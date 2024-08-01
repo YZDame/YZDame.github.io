@@ -1,1 +1,2 @@
-# YZDame.github.io
+# 404 Not Found
+[❌](https://yzdame.me/docs)
