@@ -40,10 +40,7 @@
   <entry>
     <title>BNUslides：一份简洁的师大蓝主题Beamer</title>
     <url>/post/a4a4bede.html</url>
-    <content><![CDATA[<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201820201.webp" style="zoom:50%;" />
-
-
-<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
+    <content><![CDATA[<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
 <li><p>纯粹的师大蓝：两种颜色分别取自官网和校徽，再设置不同透明度进行组合</p>
 </li>
 <li><p>极致的矢量图：可以直接使用<em>Tikz</em>作图，包括封面校徽logo也是<a href="https://github.com/LeyuDame/BNU_icon_Tikz"><em>Tikz</em>作出的矢量图</a></p>
@@ -63,6 +60,8 @@
 <li><p>用<code>.cls</code> 文件单独控制格式，在使用此模板时只需<code>\documentclass&#123;bnuslides&#125;</code>即可调用此模板，实现内容与格式完全分离</p>
 </li>
 </ol>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201820201.webp" style="zoom:50%;" />
+
 <h3 id="编译方式与发布地址"><a href="#编译方式与发布地址" class="headerlink" title="编译方式与发布地址"></a>编译方式与发布地址</h3><p>编译请使用<code>xelatex*2</code>，否则目录无法正常显示</p>
 <p><a href="https://www.overleaf.com/latex/templates/bnuslides/txrjnsqpqqkh">Overleaf</a>：开箱即用，但后期不一定会更新</p>
 <p><a href="https://github.com/LeyuDame/BNUslides">Github</a>：不定期更新</p>
@@ -103,6 +102,8 @@
     <content><![CDATA[<h2 id="两个生活小问题"><a href="#两个生活小问题" class="headerlink" title="两个生活小问题"></a>两个生活小问题</h2><p>在了解Frobenius问题之前, 我们先来看两个生活中的小问题. </p>
 <p>首先, 为什么高铁的座位设置大多是 “2+3” 的组合？即过道一侧是两个座位组合在一起、另一侧是三个座位组合在一起呢？设想一下, 当你和家人或是朋友出行时, 不管你们人数是多少, 只要不少于两人, 总有一种座位组合方式让每一个人和认识的人坐在一起, 而不会出现落单的情况. 当出行人数是偶数时, 只需都安排两人坐即可；当出行人数是奇数时, 只需安排三个人坐三人座, 剩下的人（如果有的话）一定是偶数, 再安排两人座若干即可. </p>
 <p>我们再看第二个问题：给定几种面值的硬币, 不能用这些硬币支付的最大金额是多少？</p>
+<span id="more"></span>
+
 <p>假设你现在去便利店买东西, 现在有若干面值的硬币：￥2, ￥3, ￥5, ￥7, 你只可以选其中两种放进你的钱包（数量不限）. 你不知道你要买的东西具体的价格, 并且便利店不设找零, 所以你希望用这两种面值的硬币去组合出尽可能多的数值, 你会怎么选？</p>
 <p>假如现在你选了￥3和￥5, 那么从不小于￥5的商品开始逐一验证, 我们发现如果商品的价格是￥7就无法组合出来, 不过价格超过￥7 时似乎都可以表示出来；接着我们选￥3和￥7继续做试验, 我们发现￥8, ￥11 都是无法用￥3 和￥7 组合出来的, 那么大于￥11的情形是否都满足可以用这两种面额的硬币进行组合呢？逐一验证的方法显然无法严格证明. </p>
 <h2 id="两个数学问题"><a href="#两个数学问题" class="headerlink" title="两个数学问题"></a>两个数学问题</h2><p>我们先不急着回答刚才的问题, 而是先看两道数学问题. </p>
@@ -411,12 +412,12 @@
   <entry>
     <title>一份简洁易用的美赛LaTeX模板</title>
     <url>/post/ba7a336d.html</url>
-    <content><![CDATA[<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
-
-<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
+    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
 <span id="more"></span>
 
 <p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
+
 <h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
 <p>“要想拿O奖，首先得长得像O奖。”</p>
 </blockquote>
@@ -871,5 +872,19 @@
         <tag>vscode</tag>
         <tag>copilot</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/post/undefined.html</url>
+    <content><![CDATA[<p>今天完成了从旧帐号（LeyuDame）、旧电脑（Windows 11）到新帐号（YZDame）、新电脑（macOS Sequoia）的博客迁移工作，仍然沿用原来的Hexo Next主题。</p>
+<p>测试一下 $\LaTeX$ 数学公式：<br>$$<br>\sin 2\alpha &#x3D; 2\sin\alpha \cos\alpha<br>$$<br>测试一下代码框：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% \LaTeX</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">	<span class="keyword">\sin</span> 2<span class="keyword">\alpha</span> = 2<span class="keyword">\sin</span><span class="keyword">\alpha</span> <span class="keyword">\cos</span><span class="keyword">\alpha</span></span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他markdown语法：</p>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<p>测试 <strong>粗体</strong></p>
+]]></content>
   </entry>
 </search>
