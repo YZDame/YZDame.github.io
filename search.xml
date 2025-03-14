@@ -181,153 +181,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Some Useful Links for MCM</title>
-    <url>/post/8bdc7cc5.html</url>
-    <content><![CDATA[<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><a href="https://cn.overleaf.com/project">📝Overleaf</a> 	<a href="https://www.contest.comap.com/undergraduate/contests/mcm/login.php">🌐美赛官网</a>  	<a href="https://one.bnuzh.edu.cn/">🏫数字京师</a>	<a href="http://wolframalpha.com/">Ⓜ️wolfram</a> </p>
-<span id="more"></span>
-
-<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><ol>
-<li><a href="https://dict.cnki.net/index">知网学术翻译</a> 适合专有名词 </li>
-<li>Deepl </li>
-<li><a href="https://translate.google.co.uk/?hl=zh-CN&tab=rT&sl=en&tl=zh-CN&op=translate">Google Translate</a></li>
-</ol>
-<h2 id="文献检索"><a href="#文献检索" class="headerlink" title="文献检索"></a>文献检索</h2><ol>
-<li>木铎搜索</li>
-<li><a href="https://scholar.google.com.hk/?hl=zh-CN">Google学术</a></li>
-</ol>
-<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ol>
-<li><a href="https://data.cnki.net/internationalData">知网-中国经济社会大数据研究平台</a></li>
-<li><a href="https://www.gapminder.org/data/">gapminder</a> </li>
-<li><a href="https://ourworldindata.org/">Our World in Data</a> </li>
-<li><a href="https://www.eia.gov/">美国能源信息署 （EIA）</a> </li>
-<li><a href="https://www.nass.usda.gov/">美国农业部 </a> </li>
-<li><a href="https://datausa.io/">Data USA</a> </li>
-<li><a href="https://www.usbr.gov/">美国垦务局Bureau of Reclamation</a> </li>
-<li><a href="https://www.statista.com/">Statista</a> </li>
-<li><a href="https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx">MBS Monthly Bulletin of Statistics Online </a> </li>
-<li><a href="https://data.worldbank.org/indicator">世界银行Indicators | Data (worldbank.org)</a> </li>
-<li><a href="https://www.cia.gov/the-world-factbook/references/guide-to-country-comparisons/">中情局 Guide to Country Comparisons - The World Factbook (cia.gov)</a> </li>
-<li><a href="https://www.wikidata.org/wiki/Main_Page">Wikidata</a></li>
-</ol>
-<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><ol>
-<li><a href="https://dycharts.com/appv2/#/pages/home/chart-template">镝数图表</a> （也有数据） </li>
-<li><a href="https://echarts.apache.org/examples/zh/index.html#chart-type-line">ECharts（需要JS语言编程）</a> </li>
-<li>Tableau</li>
-<li>Mapbox</li>
-<li>Ploty</li>
-<li><a href="https://zhimap.com/home">ZhiMap思维导图（支持数学公式）</a></li>
-<li><a href="https://markmap.js.org/repl">在线md转思维导图Try markmap（支持katex）</a></li>
-</ol>
-<h2 id="LaTeX相关"><a href="#LaTeX相关" class="headerlink" title="LaTeX相关"></a>LaTeX相关</h2><ol>
-<li><a href="https://mathpix.com/">Mathpix Snip</a></li>
-<li><a href="https://latex.codecogs.com/">Codecogs</a> </li>
-<li>Axmath</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>MCM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GG组合：分分钟搞定美赛翻译</title>
-    <url>/post/3898f375.html</url>
-    <content><![CDATA[<p>前面介绍了一个简洁易用的美赛模板<a href="https://leyudame.github.io/post/ba7a336d.html">LDMCM</a>，今天继续补充一下高效可行的翻译方法。</p>
-<span id="more"></span>
-
-<p>本文主要介绍在美赛中利用GG组合——Google Translate+Grammarly来进行快速翻译和校对论文的方法，此外还简要提及了一些其他英文写作与文献阅读的工具，并提供了一些可行的AI辅助方案比如GPTs. </p>
-<h2 id="翻译与语法"><a href="#翻译与语法" class="headerlink" title="翻译与语法"></a>翻译与语法</h2><h3 id="直击问题"><a href="#直击问题" class="headerlink" title="直击问题"></a>直击问题</h3><p>对于初学者而言，用$\LaTeX$写美赛论文在排版方面相较于word其实并不会有太大优势，若是对$\LaTeX$语法不熟悉，在插入浮动体（图片、表格等）时由于并不是WYSIWYG的（所见即所得），由细节语法的错误导致编译失败反复修改代码反而非常浪费时间。反之，只要对word足够熟悉，完全可以做出非常美观的排版效果。</p>
-<p>但是，如果不是直接用英语写作，而是先写中文再翻译成英文的话，那么一定避不开含数学表达式的中文的翻译问题。这时$\LaTeX$就会显得比word更灵活一些。</p>
-<p>比如现在我们要翻译这样一段话：</p>
-<blockquote>
-<p>当无外界因素影响时，第$i$个物种的生长可以用Logistic方程来刻画<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>\label{logistic}<br>$$</p>
-<p>这里的$\frac{\mathrm{d} N_i}{\mathrm{d} t}$表示物种$i$的瞬时增长量， $r_i$表示物种$i$的固有增长率，$N_i$表示物种$i$的生物量，$K_i$表示物种 $i$的环境容纳量。</p>
-</blockquote>
-<p>首先来看看在word中自带的翻译文档的效果：</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/word-logistic.webp" alt="" style="zoom: 80%;" />
-
-<p>嗯……乍一看感觉还行，但仔细一瞧会发现有点怪怪的。如果是把上述文字复制到第三方翻译网站，用插件生成的公式（比如Axmath）会类似于图片一样直接无法翻译；Office Math公式会自动部分地变成$\LaTeX$格式，但是怎么把翻译好的含有$\LaTeX$格式的英文变回到word中呢？🤔</p>
-<p>但如果是用$\LaTeX$书写论文，也就变成了要翻译上面文字的源代码：</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">当无外界因素影响时，第<span class="built_in">$</span>i<span class="built_in">$</span>个物种的生长可以用Logistic方程来刻画</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\frac</span>&#123;d N<span class="built_in">_</span>i&#125;&#123;d t&#125;=r<span class="built_in">_</span>i N<span class="built_in">_</span>i<span class="keyword">\left</span>(1-<span class="keyword">\frac</span>&#123;N<span class="built_in">_</span>i&#125;&#123;K<span class="built_in">_</span>i&#125;<span class="keyword">\right</span>)</span><br><span class="line"><span class="keyword">\label</span>&#123;logistic&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"></span><br><span class="line">这里的<span class="built_in">$</span><span class="keyword">\frac</span>&#123;dN<span class="built_in">_</span>i&#125;&#123;dt&#125;<span class="built_in">$</span>表示物种<span class="built_in">$</span>i<span class="built_in">$</span>的瞬时增长量， <span class="built_in">$</span>r<span class="built_in">_</span>i<span class="built_in">$</span>表示第物种<span class="built_in">$</span>i<span class="built_in">$</span>的固有增长率，<span class="built_in">$</span>N<span class="built_in">_</span>i<span class="built_in">$</span>表示物种<span class="built_in">$</span>i<span class="built_in">$</span>的生物量，<span class="built_in">$</span>K<span class="built_in">_</span>i<span class="built_in">$</span>表示物种 <span class="built_in">$</span>i<span class="built_in">$</span>的环境容纳量。</span><br></pre></td></tr></table></figure>
-
-<p>大部分翻译网站是支持直接翻译含有$\LaTeX$数学公式的文字的，那么具体如何操作呢？下面有请<strong>GG组合</strong>登场！（名字是临时想出来的🤣）</p>
-<h3 id="Google翻译"><a href="#Google翻译" class="headerlink" title="Google翻译"></a>Google翻译</h3><p>把上面这段源代码复制到Google翻译效果如下：</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401191743586.webp" alt="" style="zoom:67%;" />
-
-<p>除了数学表达式与普通文本连贯起来一起翻译之外，像<code>\begin&#123;equation&#125;</code>这样的代码环境也原封不动地保留了下来，并且这个公式的标签<code>\label&#123;logistic&#125;</code>也同样保留在了翻译文本中，也就是说，公式、参考文献、图片的引用标签只要是用英文命名的，翻译后就不会影响到正常的引用。同理，对于表格，整个<code>table</code>中的内容都可以拿去直接翻译而不会改变原有的格式和数学表达式，比如论文中的<strong>Notations&#x2F;符号说明</strong>。最后就是中文标点符号也都转换成了英文标点符号。</p>
-<p>把翻译后的源代码进行编译，大致效果如下：</p>
-<blockquote>
-<p>When there are no external factors, the growth of the $i$-th species can be described by the Logistic equation<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>$$<br>Here $\frac{\mathrm{d} N_i}{\mathrm{d} t}$ represents the instantaneous growth of species $i$, $r_i$ represents the inherent growth rate of species $i$, $N_i$ represents the biomass of species $i$, $K_i$ represents the environmental capacity of species $i$.</p>
-</blockquote>
-<p>可以看到效果还是不错的，只需要做一些细节上的调整（例如语法）就可以了，而这些调整相当一部分可以由下面要介绍的Grammarly自动检测并完成。</p>
-<h4 id="补充：vscode中的翻译插件"><a href="#补充：vscode中的翻译插件" class="headerlink" title="补充：vscode中的翻译插件"></a>补充：vscode中的翻译插件</h4><p>如果使用vscode编写文档，那么借助插件在vscode内部就可以完成翻译，并且还有一系列可自定义的快捷键可以使用，再结合Copilot的建议，效率会更高。</p>
-<p><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401191816020.webp"></p>
-<h3 id="Grammarly"><a href="#Grammarly" class="headerlink" title="Grammarly"></a>Grammarly</h3><p><a href="https://www.grammarly.com/">Grammarly</a>是一个可以检测语法和拼写的软件，支持多平台多种方式使用，基础功能是免费的。下载桌面端后Grammarly会自动在后台运行，在所有能输入文字的地方Grammarly都可以自动检测语法并给出改写建议，点击接受即可自动完成替换。</p>
-<h2 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h2><h3 id="通义智文"><a href="#通义智文" class="headerlink" title="通义智文"></a>通义智文</h3><p>作为通义大模型的一个产品，<a href="https://tongyi.aliyun.com/zhiwen">通义智文</a>在概括文档方面有着不错的表现，可以帮助我们快速了解一篇文献的大致内容，直接跳过了翻译步骤。</p>
-<h3 id="zotero-pdf-translate"><a href="#zotero-pdf-translate" class="headerlink" title="zotero-pdf-translate"></a>zotero-pdf-translate</h3><p><a href="https://github.com/windingwind/zotero-pdf-translate">zotero-pdf-translate</a>是zotero的一个插件，安装后即可实现在zotero中进行文献翻译，再结合zotero的pdf阅读、笔记和参考文献导出。</p>
-<h3 id="Xtranslator"><a href="#Xtranslator" class="headerlink" title="Xtranslator"></a>Xtranslator</h3><p>这也是一个翻译软件，支持在任意pdf阅读器中进行划词翻译。</p>
-<h2 id="AI辅助"><a href="#AI辅助" class="headerlink" title="AI辅助"></a>AI辅助</h2><h3 id="Wolfram"><a href="#Wolfram" class="headerlink" title="Wolfram"></a>Wolfram</h3><p>最近ChatGPT插件商店——GPTs终于上线了，最令人期待的也许莫过于<a href="https://chat.openai.com/g/g-0S5FXLyFN-wolfram">GPT-4与Wolfram的结合</a>了，这使得ChatGPT的数学“能力”大大提高，并且可以进行更加精确的计算以及作图（尤其是符号计算！）。虽然它并不是做翻译的，但我们还是尝试一下把刚才这段文字发送给它看看效果如何：</p>
-<p><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401192218226.webp"></p>
-<p>可以看到Wolfram对Logistic方程概括得比较到位，在给出“随便画个图吧”的指令后，它也非常快速地与wolframcloud完成了“交谈”并给出了图象以及分析。</p>
-<h3 id="Translate-Chinese-to-Academic-English-科研论文中翻英"><a href="#Translate-Chinese-to-Academic-English-科研论文中翻英" class="headerlink" title="Translate Chinese to Academic English 科研论文中翻英"></a>Translate Chinese to Academic English 科研论文中翻英</h3><p>这也是一个<a href="https://chat.openai.com/g/g-HejNUzj8l-translate-chinese-to-academic-english-ke-yan-lun-wen-zhong-fan-ying">GPTs</a>，把上面这段需要翻译的文字发送过去后，它先是给出了直译（与前面Google翻译的结果非常相近），随后针对部分名词列出了几个Identified Issues，最后再结合这些问题给出了更加学术化的翻译。（感觉前面列出的工具有点跟不上时代了哈哈）</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401192207598.webp" alt="" style="zoom:;" />
-
-<p>翻译后的结果：</p>
-<blockquote>
-<p>In the absence of external influences, the growth of the $i^{th}$ species can be modeled using the Logistic equation:<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>$$<br>In this equation, $\frac{\mathrm{d} N_i}{\mathrm{d} t}$ denotes the instantaneous growth rate of species $i$, $r_i$ is the intrinsic growth rate of species $i$, $N_i$ represents the biomass of species $i$, and $K_i$ signifies the environmental carrying capacity for species $i$.</p>
-</blockquote>
-<p>可以看到相较于之前的直译，学术翻译后的结果不仅在语句的结构和表达上提高了几个档次，而且连$i^{th}$这种表达都翻译到位了。😱</p>
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>MCM</tag>
-        <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决Github port 443 Time out问题</title>
-    <url>/post/cbb03b27.html</url>
-    <content><![CDATA[<p>今天push到远程仓库的时候系统报错：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Failed to connect to github.com port 443 after 21051 ms: Couldn&#x27;t connect to server</span><br></pre></td></tr></table></figure>
-
-<p>接着又是一顿左转右转反复尝试，试了一堆方法都不行（尤其是某N网站里的回答），最后通过这篇<a href="https://zhuanlan.zhihu.com/p/636418854">知乎文章</a>里的方法搞定。</p>
-<p>其实说到底就是<strong>git 设置的端口与系统代理不一致</strong>，调整一下git端口即可。</p>
-<p>首先可以查看一下当前git是否使用了代理：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
-
-<p>如果使用了代理会显示相应的ip以及端口号，未使用则不会显示内容。</p>
-<p>接着查看一下自己的系统代理，以win11为例，在“设置-网络和Internet-代理”中编辑代理服务器界面可以查看到当前的系统代理地址和端口，比如我的是<code>127.0.0.1:7890</code>，接下来给自己的git配置上：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 注意结合自己的实际情况调整代理地址</span><br><span class="line">git config --global http.proxy http://127.0.0.1:7890 </span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<p> 最后重新push一下，搞定！🎉</p>
-<p><em>如果需要重置即恢复默认值取消git代理的话，可以使用如下命令：</em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 取消代理</span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>git</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cherry Studio + 硅基流动，让你的DeepSeek体验上到next level</title>
     <url>/post/undefined.html</url>
     <content><![CDATA[<h2 id="🎯-痛点与解决方案"><a href="#🎯-痛点与解决方案" class="headerlink" title="🎯 痛点与解决方案"></a>🎯 痛点与解决方案</h2><p>遇到DeepSeek服务器繁忙？😫</p>
 <p>本地部署硬件算力不足？🤔</p>
 <p> 蒸馏版模型效果不满意？😑</p>
+<span id="more"></span>
+
 <p>不妨试试“本地Cherry Studio客户端+DeepSeek API”的方法，因为这样：</p>
 <ol>
 <li>可避免服务器繁忙</li>
@@ -447,6 +307,114 @@
       </tags>
   </entry>
   <entry>
+    <title>GG组合：分分钟搞定美赛翻译</title>
+    <url>/post/3898f375.html</url>
+    <content><![CDATA[<p>前面介绍了一个简洁易用的美赛模板<a href="https://leyudame.github.io/post/ba7a336d.html">LDMCM</a>，今天继续补充一下高效可行的翻译方法。</p>
+<span id="more"></span>
+
+<p>本文主要介绍在美赛中利用GG组合——Google Translate+Grammarly来进行快速翻译和校对论文的方法，此外还简要提及了一些其他英文写作与文献阅读的工具，并提供了一些可行的AI辅助方案比如GPTs. </p>
+<h2 id="翻译与语法"><a href="#翻译与语法" class="headerlink" title="翻译与语法"></a>翻译与语法</h2><h3 id="直击问题"><a href="#直击问题" class="headerlink" title="直击问题"></a>直击问题</h3><p>对于初学者而言，用$\LaTeX$写美赛论文在排版方面相较于word其实并不会有太大优势，若是对$\LaTeX$语法不熟悉，在插入浮动体（图片、表格等）时由于并不是WYSIWYG的（所见即所得），由细节语法的错误导致编译失败反复修改代码反而非常浪费时间。反之，只要对word足够熟悉，完全可以做出非常美观的排版效果。</p>
+<p>但是，如果不是直接用英语写作，而是先写中文再翻译成英文的话，那么一定避不开含数学表达式的中文的翻译问题。这时$\LaTeX$就会显得比word更灵活一些。</p>
+<p>比如现在我们要翻译这样一段话：</p>
+<blockquote>
+<p>当无外界因素影响时，第$i$个物种的生长可以用Logistic方程来刻画<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>\label{logistic}<br>$$</p>
+<p>这里的$\frac{\mathrm{d} N_i}{\mathrm{d} t}$表示物种$i$的瞬时增长量， $r_i$表示物种$i$的固有增长率，$N_i$表示物种$i$的生物量，$K_i$表示物种 $i$的环境容纳量。</p>
+</blockquote>
+<p>首先来看看在word中自带的翻译文档的效果：</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/word-logistic.webp" alt="" style="zoom: 80%;" />
+
+<p>嗯……乍一看感觉还行，但仔细一瞧会发现有点怪怪的。如果是把上述文字复制到第三方翻译网站，用插件生成的公式（比如Axmath）会类似于图片一样直接无法翻译；Office Math公式会自动部分地变成$\LaTeX$格式，但是怎么把翻译好的含有$\LaTeX$格式的英文变回到word中呢？🤔</p>
+<p>但如果是用$\LaTeX$书写论文，也就变成了要翻译上面文字的源代码：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">当无外界因素影响时，第<span class="built_in">$</span>i<span class="built_in">$</span>个物种的生长可以用Logistic方程来刻画</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\frac</span>&#123;d N<span class="built_in">_</span>i&#125;&#123;d t&#125;=r<span class="built_in">_</span>i N<span class="built_in">_</span>i<span class="keyword">\left</span>(1-<span class="keyword">\frac</span>&#123;N<span class="built_in">_</span>i&#125;&#123;K<span class="built_in">_</span>i&#125;<span class="keyword">\right</span>)</span><br><span class="line"><span class="keyword">\label</span>&#123;logistic&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"></span><br><span class="line">这里的<span class="built_in">$</span><span class="keyword">\frac</span>&#123;dN<span class="built_in">_</span>i&#125;&#123;dt&#125;<span class="built_in">$</span>表示物种<span class="built_in">$</span>i<span class="built_in">$</span>的瞬时增长量， <span class="built_in">$</span>r<span class="built_in">_</span>i<span class="built_in">$</span>表示第物种<span class="built_in">$</span>i<span class="built_in">$</span>的固有增长率，<span class="built_in">$</span>N<span class="built_in">_</span>i<span class="built_in">$</span>表示物种<span class="built_in">$</span>i<span class="built_in">$</span>的生物量，<span class="built_in">$</span>K<span class="built_in">_</span>i<span class="built_in">$</span>表示物种 <span class="built_in">$</span>i<span class="built_in">$</span>的环境容纳量。</span><br></pre></td></tr></table></figure>
+
+<p>大部分翻译网站是支持直接翻译含有$\LaTeX$数学公式的文字的，那么具体如何操作呢？下面有请<strong>GG组合</strong>登场！（名字是临时想出来的🤣）</p>
+<h3 id="Google翻译"><a href="#Google翻译" class="headerlink" title="Google翻译"></a>Google翻译</h3><p>把上面这段源代码复制到Google翻译效果如下：</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401191743586.webp" alt="" style="zoom:67%;" />
+
+<p>除了数学表达式与普通文本连贯起来一起翻译之外，像<code>\begin&#123;equation&#125;</code>这样的代码环境也原封不动地保留了下来，并且这个公式的标签<code>\label&#123;logistic&#125;</code>也同样保留在了翻译文本中，也就是说，公式、参考文献、图片的引用标签只要是用英文命名的，翻译后就不会影响到正常的引用。同理，对于表格，整个<code>table</code>中的内容都可以拿去直接翻译而不会改变原有的格式和数学表达式，比如论文中的<strong>Notations&#x2F;符号说明</strong>。最后就是中文标点符号也都转换成了英文标点符号。</p>
+<p>把翻译后的源代码进行编译，大致效果如下：</p>
+<blockquote>
+<p>When there are no external factors, the growth of the $i$-th species can be described by the Logistic equation<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>$$<br>Here $\frac{\mathrm{d} N_i}{\mathrm{d} t}$ represents the instantaneous growth of species $i$, $r_i$ represents the inherent growth rate of species $i$, $N_i$ represents the biomass of species $i$, $K_i$ represents the environmental capacity of species $i$.</p>
+</blockquote>
+<p>可以看到效果还是不错的，只需要做一些细节上的调整（例如语法）就可以了，而这些调整相当一部分可以由下面要介绍的Grammarly自动检测并完成。</p>
+<h4 id="补充：vscode中的翻译插件"><a href="#补充：vscode中的翻译插件" class="headerlink" title="补充：vscode中的翻译插件"></a>补充：vscode中的翻译插件</h4><p>如果使用vscode编写文档，那么借助插件在vscode内部就可以完成翻译，并且还有一系列可自定义的快捷键可以使用，再结合Copilot的建议，效率会更高。</p>
+<p><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401191816020.webp"></p>
+<h3 id="Grammarly"><a href="#Grammarly" class="headerlink" title="Grammarly"></a>Grammarly</h3><p><a href="https://www.grammarly.com/">Grammarly</a>是一个可以检测语法和拼写的软件，支持多平台多种方式使用，基础功能是免费的。下载桌面端后Grammarly会自动在后台运行，在所有能输入文字的地方Grammarly都可以自动检测语法并给出改写建议，点击接受即可自动完成替换。</p>
+<h2 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h2><h3 id="通义智文"><a href="#通义智文" class="headerlink" title="通义智文"></a>通义智文</h3><p>作为通义大模型的一个产品，<a href="https://tongyi.aliyun.com/zhiwen">通义智文</a>在概括文档方面有着不错的表现，可以帮助我们快速了解一篇文献的大致内容，直接跳过了翻译步骤。</p>
+<h3 id="zotero-pdf-translate"><a href="#zotero-pdf-translate" class="headerlink" title="zotero-pdf-translate"></a>zotero-pdf-translate</h3><p><a href="https://github.com/windingwind/zotero-pdf-translate">zotero-pdf-translate</a>是zotero的一个插件，安装后即可实现在zotero中进行文献翻译，再结合zotero的pdf阅读、笔记和参考文献导出。</p>
+<h3 id="Xtranslator"><a href="#Xtranslator" class="headerlink" title="Xtranslator"></a>Xtranslator</h3><p>这也是一个翻译软件，支持在任意pdf阅读器中进行划词翻译。</p>
+<h2 id="AI辅助"><a href="#AI辅助" class="headerlink" title="AI辅助"></a>AI辅助</h2><h3 id="Wolfram"><a href="#Wolfram" class="headerlink" title="Wolfram"></a>Wolfram</h3><p>最近ChatGPT插件商店——GPTs终于上线了，最令人期待的也许莫过于<a href="https://chat.openai.com/g/g-0S5FXLyFN-wolfram">GPT-4与Wolfram的结合</a>了，这使得ChatGPT的数学“能力”大大提高，并且可以进行更加精确的计算以及作图（尤其是符号计算！）。虽然它并不是做翻译的，但我们还是尝试一下把刚才这段文字发送给它看看效果如何：</p>
+<p><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401192218226.webp"></p>
+<p>可以看到Wolfram对Logistic方程概括得比较到位，在给出“随便画个图吧”的指令后，它也非常快速地与wolframcloud完成了“交谈”并给出了图象以及分析。</p>
+<h3 id="Translate-Chinese-to-Academic-English-科研论文中翻英"><a href="#Translate-Chinese-to-Academic-English-科研论文中翻英" class="headerlink" title="Translate Chinese to Academic English 科研论文中翻英"></a>Translate Chinese to Academic English 科研论文中翻英</h3><p>这也是一个<a href="https://chat.openai.com/g/g-HejNUzj8l-translate-chinese-to-academic-english-ke-yan-lun-wen-zhong-fan-ying">GPTs</a>，把上面这段需要翻译的文字发送过去后，它先是给出了直译（与前面Google翻译的结果非常相近），随后针对部分名词列出了几个Identified Issues，最后再结合这些问题给出了更加学术化的翻译。（感觉前面列出的工具有点跟不上时代了哈哈）</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401192207598.webp" alt="" style="zoom:;" />
+
+<p>翻译后的结果：</p>
+<blockquote>
+<p>In the absence of external influences, the growth of the $i^{th}$ species can be modeled using the Logistic equation:<br>$$<br>\frac{\mathrm{d} N_i}{\mathrm{d} t}&#x3D;r_i N_i\left(1-\frac{N_i}{K_i}\right)<br>$$<br>In this equation, $\frac{\mathrm{d} N_i}{\mathrm{d} t}$ denotes the instantaneous growth rate of species $i$, $r_i$ is the intrinsic growth rate of species $i$, $N_i$ represents the biomass of species $i$, and $K_i$ signifies the environmental carrying capacity for species $i$.</p>
+</blockquote>
+<p>可以看到相较于之前的直译，学术翻译后的结果不仅在语句的结构和表达上提高了几个档次，而且连$i^{th}$这种表达都翻译到位了。😱</p>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>MCM</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Some Useful Links for MCM</title>
+    <url>/post/8bdc7cc5.html</url>
+    <content><![CDATA[<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><a href="https://cn.overleaf.com/project">📝Overleaf</a> 	<a href="https://www.contest.comap.com/undergraduate/contests/mcm/login.php">🌐美赛官网</a>  	<a href="https://one.bnuzh.edu.cn/">🏫数字京师</a>	<a href="http://wolframalpha.com/">Ⓜ️wolfram</a> </p>
+<span id="more"></span>
+
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><ol>
+<li><a href="https://dict.cnki.net/index">知网学术翻译</a> 适合专有名词 </li>
+<li>Deepl </li>
+<li><a href="https://translate.google.co.uk/?hl=zh-CN&tab=rT&sl=en&tl=zh-CN&op=translate">Google Translate</a></li>
+</ol>
+<h2 id="文献检索"><a href="#文献检索" class="headerlink" title="文献检索"></a>文献检索</h2><ol>
+<li>木铎搜索</li>
+<li><a href="https://scholar.google.com.hk/?hl=zh-CN">Google学术</a></li>
+</ol>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ol>
+<li><a href="https://data.cnki.net/internationalData">知网-中国经济社会大数据研究平台</a></li>
+<li><a href="https://www.gapminder.org/data/">gapminder</a> </li>
+<li><a href="https://ourworldindata.org/">Our World in Data</a> </li>
+<li><a href="https://www.eia.gov/">美国能源信息署 （EIA）</a> </li>
+<li><a href="https://www.nass.usda.gov/">美国农业部 </a> </li>
+<li><a href="https://datausa.io/">Data USA</a> </li>
+<li><a href="https://www.usbr.gov/">美国垦务局Bureau of Reclamation</a> </li>
+<li><a href="https://www.statista.com/">Statista</a> </li>
+<li><a href="https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx">MBS Monthly Bulletin of Statistics Online </a> </li>
+<li><a href="https://data.worldbank.org/indicator">世界银行Indicators | Data (worldbank.org)</a> </li>
+<li><a href="https://www.cia.gov/the-world-factbook/references/guide-to-country-comparisons/">中情局 Guide to Country Comparisons - The World Factbook (cia.gov)</a> </li>
+<li><a href="https://www.wikidata.org/wiki/Main_Page">Wikidata</a></li>
+</ol>
+<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><ol>
+<li><a href="https://dycharts.com/appv2/#/pages/home/chart-template">镝数图表</a> （也有数据） </li>
+<li><a href="https://echarts.apache.org/examples/zh/index.html#chart-type-line">ECharts（需要JS语言编程）</a> </li>
+<li>Tableau</li>
+<li>Mapbox</li>
+<li>Ploty</li>
+<li><a href="https://zhimap.com/home">ZhiMap思维导图（支持数学公式）</a></li>
+<li><a href="https://markmap.js.org/repl">在线md转思维导图Try markmap（支持katex）</a></li>
+</ol>
+<h2 id="LaTeX相关"><a href="#LaTeX相关" class="headerlink" title="LaTeX相关"></a>LaTeX相关</h2><ol>
+<li><a href="https://mathpix.com/">Mathpix Snip</a></li>
+<li><a href="https://latex.codecogs.com/">Codecogs</a> </li>
+<li>Axmath</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>MCM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tikz绘制BNU校徽</title>
     <url>/post/2723d25d.html</url>
     <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
@@ -479,32 +447,37 @@
       </tags>
   </entry>
   <entry>
-    <title>2024年阅读摘录</title>
-    <url>/post/b2821542.html</url>
-    <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
-<p>只有走在路上，才能摆脱局限，摆脱执着，让所有的选择、探寻、猜测、想象都生机勃勃。</p>
-</blockquote>
-<h2 id="吴军《数学之美》"><a href="#吴军《数学之美》" class="headerlink" title="吴军《数学之美》"></a>吴军《数学之美》</h2><blockquote>
-<p>每当弗莱德和我谈起各自少年时的教育，我们都同意这样几个观点。首先，小学生和中学生其实没有必要花那么多时间读书，而他们的社会经验、生活能力以及在那时树立起的志向将帮助他们的一生。第二，中学阶段花很多时间比同伴多读的课程，上大学以后用很短时间就能读完，因为在大学阶段，人的理解力要强得多。举个例子，在中学需要花500小时才能学会的内容，在大学可能花100小时就够了。因此，一个学生在中小学阶段建立的那一点点优势在大学很快就会丧失殆尽。第三，学习（和教育）是持续一辈子的过程，很多中学成绩优异的亚裔学生进入名校后表现明显不如那些出于兴趣而读书的美国同伴，因前者持续学习的动力不足。第四，书本的内容可以早学，也可以晚学，但是错过了成长阶段却是无法补回来的。（因此，少年班的做法不足取。）现在中国的好学校里，恐怕百分之九十九的孩子在读书上花的时间都比我当时要多，更比贾里尼克要多得多，但是这些孩子今天可能有百分之九十九在学术上的建树不如我，更不如贾里尼克。这实在是教育的误区。</p>
-</blockquote>
-<h2 id="丘成桐《我的几何人生》"><a href="#丘成桐《我的几何人生》" class="headerlink" title="丘成桐《我的几何人生》"></a>丘成桐《我的几何人生》</h2><blockquote>
-<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。 </p>
-</blockquote>
-<blockquote>
-<p>虽然金钱需要考虑，但正如五柳先生说的，它并不是一切，做人要看远些。我会在高研院的一年尽力工作和学习，然后再找更理想的位置。</p>
-</blockquote>
-<blockquote>
-<p>自1987年开始，过去三十多年我都在哈佛度过。诚然，这么多年，不一定天天都快乐，但总的来说是美好的日子，或者谚语说得对，“第三次，便顺意”。</p>
-</blockquote>
-<h2 id="顾险峰"><a href="#顾险峰" class="headerlink" title="顾险峰"></a>顾险峰</h2><blockquote>
-<p>大多数浅层次的智力劳动很快会被AI所承担，年轻人求学期间尽量学习更为深刻的理工科方向，才能保证长期的核心竞争力。</p>
-</blockquote>
-<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》"><a href="#沃尔特·艾萨克森-《埃隆·马斯克传》" class="headerlink" title="沃尔特·艾萨克森 《埃隆·马斯克传》"></a>沃尔特·艾萨克森 《埃隆·马斯克传》</h2><blockquote>
-<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。 </p>
-</blockquote>
+    <title>解决Github port 443 Time out问题</title>
+    <url>/post/cbb03b27.html</url>
+    <content><![CDATA[<p>今天push到远程仓库的时候系统报错：</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Failed to connect to github.com port 443 after 21051 ms: Couldn&#x27;t connect to server</span><br></pre></td></tr></table></figure>
+
+<p>接着又是一顿左转右转反复尝试，试了一堆方法都不行（尤其是某N网站里的回答），最后通过这篇<a href="https://zhuanlan.zhihu.com/p/636418854">知乎文章</a>里的方法搞定。</p>
+<p>其实说到底就是<strong>git 设置的端口与系统代理不一致</strong>，调整一下git端口即可。</p>
+<p>首先可以查看一下当前git是否使用了代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+
+<p>如果使用了代理会显示相应的ip以及端口号，未使用则不会显示内容。</p>
+<p>接着查看一下自己的系统代理，以win11为例，在“设置-网络和Internet-代理”中编辑代理服务器界面可以查看到当前的系统代理地址和端口，比如我的是<code>127.0.0.1:7890</code>，接下来给自己的git配置上：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 注意结合自己的实际情况调整代理地址</span><br><span class="line">git config --global http.proxy http://127.0.0.1:7890 </span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<p> 最后重新push一下，搞定！🎉</p>
+<p><em>如果需要重置即恢复默认值取消git代理的话，可以使用如下命令：</em></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 取消代理</span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 ]]></content>
       <tags>
-        <tag>阅读</tag>
+        <tag>GitHub</tag>
+        <tag>git</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -534,9 +507,131 @@
       </tags>
   </entry>
   <entry>
+    <title>2024年阅读摘录</title>
+    <url>/post/b2821542.html</url>
+    <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
+<p>只有走在路上，才能摆脱局限，摆脱执着，让所有的选择、探寻、猜测、想象都生机勃勃。</p>
+</blockquote>
+<h2 id="吴军《数学之美》"><a href="#吴军《数学之美》" class="headerlink" title="吴军《数学之美》"></a>吴军《数学之美》</h2><blockquote>
+<p>每当弗莱德和我谈起各自少年时的教育，我们都同意这样几个观点。首先，小学生和中学生其实没有必要花那么多时间读书，而他们的社会经验、生活能力以及在那时树立起的志向将帮助他们的一生。第二，中学阶段花很多时间比同伴多读的课程，上大学以后用很短时间就能读完，因为在大学阶段，人的理解力要强得多。举个例子，在中学需要花500小时才能学会的内容，在大学可能花100小时就够了。因此，一个学生在中小学阶段建立的那一点点优势在大学很快就会丧失殆尽。第三，学习（和教育）是持续一辈子的过程，很多中学成绩优异的亚裔学生进入名校后表现明显不如那些出于兴趣而读书的美国同伴，因前者持续学习的动力不足。第四，书本的内容可以早学，也可以晚学，但是错过了成长阶段却是无法补回来的。（因此，少年班的做法不足取。）现在中国的好学校里，恐怕百分之九十九的孩子在读书上花的时间都比我当时要多，更比贾里尼克要多得多，但是这些孩子今天可能有百分之九十九在学术上的建树不如我，更不如贾里尼克。这实在是教育的误区。</p>
+</blockquote>
+<h2 id="丘成桐《我的几何人生》"><a href="#丘成桐《我的几何人生》" class="headerlink" title="丘成桐《我的几何人生》"></a>丘成桐《我的几何人生》</h2><blockquote>
+<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。 </p>
+</blockquote>
+<blockquote>
+<p>虽然金钱需要考虑，但正如五柳先生说的，它并不是一切，做人要看远些。我会在高研院的一年尽力工作和学习，然后再找更理想的位置。</p>
+</blockquote>
+<blockquote>
+<p>自1987年开始，过去三十多年我都在哈佛度过。诚然，这么多年，不一定天天都快乐，但总的来说是美好的日子，或者谚语说得对，“第三次，便顺意”。</p>
+</blockquote>
+<h2 id="顾险峰"><a href="#顾险峰" class="headerlink" title="顾险峰"></a>顾险峰</h2><blockquote>
+<p>大多数浅层次的智力劳动很快会被AI所承担，年轻人求学期间尽量学习更为深刻的理工科方向，才能保证长期的核心竞争力。</p>
+</blockquote>
+<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》"><a href="#沃尔特·艾萨克森-《埃隆·马斯克传》" class="headerlink" title="沃尔特·艾萨克森 《埃隆·马斯克传》"></a>沃尔特·艾萨克森 《埃隆·马斯克传》</h2><blockquote>
+<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。 </p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>studio</title>
     <url>/post/undefined.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>一份简洁易用的美赛LaTeX模板</title>
+    <url>/post/ba7a336d.html</url>
+    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
+<span id="more"></span>
+
+<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
+
+<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
+<p>“要想拿O奖，首先得长得像O奖。”</p>
+</blockquote>
+<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
+<ul>
+<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
+<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
+<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
+<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
+<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
+<li>增加了超链接</li>
+<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
+</ul>
+<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
+<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
+<thead>
+<tr>
+<th>缩略语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i.e., blabla</td>
+<td>也即是blabla（一定加逗号）</td>
+</tr>
+<tr>
+<td>e.g., blabla</td>
+<td>例如，blabla</td>
+</tr>
+<tr>
+<td>, etc.   blabla</td>
+<td>，等等。blabla</td>
+</tr>
+<tr>
+<td>n.b.</td>
+<td>特别注意</td>
+</tr>
+<tr>
+<td>cf.</td>
+<td>参见</td>
+</tr>
+</tbody></table>
+<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
+<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
+</li>
+<li><p>Axmath：像输入法一样输入公式</p>
+</li>
+<li><p>Mathpix Snip：OCR</p>
+</li>
+<li><p>latex-formatter（vscode扩展）：格式化</p>
+</li>
+</ul>
+<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
+
+<p>本地编译：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
+<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
+<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>MCM</tag>
+      </tags>
   </entry>
   <entry>
     <title>乡村将兴，胡不归</title>
@@ -916,99 +1011,6 @@
         <tag>LaTeX</tag>
         <tag>vscode</tag>
         <tag>copilot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一份简洁易用的美赛LaTeX模板</title>
-    <url>/post/ba7a336d.html</url>
-    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
-<span id="more"></span>
-
-<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
-
-<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
-<p>“要想拿O奖，首先得长得像O奖。”</p>
-</blockquote>
-<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
-<ul>
-<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
-<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
-<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
-<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
-<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
-<li>增加了超链接</li>
-<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
-</ul>
-<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
-<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
-<thead>
-<tr>
-<th>缩略语</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>i.e., blabla</td>
-<td>也即是blabla（一定加逗号）</td>
-</tr>
-<tr>
-<td>e.g., blabla</td>
-<td>例如，blabla</td>
-</tr>
-<tr>
-<td>, etc.   blabla</td>
-<td>，等等。blabla</td>
-</tr>
-<tr>
-<td>n.b.</td>
-<td>特别注意</td>
-</tr>
-<tr>
-<td>cf.</td>
-<td>参见</td>
-</tr>
-</tbody></table>
-<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
-<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
-</li>
-<li><p>Axmath：像输入法一样输入公式</p>
-</li>
-<li><p>Mathpix Snip：OCR</p>
-</li>
-<li><p>latex-formatter（vscode扩展）：格式化</p>
-</li>
-</ul>
-<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
-
-<p>本地编译：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
-
-<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
-<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
-<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>MCM</tag>
       </tags>
   </entry>
 </search>
