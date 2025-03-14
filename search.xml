@@ -186,9 +186,9 @@
     <content><![CDATA[<h2 id="🎯-痛点与解决方案"><a href="#🎯-痛点与解决方案" class="headerlink" title="🎯 痛点与解决方案"></a>🎯 痛点与解决方案</h2><p>遇到DeepSeek服务器繁忙？😫</p>
 <p>本地部署硬件算力不足？🤔</p>
 <p> 蒸馏版模型效果不满意？😑</p>
+<p>不妨试试“本地Cherry Studio客户端+DeepSeek API”的方法，因为这样：</p>
 <span id="more"></span>
 
-<p>不妨试试“本地Cherry Studio客户端+DeepSeek API”的方法，因为这样：</p>
 <ol>
 <li>可避免服务器繁忙</li>
 <li>解决本地部署硬件算力不足</li>
@@ -536,11 +536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>studio</title>
-    <url>/post/undefined.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>一份简洁易用的美赛LaTeX模板</title>
     <url>/post/ba7a336d.html</url>
     <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
@@ -655,15 +650,6 @@
 ]]></content>
       <tags>
         <tag>小作文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Career, Profession &amp; Livelihood 事业、职业与饭碗</title>
-    <url>/post/undefined.html</url>
-    <content><![CDATA[<h1 id="Career-Profession-Livelihood"><a href="#Career-Profession-Livelihood" class="headerlink" title="Career, Profession &amp; Livelihood"></a>Career, Profession &amp; Livelihood</h1><p>转眼间工作已一年有余，回想起过去的</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
