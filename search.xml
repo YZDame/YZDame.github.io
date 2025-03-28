@@ -64,123 +64,6 @@
       </tags>
   </entry>
   <entry>
-    <title>BNUslides：一份简洁的师大蓝主题Beamer</title>
-    <url>/post/a4a4bede.html</url>
-    <content><![CDATA[<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
-<li><p>纯粹的师大蓝：两种颜色分别取自官网和校徽，再设置不同透明度进行组合</p>
-</li>
-<li><p>极致的矢量图：可以直接使用<em>Tikz</em>作图，包括封面校徽logo也是<a href="https://github.com/LeyuDame/BNU_icon_Tikz"><em>Tikz</em>作出的矢量图</a></p>
-</li>
-<li><p>数学字体选用了个人认为比较好看的Fourier（中文字体默认为微软雅黑）</p>
-</li>
-<li><p>与BNU图书馆官方毕业论文$\LaTeX{}$​模板语法一致，可以实现无缝迁移，例如</p>
-<span id="more"></span>
-
-<ul>
-<li>向量，矩阵，张量等采用加粗斜体： <code>\symbf&#123;r&#125;</code> –&gt;  $\boldsymbol{r}$ </li>
-<li>特殊常数和微分采用整体：<code>\uppi</code> –&gt;  $\mathrm{\pi}$ , <code>\dif x</code> –&gt;  $\mathrm{d} x$</li>
-</ul>
-</li>
-<li><p>采用了16:9的显示比例而非传统的4:3，更适用于电脑和投影仪上展示，并且得益于16:9的比例更“宽”，在右侧借鉴了<a href="https://github.com/zbowang/BeamerTheme">Zhibo Wang</a>的侧栏目录设计，每一页面对应小标题会在侧栏目录中高亮显示</p>
-</li>
-<li><p>用<code>.cls</code> 文件单独控制格式，在使用此模板时只需<code>\documentclass&#123;bnuslides&#125;</code>即可调用此模板，实现内容与格式完全分离</p>
-</li>
-</ol>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201820201.webp" style="zoom:50%;" />
-
-<h3 id="编译方式与发布地址"><a href="#编译方式与发布地址" class="headerlink" title="编译方式与发布地址"></a>编译方式与发布地址</h3><p>编译请使用<code>xelatex*2</code>，否则目录无法正常显示</p>
-<p><a href="https://www.overleaf.com/latex/templates/bnuslides/txrjnsqpqqkh">Overleaf</a>：开箱即用，但后期不一定会更新</p>
-<p><a href="https://github.com/LeyuDame/BNUslides">Github</a>：不定期更新</p>
-<p>如果觉得上述两种方式比较麻烦，也可以直接复制<code>.cls</code>文件中的全部代码，然后在<code>.tex</code>主文档调用即可，即</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;bnuslides&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下是<code>bnuslides.cls</code>的全部内容，也不是很多：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% Author: LeyuDame</span></span><br><span class="line"><span class="comment">% Date: 2024-04-20</span></span><br><span class="line"><span class="comment">% Github: https://github.com/LeyuDame/BNUslides</span></span><br><span class="line"><span class="keyword">\ProvidesClass</span>&#123;bnuslides&#125;</span><br><span class="line"><span class="keyword">\LoadClass</span>[aspectratio=169]&#123;ctexbeamer&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amssymb&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsfonts&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;bm&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;upgreek&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;mathrsfs&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;commath&#125;</span><br><span class="line"><span class="comment">% 数学字体选择</span></span><br><span class="line"><span class="comment">%\RequirePackage&#123;fourier&#125; </span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;fouriernc&#125;</span><br><span class="line"><span class="comment">%\RequirePackage&#123;mathdesign&#125;</span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;graphicx&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;caption&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;multicol&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;subcaption&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;natbib&#125;</span><br><span class="line"><span class="keyword">\useoutertheme</span>[width=5<span class="keyword">\baselineskip</span>,right]&#123;sidebar&#125;</span><br><span class="line"><span class="comment">% delete title and author</span></span><br><span class="line"><span class="comment">% \makeatletter</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;sidebar right&#125;&#123;<span class="keyword">\insertverticalnavigation</span>&#123;<span class="keyword">\beamer@sidebarwidth</span>&#125;&#125;</span><br><span class="line"><span class="comment">% fontsize</span></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;section in sidebar&#125;&#123;size=<span class="keyword">\scriptsize</span>&#125;</span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;subsection in sidebar&#125;&#123;size=<span class="keyword">\tiny</span>&#125;</span><br><span class="line"><span class="comment">% margin</span></span><br><span class="line"><span class="keyword">\setbeamersize</span>&#123;sidebar width right=3.2cm&#125;</span><br><span class="line"><span class="keyword">\setbeamersize</span>&#123;sidebar width left=1cm&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlue&#125;&#123;RGB&#125;&#123;0,80,147&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueLight&#125;&#123;RGB&#125;&#123;0,120,200&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueDark&#125;&#123;RGB&#125;&#123;36, 55, 104&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueLighter&#125;&#123;RGB&#125;&#123;0,160,240&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125; <span class="comment">% 衬线数学字体</span></span><br><span class="line"><span class="keyword">\useinnertheme</span>&#123;default&#125;</span><br><span class="line"><span class="keyword">\useinnertheme</span>[shadow]&#123;rounded&#125; <span class="comment">% 阴影加圆角</span></span><br><span class="line"><span class="comment">%\useinnertheme[]&#123;rounded&#125; % 不加阴影</span></span><br><span class="line"><span class="comment">% 页眉与页脚</span></span><br><span class="line"><span class="keyword">\useoutertheme</span>&#123;infolines&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette primary&#125;&#123;bg=BUNBlueLighter!10,fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette secondary&#125;&#123;bg=BUNBlueLighter!20,fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette tertiary&#125;&#123;bg=BUNBlueDark,fg=white&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;frametitle&#125;&#123;<span class="keyword">\vskip</span>1em<span class="keyword">\insertframetitle</span>&#125;</span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;rose&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;title&#125;&#123;fg=BUNBlue,bg=BUNBlue!10&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;frametitle&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;structure&#125;&#123;fg=BUNBlueLight&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;section in toc&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;subsection in toc&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;section in sidebar&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;subsection in sidebar&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="comment">%在每个section 前边单独插入当前章节高亮的目录页</span></span><br><span class="line"><span class="comment">%\AtBeginSection[]</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">%	\begin&#123;frame&#125;</span></span><br><span class="line"><span class="comment">%		\frametitle&#123;目录&#125;</span></span><br><span class="line"><span class="comment">%		\tableofcontents[currentsection]</span></span><br><span class="line"><span class="comment">%	\end&#123;frame&#125;</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="keyword">\newenvironment</span>&#123;centertikzpicture&#125;</span><br><span class="line">&#123;<span class="keyword">\begin</span>&#123;center&#125;<span class="keyword">\begin</span>&#123;tikzpicture&#125;&#125;</span><br><span class="line">			&#123;<span class="keyword">\end</span>&#123;tikzpicture&#125;<span class="keyword">\end</span>&#123;center&#125;&#125;</span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\symbf</span>&#125;[1]&#123;<span class="keyword">\boldsymbol</span>&#123;<span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\thempfootnote</span>&#125;&#123;<span class="keyword">\arabic</span>&#123;mpfootnote&#125;&#125;</span><br><span class="line"><span class="comment">% 设置行间距</span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;setspace&#125;</span><br><span class="line"><span class="keyword">\AtBeginDocument</span>&#123;<span class="keyword">\setstretch</span>&#123;1.25&#125;&#125;</span><br><span class="line"><span class="keyword">\title</span>[BNUslides]&#123;BNUslides: 一份简单的师大蓝主题Beamer&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;&#125;</span><br><span class="line"><span class="keyword">\author</span>[LeyuDame]&#123;LeyuDame&#125;</span><br><span class="line"><span class="keyword">\institute</span>[北京师范大学]&#123;北京师范大学&#125;</span><br><span class="line"><span class="keyword">\date</span>[<span class="keyword">\today</span>]&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"><span class="keyword">\titlegraphic</span>&#123;<span class="keyword">\includegraphics</span>[width=2cm]&#123;bnu<span class="built_in">_</span>icon.pdf&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="卷王与他们的Beamer故事"><a href="#卷王与他们的Beamer故事" class="headerlink" title="卷王与他们的Beamer故事"></a>卷王与他们的Beamer故事</h2><p>第一次接触 $\LaTeX{}$ 是数分研讨课，不过那学期课选得太多，所以开学一周后数分研讨课退了，几个G得texlive却在电脑上留了下来。而第一次接触Beamer则是在一学期后的《概率论》，几堂课下来发现老师的课件风格统一和谐，尤其是公式字母！比如概率空间 $(\Omega,\mathcal{F},\mathcal{P})$ 中的花体字母​，实在是太优雅了！</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626671.webp" style="zoom: 33%;" />
-
-<p>那时我梦寐以求的一件事就是做一份和概率论老师类似的课件，所以在解几研讨课上，我第一次使用了Beamer进行展示，尤记得当时在讲台上打开pdf时激动颤抖的手🤣</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626057.webp" alt="" style="zoom: 33%;" />
-
-<p>同一时期复变课上老师也用beamer进行授课，现在看来这个蓝绿蓝绿的配色似乎有某师的风格</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626212.webp" style="zoom: 33%;" />
-
-<p>与此同时，正是各路卷王们开始八仙过海各显神通的时候。大家纷纷投笔从 $\LaTeX{}$ ，从手写作业变成手敲作业，从手写笔记变成帮老师打讲义🥲，而彼时的我自然不在“过海”之列，却也望其项背，尤其是认识到了overleaf和mathpix后，学习 $\LaTeX{} $的效率提升了很多。</p>
-<p>在期末考试前的最后一节概率论课上，老师也许再次提及了中心极限定理或大数定律，又或是强调了马尔可夫不等式，但现在回想起来，让人印象最深刻的还是他送给我们的那句诗：</p>
-<p><em><strong>人生天地间，忽如远行客。</strong></em></p>
-<p>在那个多雨的夏天，这句话如一缕清风，吹进这个被云雾缠绕而略显沉闷的山谷，也吹散了，如云雾一般的飘渺的回忆。</p>
-]]></content>
-      <categories>
-        <category>LaTeX模板</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>Beamer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Frobenius问题（硬币问题）</title>
-    <url>/post/164132f9.html</url>
-    <content><![CDATA[<h2 id="两个生活小问题"><a href="#两个生活小问题" class="headerlink" title="两个生活小问题"></a>两个生活小问题</h2><p>在了解Frobenius问题之前, 我们先来看两个生活中的小问题. </p>
-<p>首先, 为什么高铁的座位设置大多是 “2+3” 的组合？即过道一侧是两个座位组合在一起、另一侧是三个座位组合在一起呢？设想一下, 当你和家人或是朋友出行时, 不管你们人数是多少, 只要不少于两人, 总有一种座位组合方式让每一个人和认识的人坐在一起, 而不会出现落单的情况. 当出行人数是偶数时, 只需都安排两人坐即可；当出行人数是奇数时, 只需安排三个人坐三人座, 剩下的人（如果有的话）一定是偶数, 再安排两人座若干即可. </p>
-<p>我们再看第二个问题：给定几种面值的硬币, 不能用这些硬币支付的最大金额是多少？</p>
-<span id="more"></span>
-
-<p>假设你现在去便利店买东西, 现在有若干面值的硬币：￥2, ￥3, ￥5, ￥7, 你只可以选其中两种放进你的钱包（数量不限）. 你不知道你要买的东西具体的价格, 并且便利店不设找零, 所以你希望用这两种面值的硬币去组合出尽可能多的数值, 你会怎么选？</p>
-<p>假如现在你选了￥3和￥5, 那么从不小于￥5的商品开始逐一验证, 我们发现如果商品的价格是￥7就无法组合出来, 不过价格超过￥7 时似乎都可以表示出来；接着我们选￥3和￥7继续做试验, 我们发现￥8, ￥11 都是无法用￥3 和￥7 组合出来的, 那么大于￥11的情形是否都满足可以用这两种面额的硬币进行组合呢？逐一验证的方法显然无法严格证明. </p>
-<h2 id="两个数学问题"><a href="#两个数学问题" class="headerlink" title="两个数学问题"></a>两个数学问题</h2><p>我们先不急着回答刚才的问题, 而是先看两道数学问题. </p>
-<blockquote>
-<p><strong>问题 1</strong> </p>
-<p>设正整数 $a, b$ 互素. 证明：不定方程  $a x + b y &#x3D; a b - a - b$ 没有非负整数解. </p>
-</blockquote>
-<blockquote>
-<p><strong>问题 2</strong><br>设正整数 $a, b$ 互素, 且正整数 $c$ 满足 $c &gt; a b - a - b$. 证明：不定方程 $a x + b y &#x3D; c$ 有非负整数解. </p>
-</blockquote>
-<p>事实上, 上述两个问题说的是同一件事, 也即是：对于不定方程 $a x + b y &#x3D; c$ , 只要 $c &gt; c_{0} &#x3D; a b - a - b$, 方程 $a x + b y &#x3D; c$ 就有非负整数解. </p>
-<p><strong>问题1的证明</strong> </p>
-<p>采用反证法. 若存在非负整数对 $(x_{0}, y_{0})$ 满足该不定方程, 则<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) &#x3D; a b，<br>$$<br>此时应有 $a \mid b(y_{0} + 1)$ , 因为 $(a, b) &#x3D; 1$, 故 $a \mid y_{0} + 1$ , 由于 $a$ 与 $y_{0} + 1$ 均为正整数, 得 $a \leq y_{0} + 1$. </p>
-<p>同理可证：$b \mid x_{0} + 1$, 进而 $b \leq x_{0} + 1$. 但此时左边满足<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) \geq a b + b a &#x3D; 2 a b,<br>$$<br>而右边为 $a b$, 矛盾. </p>
-<p>因此, 原方程没有非负整数解. </p>
-<p><strong>问题2的证明</strong>  </p>
-<p>这里我们要用到二元一次不定方程通解的概念. 现设方程的通解为<br>$$<br>\left{<br>\begin{array}{l}<br>x &#x3D; x_{0} + b t, \<br>y &#x3D; y_{0} - a t<br>\end{array}<br>\quad (t \in \mathbb{Z})<br>\right.<br>$$<br>其中 $(x_{0}, y_{0})$ 为方程的特解. </p>
-<p>通过调节 $t$ 的值（对 $x_{0}$ 增减 $b$）, 可找到一个解 $(x_{1}, y_{1})$ 使得 $0 \leq x_{1} \leq b - 1$. 此时<br>$$<br>b y_{1} &#x3D; c - a x_{1} &gt; a b - a - b - a x_{1} \geq a b - a - b - a(b - 1) &#x3D; -b<br>$$<br>故$y_{1} &gt; -1$, 即 $y_{1} \geq 0$. 这表明 $(x_{1}, y_{1})$ 是方程的非负整数解, 命题得证. </p>
-<h2 id="Frobenius问题（硬币问题）"><a href="#Frobenius问题（硬币问题）" class="headerlink" title="Frobenius问题（硬币问题）"></a>Frobenius问题（硬币问题）</h2><p>Frobenius问题（又称<strong>硬币问题</strong>）的核心是研究给定一组互素的正整数 $a_1, a_2, \ldots, a_n$ 时, 无法表示为这些数的非负整数线性组合的最大整数. 这个最大不可表数被称为 <strong>Frobenius数</strong>, 记作 $g(a_1, a_2, \ldots, a_n)$. 例如, 对于互素的 $a$ 和 $b$, Sylvester 在 1884 年证明了 $g(a, b) &#x3D; ab - a - b$, 这正是前文问题 1 和 2 中提到的临界值 $c_0$. </p>
-<p>该问题由德国数学家 Ferdinand Georg Frobenius 在 19 世纪末提出, 但更早的研究可追溯至英国数学家 James Joseph Sylvester. Sylvester 在讨论“鸡块问题”时, 已揭示了二元情形的解：若鸡块包装为 7 块和 11 块, 则最大无法购买的块数为 59. 这一具体案例被广泛用于数学教学中, 成为经典例题. </p>
-<p>虽然二元情形已有明确公式, 但当变量数 $n \geq 3$ 时, Frobenius数尚无通用解法. 数学家 Issai Schur 曾称其为“数论中看似简单却极难的问题”. 目前已知：</p>
-<ol>
-<li><strong>三元及以上无通解</strong>：即使对 $n&#x3D;3$, 仅在某些特殊条件下存在部分公式（如等差数列或特定互素组合）. </li>
-<li><strong>计算复杂度</strong>：确定 Frobenius数属于 NP 难问题, 当 $n$ 较大时需依赖算法或近似计算. </li>
-<li><strong>实际应用</strong>：该问题在资源调度、密码学、物流规划中均有应用. 例如, 优化自动售货机的硬币找零系统.</li>
-</ol>
-<p>最后是相关领域的一些扩展与应用：</p>
-<ol>
-<li><p><strong>代数拓扑的联系</strong><br>广义弱双 Frobenius 代数上的等变循环上同调研究, 揭示了该问题在代数结构与拓扑不变性中的深层联系. 例如, 等变循环上同调的不变量可能与 Frobenius数的计算相关. </p>
-</li>
-<li><p><strong>组合优化与算法</strong><br>目前主流的算法包括：</p>
-<ul>
-<li><strong>穷举法</strong>：通过模运算缩小搜索范围（如对二元情形取模 $a$ 或 $b$）. </li>
-<li><strong>差分法</strong>：利用动态规划标记可表数. </li>
-<li><strong>几何方法</strong>：将问题转化为格点覆盖问题, 分析超立方体的覆盖间隙.</li>
-</ul>
-</li>
-<li><p><strong>未解之谜</strong><br>对 $n \geq 3$ 的情形, 数学家仅能通过条件约束（如 $a_1 &lt; a_2 &lt; \ldots &lt; a_n$ 且互素）或特定结构（如等差数列）推导部分结果. 例如, 若 $a, b, c$ 成等差数列且互素, 则 $g(a, b, c) &#x3D; \frac{a b}{2} - a - b$（需验证条件）.</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>竞赛</category>
-      </categories>
-      <tags>
-        <tag>数学教学</tag>
-        <tag>竞赛</tag>
-        <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cherry Studio + 硅基流动，让你的DeepSeek体验上到next level</title>
     <url>/post/undefined.html</url>
     <content><![CDATA[<h2 id="🎯-痛点与解决方案"><a href="#🎯-痛点与解决方案" class="headerlink" title="🎯 痛点与解决方案"></a>🎯 痛点与解决方案</h2><p>遇到DeepSeek服务器繁忙？😫</p>
@@ -307,6 +190,115 @@
       </tags>
   </entry>
   <entry>
+    <title>Frobenius问题（硬币问题）</title>
+    <url>/post/164132f9.html</url>
+    <content><![CDATA[<h2 id="两个生活小问题"><a href="#两个生活小问题" class="headerlink" title="两个生活小问题"></a>两个生活小问题</h2><p>在了解Frobenius问题之前, 我们先来看两个生活中的小问题. </p>
+<p>首先, 为什么高铁的座位设置大多是 “2+3” 的组合？即过道一侧是两个座位组合在一起、另一侧是三个座位组合在一起呢？设想一下, 当你和家人或是朋友出行时, 不管你们人数是多少, 只要不少于两人, 总有一种座位组合方式让每一个人和认识的人坐在一起, 而不会出现落单的情况. 当出行人数是偶数时, 只需都安排两人坐即可；当出行人数是奇数时, 只需安排三个人坐三人座, 剩下的人（如果有的话）一定是偶数, 再安排两人座若干即可. </p>
+<p>我们再看第二个问题：给定几种面值的硬币, 不能用这些硬币支付的最大金额是多少？</p>
+<span id="more"></span>
+
+<p>假设你现在去便利店买东西, 现在有若干面值的硬币：￥2, ￥3, ￥5, ￥7, 你只可以选其中两种放进你的钱包（数量不限）. 你不知道你要买的东西具体的价格, 并且便利店不设找零, 所以你希望用这两种面值的硬币去组合出尽可能多的数值, 你会怎么选？</p>
+<p>假如现在你选了￥3和￥5, 那么从不小于￥5的商品开始逐一验证, 我们发现如果商品的价格是￥7就无法组合出来, 不过价格超过￥7 时似乎都可以表示出来；接着我们选￥3和￥7继续做试验, 我们发现￥8, ￥11 都是无法用￥3 和￥7 组合出来的, 那么大于￥11的情形是否都满足可以用这两种面额的硬币进行组合呢？逐一验证的方法显然无法严格证明. </p>
+<h2 id="两个数学问题"><a href="#两个数学问题" class="headerlink" title="两个数学问题"></a>两个数学问题</h2><p>我们先不急着回答刚才的问题, 而是先看两道数学问题. </p>
+<blockquote>
+<p><strong>问题 1</strong> </p>
+<p>设正整数 $a, b$ 互素. 证明：不定方程  $a x + b y &#x3D; a b - a - b$ 没有非负整数解. </p>
+</blockquote>
+<blockquote>
+<p><strong>问题 2</strong><br>设正整数 $a, b$ 互素, 且正整数 $c$ 满足 $c &gt; a b - a - b$. 证明：不定方程 $a x + b y &#x3D; c$ 有非负整数解. </p>
+</blockquote>
+<p>事实上, 上述两个问题说的是同一件事, 也即是：对于不定方程 $a x + b y &#x3D; c$ , 只要 $c &gt; c_{0} &#x3D; a b - a - b$, 方程 $a x + b y &#x3D; c$ 就有非负整数解. </p>
+<p><strong>问题1的证明</strong> </p>
+<p>采用反证法. 若存在非负整数对 $(x_{0}, y_{0})$ 满足该不定方程, 则<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) &#x3D; a b，<br>$$<br>此时应有 $a \mid b(y_{0} + 1)$ , 因为 $(a, b) &#x3D; 1$, 故 $a \mid y_{0} + 1$ , 由于 $a$ 与 $y_{0} + 1$ 均为正整数, 得 $a \leq y_{0} + 1$. </p>
+<p>同理可证：$b \mid x_{0} + 1$, 进而 $b \leq x_{0} + 1$. 但此时左边满足<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) \geq a b + b a &#x3D; 2 a b,<br>$$<br>而右边为 $a b$, 矛盾. </p>
+<p>因此, 原方程没有非负整数解. </p>
+<p><strong>问题2的证明</strong>  </p>
+<p>这里我们要用到二元一次不定方程通解的概念. 现设方程的通解为<br>$$<br>\left{<br>\begin{array}{l}<br>x &#x3D; x_{0} + b t, \<br>y &#x3D; y_{0} - a t<br>\end{array}<br>\quad (t \in \mathbb{Z})<br>\right.<br>$$<br>其中 $(x_{0}, y_{0})$ 为方程的特解. </p>
+<p>通过调节 $t$ 的值（对 $x_{0}$ 增减 $b$）, 可找到一个解 $(x_{1}, y_{1})$ 使得 $0 \leq x_{1} \leq b - 1$. 此时<br>$$<br>b y_{1} &#x3D; c - a x_{1} &gt; a b - a - b - a x_{1} \geq a b - a - b - a(b - 1) &#x3D; -b<br>$$<br>故$y_{1} &gt; -1$, 即 $y_{1} \geq 0$. 这表明 $(x_{1}, y_{1})$ 是方程的非负整数解, 命题得证. </p>
+<h2 id="Frobenius问题（硬币问题）"><a href="#Frobenius问题（硬币问题）" class="headerlink" title="Frobenius问题（硬币问题）"></a>Frobenius问题（硬币问题）</h2><p>Frobenius问题（又称<strong>硬币问题</strong>）的核心是研究给定一组互素的正整数 $a_1, a_2, \ldots, a_n$ 时, 无法表示为这些数的非负整数线性组合的最大整数. 这个最大不可表数被称为 <strong>Frobenius数</strong>, 记作 $g(a_1, a_2, \ldots, a_n)$. 例如, 对于互素的 $a$ 和 $b$, Sylvester 在 1884 年证明了 $g(a, b) &#x3D; ab - a - b$, 这正是前文问题 1 和 2 中提到的临界值 $c_0$. </p>
+<p>该问题由德国数学家 Ferdinand Georg Frobenius 在 19 世纪末提出, 但更早的研究可追溯至英国数学家 James Joseph Sylvester. Sylvester 在讨论“鸡块问题”时, 已揭示了二元情形的解：若鸡块包装为 7 块和 11 块, 则最大无法购买的块数为 59. 这一具体案例被广泛用于数学教学中, 成为经典例题. </p>
+<p>虽然二元情形已有明确公式, 但当变量数 $n \geq 3$ 时, Frobenius数尚无通用解法. 数学家 Issai Schur 曾称其为“数论中看似简单却极难的问题”. 目前已知：</p>
+<ol>
+<li><strong>三元及以上无通解</strong>：即使对 $n&#x3D;3$, 仅在某些特殊条件下存在部分公式（如等差数列或特定互素组合）. </li>
+<li><strong>计算复杂度</strong>：确定 Frobenius数属于 NP 难问题, 当 $n$ 较大时需依赖算法或近似计算. </li>
+<li><strong>实际应用</strong>：该问题在资源调度、密码学、物流规划中均有应用. 例如, 优化自动售货机的硬币找零系统.</li>
+</ol>
+<p>最后是相关领域的一些扩展与应用：</p>
+<ol>
+<li><p><strong>代数拓扑的联系</strong><br>广义弱双 Frobenius 代数上的等变循环上同调研究, 揭示了该问题在代数结构与拓扑不变性中的深层联系. 例如, 等变循环上同调的不变量可能与 Frobenius数的计算相关. </p>
+</li>
+<li><p><strong>组合优化与算法</strong><br>目前主流的算法包括：</p>
+<ul>
+<li><strong>穷举法</strong>：通过模运算缩小搜索范围（如对二元情形取模 $a$ 或 $b$）. </li>
+<li><strong>差分法</strong>：利用动态规划标记可表数. </li>
+<li><strong>几何方法</strong>：将问题转化为格点覆盖问题, 分析超立方体的覆盖间隙.</li>
+</ul>
+</li>
+<li><p><strong>未解之谜</strong><br>对 $n \geq 3$ 的情形, 数学家仅能通过条件约束（如 $a_1 &lt; a_2 &lt; \ldots &lt; a_n$ 且互素）或特定结构（如等差数列）推导部分结果. 例如, 若 $a, b, c$ 成等差数列且互素, 则 $g(a, b, c) &#x3D; \frac{a b}{2} - a - b$（需验证条件）.</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>竞赛</category>
+      </categories>
+      <tags>
+        <tag>数学教学</tag>
+        <tag>竞赛</tag>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Some Useful Links for MCM</title>
+    <url>/post/8bdc7cc5.html</url>
+    <content><![CDATA[<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><a href="https://cn.overleaf.com/project">📝Overleaf</a> 	<a href="https://www.contest.comap.com/undergraduate/contests/mcm/login.php">🌐美赛官网</a>  	<a href="https://one.bnuzh.edu.cn/">🏫数字京师</a>	<a href="http://wolframalpha.com/">Ⓜ️wolfram</a> </p>
+<span id="more"></span>
+
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><ol>
+<li><a href="https://dict.cnki.net/index">知网学术翻译</a> 适合专有名词 </li>
+<li>Deepl </li>
+<li><a href="https://translate.google.co.uk/?hl=zh-CN&tab=rT&sl=en&tl=zh-CN&op=translate">Google Translate</a></li>
+</ol>
+<h2 id="文献检索"><a href="#文献检索" class="headerlink" title="文献检索"></a>文献检索</h2><ol>
+<li>木铎搜索</li>
+<li><a href="https://scholar.google.com.hk/?hl=zh-CN">Google学术</a></li>
+</ol>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ol>
+<li><a href="https://data.cnki.net/internationalData">知网-中国经济社会大数据研究平台</a></li>
+<li><a href="https://www.gapminder.org/data/">gapminder</a> </li>
+<li><a href="https://ourworldindata.org/">Our World in Data</a> </li>
+<li><a href="https://www.eia.gov/">美国能源信息署 （EIA）</a> </li>
+<li><a href="https://www.nass.usda.gov/">美国农业部 </a> </li>
+<li><a href="https://datausa.io/">Data USA</a> </li>
+<li><a href="https://www.usbr.gov/">美国垦务局Bureau of Reclamation</a> </li>
+<li><a href="https://www.statista.com/">Statista</a> </li>
+<li><a href="https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx">MBS Monthly Bulletin of Statistics Online </a> </li>
+<li><a href="https://data.worldbank.org/indicator">世界银行Indicators | Data (worldbank.org)</a> </li>
+<li><a href="https://www.cia.gov/the-world-factbook/references/guide-to-country-comparisons/">中情局 Guide to Country Comparisons - The World Factbook (cia.gov)</a> </li>
+<li><a href="https://www.wikidata.org/wiki/Main_Page">Wikidata</a></li>
+</ol>
+<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><ol>
+<li><a href="https://dycharts.com/appv2/#/pages/home/chart-template">镝数图表</a> （也有数据） </li>
+<li><a href="https://echarts.apache.org/examples/zh/index.html#chart-type-line">ECharts（需要JS语言编程）</a> </li>
+<li>Tableau</li>
+<li>Mapbox</li>
+<li>Ploty</li>
+<li><a href="https://zhimap.com/home">ZhiMap思维导图（支持数学公式）</a></li>
+<li><a href="https://markmap.js.org/repl">在线md转思维导图Try markmap（支持katex）</a></li>
+</ol>
+<h2 id="LaTeX相关"><a href="#LaTeX相关" class="headerlink" title="LaTeX相关"></a>LaTeX相关</h2><ol>
+<li><a href="https://mathpix.com/">Mathpix Snip</a></li>
+<li><a href="https://latex.codecogs.com/">Codecogs</a> </li>
+<li>Axmath</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>MCM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GG组合：分分钟搞定美赛翻译</title>
     <url>/post/3898f375.html</url>
     <content><![CDATA[<p>前面介绍了一个简洁易用的美赛模板<a href="https://leyudame.github.io/post/ba7a336d.html">LDMCM</a>，今天继续补充一下高效可行的翻译方法。</p>
@@ -361,57 +353,6 @@
       <tags>
         <tag>MCM</tag>
         <tag>翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Some Useful Links for MCM</title>
-    <url>/post/8bdc7cc5.html</url>
-    <content><![CDATA[<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p><a href="https://cn.overleaf.com/project">📝Overleaf</a> 	<a href="https://www.contest.comap.com/undergraduate/contests/mcm/login.php">🌐美赛官网</a>  	<a href="https://one.bnuzh.edu.cn/">🏫数字京师</a>	<a href="http://wolframalpha.com/">Ⓜ️wolfram</a> </p>
-<span id="more"></span>
-
-<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><ol>
-<li><a href="https://dict.cnki.net/index">知网学术翻译</a> 适合专有名词 </li>
-<li>Deepl </li>
-<li><a href="https://translate.google.co.uk/?hl=zh-CN&tab=rT&sl=en&tl=zh-CN&op=translate">Google Translate</a></li>
-</ol>
-<h2 id="文献检索"><a href="#文献检索" class="headerlink" title="文献检索"></a>文献检索</h2><ol>
-<li>木铎搜索</li>
-<li><a href="https://scholar.google.com.hk/?hl=zh-CN">Google学术</a></li>
-</ol>
-<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ol>
-<li><a href="https://data.cnki.net/internationalData">知网-中国经济社会大数据研究平台</a></li>
-<li><a href="https://www.gapminder.org/data/">gapminder</a> </li>
-<li><a href="https://ourworldindata.org/">Our World in Data</a> </li>
-<li><a href="https://www.eia.gov/">美国能源信息署 （EIA）</a> </li>
-<li><a href="https://www.nass.usda.gov/">美国农业部 </a> </li>
-<li><a href="https://datausa.io/">Data USA</a> </li>
-<li><a href="https://www.usbr.gov/">美国垦务局Bureau of Reclamation</a> </li>
-<li><a href="https://www.statista.com/">Statista</a> </li>
-<li><a href="https://unstats.un.org/unsd/mbs/app/DataSearchTable.aspx">MBS Monthly Bulletin of Statistics Online </a> </li>
-<li><a href="https://data.worldbank.org/indicator">世界银行Indicators | Data (worldbank.org)</a> </li>
-<li><a href="https://www.cia.gov/the-world-factbook/references/guide-to-country-comparisons/">中情局 Guide to Country Comparisons - The World Factbook (cia.gov)</a> </li>
-<li><a href="https://www.wikidata.org/wiki/Main_Page">Wikidata</a></li>
-</ol>
-<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><ol>
-<li><a href="https://dycharts.com/appv2/#/pages/home/chart-template">镝数图表</a> （也有数据） </li>
-<li><a href="https://echarts.apache.org/examples/zh/index.html#chart-type-line">ECharts（需要JS语言编程）</a> </li>
-<li>Tableau</li>
-<li>Mapbox</li>
-<li>Ploty</li>
-<li><a href="https://zhimap.com/home">ZhiMap思维导图（支持数学公式）</a></li>
-<li><a href="https://markmap.js.org/repl">在线md转思维导图Try markmap（支持katex）</a></li>
-</ol>
-<h2 id="LaTeX相关"><a href="#LaTeX相关" class="headerlink" title="LaTeX相关"></a>LaTeX相关</h2><ol>
-<li><a href="https://mathpix.com/">Mathpix Snip</a></li>
-<li><a href="https://latex.codecogs.com/">Codecogs</a> </li>
-<li>Axmath</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>MCM</tag>
       </tags>
   </entry>
   <entry>
@@ -482,27 +423,54 @@
       </tags>
   </entry>
   <entry>
-    <title>Tikz绘制BNU校徽</title>
-    <url>/post/2723d25d.html</url>
-    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
-<p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
-</blockquote>
-<p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
+    <title>BNUslides：一份简洁的师大蓝主题Beamer</title>
+    <url>/post/a4a4bede.html</url>
+    <content><![CDATA[<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
+<li><p>纯粹的师大蓝：两种颜色分别取自官网和校徽，再设置不同透明度进行组合</p>
+</li>
+<li><p>极致的矢量图：可以直接使用<em>Tikz</em>作图，包括封面校徽logo也是<a href="https://github.com/LeyuDame/BNU_icon_Tikz"><em>Tikz</em>作出的矢量图</a></p>
+</li>
+<li><p>数学字体选用了个人认为比较好看的Fourier（中文字体默认为微软雅黑）</p>
+</li>
+<li><p>与BNU图书馆官方毕业论文$\LaTeX{}$​模板语法一致，可以实现无缝迁移，例如</p>
 <span id="more"></span>
 
-<p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125; </span><br><span class="line"><span class="keyword">\usepackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br></pre></td></tr></table></figure>
-
-<p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
-<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
-<ol>
-<li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
-<li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
+<ul>
+<li>向量，矩阵，张量等采用加粗斜体： <code>\symbf&#123;r&#125;</code> –&gt;  $\boldsymbol{r}$ </li>
+<li>特殊常数和微分采用整体：<code>\uppi</code> –&gt;  $\mathrm{\pi}$ , <code>\dif x</code> –&gt;  $\mathrm{d} x$</li>
+</ul>
+</li>
+<li><p>采用了16:9的显示比例而非传统的4:3，更适用于电脑和投影仪上展示，并且得益于16:9的比例更“宽”，在右侧借鉴了<a href="https://github.com/zbowang/BeamerTheme">Zhibo Wang</a>的侧栏目录设计，每一页面对应小标题会在侧栏目录中高亮显示</p>
+</li>
+<li><p>用<code>.cls</code> 文件单独控制格式，在使用此模板时只需<code>\documentclass&#123;bnuslides&#125;</code>即可调用此模板，实现内容与格式完全分离</p>
+</li>
 </ol>
-<p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>&quot;latex-workshop.latex.recipes&quot;: [...]</code>部分加入</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;XeLaTeX * 2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201820201.webp" style="zoom:50%;" />
 
-<p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
+<h3 id="编译方式与发布地址"><a href="#编译方式与发布地址" class="headerlink" title="编译方式与发布地址"></a>编译方式与发布地址</h3><p>编译请使用<code>xelatex*2</code>，否则目录无法正常显示</p>
+<p><a href="https://www.overleaf.com/latex/templates/bnuslides/txrjnsqpqqkh">Overleaf</a>：开箱即用，但后期不一定会更新</p>
+<p><a href="https://github.com/LeyuDame/BNUslides">Github</a>：不定期更新</p>
+<p>如果觉得上述两种方式比较麻烦，也可以直接复制<code>.cls</code>文件中的全部代码，然后在<code>.tex</code>主文档调用即可，即</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;bnuslides&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下是<code>bnuslides.cls</code>的全部内容，也不是很多：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% Author: LeyuDame</span></span><br><span class="line"><span class="comment">% Date: 2024-04-20</span></span><br><span class="line"><span class="comment">% Github: https://github.com/LeyuDame/BNUslides</span></span><br><span class="line"><span class="keyword">\ProvidesClass</span>&#123;bnuslides&#125;</span><br><span class="line"><span class="keyword">\LoadClass</span>[aspectratio=169]&#123;ctexbeamer&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amssymb&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsfonts&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;bm&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;upgreek&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;mathrsfs&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;commath&#125;</span><br><span class="line"><span class="comment">% 数学字体选择</span></span><br><span class="line"><span class="comment">%\RequirePackage&#123;fourier&#125; </span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;fouriernc&#125;</span><br><span class="line"><span class="comment">%\RequirePackage&#123;mathdesign&#125;</span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;graphicx&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;caption&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;multicol&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;subcaption&#125;</span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;natbib&#125;</span><br><span class="line"><span class="keyword">\useoutertheme</span>[width=5<span class="keyword">\baselineskip</span>,right]&#123;sidebar&#125;</span><br><span class="line"><span class="comment">% delete title and author</span></span><br><span class="line"><span class="comment">% \makeatletter</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;sidebar right&#125;&#123;<span class="keyword">\insertverticalnavigation</span>&#123;<span class="keyword">\beamer@sidebarwidth</span>&#125;&#125;</span><br><span class="line"><span class="comment">% fontsize</span></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;section in sidebar&#125;&#123;size=<span class="keyword">\scriptsize</span>&#125;</span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;subsection in sidebar&#125;&#123;size=<span class="keyword">\tiny</span>&#125;</span><br><span class="line"><span class="comment">% margin</span></span><br><span class="line"><span class="keyword">\setbeamersize</span>&#123;sidebar width right=3.2cm&#125;</span><br><span class="line"><span class="keyword">\setbeamersize</span>&#123;sidebar width left=1cm&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlue&#125;&#123;RGB&#125;&#123;0,80,147&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueLight&#125;&#123;RGB&#125;&#123;0,120,200&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueDark&#125;&#123;RGB&#125;&#123;36, 55, 104&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;BUNBlueLighter&#125;&#123;RGB&#125;&#123;0,160,240&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125; <span class="comment">% 衬线数学字体</span></span><br><span class="line"><span class="keyword">\useinnertheme</span>&#123;default&#125;</span><br><span class="line"><span class="keyword">\useinnertheme</span>[shadow]&#123;rounded&#125; <span class="comment">% 阴影加圆角</span></span><br><span class="line"><span class="comment">%\useinnertheme[]&#123;rounded&#125; % 不加阴影</span></span><br><span class="line"><span class="comment">% 页眉与页脚</span></span><br><span class="line"><span class="keyword">\useoutertheme</span>&#123;infolines&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette primary&#125;&#123;bg=BUNBlueLighter!10,fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette secondary&#125;&#123;bg=BUNBlueLighter!20,fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;palette tertiary&#125;&#123;bg=BUNBlueDark,fg=white&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;frametitle&#125;&#123;<span class="keyword">\vskip</span>1em<span class="keyword">\insertframetitle</span>&#125;</span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;rose&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;title&#125;&#123;fg=BUNBlue,bg=BUNBlue!10&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;frametitle&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;structure&#125;&#123;fg=BUNBlueLight&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;section in toc&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;subsection in toc&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;section in sidebar&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;subsection in sidebar&#125;&#123;fg=BUNBlue&#125;</span><br><span class="line"><span class="comment">%在每个section 前边单独插入当前章节高亮的目录页</span></span><br><span class="line"><span class="comment">%\AtBeginSection[]</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">%	\begin&#123;frame&#125;</span></span><br><span class="line"><span class="comment">%		\frametitle&#123;目录&#125;</span></span><br><span class="line"><span class="comment">%		\tableofcontents[currentsection]</span></span><br><span class="line"><span class="comment">%	\end&#123;frame&#125;</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="keyword">\newenvironment</span>&#123;centertikzpicture&#125;</span><br><span class="line">&#123;<span class="keyword">\begin</span>&#123;center&#125;<span class="keyword">\begin</span>&#123;tikzpicture&#125;&#125;</span><br><span class="line">			&#123;<span class="keyword">\end</span>&#123;tikzpicture&#125;<span class="keyword">\end</span>&#123;center&#125;&#125;</span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\symbf</span>&#125;[1]&#123;<span class="keyword">\boldsymbol</span>&#123;<span class="params">#1</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\thempfootnote</span>&#125;&#123;<span class="keyword">\arabic</span>&#123;mpfootnote&#125;&#125;</span><br><span class="line"><span class="comment">% 设置行间距</span></span><br><span class="line"><span class="keyword">\RequirePackage</span>&#123;setspace&#125;</span><br><span class="line"><span class="keyword">\AtBeginDocument</span>&#123;<span class="keyword">\setstretch</span>&#123;1.25&#125;&#125;</span><br><span class="line"><span class="keyword">\title</span>[BNUslides]&#123;BNUslides: 一份简单的师大蓝主题Beamer&#125;</span><br><span class="line"><span class="keyword">\subtitle</span>&#123;&#125;</span><br><span class="line"><span class="keyword">\author</span>[LeyuDame]&#123;LeyuDame&#125;</span><br><span class="line"><span class="keyword">\institute</span>[北京师范大学]&#123;北京师范大学&#125;</span><br><span class="line"><span class="keyword">\date</span>[<span class="keyword">\today</span>]&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"><span class="keyword">\titlegraphic</span>&#123;<span class="keyword">\includegraphics</span>[width=2cm]&#123;bnu<span class="built_in">_</span>icon.pdf&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="卷王与他们的Beamer故事"><a href="#卷王与他们的Beamer故事" class="headerlink" title="卷王与他们的Beamer故事"></a>卷王与他们的Beamer故事</h2><p>第一次接触 $\LaTeX{}$ 是数分研讨课，不过那学期课选得太多，所以开学一周后数分研讨课退了，几个G得texlive却在电脑上留了下来。而第一次接触Beamer则是在一学期后的《概率论》，几堂课下来发现老师的课件风格统一和谐，尤其是公式字母！比如概率空间 $(\Omega,\mathcal{F},\mathcal{P})$ 中的花体字母​，实在是太优雅了！</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626671.webp" style="zoom: 33%;" />
+
+<p>那时我梦寐以求的一件事就是做一份和概率论老师类似的课件，所以在解几研讨课上，我第一次使用了Beamer进行展示，尤记得当时在讲台上打开pdf时激动颤抖的手🤣</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626057.webp" alt="" style="zoom: 33%;" />
+
+<p>同一时期复变课上老师也用beamer进行授课，现在看来这个蓝绿蓝绿的配色似乎有某师的风格</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202404201626212.webp" style="zoom: 33%;" />
+
+<p>与此同时，正是各路卷王们开始八仙过海各显神通的时候。大家纷纷投笔从 $\LaTeX{}$ ，从手写作业变成手敲作业，从手写笔记变成帮老师打讲义🥲，而彼时的我自然不在“过海”之列，却也望其项背，尤其是认识到了overleaf和mathpix后，学习 $\LaTeX{} $的效率提升了很多。</p>
+<p>在期末考试前的最后一节概率论课上，老师也许再次提及了中心极限定理或大数定律，又或是强调了马尔可夫不等式，但现在回想起来，让人印象最深刻的还是他送给我们的那句诗：</p>
+<p><em><strong>人生天地间，忽如远行客。</strong></em></p>
+<p>在那个多雨的夏天，这句话如一缕清风，吹进这个被云雾缠绕而略显沉闷的山谷，也吹散了，如云雾一般的飘渺的回忆。</p>
 ]]></content>
       <categories>
         <category>LaTeX模板</category>
@@ -510,7 +478,7 @@
       <tags>
         <tag>LaTeX</tag>
         <tag>模板</tag>
-        <tag>Tikz</tag>
+        <tag>Beamer</tag>
       </tags>
   </entry>
   <entry>
@@ -545,61 +513,6 @@
         <tag>GitHub</tag>
         <tag>git</tag>
         <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024年阅读摘录</title>
-    <url>/post/b2821542.html</url>
-    <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
-<p>只有走在路上，才能摆脱局限，摆脱执着，让所有的选择、探寻、猜测、想象都生机勃勃。</p>
-</blockquote>
-<h2 id="吴军《数学之美》"><a href="#吴军《数学之美》" class="headerlink" title="吴军《数学之美》"></a>吴军《数学之美》</h2><blockquote>
-<p>每当弗莱德和我谈起各自少年时的教育，我们都同意这样几个观点。首先，小学生和中学生其实没有必要花那么多时间读书，而他们的社会经验、生活能力以及在那时树立起的志向将帮助他们的一生。第二，中学阶段花很多时间比同伴多读的课程，上大学以后用很短时间就能读完，因为在大学阶段，人的理解力要强得多。举个例子，在中学需要花500小时才能学会的内容，在大学可能花100小时就够了。因此，一个学生在中小学阶段建立的那一点点优势在大学很快就会丧失殆尽。第三，学习（和教育）是持续一辈子的过程，很多中学成绩优异的亚裔学生进入名校后表现明显不如那些出于兴趣而读书的美国同伴，因前者持续学习的动力不足。第四，书本的内容可以早学，也可以晚学，但是错过了成长阶段却是无法补回来的。（因此，少年班的做法不足取。）现在中国的好学校里，恐怕百分之九十九的孩子在读书上花的时间都比我当时要多，更比贾里尼克要多得多，但是这些孩子今天可能有百分之九十九在学术上的建树不如我，更不如贾里尼克。这实在是教育的误区。</p>
-</blockquote>
-<h2 id="丘成桐《我的几何人生》"><a href="#丘成桐《我的几何人生》" class="headerlink" title="丘成桐《我的几何人生》"></a>丘成桐《我的几何人生》</h2><blockquote>
-<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。 </p>
-</blockquote>
-<blockquote>
-<p>虽然金钱需要考虑，但正如五柳先生说的，它并不是一切，做人要看远些。我会在高研院的一年尽力工作和学习，然后再找更理想的位置。</p>
-</blockquote>
-<blockquote>
-<p>自1987年开始，过去三十多年我都在哈佛度过。诚然，这么多年，不一定天天都快乐，但总的来说是美好的日子，或者谚语说得对，“第三次，便顺意”。</p>
-</blockquote>
-<h2 id="顾险峰"><a href="#顾险峰" class="headerlink" title="顾险峰"></a>顾险峰</h2><blockquote>
-<p>大多数浅层次的智力劳动很快会被AI所承担，年轻人求学期间尽量学习更为深刻的理工科方向，才能保证长期的核心竞争力。</p>
-</blockquote>
-<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》"><a href="#沃尔特·艾萨克森-《埃隆·马斯克传》" class="headerlink" title="沃尔特·艾萨克森 《埃隆·马斯克传》"></a>沃尔特·艾萨克森 《埃隆·马斯克传》</h2><blockquote>
-<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。 </p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自用Marp配置</title>
-    <url>/post/fda8c156.html</url>
-    <content><![CDATA[<p>记录一下自己常用的Marp基本配置，这样如果隔一段时间不用忘记了又得翻这几个文档🤣</p>
-<span id="more"></span>
-
-<ol>
-<li><a href="https://cloud.tencent.com/developer/article/1942512">https://cloud.tencent.com/developer/article/1942512</a></li>
-<li><a href="https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD">https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD</a></li>
-<li><a href="https://marp.app/">https://marp.app/</a></li>
-<li><a href="https://www.lianxh.cn/details/1059.html">https://www.lianxh.cn/details/1059.html</a></li>
-</ol>
-<p>基本配置：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: gaia</span><br><span class="line"><span class="section">#gaia, uncover, default</span></span><br><span class="line"><span class="emphasis">_class: lead</span></span><br><span class="line"><span class="emphasis">paginate: true</span></span><br><span class="line"><span class="emphasis">header: </span></span><br><span class="line"><span class="emphasis">footer: </span></span><br><span class="line"><span class="emphasis">headingDivider: 2 </span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
-
-<p>指定页垂直居中：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--_class: lead--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>其他功能如插入图片和语法细节后期补充。</em></p>
-]]></content>
-      <tags>
-        <tag>Marp</tag>
-        <tag>Markdown</tag>
-        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -696,6 +609,67 @@
       </tags>
   </entry>
   <entry>
+    <title>2024年阅读摘录</title>
+    <url>/post/b2821542.html</url>
+    <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
+<p>只有走在路上，才能摆脱局限，摆脱执着，让所有的选择、探寻、猜测、想象都生机勃勃。</p>
+</blockquote>
+<h2 id="吴军《数学之美》"><a href="#吴军《数学之美》" class="headerlink" title="吴军《数学之美》"></a>吴军《数学之美》</h2><blockquote>
+<p>每当弗莱德和我谈起各自少年时的教育，我们都同意这样几个观点。首先，小学生和中学生其实没有必要花那么多时间读书，而他们的社会经验、生活能力以及在那时树立起的志向将帮助他们的一生。第二，中学阶段花很多时间比同伴多读的课程，上大学以后用很短时间就能读完，因为在大学阶段，人的理解力要强得多。举个例子，在中学需要花500小时才能学会的内容，在大学可能花100小时就够了。因此，一个学生在中小学阶段建立的那一点点优势在大学很快就会丧失殆尽。第三，学习（和教育）是持续一辈子的过程，很多中学成绩优异的亚裔学生进入名校后表现明显不如那些出于兴趣而读书的美国同伴，因前者持续学习的动力不足。第四，书本的内容可以早学，也可以晚学，但是错过了成长阶段却是无法补回来的。（因此，少年班的做法不足取。）现在中国的好学校里，恐怕百分之九十九的孩子在读书上花的时间都比我当时要多，更比贾里尼克要多得多，但是这些孩子今天可能有百分之九十九在学术上的建树不如我，更不如贾里尼克。这实在是教育的误区。</p>
+</blockquote>
+<h2 id="丘成桐《我的几何人生》"><a href="#丘成桐《我的几何人生》" class="headerlink" title="丘成桐《我的几何人生》"></a>丘成桐《我的几何人生》</h2><blockquote>
+<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。 </p>
+</blockquote>
+<blockquote>
+<p>虽然金钱需要考虑，但正如五柳先生说的，它并不是一切，做人要看远些。我会在高研院的一年尽力工作和学习，然后再找更理想的位置。</p>
+</blockquote>
+<blockquote>
+<p>自1987年开始，过去三十多年我都在哈佛度过。诚然，这么多年，不一定天天都快乐，但总的来说是美好的日子，或者谚语说得对，“第三次，便顺意”。</p>
+</blockquote>
+<h2 id="顾险峰"><a href="#顾险峰" class="headerlink" title="顾险峰"></a>顾险峰</h2><blockquote>
+<p>大多数浅层次的智力劳动很快会被AI所承担，年轻人求学期间尽量学习更为深刻的理工科方向，才能保证长期的核心竞争力。</p>
+</blockquote>
+<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》"><a href="#沃尔特·艾萨克森-《埃隆·马斯克传》" class="headerlink" title="沃尔特·艾萨克森 《埃隆·马斯克传》"></a>沃尔特·艾萨克森 《埃隆·马斯克传》</h2><blockquote>
+<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。 </p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tikz绘制BNU校徽</title>
+    <url>/post/2723d25d.html</url>
+    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
+<p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
+</blockquote>
+<p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
+<span id="more"></span>
+
+<p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125; </span><br><span class="line"><span class="keyword">\usepackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
+<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
+<ol>
+<li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
+<li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
+</ol>
+<p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>&quot;latex-workshop.latex.recipes&quot;: [...]</code>部分加入</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;XeLaTeX * 2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
+]]></content>
+      <categories>
+        <category>LaTeX模板</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>Tikz</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>乡村将兴，胡不归</title>
     <url>/post/daa65a32.html</url>
     <content><![CDATA[<blockquote>
@@ -750,6 +724,247 @@
 ]]></content>
       <tags>
         <tag>数学教学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自用Marp配置</title>
+    <url>/post/fda8c156.html</url>
+    <content><![CDATA[<p>记录一下自己常用的Marp基本配置，这样如果隔一段时间不用忘记了又得翻这几个文档🤣</p>
+<span id="more"></span>
+
+<ol>
+<li><a href="https://cloud.tencent.com/developer/article/1942512">https://cloud.tencent.com/developer/article/1942512</a></li>
+<li><a href="https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD">https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD</a></li>
+<li><a href="https://marp.app/">https://marp.app/</a></li>
+<li><a href="https://www.lianxh.cn/details/1059.html">https://www.lianxh.cn/details/1059.html</a></li>
+</ol>
+<p>基本配置：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: gaia</span><br><span class="line"><span class="section">#gaia, uncover, default</span></span><br><span class="line"><span class="emphasis">_class: lead</span></span><br><span class="line"><span class="emphasis">paginate: true</span></span><br><span class="line"><span class="emphasis">header: </span></span><br><span class="line"><span class="emphasis">footer: </span></span><br><span class="line"><span class="emphasis">headingDivider: 2 </span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
+
+<p>指定页垂直居中：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--_class: lead--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>其他功能如插入图片和语法细节后期补充。</em></p>
+]]></content>
+      <tags>
+        <tag>Marp</tag>
+        <tag>Markdown</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>番石榴</title>
+    <url>/post/f20b745e.html</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>小作文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo部署出现Spawn failed问题</title>
+    <url>/post/cf2181b.html</url>
+    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
+<ul>
+<li><p>打开命令行输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>得到报错</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
+</li>
+<li><p>命令行再次输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>bug</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决vscode编译latex的两个小困扰</title>
+    <url>/post/622bc5ab.html</url>
+    <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
+<span id="more"></span>
+
+<p>今天我尝试将这些小问题与copilot进行交流，没想到它很快给出了比较专业准确的回答，经过几轮对话，最终问题也都得到了解决。最后我把copilot的回答总结了一下得到了这篇文档，文中的解决办法<strong>全部</strong>来自copilot，因此个别细节的正确性还有待考证。</p>
+<h2 id="LaTeX-Workshop扩展的报错弹窗"><a href="#LaTeX-Workshop扩展的报错弹窗" class="headerlink" title="LaTeX Workshop扩展的报错弹窗"></a>LaTeX Workshop扩展的报错弹窗</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Recipe terminated with error. Retry building the project.</span><br></pre></td></tr></table></figure>
+
+<p>那么有没有什么解决办法呢？比如让<code>Ctrl+S</code>变为单纯的保存功能而不自动进行编译，或者隐藏LaTeX Workshop扩展的弹窗提示报错？</p>
+<blockquote>
+<p>在此之前我已经设置了常用编译链<code>xelatex -&gt; bibtex -&gt; xelatex*2</code>的快捷键为<code>Alt+X</code>，因此我希望取消这个保存（<code>Ctrl+S</code>）后自动用pdflatex编译的功能。</p>
+</blockquote>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
+<ol>
+<li>打开 VS Code 的设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>设置</code>，或者使用快捷键 <code>Ctrl+,</code> 来打开。</li>
+<li>在设置中，找到 <code>LaTeX Workshop</code> 部分。</li>
+<li>在 <code>LaTeX Workshop</code> 设置中，找到 <code>latex.autoBuild.onSave.enabled</code> 选项，它默认是 <code>onFileChange</code>，现在选择 <code>never</code>。</li>
+</ol>
+<p>现在，当你保存 LaTeX 文件时，VS Code 不会自动编译它。</p>
+<h4 id="补充一"><a href="#补充一" class="headerlink" title="补充一"></a>补充一</h4><p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
+<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
+<ul>
+<li><code>onSave</code>：在保存 <code>.tex</code> 文件时编译项目。也就是说，每当你在 VS Code 中保存 LaTeX 文件时，VS Code 将自动编译你的 LaTeX 项目。</li>
+<li><code>onFileChange</code>：在检测到任何依赖文件的变化时编译项目，即使这些变化是由其他应用程序引起的。</li>
+</ul>
+<h2 id="latexmk编译命令绑定快捷键"><a href="#latexmk编译命令绑定快捷键" class="headerlink" title="latexmk编译命令绑定快捷键"></a>latexmk编译命令绑定快捷键</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
+<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
+<li><p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
+<ol>
+<li>在 VS Code 中，打开你的工作区的 <code>.vscode</code> 目录（如果没有，你需要创建一个）</li>
+<li>在 <code>.vscode</code> 目录中，创建一个名为 <code>tasks.json</code> 的文件</li>
+<li>在 <code>tasks.json</code> 文件中，添加以下内容：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build latex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;main.tex&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这将创建一个名为 “build latex” 的任务，它会运行 <code>latexmk main.tex</code> 命令。</p>
+<ol>
+<li>打开 VS Code 的键盘快捷键设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>键盘快捷键</code>，或者使用快捷键 <code>Ctrl+K Ctrl+S</code> 来打开。</li>
+<li>在键盘快捷键设置中，找到 <code>任务：运行生成任务</code> 这一项，然后将其快捷键设置为 <code>Ctrl+D</code>。</li>
+</ol>
+<p>现在，每次你按 <code>Ctrl+D</code>，VS Code 就会运行 “build latex” 任务，即运行 <code>latexmk main.tex</code> 命令。</p>
+</li>
+</ol>
+<h2 id="其他问答：latexmk是什么"><a href="#其他问答：latexmk是什么" class="headerlink" title="其他问答：latexmk是什么"></a>其他问答：latexmk是什么</h2><p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
+<p>基本的 <code>latexmk</code> 命令如下：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk [选项] [文件...]</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>[选项]</code> 是可选的命令行选项，<code>[文件...]</code> 是一个或多个要编译的 LaTeX 文件。</p>
+<p>一些常用的 <code>latexmk</code> 选项包括：</p>
+<ul>
+<li><code>-pdf</code>：生成 PDF 文件（使用 pdflatex）。</li>
+<li><code>-bibtex</code>：运行 bibtex 或 biber（如果需要）。</li>
+<li><code>-c</code>：清理所有非日志文件。</li>
+<li><code>-C</code>：清理所有生成的文件，包括 PDF 文件。</li>
+</ul>
+<p>例如，如果你有一个名为 <code>main.tex</code> 的 LaTeX 文件，你可以使用以下命令来编译它：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk -pdf -bibtex main.tex</span><br></pre></td></tr></table></figure>
+
+<p>这将使用 pdflatex 和 bibtex（如果需要）来编译 <code>main.tex</code>，并生成一个 PDF 文件。</p>
+]]></content>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>vscode</tag>
+        <tag>copilot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美赛模板LDMCM更新说明</title>
+    <url>/post/a977b826.html</url>
+    <content><![CDATA[<p>本次更新主要是新增了对LLM的引用方式以及附录中2024美赛要求的<em>Report on Use of AI</em>. </p>
+<span id="more"></span>
+
+<p><em>注：以下翻译部分都来自于GPT-4，请注意其准确性，原文内容请访问<a href="https://www.contest.comap.com/undergraduate/contests/">美赛官网</a></em></p>
+<h2 id="政策内容"><a href="#政策内容" class="headerlink" title="政策内容"></a>政策内容</h2><ol>
+<li><p><strong>政策目的</strong>：鉴于大型语言模型和生成式AI技术的快速发展，该政策旨在为参赛团队、指导老师和评委提供更多的透明度和指导。政策适用于学生工作的所有方面，包括研究与开发模型（包括代码创造）到书面报告。</p>
+</li>
+<li><p><strong>诚实透明</strong>：团队必须对使用AI工具的所有情况坦诚和透明。团队和提交作品的透明度越高，其工作就越有可能被完全信任、欣赏和正确使用。这种披露有助于理解智力工作的发展，并正确承认贡献。如果不公开和明确引用AI工具的作用，可能会导致可疑的段落和工作被识别为抄袭并取消资格。</p>
+</li>
+<li><p><strong>AI工具的使用</strong>：解决问题不需要使用AI工具，尽管允许负责任地使用。COMAP认识到LLMs和生成式AI作为生产力工具的价值，它们可以帮助团队准备提交材料，例如生成结构的初始想法，或在总结、改写、语言润色等方面。在模型开发的许多任务中，人类的创造力和团队合作至关重要，而依赖AI工具会带来风险。因此，建议在使用这些技术进行模型选择和构建、协助创建代码、解释数据和模型结果以及得出科学结论等任务时要小心。</p>
+</li>
+<li><p><strong>LLMs和生成式AI的限制</strong>：</p>
+<ul>
+<li><strong>客观性</strong>：之前发布的包含种族主义、性别歧视或其他偏见的内容可能会在LLM生成的文本中出现，一些重要观点可能不会被代表。</li>
+<li><strong>准确性</strong>：LLMs可能会“幻觉”，即生成虚假内容，特别是在超出其领域或处理复杂或模棱两可的主题时。它们可能生成在语言上但不在科学上可信的内容，它们可能会搞错事实，并且已经显示出它们可以生成不存在的引用。一些LLM只训练了特定日期之前发布的内容，因此呈现出不完整的画面。</li>
+<li><strong>上下文理解</strong>：LLMs不能将人类理解应用于文本的上下文，特别是在处理习语表达、讽刺、幽默或隐喻语言时。这可能导致生成内容中的错误或误解。</li>
+<li><strong>训练数据</strong>：LLMs需要大量高质量的训练数据以达到最佳性能。然而，在某些领域或语言中，这样的数据可能不容易获得，从而限制了任何输出的有用性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="参赛团队的应该注意什么？"><a href="#参赛团队的应该注意什么？" class="headerlink" title="参赛团队的应该注意什么？"></a>参赛团队的应该注意什么？</h3><ol>
+<li><p><strong>明确指出使用LLMs或其他AI工具</strong>：参赛团队在报告中必须明确指出他们使用了LLMs或其他AI工具，包括使用了哪个模型以及用途。要求使用文内引用和参考文献部分来做这个说明。此外，在25页解决方案之后附上使用AI的报告（下文将描述）。</p>
+</li>
+<li><p><strong>验证内容和引用的准确性、有效性和适当性</strong>：团队需要验证由语言模型生成的内容和任何引用的准确性、有效性和适当性，并纠正任何错误或不一致。</p>
+</li>
+<li><p><strong>提供引用和参考文献</strong>：参赛团队应该按照提供的指导提供引用和参考文献，并仔细检查引用确保它们是准确的并且正确引用。</p>
+</li>
+<li><p><strong>意识到抄袭的潜在风险</strong>：由于LLMs可能会从其他来源复制大量文本，因此有抄袭的潜在风险。团队需要检查原始来源，确保他们没有抄袭别人的工作。</p>
+</li>
+</ol>
+<h3 id="引用建议"><a href="#引用建议" class="headerlink" title="引用建议"></a>引用建议</h3><ol>
+<li><p><strong>文档和引用工具</strong>：参赛团队在使用任何工具时，需要仔细考虑如何进行文档记录和引用。随着越来越多的风格指南开始纳入AI工具的引用和参考政策，团队应当遵循这些指南来正确引用所使用的AI工具。</p>
+</li>
+<li><p><strong>内文引用和参考部分</strong>：在25页的解决方案报告中，团队应使用内文引用，并在参考文献部分列出所有使用的AI工具。这要求团队在报告的相应部分清晰地标注使用的AI工具，包括工具的名称和用途。</p>
+</li>
+<li><p><strong>报告页数限制</strong>：无论团队是否选择使用AI工具，主要解决方案报告的页数限制仍为25页。这意味着团队需要在这一页面限制内完成他们的主要报告。</p>
+</li>
+<li><p><strong>使用AI的报告</strong>：如果团队选择使用AI工具，他们需要在报告的末尾新增一个标题为“使用AI的报告”（Report on Use of AI）的部分。这一新部分没有页面限制，并且不计入25页解决方案的页数限制内。这允许团队详细记录他们如何使用AI工具，包括使用的工具类型、用途和对解决方案的贡献，而不用担心会超过页面限制。</p>
+</li>
+</ol>
+<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><p>新增了LLM的引用方式。以ChatGPT为例。只需使用<code>\upcite&#123;openai2024chatgpt&#125;</code>命令即可（或<code>\cite&#123;openai2024chatgpt&#125;</code>），具体改动请参见<code>references.bib</code>文件。</p>
+<p>效果如下：</p>
+<blockquote>
+<p>此处引用了LLM. $^{[1]}$</p>
+<p>[1] OpenAI. Chatgpt: Optimizing language models for dialogue, Feb 2024. Available<br>online: <a href="https://openai.com/chatgpt">https://openai.com/chatgpt</a> (accessed on February 2nd, 2024).</p>
+</blockquote>
+<h2 id="Report-on-Use-of-AI"><a href="#Report-on-Use-of-AI" class="headerlink" title="Report on Use of AI"></a>Report on Use of AI</h2><p>新增了2024美赛要求的<strong>Report on Use of AI</strong>，具体改动请参见附录部分，即<em>Appendix C: Report on Use of AI</em>.</p>
+<p>采用了官方提供的格式：</p>
+<blockquote>
+<ol>
+<li>OpenAI ChatGPT (Nov 5, 2023 version, ChatGPT-4)</li>
+</ol>
+<p>  Query1: <code>&lt;insert the exact wording you input into the AI tool&gt;</code></p>
+<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
+<ol start="2">
+<li>OpenAI Ernie (Nov 5, 2023 version, Ernie 4.0)</li>
+</ol>
+<p>  Query1: <code>&lt;insert the exact wording of any subsequent input into the AI tool&gt;</code></p>
+<p>  Output: <code>&lt;insert the complete output from the second query&gt;</code></p>
+<ol start="3">
+<li>Github CoPilot (Feb 3, 2024 version)</li>
+</ol>
+<p>  Query1: <code>&lt;insert the exact wording you input into the AI tool&gt;</code></p>
+<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
+<ol start="4">
+<li>Google Bard (Feb 2, 2024 version)</li>
+</ol>
+<p>  Query: <code>&lt;insert the exact wording of your query&gt;</code></p>
+<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
+</blockquote>
+<p>在书写时只需把LLM的问答替换掉<code>&lt;···&gt;</code>中的内容即可。在导出ChaGPT的回答时，推荐一个chrome插件<a href="https://chromewebstore.google.com/detail/chatgpt-to-markdown/dloobgjjpoohngalnjepgdggjeempdec">chatgpt-to-markdown</a>，可以非常方便地把对话导出成md文本。</p>
+<h2 id="下载更新"><a href="#下载更新" class="headerlink" title="下载更新"></a>下载更新</h2><p>参见<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>MCM</tag>
       </tags>
   </entry>
   <entry>
@@ -849,221 +1064,6 @@
         <tag>LaTeX</tag>
         <tag>模板</tag>
         <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>番石榴</title>
-    <url>/post/f20b745e.html</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>小作文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决vscode编译latex的两个小困扰</title>
-    <url>/post/622bc5ab.html</url>
-    <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
-<span id="more"></span>
-
-<p>今天我尝试将这些小问题与copilot进行交流，没想到它很快给出了比较专业准确的回答，经过几轮对话，最终问题也都得到了解决。最后我把copilot的回答总结了一下得到了这篇文档，文中的解决办法<strong>全部</strong>来自copilot，因此个别细节的正确性还有待考证。</p>
-<h2 id="LaTeX-Workshop扩展的报错弹窗"><a href="#LaTeX-Workshop扩展的报错弹窗" class="headerlink" title="LaTeX Workshop扩展的报错弹窗"></a>LaTeX Workshop扩展的报错弹窗</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Recipe terminated with error. Retry building the project.</span><br></pre></td></tr></table></figure>
-
-<p>那么有没有什么解决办法呢？比如让<code>Ctrl+S</code>变为单纯的保存功能而不自动进行编译，或者隐藏LaTeX Workshop扩展的弹窗提示报错？</p>
-<blockquote>
-<p>在此之前我已经设置了常用编译链<code>xelatex -&gt; bibtex -&gt; xelatex*2</code>的快捷键为<code>Alt+X</code>，因此我希望取消这个保存（<code>Ctrl+S</code>）后自动用pdflatex编译的功能。</p>
-</blockquote>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
-<ol>
-<li>打开 VS Code 的设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>设置</code>，或者使用快捷键 <code>Ctrl+,</code> 来打开。</li>
-<li>在设置中，找到 <code>LaTeX Workshop</code> 部分。</li>
-<li>在 <code>LaTeX Workshop</code> 设置中，找到 <code>latex.autoBuild.onSave.enabled</code> 选项，它默认是 <code>onFileChange</code>，现在选择 <code>never</code>。</li>
-</ol>
-<p>现在，当你保存 LaTeX 文件时，VS Code 不会自动编译它。</p>
-<h4 id="补充一"><a href="#补充一" class="headerlink" title="补充一"></a>补充一</h4><p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
-<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
-<ul>
-<li><code>onSave</code>：在保存 <code>.tex</code> 文件时编译项目。也就是说，每当你在 VS Code 中保存 LaTeX 文件时，VS Code 将自动编译你的 LaTeX 项目。</li>
-<li><code>onFileChange</code>：在检测到任何依赖文件的变化时编译项目，即使这些变化是由其他应用程序引起的。</li>
-</ul>
-<h2 id="latexmk编译命令绑定快捷键"><a href="#latexmk编译命令绑定快捷键" class="headerlink" title="latexmk编译命令绑定快捷键"></a>latexmk编译命令绑定快捷键</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
-<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
-<li><p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
-<ol>
-<li>在 VS Code 中，打开你的工作区的 <code>.vscode</code> 目录（如果没有，你需要创建一个）</li>
-<li>在 <code>.vscode</code> 目录中，创建一个名为 <code>tasks.json</code> 的文件</li>
-<li>在 <code>tasks.json</code> 文件中，添加以下内容：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build latex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;main.tex&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>这将创建一个名为 “build latex” 的任务，它会运行 <code>latexmk main.tex</code> 命令。</p>
-<ol>
-<li>打开 VS Code 的键盘快捷键设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>键盘快捷键</code>，或者使用快捷键 <code>Ctrl+K Ctrl+S</code> 来打开。</li>
-<li>在键盘快捷键设置中，找到 <code>任务：运行生成任务</code> 这一项，然后将其快捷键设置为 <code>Ctrl+D</code>。</li>
-</ol>
-<p>现在，每次你按 <code>Ctrl+D</code>，VS Code 就会运行 “build latex” 任务，即运行 <code>latexmk main.tex</code> 命令。</p>
-</li>
-</ol>
-<h2 id="其他问答：latexmk是什么"><a href="#其他问答：latexmk是什么" class="headerlink" title="其他问答：latexmk是什么"></a>其他问答：latexmk是什么</h2><p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
-<p>基本的 <code>latexmk</code> 命令如下：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk [选项] [文件...]</span><br></pre></td></tr></table></figure>
-
-<p>其中，<code>[选项]</code> 是可选的命令行选项，<code>[文件...]</code> 是一个或多个要编译的 LaTeX 文件。</p>
-<p>一些常用的 <code>latexmk</code> 选项包括：</p>
-<ul>
-<li><code>-pdf</code>：生成 PDF 文件（使用 pdflatex）。</li>
-<li><code>-bibtex</code>：运行 bibtex 或 biber（如果需要）。</li>
-<li><code>-c</code>：清理所有非日志文件。</li>
-<li><code>-C</code>：清理所有生成的文件，包括 PDF 文件。</li>
-</ul>
-<p>例如，如果你有一个名为 <code>main.tex</code> 的 LaTeX 文件，你可以使用以下命令来编译它：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk -pdf -bibtex main.tex</span><br></pre></td></tr></table></figure>
-
-<p>这将使用 pdflatex 和 bibtex（如果需要）来编译 <code>main.tex</code>，并生成一个 PDF 文件。</p>
-]]></content>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>vscode</tag>
-        <tag>copilot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决hexo部署出现Spawn failed问题</title>
-    <url>/post/cf2181b.html</url>
-    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
-<ul>
-<li><p>打开命令行输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>得到报错</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
-</li>
-<li><p>命令行再次输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>git</tag>
-        <tag>bug</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美赛模板LDMCM更新说明</title>
-    <url>/post/a977b826.html</url>
-    <content><![CDATA[<p>本次更新主要是新增了对LLM的引用方式以及附录中2024美赛要求的<em>Report on Use of AI</em>. </p>
-<span id="more"></span>
-
-<p><em>注：以下翻译部分都来自于GPT-4，请注意其准确性，原文内容请访问<a href="https://www.contest.comap.com/undergraduate/contests/">美赛官网</a></em></p>
-<h2 id="政策内容"><a href="#政策内容" class="headerlink" title="政策内容"></a>政策内容</h2><ol>
-<li><p><strong>政策目的</strong>：鉴于大型语言模型和生成式AI技术的快速发展，该政策旨在为参赛团队、指导老师和评委提供更多的透明度和指导。政策适用于学生工作的所有方面，包括研究与开发模型（包括代码创造）到书面报告。</p>
-</li>
-<li><p><strong>诚实透明</strong>：团队必须对使用AI工具的所有情况坦诚和透明。团队和提交作品的透明度越高，其工作就越有可能被完全信任、欣赏和正确使用。这种披露有助于理解智力工作的发展，并正确承认贡献。如果不公开和明确引用AI工具的作用，可能会导致可疑的段落和工作被识别为抄袭并取消资格。</p>
-</li>
-<li><p><strong>AI工具的使用</strong>：解决问题不需要使用AI工具，尽管允许负责任地使用。COMAP认识到LLMs和生成式AI作为生产力工具的价值，它们可以帮助团队准备提交材料，例如生成结构的初始想法，或在总结、改写、语言润色等方面。在模型开发的许多任务中，人类的创造力和团队合作至关重要，而依赖AI工具会带来风险。因此，建议在使用这些技术进行模型选择和构建、协助创建代码、解释数据和模型结果以及得出科学结论等任务时要小心。</p>
-</li>
-<li><p><strong>LLMs和生成式AI的限制</strong>：</p>
-<ul>
-<li><strong>客观性</strong>：之前发布的包含种族主义、性别歧视或其他偏见的内容可能会在LLM生成的文本中出现，一些重要观点可能不会被代表。</li>
-<li><strong>准确性</strong>：LLMs可能会“幻觉”，即生成虚假内容，特别是在超出其领域或处理复杂或模棱两可的主题时。它们可能生成在语言上但不在科学上可信的内容，它们可能会搞错事实，并且已经显示出它们可以生成不存在的引用。一些LLM只训练了特定日期之前发布的内容，因此呈现出不完整的画面。</li>
-<li><strong>上下文理解</strong>：LLMs不能将人类理解应用于文本的上下文，特别是在处理习语表达、讽刺、幽默或隐喻语言时。这可能导致生成内容中的错误或误解。</li>
-<li><strong>训练数据</strong>：LLMs需要大量高质量的训练数据以达到最佳性能。然而，在某些领域或语言中，这样的数据可能不容易获得，从而限制了任何输出的有用性。</li>
-</ul>
-</li>
-</ol>
-<h3 id="参赛团队的应该注意什么？"><a href="#参赛团队的应该注意什么？" class="headerlink" title="参赛团队的应该注意什么？"></a>参赛团队的应该注意什么？</h3><ol>
-<li><p><strong>明确指出使用LLMs或其他AI工具</strong>：参赛团队在报告中必须明确指出他们使用了LLMs或其他AI工具，包括使用了哪个模型以及用途。要求使用文内引用和参考文献部分来做这个说明。此外，在25页解决方案之后附上使用AI的报告（下文将描述）。</p>
-</li>
-<li><p><strong>验证内容和引用的准确性、有效性和适当性</strong>：团队需要验证由语言模型生成的内容和任何引用的准确性、有效性和适当性，并纠正任何错误或不一致。</p>
-</li>
-<li><p><strong>提供引用和参考文献</strong>：参赛团队应该按照提供的指导提供引用和参考文献，并仔细检查引用确保它们是准确的并且正确引用。</p>
-</li>
-<li><p><strong>意识到抄袭的潜在风险</strong>：由于LLMs可能会从其他来源复制大量文本，因此有抄袭的潜在风险。团队需要检查原始来源，确保他们没有抄袭别人的工作。</p>
-</li>
-</ol>
-<h3 id="引用建议"><a href="#引用建议" class="headerlink" title="引用建议"></a>引用建议</h3><ol>
-<li><p><strong>文档和引用工具</strong>：参赛团队在使用任何工具时，需要仔细考虑如何进行文档记录和引用。随着越来越多的风格指南开始纳入AI工具的引用和参考政策，团队应当遵循这些指南来正确引用所使用的AI工具。</p>
-</li>
-<li><p><strong>内文引用和参考部分</strong>：在25页的解决方案报告中，团队应使用内文引用，并在参考文献部分列出所有使用的AI工具。这要求团队在报告的相应部分清晰地标注使用的AI工具，包括工具的名称和用途。</p>
-</li>
-<li><p><strong>报告页数限制</strong>：无论团队是否选择使用AI工具，主要解决方案报告的页数限制仍为25页。这意味着团队需要在这一页面限制内完成他们的主要报告。</p>
-</li>
-<li><p><strong>使用AI的报告</strong>：如果团队选择使用AI工具，他们需要在报告的末尾新增一个标题为“使用AI的报告”（Report on Use of AI）的部分。这一新部分没有页面限制，并且不计入25页解决方案的页数限制内。这允许团队详细记录他们如何使用AI工具，包括使用的工具类型、用途和对解决方案的贡献，而不用担心会超过页面限制。</p>
-</li>
-</ol>
-<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><p>新增了LLM的引用方式。以ChatGPT为例。只需使用<code>\upcite&#123;openai2024chatgpt&#125;</code>命令即可（或<code>\cite&#123;openai2024chatgpt&#125;</code>），具体改动请参见<code>references.bib</code>文件。</p>
-<p>效果如下：</p>
-<blockquote>
-<p>此处引用了LLM. $^{[1]}$</p>
-<p>[1] OpenAI. Chatgpt: Optimizing language models for dialogue, Feb 2024. Available<br>online: <a href="https://openai.com/chatgpt">https://openai.com/chatgpt</a> (accessed on February 2nd, 2024).</p>
-</blockquote>
-<h2 id="Report-on-Use-of-AI"><a href="#Report-on-Use-of-AI" class="headerlink" title="Report on Use of AI"></a>Report on Use of AI</h2><p>新增了2024美赛要求的<strong>Report on Use of AI</strong>，具体改动请参见附录部分，即<em>Appendix C: Report on Use of AI</em>.</p>
-<p>采用了官方提供的格式：</p>
-<blockquote>
-<ol>
-<li>OpenAI ChatGPT (Nov 5, 2023 version, ChatGPT-4)</li>
-</ol>
-<p>  Query1: <code>&lt;insert the exact wording you input into the AI tool&gt;</code></p>
-<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
-<ol start="2">
-<li>OpenAI Ernie (Nov 5, 2023 version, Ernie 4.0)</li>
-</ol>
-<p>  Query1: <code>&lt;insert the exact wording of any subsequent input into the AI tool&gt;</code></p>
-<p>  Output: <code>&lt;insert the complete output from the second query&gt;</code></p>
-<ol start="3">
-<li>Github CoPilot (Feb 3, 2024 version)</li>
-</ol>
-<p>  Query1: <code>&lt;insert the exact wording you input into the AI tool&gt;</code></p>
-<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
-<ol start="4">
-<li>Google Bard (Feb 2, 2024 version)</li>
-</ol>
-<p>  Query: <code>&lt;insert the exact wording of your query&gt;</code></p>
-<p>  Output: <code>&lt;insert the complete output from the AI tool&gt;</code></p>
-</blockquote>
-<p>在书写时只需把LLM的问答替换掉<code>&lt;···&gt;</code>中的内容即可。在导出ChaGPT的回答时，推荐一个chrome插件<a href="https://chromewebstore.google.com/detail/chatgpt-to-markdown/dloobgjjpoohngalnjepgdggjeempdec">chatgpt-to-markdown</a>，可以非常方便地把对话导出成md文本。</p>
-<h2 id="下载更新"><a href="#下载更新" class="headerlink" title="下载更新"></a>下载更新</h2><p>参见<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a>或</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>MCM</tag>
       </tags>
   </entry>
 </search>
