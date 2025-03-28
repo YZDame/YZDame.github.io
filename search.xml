@@ -415,6 +415,73 @@
       </tags>
   </entry>
   <entry>
+    <title>Mistral AI OCR介绍</title>
+    <url>/post/undefined.html</url>
+    <content><![CDATA[<blockquote>
+<p>从本期开始将整理一些常用的LaTeX相关工具，回归一下本账号成立的初衷。</p>
+</blockquote>
+<h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>在过去，最好用的识别数学公式并进行代码转换的网站&#x2F;软件莫过于Mathpix了：支持各种格式转换，比如pdf,png到tex,md，当然也包括docx等等，无论是pdf文档转换还是截图识别，从移动端的Snip App再到桌面客户端以及网页版、浏览器插件全生态的覆盖让使用体验无比丝滑。</p>
+<p>但免费版的使用额度相当有限，而付费订阅又太贵（一年50美刀）；此外，网页版还偶尔会出现网络连接不稳定的情形。</p>
+<p>不过现在，号称地表最强的OCR工具Mistral出现了。这是一家法国的初创AI公司，可以理解为欧洲版的DeepSeek，它的价格也十分便宜（OCR功能大概1美刀可以转换上千页pdf）。</p>
+<span id="more"></span>
+
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>直接访问官网聊天界面（可能需要用手机号注册账号）：</p>
+<blockquote>
+<p><a href="https://chat.mistral.ai/chat">https://chat.mistral.ai/chat</a></p>
+</blockquote>
+<p>像其他大语言模型一样对话框内上传文件，输入“转换成markdown”即可；比如这里我上传了一篇和DeepSeek-R1的论文：<br><img data-src="https://files.mdnice.com/user/47704/3ae9056d-d5fc-40c8-857a-f2bf86da6e82.png"><br>等待几秒钟，即可得到转换后的markdown代码。<br>进一步地，利用Typora或Obsidian等markdown编辑器，即可查看或转换成pdf、docx等格式（可能需要额外安装pandoc）。</p>
+<h3 id="网页版效果展示"><a href="#网页版效果展示" class="headerlink" title="网页版效果展示"></a>网页版效果展示</h3><p>更多效果展示请参阅官网介绍：</p>
+<blockquote>
+<p><a href="https://mistral.ai/news/mistral-ocr">https://mistral.ai/news/mistral-ocr</a></p>
+</blockquote>
+<p>这是原来的pdf文件：<br><img data-src="https://files.mdnice.com/user/47704/dab88e93-3111-4cf5-8cad-1834b9db7cf7.png"><br>这是转化后并在Typora中显示的效果（主题：Newsprint）：<br><img data-src="https://files.mdnice.com/user/47704/8ab09e15-a008-4c01-b5ac-02b27bd12724.png" alt="目录（带超链接）"><br><img data-src="https://files.mdnice.com/user/47704/3084eea9-ffe9-40a5-b44e-cc22399868b6.png" alt="数学公式"><br><img data-src="https://files.mdnice.com/user/47704/6e075225-8698-4f6a-8ca1-ee6eda6313a1.png" alt="表格"></p>
+<p>可以看到，除了图片外的效果非常不错，但如果要把图片也提取出来并在相应位置保留，就需要用到下面的方法了。</p>
+<h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><p>除了在官网的对话界面处理文件外，也可以通过API调用进行批量处理。<br>感谢<a href="https://github.com/nicekate">@nicekate</a> 提供的Python代码，可以实现在本地调用Mistral API进行文件处理，并且在B站上还有相应的演示视频。</p>
+<ol>
+<li>GitHub仓库地址：<br> <a href="https://github.com/nicekate/mistral-ocr">https://github.com/nicekate/mistral-ocr</a></li>
+<li>B站视频：<br> 【实测 Mistral OCR ：世界最佳文档理解模型？】 <a href="https://www.bilibili.com/video/BV1Bw92YiEEH">https://www.bilibili.com/video/BV1Bw92YiEEH</a></li>
+</ol>
+<p>配置方法也非常简单，只需要申请一个自己的API key，然后再把上面的仓库clone下来，填入相应的API key即可。</p>
+<h3 id="申请API-key"><a href="#申请API-key" class="headerlink" title="申请API key"></a>申请API key</h3><p>在控制台左侧菜单栏点击”API Keys”，然后点击右上角的“Create new key”，复制即可。</p>
+<blockquote>
+<p><a href="https://console.mistral.ai/home">https://console.mistral.ai/home</a></p>
+</blockquote>
+<h3 id="下载Python代码"><a href="#下载Python代码" class="headerlink" title="下载Python代码"></a>下载Python代码</h3><p>先将上述仓库clone到本地：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/nicekate/mistral-ocr.git</span><br></pre></td></tr></table></figure>
+<p>再安装依赖项：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install mistralai</span><br></pre></td></tr></table></figure>
+<p>在<code>pdf_ocr.py</code> 中修改 API 密钥和 PDF 文件路径即可（72～73行）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">API_KEY = <span class="string">&quot;填入你自己的api key&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PDF_PATH = &quot;</span>xxx.pd<span class="string">f&quot;</span></span><br></pre></td></tr></table></figure>
+<p>运行文件，即可在同目录下找到转换后的文件夹<code>ocr_results_xxx</code>，其中包含了转换后的markdown文件和图片文件。</p>
+<h3 id="本地转换效果展示"><a href="#本地转换效果展示" class="headerlink" title="本地转换效果展示"></a>本地转换效果展示</h3><p>主题：Typora GitHub<br><img data-src="https://files.mdnice.com/user/47704/beab2cdd-aa9f-47f8-a547-f577927edff1.jpg"></p>
+<p><img data-src="https://files.mdnice.com/user/47704/9abcf7a8-b320-4011-b699-863c730a5b27.jpg"></p>
+<h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><p>有时需要同时进行多个PDF文件的转换，于是在此基础上我自己动手增加了批处理功能，可以将同一目录下的所有PDF文件进行转换。</p>
+<p>具体修改如下：</p>
+<ol>
+<li>新增 <code>get_pdf_files_in_directory</code> 函数，用于扫描指定文件夹并返回所有 PDF 文件的完整路径。</li>
+<li>在 <code>__main__</code> 中，替换手动指定 PDF 文件路径的方式，改为从文件夹中自动获取 PDF 文件。</li>
+<li>如果文件夹中没有 PDF 文件，会提示用户。<br>以下是新增的代码片段：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process_pdfs</span>(<span class="params">pdf_paths: <span class="built_in">list</span>, api_key: <span class="built_in">str</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> pdf_path <span class="keyword">in</span> pdf_paths:</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line"></span><br><span class="line">output_dir = process_pdf(pdf_path, api_key)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;文件 <span class="subst">&#123;pdf_path&#125;</span> 处理完成，结果保存在: <span class="subst">&#123;output_dir&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;处理文件 <span class="subst">&#123;pdf_path&#125;</span> 时出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_pdf_files_in_directory</span>(<span class="params">directory: <span class="built_in">str</span></span>) -&gt; <span class="built_in">list</span>:</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;获取指定目录中的所有PDF文件路径&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">pdf_files = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(directory):</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> file.endswith(<span class="string">&quot;.pdf&quot;</span>):</span><br><span class="line"></span><br><span class="line">pdf_files.append(os.path.join(directory, file))</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> pdf_files</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用示例</span></span><br><span class="line"></span><br><span class="line">API_KEY = <span class="string">&quot;your_mistral_api_key&quot;</span></span><br><span class="line"></span><br><span class="line">DIRECTORY = <span class="string">&quot;your_pdf_file&quot;</span> <span class="comment"># 指定包含PDF文件的文件夹名称</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文件夹中的所有PDF文件</span></span><br><span class="line"></span><br><span class="line">PDF_PATHS = get_pdf_files_in_directory(DIRECTORY)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> PDF_PATHS:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;目录 <span class="subst">&#123;DIRECTORY&#125;</span> 中没有找到PDF文件。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line">process_pdfs(PDF_PATHS, API_KEY)</span><br></pre></td></tr></table></figure>
+
+<p>完整的文件已上传至GitHub，欢迎star：</p>
+<blockquote>
+<p><a href="https://github.com/YZDame/mistral-ocr">https://github.com/YZDame/mistral-ocr</a></p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>完美翻译 PDF 的第一步-Mistral OCR 初步使用指南 <a href="https://zhuanlan.zhihu.com/p/28801320889">https://zhuanlan.zhihu.com/p/28801320889</a></li>
+<li>【实测 Mistral OCR ：世界最佳文档理解模型？】 <a href="https://www.bilibili.com/video/BV1Bw92YiEEH">https://www.bilibili.com/video/BV1Bw92YiEEH</a></li>
+<li><a href="https://github.com/nicekate/mistral-ocr">https://github.com/nicekate/mistral-ocr</a></li>
+<li>在前者基础上增加批处理功能：<a href="https://github.com/YZDame/mistral-ocr">https://github.com/YZDame/mistral-ocr</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>AI</tag>
+        <tag>OCR</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tikz绘制BNU校徽</title>
     <url>/post/2723d25d.html</url>
     <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
@@ -481,32 +548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>自用Marp配置</title>
-    <url>/post/fda8c156.html</url>
-    <content><![CDATA[<p>记录一下自己常用的Marp基本配置，这样如果隔一段时间不用忘记了又得翻这几个文档🤣</p>
-<span id="more"></span>
-
-<ol>
-<li><a href="https://cloud.tencent.com/developer/article/1942512">https://cloud.tencent.com/developer/article/1942512</a></li>
-<li><a href="https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD">https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD</a></li>
-<li><a href="https://marp.app/">https://marp.app/</a></li>
-<li><a href="https://www.lianxh.cn/details/1059.html">https://www.lianxh.cn/details/1059.html</a></li>
-</ol>
-<p>基本配置：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: gaia</span><br><span class="line"><span class="section">#gaia, uncover, default</span></span><br><span class="line"><span class="emphasis">_class: lead</span></span><br><span class="line"><span class="emphasis">paginate: true</span></span><br><span class="line"><span class="emphasis">header: </span></span><br><span class="line"><span class="emphasis">footer: </span></span><br><span class="line"><span class="emphasis">headingDivider: 2 </span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
-
-<p>指定页垂直居中：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--_class: lead--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>其他功能如插入图片和语法细节后期补充。</em></p>
-]]></content>
-      <tags>
-        <tag>Marp</tag>
-        <tag>Markdown</tag>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024年阅读摘录</title>
     <url>/post/b2821542.html</url>
     <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
@@ -533,6 +574,32 @@
 ]]></content>
       <tags>
         <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自用Marp配置</title>
+    <url>/post/fda8c156.html</url>
+    <content><![CDATA[<p>记录一下自己常用的Marp基本配置，这样如果隔一段时间不用忘记了又得翻这几个文档🤣</p>
+<span id="more"></span>
+
+<ol>
+<li><a href="https://cloud.tencent.com/developer/article/1942512">https://cloud.tencent.com/developer/article/1942512</a></li>
+<li><a href="https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD">https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD</a></li>
+<li><a href="https://marp.app/">https://marp.app/</a></li>
+<li><a href="https://www.lianxh.cn/details/1059.html">https://www.lianxh.cn/details/1059.html</a></li>
+</ol>
+<p>基本配置：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: gaia</span><br><span class="line"><span class="section">#gaia, uncover, default</span></span><br><span class="line"><span class="emphasis">_class: lead</span></span><br><span class="line"><span class="emphasis">paginate: true</span></span><br><span class="line"><span class="emphasis">header: </span></span><br><span class="line"><span class="emphasis">footer: </span></span><br><span class="line"><span class="emphasis">headingDivider: 2 </span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
+
+<p>指定页垂直居中：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--_class: lead--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>其他功能如插入图片和语法细节后期补充。</em></p>
+]]></content>
+      <tags>
+        <tag>Marp</tag>
+        <tag>Markdown</tag>
+        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -804,6 +871,111 @@
       </tags>
   </entry>
   <entry>
+    <title>解决vscode编译latex的两个小困扰</title>
+    <url>/post/622bc5ab.html</url>
+    <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
+<span id="more"></span>
+
+<p>今天我尝试将这些小问题与copilot进行交流，没想到它很快给出了比较专业准确的回答，经过几轮对话，最终问题也都得到了解决。最后我把copilot的回答总结了一下得到了这篇文档，文中的解决办法<strong>全部</strong>来自copilot，因此个别细节的正确性还有待考证。</p>
+<h2 id="LaTeX-Workshop扩展的报错弹窗"><a href="#LaTeX-Workshop扩展的报错弹窗" class="headerlink" title="LaTeX Workshop扩展的报错弹窗"></a>LaTeX Workshop扩展的报错弹窗</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Recipe terminated with error. Retry building the project.</span><br></pre></td></tr></table></figure>
+
+<p>那么有没有什么解决办法呢？比如让<code>Ctrl+S</code>变为单纯的保存功能而不自动进行编译，或者隐藏LaTeX Workshop扩展的弹窗提示报错？</p>
+<blockquote>
+<p>在此之前我已经设置了常用编译链<code>xelatex -&gt; bibtex -&gt; xelatex*2</code>的快捷键为<code>Alt+X</code>，因此我希望取消这个保存（<code>Ctrl+S</code>）后自动用pdflatex编译的功能。</p>
+</blockquote>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
+<ol>
+<li>打开 VS Code 的设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>设置</code>，或者使用快捷键 <code>Ctrl+,</code> 来打开。</li>
+<li>在设置中，找到 <code>LaTeX Workshop</code> 部分。</li>
+<li>在 <code>LaTeX Workshop</code> 设置中，找到 <code>latex.autoBuild.onSave.enabled</code> 选项，它默认是 <code>onFileChange</code>，现在选择 <code>never</code>。</li>
+</ol>
+<p>现在，当你保存 LaTeX 文件时，VS Code 不会自动编译它。</p>
+<h4 id="补充一"><a href="#补充一" class="headerlink" title="补充一"></a>补充一</h4><p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
+<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
+<ul>
+<li><code>onSave</code>：在保存 <code>.tex</code> 文件时编译项目。也就是说，每当你在 VS Code 中保存 LaTeX 文件时，VS Code 将自动编译你的 LaTeX 项目。</li>
+<li><code>onFileChange</code>：在检测到任何依赖文件的变化时编译项目，即使这些变化是由其他应用程序引起的。</li>
+</ul>
+<h2 id="latexmk编译命令绑定快捷键"><a href="#latexmk编译命令绑定快捷键" class="headerlink" title="latexmk编译命令绑定快捷键"></a>latexmk编译命令绑定快捷键</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
+<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
+<li><p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
+<ol>
+<li>在 VS Code 中，打开你的工作区的 <code>.vscode</code> 目录（如果没有，你需要创建一个）</li>
+<li>在 <code>.vscode</code> 目录中，创建一个名为 <code>tasks.json</code> 的文件</li>
+<li>在 <code>tasks.json</code> 文件中，添加以下内容：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build latex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;main.tex&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这将创建一个名为 “build latex” 的任务，它会运行 <code>latexmk main.tex</code> 命令。</p>
+<ol>
+<li>打开 VS Code 的键盘快捷键设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>键盘快捷键</code>，或者使用快捷键 <code>Ctrl+K Ctrl+S</code> 来打开。</li>
+<li>在键盘快捷键设置中，找到 <code>任务：运行生成任务</code> 这一项，然后将其快捷键设置为 <code>Ctrl+D</code>。</li>
+</ol>
+<p>现在，每次你按 <code>Ctrl+D</code>，VS Code 就会运行 “build latex” 任务，即运行 <code>latexmk main.tex</code> 命令。</p>
+</li>
+</ol>
+<h2 id="其他问答：latexmk是什么"><a href="#其他问答：latexmk是什么" class="headerlink" title="其他问答：latexmk是什么"></a>其他问答：latexmk是什么</h2><p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
+<p>基本的 <code>latexmk</code> 命令如下：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk [选项] [文件...]</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>[选项]</code> 是可选的命令行选项，<code>[文件...]</code> 是一个或多个要编译的 LaTeX 文件。</p>
+<p>一些常用的 <code>latexmk</code> 选项包括：</p>
+<ul>
+<li><code>-pdf</code>：生成 PDF 文件（使用 pdflatex）。</li>
+<li><code>-bibtex</code>：运行 bibtex 或 biber（如果需要）。</li>
+<li><code>-c</code>：清理所有非日志文件。</li>
+<li><code>-C</code>：清理所有生成的文件，包括 PDF 文件。</li>
+</ul>
+<p>例如，如果你有一个名为 <code>main.tex</code> 的 LaTeX 文件，你可以使用以下命令来编译它：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk -pdf -bibtex main.tex</span><br></pre></td></tr></table></figure>
+
+<p>这将使用 pdflatex 和 bibtex（如果需要）来编译 <code>main.tex</code>，并生成一个 PDF 文件。</p>
+]]></content>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>vscode</tag>
+        <tag>copilot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo部署出现Spawn failed问题</title>
+    <url>/post/cf2181b.html</url>
+    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
+<ul>
+<li><p>打开命令行输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>得到报错</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
+</li>
+<li><p>命令行再次输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>bug</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>美赛模板LDMCM更新说明</title>
     <url>/post/a977b826.html</url>
     <content><![CDATA[<p>本次更新主要是新增了对LLM的引用方式以及附录中2024美赛要求的<em>Report on Use of AI</em>. </p>
@@ -892,111 +1064,6 @@
         <tag>LaTeX</tag>
         <tag>模板</tag>
         <tag>MCM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决hexo部署出现Spawn failed问题</title>
-    <url>/post/cf2181b.html</url>
-    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
-<ul>
-<li><p>打开命令行输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>得到报错</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
-</li>
-<li><p>命令行再次输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>git</tag>
-        <tag>bug</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决vscode编译latex的两个小困扰</title>
-    <url>/post/622bc5ab.html</url>
-    <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
-<span id="more"></span>
-
-<p>今天我尝试将这些小问题与copilot进行交流，没想到它很快给出了比较专业准确的回答，经过几轮对话，最终问题也都得到了解决。最后我把copilot的回答总结了一下得到了这篇文档，文中的解决办法<strong>全部</strong>来自copilot，因此个别细节的正确性还有待考证。</p>
-<h2 id="LaTeX-Workshop扩展的报错弹窗"><a href="#LaTeX-Workshop扩展的报错弹窗" class="headerlink" title="LaTeX Workshop扩展的报错弹窗"></a>LaTeX Workshop扩展的报错弹窗</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Recipe terminated with error. Retry building the project.</span><br></pre></td></tr></table></figure>
-
-<p>那么有没有什么解决办法呢？比如让<code>Ctrl+S</code>变为单纯的保存功能而不自动进行编译，或者隐藏LaTeX Workshop扩展的弹窗提示报错？</p>
-<blockquote>
-<p>在此之前我已经设置了常用编译链<code>xelatex -&gt; bibtex -&gt; xelatex*2</code>的快捷键为<code>Alt+X</code>，因此我希望取消这个保存（<code>Ctrl+S</code>）后自动用pdflatex编译的功能。</p>
-</blockquote>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
-<ol>
-<li>打开 VS Code 的设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>设置</code>，或者使用快捷键 <code>Ctrl+,</code> 来打开。</li>
-<li>在设置中，找到 <code>LaTeX Workshop</code> 部分。</li>
-<li>在 <code>LaTeX Workshop</code> 设置中，找到 <code>latex.autoBuild.onSave.enabled</code> 选项，它默认是 <code>onFileChange</code>，现在选择 <code>never</code>。</li>
-</ol>
-<p>现在，当你保存 LaTeX 文件时，VS Code 不会自动编译它。</p>
-<h4 id="补充一"><a href="#补充一" class="headerlink" title="补充一"></a>补充一</h4><p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
-<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
-<ul>
-<li><code>onSave</code>：在保存 <code>.tex</code> 文件时编译项目。也就是说，每当你在 VS Code 中保存 LaTeX 文件时，VS Code 将自动编译你的 LaTeX 项目。</li>
-<li><code>onFileChange</code>：在检测到任何依赖文件的变化时编译项目，即使这些变化是由其他应用程序引起的。</li>
-</ul>
-<h2 id="latexmk编译命令绑定快捷键"><a href="#latexmk编译命令绑定快捷键" class="headerlink" title="latexmk编译命令绑定快捷键"></a>latexmk编译命令绑定快捷键</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
-<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
-<li><p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
-<ol>
-<li>在 VS Code 中，打开你的工作区的 <code>.vscode</code> 目录（如果没有，你需要创建一个）</li>
-<li>在 <code>.vscode</code> 目录中，创建一个名为 <code>tasks.json</code> 的文件</li>
-<li>在 <code>tasks.json</code> 文件中，添加以下内容：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build latex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;main.tex&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>这将创建一个名为 “build latex” 的任务，它会运行 <code>latexmk main.tex</code> 命令。</p>
-<ol>
-<li>打开 VS Code 的键盘快捷键设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>键盘快捷键</code>，或者使用快捷键 <code>Ctrl+K Ctrl+S</code> 来打开。</li>
-<li>在键盘快捷键设置中，找到 <code>任务：运行生成任务</code> 这一项，然后将其快捷键设置为 <code>Ctrl+D</code>。</li>
-</ol>
-<p>现在，每次你按 <code>Ctrl+D</code>，VS Code 就会运行 “build latex” 任务，即运行 <code>latexmk main.tex</code> 命令。</p>
-</li>
-</ol>
-<h2 id="其他问答：latexmk是什么"><a href="#其他问答：latexmk是什么" class="headerlink" title="其他问答：latexmk是什么"></a>其他问答：latexmk是什么</h2><p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
-<p>基本的 <code>latexmk</code> 命令如下：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk [选项] [文件...]</span><br></pre></td></tr></table></figure>
-
-<p>其中，<code>[选项]</code> 是可选的命令行选项，<code>[文件...]</code> 是一个或多个要编译的 LaTeX 文件。</p>
-<p>一些常用的 <code>latexmk</code> 选项包括：</p>
-<ul>
-<li><code>-pdf</code>：生成 PDF 文件（使用 pdflatex）。</li>
-<li><code>-bibtex</code>：运行 bibtex 或 biber（如果需要）。</li>
-<li><code>-c</code>：清理所有非日志文件。</li>
-<li><code>-C</code>：清理所有生成的文件，包括 PDF 文件。</li>
-</ul>
-<p>例如，如果你有一个名为 <code>main.tex</code> 的 LaTeX 文件，你可以使用以下命令来编译它：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk -pdf -bibtex main.tex</span><br></pre></td></tr></table></figure>
-
-<p>这将使用 pdflatex 和 bibtex（如果需要）来编译 <code>main.tex</code>，并生成一个 PDF 文件。</p>
-]]></content>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>vscode</tag>
-        <tag>copilot</tag>
       </tags>
   </entry>
 </search>
