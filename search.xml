@@ -38,32 +38,6 @@
       </tags>
   </entry>
   <entry>
-    <title>BNU中文LaTeX简历模板</title>
-    <url>/post/9df161f6.html</url>
-    <content><![CDATA[<p>由 <a href="https://github.com/LeyuDame">LeyuDame</a> 改进，主要参考<a href="https://github.com/Htallone/myCV">myCV</a></p>
-<span id="more"></span>
-
-<h2 id="主要改动"><a href="#主要改动" class="headerlink" title="主要改动"></a>主要改动</h2><ul>
-<li>添加了BNU校名Logo</li>
-<li>从BNU校徽上选取了师大蓝作为简历的整体配色</li>
-<li>调整了部分图标的样式</li>
-</ul>
-<h2 id="编译方式❓"><a href="#编译方式❓" class="headerlink" title="编译方式❓"></a>编译方式❓</h2><p>推荐直接在overleaf上进行编译✅</p>
-<p>（<em>待解决的问题：在overleaf上编译显示正常，但是在本地xelatex编译图片不能正常显示❓</em>）</p>
-<h2 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h2><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401141925277.webp" alt="" style="zoom: 25%;" />
-
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Overleaf: <a href="https://www.overleaf.com/latex/templates/bnucv/stjnkyqdcqzm">BNUCV-BNU中文LaTeX简历模板</a></p>
-]]></content>
-      <categories>
-        <category>LaTeX模板</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>overleaf</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BNUslides：一份简洁的师大蓝主题Beamer</title>
     <url>/post/a4a4bede.html</url>
     <content><![CDATA[<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
@@ -120,6 +94,90 @@
         <tag>LaTeX</tag>
         <tag>模板</tag>
         <tag>Beamer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Frobenius问题（硬币问题）</title>
+    <url>/post/164132f9.html</url>
+    <content><![CDATA[<h2 id="两个生活小问题"><a href="#两个生活小问题" class="headerlink" title="两个生活小问题"></a>两个生活小问题</h2><p>在了解Frobenius问题之前, 我们先来看两个生活中的小问题. </p>
+<p>首先, 为什么高铁的座位设置大多是 “2+3” 的组合？即过道一侧是两个座位组合在一起、另一侧是三个座位组合在一起呢？设想一下, 当你和家人或是朋友出行时, 不管你们人数是多少, 只要不少于两人, 总有一种座位组合方式让每一个人和认识的人坐在一起, 而不会出现落单的情况. 当出行人数是偶数时, 只需都安排两人坐即可；当出行人数是奇数时, 只需安排三个人坐三人座, 剩下的人（如果有的话）一定是偶数, 再安排两人座若干即可. </p>
+<p>我们再看第二个问题：给定几种面值的硬币, 不能用这些硬币支付的最大金额是多少？</p>
+<span id="more"></span>
+
+<p>假设你现在去便利店买东西, 现在有若干面值的硬币：￥2, ￥3, ￥5, ￥7, 你只可以选其中两种放进你的钱包（数量不限）. 你不知道你要买的东西具体的价格, 并且便利店不设找零, 所以你希望用这两种面值的硬币去组合出尽可能多的数值, 你会怎么选？</p>
+<p>假如现在你选了￥3和￥5, 那么从不小于￥5的商品开始逐一验证, 我们发现如果商品的价格是￥7就无法组合出来, 不过价格超过￥7 时似乎都可以表示出来；接着我们选￥3和￥7继续做试验, 我们发现￥8, ￥11 都是无法用￥3 和￥7 组合出来的, 那么大于￥11的情形是否都满足可以用这两种面额的硬币进行组合呢？逐一验证的方法显然无法严格证明. </p>
+<h2 id="两个数学问题"><a href="#两个数学问题" class="headerlink" title="两个数学问题"></a>两个数学问题</h2><p>我们先不急着回答刚才的问题, 而是先看两道数学问题. </p>
+<blockquote>
+<p><strong>问题 1</strong> </p>
+<p>设正整数 $a, b$ 互素. 证明：不定方程  $a x + b y &#x3D; a b - a - b$ 没有非负整数解. </p>
+</blockquote>
+<blockquote>
+<p><strong>问题 2</strong><br>设正整数 $a, b$ 互素, 且正整数 $c$ 满足 $c &gt; a b - a - b$. 证明：不定方程 $a x + b y &#x3D; c$ 有非负整数解. </p>
+</blockquote>
+<p>事实上, 上述两个问题说的是同一件事, 也即是：对于不定方程 $a x + b y &#x3D; c$ , 只要 $c &gt; c_{0} &#x3D; a b - a - b$, 方程 $a x + b y &#x3D; c$ 就有非负整数解. </p>
+<p><strong>问题1的证明</strong> </p>
+<p>采用反证法. 若存在非负整数对 $(x_{0}, y_{0})$ 满足该不定方程, 则<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) &#x3D; a b，<br>$$<br>此时应有 $a \mid b(y_{0} + 1)$ , 因为 $(a, b) &#x3D; 1$, 故 $a \mid y_{0} + 1$ , 由于 $a$ 与 $y_{0} + 1$ 均为正整数, 得 $a \leq y_{0} + 1$. </p>
+<p>同理可证：$b \mid x_{0} + 1$, 进而 $b \leq x_{0} + 1$. 但此时左边满足<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) \geq a b + b a &#x3D; 2 a b,<br>$$<br>而右边为 $a b$, 矛盾. </p>
+<p>因此, 原方程没有非负整数解. </p>
+<p><strong>问题2的证明</strong>  </p>
+<p>这里我们要用到二元一次不定方程通解的概念. 现设方程的通解为<br>$$<br>\left{<br>\begin{array}{l}<br>x &#x3D; x_{0} + b t, \<br>y &#x3D; y_{0} - a t<br>\end{array}<br>\quad (t \in \mathbb{Z})<br>\right.<br>$$<br>其中 $(x_{0}, y_{0})$ 为方程的特解. </p>
+<p>通过调节 $t$ 的值（对 $x_{0}$ 增减 $b$）, 可找到一个解 $(x_{1}, y_{1})$ 使得 $0 \leq x_{1} \leq b - 1$. 此时<br>$$<br>b y_{1} &#x3D; c - a x_{1} &gt; a b - a - b - a x_{1} \geq a b - a - b - a(b - 1) &#x3D; -b<br>$$<br>故$y_{1} &gt; -1$, 即 $y_{1} \geq 0$. 这表明 $(x_{1}, y_{1})$ 是方程的非负整数解, 命题得证. </p>
+<h2 id="Frobenius问题（硬币问题）"><a href="#Frobenius问题（硬币问题）" class="headerlink" title="Frobenius问题（硬币问题）"></a>Frobenius问题（硬币问题）</h2><p>Frobenius问题（又称<strong>硬币问题</strong>）的核心是研究给定一组互素的正整数 $a_1, a_2, \ldots, a_n$ 时, 无法表示为这些数的非负整数线性组合的最大整数. 这个最大不可表数被称为 <strong>Frobenius数</strong>, 记作 $g(a_1, a_2, \ldots, a_n)$. 例如, 对于互素的 $a$ 和 $b$, Sylvester 在 1884 年证明了 $g(a, b) &#x3D; ab - a - b$, 这正是前文问题 1 和 2 中提到的临界值 $c_0$. </p>
+<p>该问题由德国数学家 Ferdinand Georg Frobenius 在 19 世纪末提出, 但更早的研究可追溯至英国数学家 James Joseph Sylvester. Sylvester 在讨论“鸡块问题”时, 已揭示了二元情形的解：若鸡块包装为 7 块和 11 块, 则最大无法购买的块数为 59. 这一具体案例被广泛用于数学教学中, 成为经典例题. </p>
+<p>虽然二元情形已有明确公式, 但当变量数 $n \geq 3$ 时, Frobenius数尚无通用解法. 数学家 Issai Schur 曾称其为“数论中看似简单却极难的问题”. 目前已知：</p>
+<ol>
+<li><strong>三元及以上无通解</strong>：即使对 $n&#x3D;3$, 仅在某些特殊条件下存在部分公式（如等差数列或特定互素组合）. </li>
+<li><strong>计算复杂度</strong>：确定 Frobenius数属于 NP 难问题, 当 $n$ 较大时需依赖算法或近似计算. </li>
+<li><strong>实际应用</strong>：该问题在资源调度、密码学、物流规划中均有应用. 例如, 优化自动售货机的硬币找零系统.</li>
+</ol>
+<p>最后是相关领域的一些扩展与应用：</p>
+<ol>
+<li><p><strong>代数拓扑的联系</strong><br>广义弱双 Frobenius 代数上的等变循环上同调研究, 揭示了该问题在代数结构与拓扑不变性中的深层联系. 例如, 等变循环上同调的不变量可能与 Frobenius数的计算相关. </p>
+</li>
+<li><p><strong>组合优化与算法</strong><br>目前主流的算法包括：</p>
+<ul>
+<li><strong>穷举法</strong>：通过模运算缩小搜索范围（如对二元情形取模 $a$ 或 $b$）. </li>
+<li><strong>差分法</strong>：利用动态规划标记可表数. </li>
+<li><strong>几何方法</strong>：将问题转化为格点覆盖问题, 分析超立方体的覆盖间隙.</li>
+</ul>
+</li>
+<li><p><strong>未解之谜</strong><br>对 $n \geq 3$ 的情形, 数学家仅能通过条件约束（如 $a_1 &lt; a_2 &lt; \ldots &lt; a_n$ 且互素）或特定结构（如等差数列）推导部分结果. 例如, 若 $a, b, c$ 成等差数列且互素, 则 $g(a, b, c) &#x3D; \frac{a b}{2} - a - b$（需验证条件）.</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>竞赛</category>
+      </categories>
+      <tags>
+        <tag>数学教学</tag>
+        <tag>竞赛</tag>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BNU中文LaTeX简历模板</title>
+    <url>/post/9df161f6.html</url>
+    <content><![CDATA[<p>由 <a href="https://github.com/LeyuDame">LeyuDame</a> 改进，主要参考<a href="https://github.com/Htallone/myCV">myCV</a></p>
+<span id="more"></span>
+
+<h2 id="主要改动"><a href="#主要改动" class="headerlink" title="主要改动"></a>主要改动</h2><ul>
+<li>添加了BNU校名Logo</li>
+<li>从BNU校徽上选取了师大蓝作为简历的整体配色</li>
+<li>调整了部分图标的样式</li>
+</ul>
+<h2 id="编译方式❓"><a href="#编译方式❓" class="headerlink" title="编译方式❓"></a>编译方式❓</h2><p>推荐直接在overleaf上进行编译✅</p>
+<p>（<em>待解决的问题：在overleaf上编译显示正常，但是在本地xelatex编译图片不能正常显示❓</em>）</p>
+<h2 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h2><img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401141925277.webp" alt="" style="zoom: 25%;" />
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Overleaf: <a href="https://www.overleaf.com/latex/templates/bnucv/stjnkyqdcqzm">BNUCV-BNU中文LaTeX简历模板</a></p>
+]]></content>
+      <categories>
+        <category>LaTeX模板</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>overleaf</tag>
       </tags>
   </entry>
   <entry>
@@ -246,64 +304,6 @@
       <tags>
         <tag>DeepSeek</tag>
         <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Frobenius问题（硬币问题）</title>
-    <url>/post/164132f9.html</url>
-    <content><![CDATA[<h2 id="两个生活小问题"><a href="#两个生活小问题" class="headerlink" title="两个生活小问题"></a>两个生活小问题</h2><p>在了解Frobenius问题之前, 我们先来看两个生活中的小问题. </p>
-<p>首先, 为什么高铁的座位设置大多是 “2+3” 的组合？即过道一侧是两个座位组合在一起、另一侧是三个座位组合在一起呢？设想一下, 当你和家人或是朋友出行时, 不管你们人数是多少, 只要不少于两人, 总有一种座位组合方式让每一个人和认识的人坐在一起, 而不会出现落单的情况. 当出行人数是偶数时, 只需都安排两人坐即可；当出行人数是奇数时, 只需安排三个人坐三人座, 剩下的人（如果有的话）一定是偶数, 再安排两人座若干即可. </p>
-<p>我们再看第二个问题：给定几种面值的硬币, 不能用这些硬币支付的最大金额是多少？</p>
-<span id="more"></span>
-
-<p>假设你现在去便利店买东西, 现在有若干面值的硬币：￥2, ￥3, ￥5, ￥7, 你只可以选其中两种放进你的钱包（数量不限）. 你不知道你要买的东西具体的价格, 并且便利店不设找零, 所以你希望用这两种面值的硬币去组合出尽可能多的数值, 你会怎么选？</p>
-<p>假如现在你选了￥3和￥5, 那么从不小于￥5的商品开始逐一验证, 我们发现如果商品的价格是￥7就无法组合出来, 不过价格超过￥7 时似乎都可以表示出来；接着我们选￥3和￥7继续做试验, 我们发现￥8, ￥11 都是无法用￥3 和￥7 组合出来的, 那么大于￥11的情形是否都满足可以用这两种面额的硬币进行组合呢？逐一验证的方法显然无法严格证明. </p>
-<h2 id="两个数学问题"><a href="#两个数学问题" class="headerlink" title="两个数学问题"></a>两个数学问题</h2><p>我们先不急着回答刚才的问题, 而是先看两道数学问题. </p>
-<blockquote>
-<p><strong>问题 1</strong> </p>
-<p>设正整数 $a, b$ 互素. 证明：不定方程  $a x + b y &#x3D; a b - a - b$ 没有非负整数解. </p>
-</blockquote>
-<blockquote>
-<p><strong>问题 2</strong><br>设正整数 $a, b$ 互素, 且正整数 $c$ 满足 $c &gt; a b - a - b$. 证明：不定方程 $a x + b y &#x3D; c$ 有非负整数解. </p>
-</blockquote>
-<p>事实上, 上述两个问题说的是同一件事, 也即是：对于不定方程 $a x + b y &#x3D; c$ , 只要 $c &gt; c_{0} &#x3D; a b - a - b$, 方程 $a x + b y &#x3D; c$ 就有非负整数解. </p>
-<p><strong>问题1的证明</strong> </p>
-<p>采用反证法. 若存在非负整数对 $(x_{0}, y_{0})$ 满足该不定方程, 则<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) &#x3D; a b，<br>$$<br>此时应有 $a \mid b(y_{0} + 1)$ , 因为 $(a, b) &#x3D; 1$, 故 $a \mid y_{0} + 1$ , 由于 $a$ 与 $y_{0} + 1$ 均为正整数, 得 $a \leq y_{0} + 1$. </p>
-<p>同理可证：$b \mid x_{0} + 1$, 进而 $b \leq x_{0} + 1$. 但此时左边满足<br>$$<br>a(x_{0} + 1) + b(y_{0} + 1) \geq a b + b a &#x3D; 2 a b,<br>$$<br>而右边为 $a b$, 矛盾. </p>
-<p>因此, 原方程没有非负整数解. </p>
-<p><strong>问题2的证明</strong>  </p>
-<p>这里我们要用到二元一次不定方程通解的概念. 现设方程的通解为<br>$$<br>\left{<br>\begin{array}{l}<br>x &#x3D; x_{0} + b t, \<br>y &#x3D; y_{0} - a t<br>\end{array}<br>\quad (t \in \mathbb{Z})<br>\right.<br>$$<br>其中 $(x_{0}, y_{0})$ 为方程的特解. </p>
-<p>通过调节 $t$ 的值（对 $x_{0}$ 增减 $b$）, 可找到一个解 $(x_{1}, y_{1})$ 使得 $0 \leq x_{1} \leq b - 1$. 此时<br>$$<br>b y_{1} &#x3D; c - a x_{1} &gt; a b - a - b - a x_{1} \geq a b - a - b - a(b - 1) &#x3D; -b<br>$$<br>故$y_{1} &gt; -1$, 即 $y_{1} \geq 0$. 这表明 $(x_{1}, y_{1})$ 是方程的非负整数解, 命题得证. </p>
-<h2 id="Frobenius问题（硬币问题）"><a href="#Frobenius问题（硬币问题）" class="headerlink" title="Frobenius问题（硬币问题）"></a>Frobenius问题（硬币问题）</h2><p>Frobenius问题（又称<strong>硬币问题</strong>）的核心是研究给定一组互素的正整数 $a_1, a_2, \ldots, a_n$ 时, 无法表示为这些数的非负整数线性组合的最大整数. 这个最大不可表数被称为 <strong>Frobenius数</strong>, 记作 $g(a_1, a_2, \ldots, a_n)$. 例如, 对于互素的 $a$ 和 $b$, Sylvester 在 1884 年证明了 $g(a, b) &#x3D; ab - a - b$, 这正是前文问题 1 和 2 中提到的临界值 $c_0$. </p>
-<p>该问题由德国数学家 Ferdinand Georg Frobenius 在 19 世纪末提出, 但更早的研究可追溯至英国数学家 James Joseph Sylvester. Sylvester 在讨论“鸡块问题”时, 已揭示了二元情形的解：若鸡块包装为 7 块和 11 块, 则最大无法购买的块数为 59. 这一具体案例被广泛用于数学教学中, 成为经典例题. </p>
-<p>虽然二元情形已有明确公式, 但当变量数 $n \geq 3$ 时, Frobenius数尚无通用解法. 数学家 Issai Schur 曾称其为“数论中看似简单却极难的问题”. 目前已知：</p>
-<ol>
-<li><strong>三元及以上无通解</strong>：即使对 $n&#x3D;3$, 仅在某些特殊条件下存在部分公式（如等差数列或特定互素组合）. </li>
-<li><strong>计算复杂度</strong>：确定 Frobenius数属于 NP 难问题, 当 $n$ 较大时需依赖算法或近似计算. </li>
-<li><strong>实际应用</strong>：该问题在资源调度、密码学、物流规划中均有应用. 例如, 优化自动售货机的硬币找零系统.</li>
-</ol>
-<p>最后是相关领域的一些扩展与应用：</p>
-<ol>
-<li><p><strong>代数拓扑的联系</strong><br>广义弱双 Frobenius 代数上的等变循环上同调研究, 揭示了该问题在代数结构与拓扑不变性中的深层联系. 例如, 等变循环上同调的不变量可能与 Frobenius数的计算相关. </p>
-</li>
-<li><p><strong>组合优化与算法</strong><br>目前主流的算法包括：</p>
-<ul>
-<li><strong>穷举法</strong>：通过模运算缩小搜索范围（如对二元情形取模 $a$ 或 $b$）. </li>
-<li><strong>差分法</strong>：利用动态规划标记可表数. </li>
-<li><strong>几何方法</strong>：将问题转化为格点覆盖问题, 分析超立方体的覆盖间隙.</li>
-</ul>
-</li>
-<li><p><strong>未解之谜</strong><br>对 $n \geq 3$ 的情形, 数学家仅能通过条件约束（如 $a_1 &lt; a_2 &lt; \ldots &lt; a_n$ 且互素）或特定结构（如等差数列）推导部分结果. 例如, 若 $a, b, c$ 成等差数列且互素, 则 $g(a, b, c) &#x3D; \frac{a b}{2} - a - b$（需验证条件）.</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>竞赛</category>
-      </categories>
-      <tags>
-        <tag>数学教学</tag>
-        <tag>竞赛</tag>
-        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -469,38 +469,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Tikz绘制BNU校徽</title>
-    <url>/post/2723d25d.html</url>
-    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
-<p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
-</blockquote>
-<p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
-<span id="more"></span>
-
-<p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125; </span><br><span class="line"><span class="keyword">\usepackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br></pre></td></tr></table></figure>
-
-<p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
-<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
-<ol>
-<li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
-<li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
-</ol>
-<p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>&quot;latex-workshop.latex.recipes&quot;: [...]</code>部分加入</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;XeLaTeX * 2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
-<p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
-]]></content>
-      <categories>
-        <category>LaTeX模板</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>Tikz</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决Github port 443 Time out问题</title>
     <url>/post/cbb03b27.html</url>
     <content><![CDATA[<p>今天push到远程仓库的时候系统报错：</p>
@@ -590,27 +558,161 @@
       </tags>
   </entry>
   <entry>
-    <title>乡村将兴，胡不归</title>
-    <url>/post/daa65a32.html</url>
-    <content><![CDATA[<blockquote>
-<p>这是我在读高一时一次期中考的语文作文，这篇文章在当时获得了55分的高分（满分60）并全年级印发。后来我曾经一度忘记了其中的具体内容，直到最近才发现了手稿，由于是考场中仓促成文，难免有不足之处，但是后半部分的层层递进的内在逻辑结构以及言简意丰的语言确实有值得回味之处。现重新整理成电子稿的形式存档，全文如下：</p>
+    <title>Tikz绘制BNU校徽</title>
+    <url>/post/2723d25d.html</url>
+    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
+<p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
 </blockquote>
+<p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
 <span id="more"></span>
 
-<p>当今的中国，发展迅速，突飞猛进，乡村与城市齐头并进。上海，作为中国城市的代表，有着国际视野和大都市的气息；乡村，在新政策的支持下同样吸引着无数人前去创业。对此，我更倾向于到乡村生活、创业。</p>
-<p>随着城市的发展，大批人口涌入城市，谋求自身发展的同时也积极地参与城市的建设。于是城市日益发达，城市化的水平也不断提高，但随之也引来了一系列问题：人口压力、工业污染……但由于政府的有效调控，这些问题正逐步得到解决。反观乡村，人口大幅减少，污染企业迁入，乡政府疏于管理，这些问题不但没有得到解决，反倒不断堆积，日益突出。由此看来，乡村相比于城市，更需要得到关注与支持，更需要发展。</p>
-<p>“田园将芜，胡不归？”淘渊明由于官场的黑暗而回到家乡，在整理荒芜田园的同时，也不断塑造着自己淡泊宁静的心境。而身处大发展的新时代的我，面对将要振兴的乡村，也不免发出一句感叹：“乡村将兴，胡不归？”</p>
-<p>如今，乡村逐渐开始发展，也取得一些令人瞩目的成绩：如全村脱贫、生态环境改善、交通更加便利等等，但仍有不少问题有待解决。首先是教育，即使接受义务教育的覆盖率超过九成，又有多少人知道那些山区孩子上学路的遥远与艰辛？即使“六元早餐”已经普及，又有多少人知道他们的午餐和晚餐还是一如既往？其次是基础设施的建设，当大数人为户户都通水泥路而雀跃欢呼时，有多少人注意到路边随意堆放的垃圾？如此种种，使我的改善乡村环境、建设美丽乡村的希望更加迫切。乡村未兴，胡不归？</p>
-<p>国家的发展离不开乡村的发展，“绿水青山就是金山银山”，“小康不小康，关键看老乡”，在习近平总书记的号召下，越来越多的人投入到建设乡村的队伍中：放牧戍边的卓嘎和央宗、放弃优越生活的秦玥飞、乡村医生“兰小草”王珏……美丽乡村的建设欣欣向荣，乡村将兴，胡不归？</p>
-<p>我希望我也能投入到乡村的建设中去，为国家富强、民族复兴献出自己的一份哪怕是很微薄的力量。这样，“冰花男孩”的悲剧就不会再发生，乡村会更加富裕、文明、美丽。</p>
-<p>在新政策的支持下，乡村走向振兴是必然的结果。乡村必兴，胡不归？</p>
-<blockquote>
-<p>原答题卡扫描件如下，可以看出书写还是比较工整的，全文没有一个涂改之处。以后有空写一写当时在考场上写这篇文章的心路历程❤️</p>
+<p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125; </span><br><span class="line"><span class="keyword">\usepackage</span>&#123;pgfplots&#125;</span><br><span class="line"><span class="keyword">\pgfplotsset</span>&#123;compat=1.18&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
+<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
+<ol>
+<li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
+<li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
+</ol>
+<p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>&quot;latex-workshop.latex.recipes&quot;: [...]</code>部分加入</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;XeLaTeX * 2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
+]]></content>
+      <categories>
+        <category>LaTeX模板</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>Tikz</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一份简洁易用的美赛LaTeX模板</title>
+    <url>/post/ba7a336d.html</url>
+    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
+<span id="more"></span>
+
+<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
+
+<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
+<p>“要想拿O奖，首先得长得像O奖。”</p>
 </blockquote>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202312272302098.webp"/>
+<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
+<ul>
+<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
+<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
+<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
+<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
+<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
+<li>增加了超链接</li>
+<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
+</ul>
+<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
+<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
+<thead>
+<tr>
+<th>缩略语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i.e., blabla</td>
+<td>也即是blabla（一定加逗号）</td>
+</tr>
+<tr>
+<td>e.g., blabla</td>
+<td>例如，blabla</td>
+</tr>
+<tr>
+<td>, etc.   blabla</td>
+<td>，等等。blabla</td>
+</tr>
+<tr>
+<td>n.b.</td>
+<td>特别注意</td>
+</tr>
+<tr>
+<td>cf.</td>
+<td>参见</td>
+</tr>
+</tbody></table>
+<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
+<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
+</li>
+<li><p>Axmath：像输入法一样输入公式</p>
+</li>
+<li><p>Mathpix Snip：OCR</p>
+</li>
+<li><p>latex-formatter（vscode扩展）：格式化</p>
+</li>
+</ul>
+<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
+
+<p>本地编译：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
+<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
+<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>MCM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>寒假学科营备课经验</title>
+    <url>/post/9d56260e.html</url>
+    <content><![CDATA[<p>前几天整理了一下1月份上学科营的内容，连续多天的课程为我后续进行批量大规模的备课提供了可借鉴的经验基础。</p>
+<span id="more"></span>
+
+<p>总的说来，有以下几点技术加持。</p>
+<p>一是markdown相关。从Mathpix Snip到Typora再到vscode+marp流水线式“生产”讲稿以及课件以及答案解析，贯穿始终的md语法让一切操作都变得无比丝滑。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph </span><br><span class="line">    A(Mathpix Snip) --&gt;|截图和识别数学公式| B(Typora)</span><br><span class="line">    B --&gt;|编辑和格式化文档| C(VSCode+Marp)</span><br><span class="line">    C --&gt;|创建和预览幻灯片| D(最终讲稿和课件输出)</span><br><span class="line">    </span><br><span class="line">    style A fill:#e6f7ff,stroke:#5b8db8,stroke-width:2px</span><br><span class="line">    style B fill:#fff0f6,stroke:#d35d6e,stroke-width:2px</span><br><span class="line">    style C fill:#fffbe6,stroke:#f4b942,stroke-width:2px</span><br><span class="line">    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>二是AI相关。为了让课堂不单调，我尝试用GPT-4生成了一些谜语和插图。</p>
+<p>比如讲韦达定理时，我本打算找一则相关的谜语，但是在网上找了一圈也没有发现合适的，于是让GPT-4写了一个：</p>
+<blockquote>
+<p><em>在代数的海洋中，我是解的秘密钥匙；两个根的和与积，藏于系数之中。</em></p>
+</blockquote>
+<p>还有关于放缩法的谜语：</p>
+<blockquote>
+<p><em>在数学的世界，我轻巧舞动，缩小复杂，放大简明。在比例的游戏，我变换身影，我是何法，巧解难题？</em></p>
+</blockquote>
+<p>以及几幅章节页的插图：</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010815221.webp" style="zoom: 25%;" />
+
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010817513.webp" alt="" style="zoom: 25%;" />
+
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010816770.webp" style="zoom: 25%;" />
+
+<p>因为这几节课的核心在于“对称性”思想，所以这些插图虽然里面的符号看上去有些奇怪，但是整体的效果仍然很好地突出了主题。</p>
+<p>谜语是简单的，插图是抽象的，这几节课同学们反馈的效果还不错，相当于是咖啡加糖，起到了恰到好处的调节作用。顺便再提一下上面的这个mermaid图也是GPT-4画的。😋</p>
 ]]></content>
       <tags>
-        <tag>小作文</tag>
+        <tag>数学教学</tag>
       </tags>
   </entry>
   <entry>
@@ -713,96 +815,83 @@
       </tags>
   </entry>
   <entry>
-    <title>一份简洁易用的美赛LaTeX模板</title>
-    <url>/post/ba7a336d.html</url>
-    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
+    <title>番石榴</title>
+    <url>/post/f20b745e.html</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>小作文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo部署出现Spawn failed问题</title>
+    <url>/post/cf2181b.html</url>
+    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
 <span id="more"></span>
 
-<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
-<p>“要想拿O奖，首先得长得像O奖。”</p>
-</blockquote>
-<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
 <ul>
-<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
-<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
-<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
-<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
-<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
-<li>增加了超链接</li>
-<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
-</ul>
-<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
-<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+<li><p>打开命令行输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
-<thead>
-<tr>
-<th>缩略语</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>i.e., blabla</td>
-<td>也即是blabla（一定加逗号）</td>
-</tr>
-<tr>
-<td>e.g., blabla</td>
-<td>例如，blabla</td>
-</tr>
-<tr>
-<td>, etc.   blabla</td>
-<td>，等等。blabla</td>
-</tr>
-<tr>
-<td>n.b.</td>
-<td>特别注意</td>
-</tr>
-<tr>
-<td>cf.</td>
-<td>参见</td>
-</tr>
-</tbody></table>
-<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
-<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
+<p>得到报错</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Axmath：像输入法一样输入公式</p>
+<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Mathpix Snip：OCR</p>
+<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
 </li>
-<li><p>latex-formatter（vscode扩展）：格式化</p>
+<li><p>命令行再次输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
 </li>
 </ul>
-<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
-
-<p>本地编译：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
-
-<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
-<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
-<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
 ]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
       <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>MCM</tag>
+        <tag>git</tag>
+        <tag>bug</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>乡村将兴，胡不归</title>
+    <url>/post/daa65a32.html</url>
+    <content><![CDATA[<blockquote>
+<p>这是我在读高一时一次期中考的语文作文，这篇文章在当时获得了55分的高分（满分60）并全年级印发。后来我曾经一度忘记了其中的具体内容，直到最近才发现了手稿，由于是考场中仓促成文，难免有不足之处，但是后半部分的层层递进的内在逻辑结构以及言简意丰的语言确实有值得回味之处。现重新整理成电子稿的形式存档，全文如下：</p>
+</blockquote>
+<span id="more"></span>
+
+<p>当今的中国，发展迅速，突飞猛进，乡村与城市齐头并进。上海，作为中国城市的代表，有着国际视野和大都市的气息；乡村，在新政策的支持下同样吸引着无数人前去创业。对此，我更倾向于到乡村生活、创业。</p>
+<p>随着城市的发展，大批人口涌入城市，谋求自身发展的同时也积极地参与城市的建设。于是城市日益发达，城市化的水平也不断提高，但随之也引来了一系列问题：人口压力、工业污染……但由于政府的有效调控，这些问题正逐步得到解决。反观乡村，人口大幅减少，污染企业迁入，乡政府疏于管理，这些问题不但没有得到解决，反倒不断堆积，日益突出。由此看来，乡村相比于城市，更需要得到关注与支持，更需要发展。</p>
+<p>“田园将芜，胡不归？”淘渊明由于官场的黑暗而回到家乡，在整理荒芜田园的同时，也不断塑造着自己淡泊宁静的心境。而身处大发展的新时代的我，面对将要振兴的乡村，也不免发出一句感叹：“乡村将兴，胡不归？”</p>
+<p>如今，乡村逐渐开始发展，也取得一些令人瞩目的成绩：如全村脱贫、生态环境改善、交通更加便利等等，但仍有不少问题有待解决。首先是教育，即使接受义务教育的覆盖率超过九成，又有多少人知道那些山区孩子上学路的遥远与艰辛？即使“六元早餐”已经普及，又有多少人知道他们的午餐和晚餐还是一如既往？其次是基础设施的建设，当大数人为户户都通水泥路而雀跃欢呼时，有多少人注意到路边随意堆放的垃圾？如此种种，使我的改善乡村环境、建设美丽乡村的希望更加迫切。乡村未兴，胡不归？</p>
+<p>国家的发展离不开乡村的发展，“绿水青山就是金山银山”，“小康不小康，关键看老乡”，在习近平总书记的号召下，越来越多的人投入到建设乡村的队伍中：放牧戍边的卓嘎和央宗、放弃优越生活的秦玥飞、乡村医生“兰小草”王珏……美丽乡村的建设欣欣向荣，乡村将兴，胡不归？</p>
+<p>我希望我也能投入到乡村的建设中去，为国家富强、民族复兴献出自己的一份哪怕是很微薄的力量。这样，“冰花男孩”的悲剧就不会再发生，乡村会更加富裕、文明、美丽。</p>
+<p>在新政策的支持下，乡村走向振兴是必然的结果。乡村必兴，胡不归？</p>
+<blockquote>
+<p>原答题卡扫描件如下，可以看出书写还是比较工整的，全文没有一个涂改之处。以后有空写一写当时在考场上写这篇文章的心路历程❤️</p>
+</blockquote>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202312272302098.webp"/>
+]]></content>
+      <tags>
+        <tag>小作文</tag>
       </tags>
   </entry>
   <entry>
@@ -897,25 +986,6 @@
       </tags>
   </entry>
   <entry>
-    <title>番石榴</title>
-    <url>/post/f20b745e.html</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>小作文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决vscode编译latex的两个小困扰</title>
     <url>/post/622bc5ab.html</url>
     <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
@@ -981,76 +1051,6 @@
         <tag>LaTeX</tag>
         <tag>vscode</tag>
         <tag>copilot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>寒假学科营备课经验</title>
-    <url>/post/9d56260e.html</url>
-    <content><![CDATA[<p>前几天整理了一下1月份上学科营的内容，连续多天的课程为我后续进行批量大规模的备课提供了可借鉴的经验基础。</p>
-<span id="more"></span>
-
-<p>总的说来，有以下几点技术加持。</p>
-<p>一是markdown相关。从Mathpix Snip到Typora再到vscode+marp流水线式“生产”讲稿以及课件以及答案解析，贯穿始终的md语法让一切操作都变得无比丝滑。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph </span><br><span class="line">    A(Mathpix Snip) --&gt;|截图和识别数学公式| B(Typora)</span><br><span class="line">    B --&gt;|编辑和格式化文档| C(VSCode+Marp)</span><br><span class="line">    C --&gt;|创建和预览幻灯片| D(最终讲稿和课件输出)</span><br><span class="line">    </span><br><span class="line">    style A fill:#e6f7ff,stroke:#5b8db8,stroke-width:2px</span><br><span class="line">    style B fill:#fff0f6,stroke:#d35d6e,stroke-width:2px</span><br><span class="line">    style C fill:#fffbe6,stroke:#f4b942,stroke-width:2px</span><br><span class="line">    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>二是AI相关。为了让课堂不单调，我尝试用GPT-4生成了一些谜语和插图。</p>
-<p>比如讲韦达定理时，我本打算找一则相关的谜语，但是在网上找了一圈也没有发现合适的，于是让GPT-4写了一个：</p>
-<blockquote>
-<p><em>在代数的海洋中，我是解的秘密钥匙；两个根的和与积，藏于系数之中。</em></p>
-</blockquote>
-<p>还有关于放缩法的谜语：</p>
-<blockquote>
-<p><em>在数学的世界，我轻巧舞动，缩小复杂，放大简明。在比例的游戏，我变换身影，我是何法，巧解难题？</em></p>
-</blockquote>
-<p>以及几幅章节页的插图：</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010815221.webp" style="zoom: 25%;" />
-
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010817513.webp" alt="" style="zoom: 25%;" />
-
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010816770.webp" style="zoom: 25%;" />
-
-<p>因为这几节课的核心在于“对称性”思想，所以这些插图虽然里面的符号看上去有些奇怪，但是整体的效果仍然很好地突出了主题。</p>
-<p>谜语是简单的，插图是抽象的，这几节课同学们反馈的效果还不错，相当于是咖啡加糖，起到了恰到好处的调节作用。顺便再提一下上面的这个mermaid图也是GPT-4画的。😋</p>
-]]></content>
-      <tags>
-        <tag>数学教学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决hexo部署出现Spawn failed问题</title>
-    <url>/post/cf2181b.html</url>
-    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
-<ul>
-<li><p>打开命令行输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>得到报错</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
-</li>
-<li><p>命令行再次输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>git</tag>
-        <tag>bug</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
