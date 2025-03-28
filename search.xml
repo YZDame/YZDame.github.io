@@ -124,7 +124,7 @@
   </entry>
   <entry>
     <title>Cherry Studio + 硅基流动，让你的DeepSeek体验上到next level</title>
-    <url>/post/undefined.html</url>
+    <url>/post/d83ec50a.html</url>
     <content><![CDATA[<h2 id="🎯-痛点与解决方案"><a href="#🎯-痛点与解决方案" class="headerlink" title="🎯 痛点与解决方案"></a>🎯 痛点与解决方案</h2><p>遇到DeepSeek服务器繁忙？😫</p>
 <p>本地部署硬件算力不足？🤔</p>
 <p> 蒸馏版模型效果不满意？😑</p>
@@ -416,24 +416,15 @@
   </entry>
   <entry>
     <title>Mistral AI OCR介绍</title>
-    <url>/post/undefined.html</url>
-    <content><![CDATA[<blockquote>
-<p>从本期开始将整理一些常用的LaTeX相关工具，回归一下本账号成立的初衷。</p>
-</blockquote>
-<h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>在过去，最好用的识别数学公式并进行代码转换的网站&#x2F;软件莫过于Mathpix了：支持各种格式转换，比如pdf,png到tex,md，当然也包括docx等等，无论是pdf文档转换还是截图识别，从移动端的Snip App再到桌面客户端以及网页版、浏览器插件全生态的覆盖让使用体验无比丝滑。</p>
+    <url>/post/856f6c2.html</url>
+    <content><![CDATA[<h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>在过去，最好用的识别数学公式并进行代码转换的网站&#x2F;软件莫过于Mathpix了：支持各种格式转换，比如pdf,png到tex,md，当然也包括docx等等，无论是pdf文档转换还是截图识别，从移动端的Snip App再到桌面客户端以及网页版、浏览器插件全生态的覆盖让使用体验无比丝滑。</p>
 <p>但免费版的使用额度相当有限，而付费订阅又太贵（一年50美刀）；此外，网页版还偶尔会出现网络连接不稳定的情形。</p>
 <p>不过现在，号称地表最强的OCR工具Mistral出现了。这是一家法国的初创AI公司，可以理解为欧洲版的DeepSeek，它的价格也十分便宜（OCR功能大概1美刀可以转换上千页pdf）。</p>
 <span id="more"></span>
 
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>直接访问官网聊天界面（可能需要用手机号注册账号）：</p>
-<blockquote>
-<p><a href="https://chat.mistral.ai/chat">https://chat.mistral.ai/chat</a></p>
-</blockquote>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>直接访问<a href="https://chat.mistral.ai/chat">官网聊天界面</a>（可能需要用手机号注册账号）：</p>
 <p>像其他大语言模型一样对话框内上传文件，输入“转换成markdown”即可；比如这里我上传了一篇和DeepSeek-R1的论文：<br><img data-src="https://files.mdnice.com/user/47704/3ae9056d-d5fc-40c8-857a-f2bf86da6e82.png"><br>等待几秒钟，即可得到转换后的markdown代码。<br>进一步地，利用Typora或Obsidian等markdown编辑器，即可查看或转换成pdf、docx等格式（可能需要额外安装pandoc）。</p>
-<h3 id="网页版效果展示"><a href="#网页版效果展示" class="headerlink" title="网页版效果展示"></a>网页版效果展示</h3><p>更多效果展示请参阅官网介绍：</p>
-<blockquote>
-<p><a href="https://mistral.ai/news/mistral-ocr">https://mistral.ai/news/mistral-ocr</a></p>
-</blockquote>
+<h3 id="网页版效果展示"><a href="#网页版效果展示" class="headerlink" title="网页版效果展示"></a>网页版效果展示</h3><p>更多效果展示请参阅<a href="https://mistral.ai/news/mistral-ocr">官网介绍</a>：</p>
 <p>这是原来的pdf文件：<br><img data-src="https://files.mdnice.com/user/47704/dab88e93-3111-4cf5-8cad-1834b9db7cf7.png"><br>这是转化后并在Typora中显示的效果（主题：Newsprint）：<br><img data-src="https://files.mdnice.com/user/47704/8ab09e15-a008-4c01-b5ac-02b27bd12724.png" alt="目录（带超链接）"><br><img data-src="https://files.mdnice.com/user/47704/3084eea9-ffe9-40a5-b44e-cc22399868b6.png" alt="数学公式"><br><img data-src="https://files.mdnice.com/user/47704/6e075225-8698-4f6a-8ca1-ee6eda6313a1.png" alt="表格"></p>
 <p>可以看到，除了图片外的效果非常不错，但如果要把图片也提取出来并在相应位置保留，就需要用到下面的方法了。</p>
 <h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><p>除了在官网的对话界面处理文件外，也可以通过API调用进行批量处理。<br>感谢<a href="https://github.com/nicekate">@nicekate</a> 提供的Python代码，可以实现在本地调用Mistral API进行文件处理，并且在B站上还有相应的演示视频。</p>
@@ -442,10 +433,7 @@
 <li>B站视频：<br> 【实测 Mistral OCR ：世界最佳文档理解模型？】 <a href="https://www.bilibili.com/video/BV1Bw92YiEEH">https://www.bilibili.com/video/BV1Bw92YiEEH</a></li>
 </ol>
 <p>配置方法也非常简单，只需要申请一个自己的API key，然后再把上面的仓库clone下来，填入相应的API key即可。</p>
-<h3 id="申请API-key"><a href="#申请API-key" class="headerlink" title="申请API key"></a>申请API key</h3><p>在控制台左侧菜单栏点击”API Keys”，然后点击右上角的“Create new key”，复制即可。</p>
-<blockquote>
-<p><a href="https://console.mistral.ai/home">https://console.mistral.ai/home</a></p>
-</blockquote>
+<h3 id="申请API-key"><a href="#申请API-key" class="headerlink" title="申请API key"></a>申请API key</h3><p>在<a href="https://console.mistral.ai/home">控制台</a>左侧菜单栏点击”API Keys”，然后点击右上角的“Create new key”，复制即可。</p>
 <h3 id="下载Python代码"><a href="#下载Python代码" class="headerlink" title="下载Python代码"></a>下载Python代码</h3><p>先将上述仓库clone到本地：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/nicekate/mistral-ocr.git</span><br></pre></td></tr></table></figure>
 <p>再安装依赖项：</p>
@@ -453,8 +441,7 @@
 <p>在<code>pdf_ocr.py</code> 中修改 API 密钥和 PDF 文件路径即可（72～73行）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">API_KEY = <span class="string">&quot;填入你自己的api key&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PDF_PATH = &quot;</span>xxx.pd<span class="string">f&quot;</span></span><br></pre></td></tr></table></figure>
 <p>运行文件，即可在同目录下找到转换后的文件夹<code>ocr_results_xxx</code>，其中包含了转换后的markdown文件和图片文件。</p>
-<h3 id="本地转换效果展示"><a href="#本地转换效果展示" class="headerlink" title="本地转换效果展示"></a>本地转换效果展示</h3><p>主题：Typora GitHub<br><img data-src="https://files.mdnice.com/user/47704/beab2cdd-aa9f-47f8-a547-f577927edff1.jpg"></p>
-<p><img data-src="https://files.mdnice.com/user/47704/9abcf7a8-b320-4011-b699-863c730a5b27.jpg"></p>
+<h3 id="本地转换效果展示"><a href="#本地转换效果展示" class="headerlink" title="本地转换效果展示"></a>本地转换效果展示</h3><h3 id=""><a href="#" class="headerlink" title=""></a><img data-src="https://files.mdnice.com/user/47704/beab2cdd-aa9f-47f8-a547-f577927edff1.jpg"></h3><p><img data-src="https://files.mdnice.com/user/47704/9abcf7a8-b320-4011-b699-863c730a5b27.jpg"></p>
 <h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><p>有时需要同时进行多个PDF文件的转换，于是在此基础上我自己动手增加了批处理功能，可以将同一目录下的所有PDF文件进行转换。</p>
 <p>具体修改如下：</p>
 <ol>
@@ -472,7 +459,7 @@
 <li>完美翻译 PDF 的第一步-Mistral OCR 初步使用指南 <a href="https://zhuanlan.zhihu.com/p/28801320889">https://zhuanlan.zhihu.com/p/28801320889</a></li>
 <li>【实测 Mistral OCR ：世界最佳文档理解模型？】 <a href="https://www.bilibili.com/video/BV1Bw92YiEEH">https://www.bilibili.com/video/BV1Bw92YiEEH</a></li>
 <li><a href="https://github.com/nicekate/mistral-ocr">https://github.com/nicekate/mistral-ocr</a></li>
-<li>在前者基础上增加批处理功能：<a href="https://github.com/YZDame/mistral-ocr">https://github.com/YZDame/mistral-ocr</a></li>
+<li><a href="https://github.com/YZDame/mistral-ocr">https://github.com/YZDame/mistral-ocr</a></li>
 </ol>
 ]]></content>
       <tags>
@@ -603,99 +590,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一份简洁易用的美赛LaTeX模板</title>
-    <url>/post/ba7a336d.html</url>
-    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
-<span id="more"></span>
-
-<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
-<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
-
-<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
-<p>“要想拿O奖，首先得长得像O奖。”</p>
-</blockquote>
-<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
-<ul>
-<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
-<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
-<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
-<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
-<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
-<li>增加了超链接</li>
-<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
-</ul>
-<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
-<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
-<thead>
-<tr>
-<th>缩略语</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>i.e., blabla</td>
-<td>也即是blabla（一定加逗号）</td>
-</tr>
-<tr>
-<td>e.g., blabla</td>
-<td>例如，blabla</td>
-</tr>
-<tr>
-<td>, etc.   blabla</td>
-<td>，等等。blabla</td>
-</tr>
-<tr>
-<td>n.b.</td>
-<td>特别注意</td>
-</tr>
-<tr>
-<td>cf.</td>
-<td>参见</td>
-</tr>
-</tbody></table>
-<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
-<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
-</li>
-<li><p>Axmath：像输入法一样输入公式</p>
-</li>
-<li><p>Mathpix Snip：OCR</p>
-</li>
-<li><p>latex-formatter（vscode扩展）：格式化</p>
-</li>
-</ul>
-<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
-
-<p>本地编译：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
-
-<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
-<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
-<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
-]]></content>
-      <categories>
-        <category>数学建模</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>MCM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>乡村将兴，胡不归</title>
     <url>/post/daa65a32.html</url>
     <content><![CDATA[<blockquote>
@@ -819,6 +713,99 @@
       </tags>
   </entry>
   <entry>
+    <title>一份简洁易用的美赛LaTeX模板</title>
+    <url>/post/ba7a336d.html</url>
+    <content><![CDATA[<h2 id="峥嵘岁月"><a href="#峥嵘岁月" class="headerlink" title="峥嵘岁月"></a>峥嵘岁月</h2><p>记得第一次参加美赛是是一个寒冷潮湿的早春，那时还不怎么会$\LaTeX$，我们用word+在线文档小程序“语文建模”，比赛的第三天在本地word上从早写到晚，结果一次不小心的操作（应该是先误删后保存再关闭文件）导致这一天书写的内容功亏一篑，虽然有手动备份但也是当天早上非常原始的版本。幸好当时还有把新建的文件放到桌面上编辑的习惯，登录OneDrive才重新恢复了文件。</p>
+<span id="more"></span>
+
+<p>迎接第二次参赛的是更加充分的准备与技术加持。当时一整个寒假都在学习相关知识，这里不得不力荐一下2021年O奖得主<a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302"><strong>浩然讲数学建模</strong></a>，他的这个合集尤其是论文写作这块讲得非常棒；另一方面，我也在思考如何提前搜集好相关的资源例如数据网站并汇总到一起形成一个网页，于是我建立了自己的第一个Pages，也就是现在博客的<a href="https://leyudame.github.io/post/8bdc7cc5.html">第一篇内容</a>🤣；最后就是提前准备好论文模板，在一段时间的搜寻后发现了这样一份简洁易用的$\LaTeX$模板——[EasyMCM][1].</p>
+<img data-src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/mcmlatex.webp" alt="" style="zoom: 50%;" />
+
+<h2 id="激扬文字"><a href="#激扬文字" class="headerlink" title="激扬文字"></a>激扬文字</h2><blockquote>
+<p>“要想拿O奖，首先得长得像O奖。”</p>
+</blockquote>
+<p>[<strong>浩然讲数学建模</strong>][2]合集视频可以说几乎都是围绕这句话展开的，所以要长得像O奖，先从论文模板开始！根据他的O奖论文模板顺藤摸瓜，我找到了原始的模板并在此基础上综合其他O奖论文中的特色进行了细微的修改与补充，其中主要的改进有</p>
+<ul>
+<li>完善了并列子图的代码，组图和每个子图可分别定义caption和label，精确控制子图间距，1x2,1x3,2x2等等排列方式自由组合</li>
+<li>引入<code>algorithm2e</code>宏包，添加了伪代码的模板</li>
+<li>完善了附录代码的添加功能，直接将代码文件放在<code>code</code>文件夹下即可</li>
+<li>完善了<code>BibTeX</code>的引用方法，可以将参考文献的<code>.bib</code>文件直接放在根目录下自动生成参考文献</li>
+<li>定义了<code>\upcite</code>命令，将引用符号上标</li>
+<li>增加了超链接</li>
+<li>调整了模型假设部分的格式，采用了2020A题O奖论文#200134（经典）中的样式，比如这个$\hookrightarrow$</li>
+</ul>
+<h3 id="上述代码片段"><a href="#上述代码片段" class="headerlink" title="上述代码片段"></a>上述代码片段</h3><p>下面列出了部分的新增代码片段，更方便直接copy😋</p>
+<h4 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h4><h5 id="1x2的组图"><a href="#1x2的组图" class="headerlink" title="1x2的组图"></a>1x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x2的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125; <span class="comment">%设置缩放比例，这里的.5代表缩放为原来的50%</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;left&#125;<span class="keyword">\label</span>&#123;subfig:left&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\hspace</span>&#123;10mm&#125; <span class="comment">%%%%%%%%%%%%%%%%%%调整子图间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[b]&#123;.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;right&#125;<span class="keyword">\label</span>&#123;subfig:right&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Two images&#125;<span class="keyword">\label</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1x3的组图"><a href="#1x3的组图" class="headerlink" title="1x3的组图"></a>1x3的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个1x3的组图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.3<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-c.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>*&#123;&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Three images&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;Three images&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2x2的组图"><a href="#2x2的组图" class="headerlink" title="2x2的组图"></a>2x2的组图</h5><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%% 这是一个2x2的组图（可推广至2x3,3x3等）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!htbp]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右上&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%  \begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%          \centering</span></span><br><span class="line">	<span class="comment">%          \includegraphics[width=\textwidth]&#123;img/example-image-a.pdf.pdf&#125;</span></span><br><span class="line">	<span class="comment">%          \caption&#123;&#125;</span></span><br><span class="line">	<span class="comment">%          \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%  \end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\qquad</span></span><br><span class="line">	<span class="comment">%%让图片换行，这就是实现多行组图的简单原理</span></span><br><span class="line">  <span class="comment">%%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了</span></span><br><span class="line">  <span class="comment">%%注意调整比例以及间距</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-a.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;左下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;subfigure&#125;[t]&#123;0.4<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;img/example-image-b.pdf&#125;</span><br><span class="line">		<span class="keyword">\caption</span>&#123;右下&#125;</span><br><span class="line">		<span class="keyword">\label</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">	<span class="comment">%\begin&#123;subfigure&#125;[t]&#123;0.3\textwidth&#125;</span></span><br><span class="line">	<span class="comment">%        \centering</span></span><br><span class="line">	<span class="comment">%        \includegraphics[width=\textwidth]&#123;img/npca13.pdf&#125;</span></span><br><span class="line">	<span class="comment">%        \caption&#123;result&#125;</span></span><br><span class="line">	<span class="comment">%        \label&#123;&#125;</span></span><br><span class="line">	<span class="comment">%\end&#123;subfigure&#125;</span></span><br><span class="line">	<span class="keyword">\caption</span>&#123;组图组图变变变&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;[H]</span><br><span class="line">	<span class="keyword">\KwIn</span>&#123;输入&#125;</span><br><span class="line">	<span class="keyword">\KwOut</span>&#123;输出 &#125;</span><br><span class="line">	initialization<span class="keyword">\;</span></span><br><span class="line">	<span class="keyword">\While</span>&#123;not at end of this document&#125;&#123;</span><br><span class="line">		read current<span class="keyword">\;</span></span><br><span class="line">		<span class="keyword">\Repeat</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\eIf</span>&#123;understand&#125;&#123;</span><br><span class="line">			go to next section<span class="keyword">\;</span></span><br><span class="line">			current section becomes this one<span class="keyword">\;</span></span><br><span class="line">		&#125;&#123;</span><br><span class="line">			go back to the beginning of current section<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">\Do</span>&#123;this end condition&#125;&#123;</span><br><span class="line">			do these things<span class="keyword">\;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;How to write algorithms&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>请使用<code>\href&#123;url&#125;&#123;caption&#125;</code>，例如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\href</span>&#123;<span class="link">https://www.wolframalpha.com</span>&#125;&#123;wolframalpha&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="浪遏飞舟"><a href="#浪遏飞舟" class="headerlink" title="浪遏飞舟"></a>浪遏飞舟</h2><h3 id="一些常见的缩略语💬"><a href="#一些常见的缩略语💬" class="headerlink" title="一些常见的缩略语💬"></a>一些常见的缩略语💬</h3><table>
+<thead>
+<tr>
+<th>缩略语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i.e., blabla</td>
+<td>也即是blabla（一定加逗号）</td>
+</tr>
+<tr>
+<td>e.g., blabla</td>
+<td>例如，blabla</td>
+</tr>
+<tr>
+<td>, etc.   blabla</td>
+<td>，等等。blabla</td>
+</tr>
+<tr>
+<td>n.b.</td>
+<td>特别注意</td>
+</tr>
+<tr>
+<td>cf.</td>
+<td>参见</td>
+</tr>
+</tbody></table>
+<h3 id="一些实用的-LaTeX-辅助工具🔧"><a href="#一些实用的-LaTeX-辅助工具🔧" class="headerlink" title="一些实用的$\LaTeX$辅助工具🔧"></a>一些实用的$\LaTeX$辅助工具🔧</h3><ul>
+<li><p>[excel2latex][3]：在excel里制作表格，生成相应的$\LaTeX$代码</p>
+</li>
+<li><p>Axmath：像输入法一样输入公式</p>
+</li>
+<li><p>Mathpix Snip：OCR</p>
+</li>
+<li><p>latex-formatter（vscode扩展）：格式化</p>
+</li>
+</ul>
+<h3 id="下载与使用"><a href="#下载与使用" class="headerlink" title="下载与使用"></a>下载与使用</h3><p>可以直接把该仓库clone到本地，也可以前往GitHub下载最新的源文档<a href="https://github.com/LeyuDame/LDMCM">LDMCM</a></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/LeyuDame/LDMCM.git</span><br></pre></td></tr></table></figure>
+
+<p>本地编译：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk main.tex</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以上传到overleaf上进行在线编译，编译器选择<code>xelatex</code>，点击一次<code>compile</code>即可</p>
+<p>[1]: <a href="https://github.com/xjtu-blacksmith/easymcm">https://github.com/xjtu-blacksmith/easymcm</a>	“EasyMCM仓库地址（已于2023年上半年归档）”</p>
+<p>[2]: <a href="https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302">https://space.bilibili.com/384497590/channel/collectiondetail?sid=424302</a>	“浩然讲数学建模”<br>[3]: <a href="https://github.com/ivankokan/Excel2LaTeX">https://github.com/ivankokan/Excel2LaTeX</a></p>
+]]></content>
+      <categories>
+        <category>数学建模</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>模板</tag>
+        <tag>MCM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>美赛模板LDMCM更新说明</title>
     <url>/post/a977b826.html</url>
     <content><![CDATA[<p>本次更新主要是新增了对LLM的引用方式以及附录中2024美赛要求的<em>Report on Use of AI</em>. </p>
@@ -910,40 +897,22 @@
       </tags>
   </entry>
   <entry>
-    <title>解决hexo部署出现Spawn failed问题</title>
-    <url>/post/cf2181b.html</url>
-    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
-<ul>
-<li><p>打开命令行输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>得到报错</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
-</li>
-<li><p>命令行再次输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
-</li>
-</ul>
-]]></content>
+    <title>番石榴</title>
+    <url>/post/f20b745e.html</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
-        <tag>git</tag>
-        <tag>bug</tag>
-        <tag>hexo</tag>
+        <tag>小作文</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,25 +984,6 @@
       </tags>
   </entry>
   <entry>
-    <title>番石榴</title>
-    <url>/post/f20b745e.html</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="356503d1b768d834bd1ad3858e81b4a34c5967a40f72fcd297ce61e4aeebd118">865086833ea6bdaa263b125265ced9421d9bca95c5b6247fe5cb91cf7184ea423f9b8c4bdeb67cb8acb5aa8cadc3ed0c7951af0d4446fcd6d0cc7fdc0a6e32c6e9c5d561f7e7c49b9e48d4d8b0e002098e1b1e575f4c61625e6aa67f4429ca833144c0ccb5954dcb018a61bada9ce0bf903ed19350b03269083d17d6f28635030185ae191f3246e6850a00d9f9c9172cdcf186e107bd2ee9631f0c3a9089534f171162640347c4b8adb996e4448ac4d0d0fc69423e28fc02ef22fdb3aabaa9a5631f592e84d9fa6b3b9368d1204c745f231d96e883fc5b91bb200ee83c1cac37aaa16bdeaa14085431fdc6de66a0bf8c07a586961c72530b48e43e1827122d668d8f0007e0d40f11a00e917391746d84c2bb6ae131c30dfb38d661b16ae50fd02bf1c315137f3cd00ecd32dc2f7e832828ecb67eb98ed3f6aea09cfe8fc08a331d567cb4c4a98df6f2db8309f2a257d4bb5b991ac8df7bcfe1b2ff3a63087ee15b98ac05bc96ced9185e3c746b57d8e0a48b5b43464f412c6d5c7ffb17afbccbce6ad86d5b47a578ab867e71d83e7e79a1e27195969c57b32116f49bdd08034ad5c0bc067b357edf371504286c8b22b48e1feea2b1875791b2de0cedce43d7a83e598078045eafb8de30b0cd105d1f9b1b2915e526278568fa8144f1b7e196953d8bb67c9ad43cd0584d63f5293fd93136e63d8b46c3d143c82cc6b7319f5f8906df371b1e52e48bb00758fe9a06e60e61f1b5a148722628aebba10b9f0197da9f4c18a5b4b35e55cc07282c34263012a4c5c0584b07780bde88e4bf0e54f47fcb1c22a2435515b1c01f316ddf4ef664500e9f6e48e34e97e55b67f3e359b412307b199df7b34d3f4027f2e0a4849dd25a4b9ddd6c407ba5e5637467f9a1b49dd4b3ceacb337d90b70d8eed818a8f8676a7c2e228c6e6c3ca290b4785fcfb14e636ffbb340870823501eb7e8ce7ae7dd83e71169046ef95e37d3cc37de69226dac68955b5be49ec01339984a62f8ed171893ad7c89da68aee0e8585a56c907d97221ef78e94bdb761cefb461a6576026fa23848b165c7e74cfb11cd1926cb2cdb54b722852f9a1693dfe5bc70cf7130ce57c36824552b7753e9fa6bb2b26e0da22003cafcf2b0cbaeef11ccb5b621d56ba4c2df04be41258f51c6df5497ba9e6cea055078b7fcc8ab2f3291941759bd48e28657fba0714dc29b5dace5aa7c4aa60be6bbe08e7e06c2515a4d24067fae57d9fca0cb1887a711451eaf6c5e7d5cb535c9a8a0ea9bc743ca26c4607fff67dcf780fe034e6bc683c4dbfcf2aa3fbafc34d3ade8b6dcc72617b7596cadae106e0956ac17d46a4735dc06401a773e2c3cb4fab5fbb955f3d44bd483ab2785448d6e6a7a65d04fc2dda727e64e16a54c161b3fb71d35f5c84b42051f204e4e01ff2bd662f664538d7c1d8c25c6db782934d6a4cba1ae9c022b6989d898d2848ac27fbf16b42a7ca0a7557d33119ea7dff27db94ffa78422b806cf36eaa3cfad1b5258cf03f3c8416f978415c5173317875c837ea787ab152aca83cf4f4d4f9b74c2177a45c4341aedfbce93ba8366bc6c8067f2a2886a61348aa2ea9a2c9e18f77ca2d89cc5db0e431cb270b67ad61feb2b7bdcc801eb3e9a115a8550c954d4c863f01913eb157fbe456c4b65e60f05df01e12ca1b484e11dee81f23bd1915800d2905239f2412838a31bc00fc37dc7a4c9e19c50fca88ec4150e0044a1d96020609a36a001882cbc39c69af9c04d6ae1d3227642d8165551e1ae5ca24b850bac8d83418feabb8218b1703058993a0c49822f9facd59afaa4844ceaba2efa67131a7b4232e9a20b84b0c0dda6d1981275246981eda29f93e2362de5309de0e04160590780b4edadf36641b02093daee4c643cfc5921b7c2cb55167fa06c3ece19f2d2ccd65cee42b0c2c63ea0e5899b60138cbee800a724b1f662b6940f2ef97fcbd9492cdcb65b3461211a45c5c5b9abcc0a1b72370fa30f7249bd483cccd055f45b78629eab3d453efa9c6be44f5048fb42d728065f1b7264249fb4a84318a1ce97fb61cd7894077c59aff877db44b36c2e4be88a3dcfdbfe60bb615035b2875847af5552de2b3c94727cbbf7c066c0064c42b9148cede1788a0221d6027699ce4f7eefa910e0d4839cbf59162f256502fd1e1fa3b424822777289987ece4427ddf631a2ffdab727bf1379598dd77f27aaea342ec4f2b31c5c219db5e4843622ecba9599b637d302c65b55a6c07bb6b75cb7aeb8a6eb2d3e084e17ee9f52d766b74514d29b31f4652f662022e09604f700d1f595bf906db3143858d541e304df79ca60aa8dca0f7da6c1f2e91abb7234785066f07a9377bdcf6c22001d007061dbf1cb512b0cc4dd36486596edafe7e5521771657813bb960a29ab21417d951a06b07675020cf6570f3490fe4e94cf02c5b1fd2becd3720aa1c398bf2c4fb94fea5c01281683121a65ca5686222f4d25593a2ecc9635942785c2e1824b5d0722a2123ff250fe1671d57acc9663bac37504123fbcd1a0bdcaa05f54509ff2672c68f2aa9d6a6a3e2b75c1596ec3cf01e28fa61b8a1bbf861a80ff459a19dd4de437a75f7ba4f886d82d6673259e64dacf33a746c72057205c1d79bbd018370bad458215dc49361f4429f0e8c47fc497d4242af1520643e5a5aca5ddba09243174e2b010a73617ae9871ca2ec1c2648508cbd55529588846a9a98051d9bd1ce8fce3bce066f1bd7571b5e98761f48c4c7a2b51c2aacd7276e46ad322d8732a7ca6738a006c77889427fc1d10a7ed44c0d3cb9fdd789b694e2308be589648a624077836d3da8d94f8ca384fd0e07a2d4aa97451ea5d4f8ff6a903762c0554d78dceed75f25753f20ab45ec8abcffd3ac862ee9185ebfda6da115602df4a3bcc9b6344c0dcc45c8cd45569ec65f01741bea85b4fe36c6d4c348c0ea8f2d12086d96b162a4067666d8fa8f04c5710db48138986b5ca9b2c0d458ae889a40c46a3d668d489b0c029f9d1b1bae0e22dba363a7c8fb0e86aaf72d5db5098bd190c0997364b48a665a7ba858ff364d412000538ee737d92aa2952de30227a434dcb8d42f50e60b60e8268e296fc22f95c8a6af34823f5429417f1b6e981ef3d86734877b355948d3b86f3bdcb92b3bde33ee8f8ecee6314600a915149b3a2762338865a53f8db26f0f1b8a96e9db85a25b8cb0994153524a5bcf6888fa48fe30b01d873c20ec97323eec488ac466585f14f672eb206a08b0f4bcc0874d9d3c92c6ace5ba740b47e24a4040c88ba47cbd2d190b6e18d97e38bbf53ae5e70a73b16b9e84501fcff55c01e484bce904915ede95d7eeae268facebbf48d1b77b2fef4d5f3a348ecc340c3658755296ff2b4caa94a2a1476df1eed5672eb43792009a908aff94772b9841628d2f7ae7742a1d438679b8fd033d187cbaff75e37d5c180584209c2ba6e109f6b00d89dcfa4bcba6a21201926546ba86af60d4414e57a918ed707df2f95806918bad92038f299853e1c3465cd1a30ad03587230614d46e705a54fb94431059721c6ef49bc213e30eb4fe8e4994c775097f0dd98ba537cb6077a523bc8d620ef5f3bb566fd26668c792bd938e5e47d3208d2e1172b35cf7fba1871d3d53b8a3a33405ed6236a8bb64044824039a1412ba9af24ee41f8998b4064651072e7875ba37e4c402280db2ec3d092a30ddcdab42a806a622f715c836376b0552a739360f5bf63ef5eb8d1a46893779eb8408ff9e974e927cb9c14f2d4d3dc329a56b05b4791573bc27326f155db78a34366fa455d40b9cf7b2200325d5d1d9a536a217d9bf8e63625b64b5d73a1463d911b9e90deb7eabfaaf1fae6651723edf56214f0fad7623c8e884f81d464173082fc9af789717be6e1729daebcc3afba438d5c62f6657df8838cf466ae67eb879af9e472c8428c67d0e34df22cde0c0</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>小作文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>寒假学科营备课经验</title>
     <url>/post/9d56260e.html</url>
     <content><![CDATA[<p>前几天整理了一下1月份上学科营的内容，连续多天的课程为我后续进行批量大规模的备课提供了可借鉴的经验基础。</p>
@@ -1064,6 +1014,43 @@
 ]]></content>
       <tags>
         <tag>数学教学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo部署出现Spawn failed问题</title>
+    <url>/post/cf2181b.html</url>
+    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch main</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd /usr/local/src/hexo/hanyubolg/</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rm -rf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
+<ul>
+<li><p>打开命令行输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>得到报错</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User GitHub用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
+</li>
+<li><p>命令行再次输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>bug</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
