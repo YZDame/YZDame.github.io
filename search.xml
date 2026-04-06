@@ -1240,7 +1240,7 @@
 <p>时间：2026年4月5日<br>
 关键词：tsqx、GIKZ、OCR工作流、胶水编程、学生数据库</p>
 </blockquote>
-<hr>
+<span id="more"></span>
 <h2 id="一、模型背景">一、模型背景</h2>
 <ul>
 <li><strong>Copilot 教育版</strong>：3月突然降级了。原本 Copilot 教育版支持 Opus 4.6，三月初突然被砍掉，只能用 Haiku 4.5 或 Codex 5.3。体验降级比较明显。</li>
