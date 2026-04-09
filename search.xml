@@ -1236,11 +1236,7 @@
   <entry>
     <title>2026年3月：AI工具使用小结与个人项目复盘</title>
     <url>/post/3a8f1b2c.html</url>
-    <content><![CDATA[<blockquote>
-<p>时间：2026年4月5日关键词：tsqx、GIKZ、OCR工作流、胶水编程、学生数据库</p>
-</blockquote>
-<hr>
-<h2 id="一、模型背景">一、模型背景</h2>
+    <content><![CDATA[<h2 id="一、模型背景">一、模型背景</h2>
 <ul>
 <li><strong>Copilot 教育版</strong>：3月突然降级了。原本 Copilot 教育版支持 Opus 4.6，三月初突然被砍掉，只能用 Haiku 4.5 或 Codex 5.3。体验降级比较明显。</li>
 <li><strong>ChatGPT Plus</strong>：gpt-5.4 fast 版本，速度很快，很丝滑。但 token 消耗也会加快。</li>
@@ -1268,7 +1264,7 @@
 <h3 id="GeoGebra-MCP-Server">GeoGebra-MCP-Server</h3>
 <p>受 <a href="https://www.bilibili.com/video/BV1iDQyBmEUj/">MathOver</a> 视频启发，我对开源的 GeoGebra MCP 项目 Gebrai 进行样式调整和重命名，也发布了 npm 包，可以在 cc、Codex 等工具中调用。</p>
 <p>这验证了一个思路：通过 Coding Agents 的 CLI 调用工具链来生成 GGB 文件是可行的。B 站上那位 up 主上线了商业化应用，但需要配置服务器、管理账户和缓存数据，部分功能还需付费订阅。</p>
-<h3 id="Von-题库">Von 题库</h3>
+<h3 id="Von">Von</h3>
 <p>先是 B 站给我推这个视频：<a href="https://www.bilibili.com/video/BV1BqqPBPE8g/">LaTeX 题库</a>。</p>
 <p>然后我发现 Evan Chen 的 Von 题库功能很强，可以方便地组卷和引用题目。我计划将题库镜像成 Markdown 的 Obsidian vault，后续接入 Agents 自动化流程。</p>
 <h2 id="三、OCR-之后可以做什么">三、OCR 之后可以做什么</h2>
@@ -1284,12 +1280,8 @@
 <p>现在 ChatGPT 可以在后台运行，提供源代码和 PDF 下载链接，不用开电脑，手机就能瞬间生成 PDF 小讲义。</p>
 <h2 id="五、其他">五、其他</h2>
 <h3 id="Paralex">Paralex</h3>
-<p>Vibe Coding 的一个实践：做一个原生 macOS 应用，实现双语对照翻译功能，用于查看英文论文和 PDF。</p>
-<p>用 Xcode 开发，左边导入 PDF，右边进行 OCR 和翻译，可以翻译成不同语言，提供下载原文、译文及原文加译文的功能。虽然还无法投入生产，但展示了想法落地的过程。</p>
-<h3 id="时间分配">时间分配</h3>
-<p>看到一个说法：<code>1/4</code> 看 X，<code>1/4</code> 听播客，<code>1/4</code> 与最先进的 AI 模型对话，<code>1/4</code> 读旧书。</p>
-<p>最先进的第一梯队 AI 和效果糟糕的 AI 差距非常大，要亲自体验最强模型，才能感受其厉害之处。</p>
-<hr>
+<p>Vibe Coding 的一个实践：做了一个原生 macOS 应用，实现双语对照翻译功能，用于查看英文论文和 PDF。</p>
+<p>用 Xcode 开发，左边导入 PDF，右边进行 OCR 和翻译，可以翻译成不同语言，提供下载原文、译文及原文加译文的功能。虽然不会正式对外发布，但验证了想法落地的过程。</p>
 <p><em>本文由飞书智能纪要整理，2026年4月5日</em></p>
 ]]></content>
       <tags>
