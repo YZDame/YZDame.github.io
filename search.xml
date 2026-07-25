@@ -1278,4 +1278,234 @@
         <tag>copilot</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2026年除夕AI工具小结</title>
+    <url>/post/ca2e1c42.html</url>
+    <content><![CDATA[<h2 id="一、各家模型的使用情况"><a href="#一、各家模型的使用情况" class="headerlink" title="一、各家模型的使用情况"></a>一、各家模型的使用情况</h2><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>ChatGPT 仍为日常对话、搜索的主力模型。</p>
+<blockquote>
+<p>移动端首选</p>
+</blockquote>
+<blockquote>
+<p>桌面端: ChatGPT-&gt;Atlas</p>
+<p>虽然 Atlas 没有替代 Chrome 变成我的默认浏览器，但是它把 ChatGPT 自家的客户端给替换掉了。</p>
+<p>另一方面，因为现在程序坞上的位置实在有限，所以我把 Safari 也直接从程序坞上给移走了。</p>
+</blockquote>
+<p>涉及到复杂图像的生成和理解时，用 Gemini。</p>
+<p>实时类的新闻搜索使用 Grok。</p>
+<blockquote>
+<p>Grok 的一个小问题就是，有些时候会默认用英语回答。</p>
+</blockquote>
+<p>Claude 基本不用。</p>
+<blockquote>
+<p>国内AI app: 进步大</p>
+</blockquote>
+<blockquote>
+<p>Monica</p>
+</blockquote>
+<p>Cherry Studio</p>
+<blockquote>
+<p>工作首选, 导出md-&gt;overleaf</p>
+<p>调用 API 可能不如直接在官方的体验好</p>
+</blockquote>
+<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><p>vibe coding</p>
+<blockquote>
+<p>项目</p>
+</blockquote>
+<p>从 Gemini CLI和 Copilot CLI 开始，最后还是下载了cc和codex</p>
+<blockquote>
+<p>导致使用 GitHub Copilot 的频率明显降低。</p>
+</blockquote>
+<p>Claude Code 先后接入了：</p>
+<ol>
+<li><p>小米 Mimo V2 flash</p>
+</li>
+<li><p>智谱的GLM</p>
+</li>
+<li><p>MiniMax</p>
+</li>
+</ol>
+<p>最近逐渐有 CodeX (macOS app)取代 Claude Code 的趋势</p>
+<p><em>Ghostty</em></p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>Gemini</p>
+<p>硅基流动</p>
+<h3 id="OpenClaw"><a href="#OpenClaw" class="headerlink" title="OpenClaw"></a>OpenClaw</h3><p>探索阶段, <strong>太有意思了</strong> 🦞</p>
+<ul>
+<li><p>部署</p>
+<ul>
+<li><p>Mac</p>
+</li>
+<li><p>服务器</p>
+</li>
+</ul>
+</li>
+<li><p><em>Her</em>(2013)</p>
+</li>
+</ul>
+<p>agents -&gt; skills</p>
+<p><em>扣子</em></p>
+<h2 id="二、-OCR工作流"><a href="#二、-OCR工作流" class="headerlink" title="二、 OCR工作流"></a>二、 OCR工作流</h2><ul>
+<li><p>图片/PDF(zlib)</p>
+</li>
+<li><p>OCR</p>
+<ul>
+<li><p>MinerU: 绝对主力</p>
+</li>
+<li><p>ChatGPT, Qwen, Gemini: 临时图片</p>
+</li>
+<li><p>Mistral</p>
+</li>
+</ul>
+</li>
+<li><p>单文件: ChatGPT/Cherry Studio</p>
+</li>
+<li><p>项目级文件: cc</p>
+</li>
+</ul>
+<p>语音输入: Typeless</p>
+<ol>
+<li><p>正弦和角公式： \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</p>
+</li>
+<li><p>余弦差角公式： \cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</p>
+</li>
+</ol>
+<p>上面相当于是 PlainText 的格式。我也可以使用 Typeless 选中相应的公式，直接跟它说需要怎么修改。通过语音输入结合 AI，它就能具备这种编辑能力，然后快速转化为 Markdown 或者是 LaTeX 代码。</p>
+<p>手写输入: WriteTeX</p>
+<p>不仅仅是简单的手写公式并快速转化为 LaTeX 代码，它还可以处理手绘图形（比如一些平面几何图形）。</p>
+<p>只要预设好提示词，就可以按照自己想要的格式，标准规范地输出 TikZ 代码。</p>
+<h2 id="三、工作场景"><a href="#三、工作场景" class="headerlink" title="三、工作场景"></a>三、工作场景</h2><ul>
+<li><p>整理资料</p>
+</li>
+<li><p>备课: 教案+板书</p>
+</li>
+<li><p>授课</p>
+</li>
+<li><p>PPT</p>
+<blockquote>
+<p>只要能生成 Beamer 就可以了，不用那种 Office 格式的 PPT</p>
+</blockquote>
+</li>
+<li><p>学习</p>
+</li>
+<li><p>阅卷</p>
+</li>
+</ul>
+<h2 id="四、生活娱乐"><a href="#四、生活娱乐" class="headerlink" title="四、生活娱乐"></a>四、生活娱乐</h2><ul>
+<li><p>Typeless</p>
+<blockquote>
+<p>用完 Typeless 之后，你真的不会再想用键盘打字了。</p>
+<p>因为键盘其实是计算机时代人类发明的一种输入工具，但它并不是那么自然。我之前看过一篇文章也提到过这点：使用键盘时，我得先想好内容，然后再用手指去敲击，还得配合各种组合键。如果是英文，得拼写单词；如果是中文，还得思考拼音并把它拼出来。这种效率肯定没有直接口述来得快。</p>
+<p>Typeless 的神奇之处在于：</p>
+<ol>
+<li><p>它支持长时间录音，我可以连续说一段很长的话。</p>
+</li>
+<li><p>即使表达中有些错误、重复、停顿或者各种杂音夹杂，它都能很好地识别。</p>
+</li>
+<li><p>它能自动整理出非常规范的格式。</p>
+</li>
+<li><p>比如说这样，它也可以识别出来。当你在办公室对着手机小声说话时，它也能准确识别。</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>微信</p>
+</li>
+<li><p>B站</p>
+</li>
+<li><p>抖音、小红书</p>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<p>长期、专注地做一件事越来越难能可贵: 纸质书、播客</p>
+<p>最近一直有在听一些比较优质的长时间播客。可能一期节目就要三四个小时，但我是在利用零散的碎片时间去做同一件事情，这种连贯性是真实存在的。</p>
+<p>我可能一周花个三四天才听完一期播客节目，但相比于那种一个小时刷几十条短视频而言，效果是完全不一样的。</p>
+<p>包括看书也是如此：</p>
+<ol>
+<li><p>可能要花几个星期甚至几个月才能完整看完一本纸质书</p>
+</li>
+<li><p>这种体验会让人感觉特别好</p>
+</li>
+<li><p>它不会带来那种刷完碎片化内容后的空虚感</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>数学的容错率为0</p>
+</blockquote>
+<blockquote>
+<p>总结式 AI 与数学有些背道而驰, LEAN</p>
+</blockquote>
+<p>YKWTII_0</p>
+<p>2026年2月18日 大年初二</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2026年7月AI工具小结</title>
+    <url>/post/9ebb64ac.html</url>
+    <content><![CDATA[<h2 id="一、回顾与感慨"><a href="#一、回顾与感慨" class="headerlink" title="一、回顾与感慨"></a>一、回顾与感慨</h2><p>How time flies！仅仅过去四个月时间，AI 的产品和模型就发生了翻天覆地的变化 —— Harness 工程的普及与模型能力的爬升不断交织，Skills 逐渐进入大众视野甚至有点泛滥成灾。</p>
+<h2 id="二、模型使用"><a href="#二、模型使用" class="headerlink" title="二、模型使用"></a>二、模型使用</h2><h3 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h3><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/codex-profile-card.png" alt="codex-profile-card" style="zoom: 33%;">
+
+<p>首先这几个月来用得最顺手的无疑是 ChatGPT/CodeX 了，开了 plus 订阅后基本够用，虽说进入夏季后几乎没啥新灵感新项目，但还是在以 GPT-5.5 的辅助下不断推进已有项目的迭代更新，比如 Suhuang Scroll；此外，由于普通聊天并不消耗额度，所以日常聊天和简单工作任务处理也基本上全部都转了到 GPT 上来，使用频率明显上升。</p>
+<p>此外，前段时间让 GPT 总结了一下目前在我生活和工作中承担的角色，居然达到了 10 种之多！可以说越来越全能了。不过 GPT 也有一些问题，比如喜欢吹捧，很少辩证或直接提反对意见，仍有 ai 味儿比如</p>
+<blockquote>
+<p>你上面提到的… 抓住了问题的本质。<br>这不是…, 而是 …<br>一句话总结：…</p>
+</blockquote>
+<p>因此最近我给 GPT 加入了系统指令，感觉效果似乎好了一些：</p>
+<span id="more"></span>
+
+<blockquote>
+<p>采用自然、直接、有判断力的表达方式。避免套话、夸张赞美、空泛总结、机械化转折和带有明显 AI 痕迹的语言。</p>
+<p>不要为了制造“深度感”而使用固定结构。例如“不是 X，而是 Y”“不仅 X，而且 Y”“真正的本质是……”。只有在存在真实且影响结论的区别时，才进行对比或转折。</p>
+<p>将我的观点视为需要分析的假设，而不是默认正确的结论。指出合理之处，同时检查证据、隐藏假设、适用范围、潜在风险、反例和其他可能解释。</p>
+<p>区分事实、解释和评价。先明确已知事实；再分析可能机制；最后给出判断和建议。</p>
+<p>不要从一个局部现象直接推导宏大的结论。避免过度拔高普通现象。除非有充分依据，不要使用“革命性”“颠覆性”“深刻揭示”等夸张表述。</p>
+<p>面对复杂问题时，从第一性原理出发。分析基本事实、目标、约束条件和评价标准，再形成结论。</p>
+<p>保持清晰、简洁、严谨。优先帮助我发现问题、修正观点和提高执行质量，而不是提供情绪价值。</p>
+</blockquote>
+<p>目前 AI 的信息检索、推理判断能力在许多方面远超于我，再加之我时常询问问题时本身带着不确定性与模糊的记忆，有着极大的局限性，所以我希望 GPT 可以通过纠偏带我跳出局限性。（当然这份提示词未来还有改进的空间或者说随着模型能力的进步可以彻底去掉这个提示词）</p>
+<p>另一个不得不提的一点，作为一名轻度强迫症患者，很高兴看到 ChatGPT 和 CodeX 终于合并了（就像是 Claude 桌面端那样），并且 OpenAI 这批人不仅保持着近乎日更的频率，而且天天活跃在 X 上，或玩梗或来一些猝不及防的重置，很有意思，但这种现象终归是阶段性的，目前 AI 的竞赛仍然非常激烈甚至内卷得非常严重，有点像当年五颜六色的共享单车，最后变为了黄绿蓝三分天下才稳定下来（然后就逐渐涨价毫无性价比可言）。</p>
+<p>其他一些功能就不再详细展开了，比如 GPT 的 Live 语音模式、手机端的 Remote 功能（还可以连服务器）、再早一些的焕然一新的 Image。最后提一提 Skills，经历了先安装一大堆随后再精简最后准备按工作区/项目建立个人 Skills集合（Plugins）的过程，这部分目前还在进行中，此外这个假期也在思考如何打造好自己的 loop。</p>
+<h3 id="Claude"><a href="#Claude" class="headerlink" title="Claude"></a>Claude</h3><p>6月底开通了久违的 Claude pro，用了一下最新的 Claude 桌面端，简直夯到爆炸，尤其是做前端无敌。起因是在 Vercel 的 v0 上做前端时用了 opus 4.8，但是额度太少所以转到了官方的订阅。只可惜正好赶上了 Fable 5 前后的封号浪潮，只用了不到一周（准确的说是5天），但即便如此，也消耗了大约 300 刀的 tokens。此外，Claude 的客户端真的很好用，窗口可以任意拖动排列，动画也很流畅，再加上强大的模型，戒断反应实在太大。</p>
+<h3 id="Grok"><a href="#Grok" class="headerlink" title="Grok"></a>Grok</h3><p>开通了几个月的 X Premium 订阅后，最惊喜的事情莫过于可以用早期需要 SuperGrok 才能使用的 Grok Build 了，后者简直是现阶段 TUI 的天花板，在 Grok Build 里可以使用 Cursor 的 Composer 2.5 Fast 和 Grok Build 0.1；而后更惊喜的是 SpaceXAI很快又推出了 Grok 4.5，官方说是 Opus 4.8 级别的模型，但用下来体感比较接近 GPT 5.4，但速度贼快，比大多数同级别模型都要快。</p>
+<h3 id="MiniMax"><a href="#MiniMax" class="headerlink" title="MiniMax"></a>MiniMax</h3><p>推出了 M3，拉完了，完全没法用。只希望 M3 Pro 可以达到能用的水平。</p>
+<h3 id="GLM-和-Kimi"><a href="#GLM-和-Kimi" class="headerlink" title="GLM 和 Kimi"></a>GLM 和 Kimi</h3><p>最近表现很是亮眼，先有 GLM 5.2，后有 Kimi K3，只可惜当年图便宜买了 Minimax 的年度订阅而没有选择这两家，只能当新闻看了。</p>
+<h3 id="Hermes-和-OpenClaw"><a href="#Hermes-和-OpenClaw" class="headerlink" title="Hermes 和 OpenClaw"></a>Hermes 和 OpenClaw</h3><p>截至5月份， 彻底停用 OpenClaw， 转为 Hermes；进入6月份，使用Hermes 的频率也近乎为零，原因很简单， Codex太好用了！</p>
+<h3 id="Copilot"><a href="#Copilot" class="headerlink" title="Copilot"></a>Copilot</h3><p>学生套餐几乎没法用了，官方称是算力紧张，但社区可谓是骂声一片。回想自己的 Copilot 使用历程，当然后期是一步步被阉割之路，不免有些感慨，这里暂且不作展开。一个直接的结果就是我开始寻找 vscode 的替代品，先后尝试了 cursor，zed，都无法实现良好的 latex 编辑体验（这个确实硬需求，虽说后者们对 ai 的支持也非常好），于是最后的解决办法是直接关闭 vscode 的 copilot 功能。</p>
+<h2 id="三、对过去项目的一些思考"><a href="#三、对过去项目的一些思考" class="headerlink" title="三、对过去项目的一些思考"></a>三、对过去项目的一些思考</h2><p>前面提到了局限性，除了横向的局限性外（比如自己的内部认知与外部世界），还有自身在不同时间点产生的纵向局限性（站在当下往前看）。也正是因为认识到了这种时间产生的局限性，所以4月份以来几乎没有什么新的工作或想法，而是在不断地冲浪学习。</p>
+<p>而在 4 月份之前的 3 月份，则是达到了一个 vibe coding 的高峰期，那时接触 Claude Code 和 OpenClaw 有一段时间，慢慢认识到了 AI Agent 的强大。虽然到后面才进一步认识到这种强大的边界以及能力的上限，但当时并没有这种意识，可谓初生牛犊不怕虎，于是乎，wemath2md 应运而生。这个算得上是最早的 vibe 作品，第一个版本在 2025 年 11 月用 cherry studio 的 chat 模式和 vscode 完成，后续理论上来说应该做成一个 skill，但实际使用频率太低，加之这并不是一个正确的方向，也就是如果公众号作者连数学排版都不会，拿一堆图片糊在一起，也没什么转换保持的价值。因此，在后面我会提到，要写一个系列文章，名字就叫做 Markdown is all you need（致敬经典）。在 AI 时代，每个人都需要有一点 md 的基本知识，这样上述糊糊图数学文章就会成为时代遗物。</p>
+<p>Gikz 和 GeoGebra-MCP 则是另一个未来的时代遗物，甚至 ggb 本身。Gikz 的想法是把 ggb 图形导出的 tikz 代码进行简化，从而更好地插入到 latex 文档中，但事实上，现在几乎可以直接让 ai 生成较为准确的 tikz，在这个视角看，tsqx 的意义反而大一些。至于 ggb mcp，利用 agent 的浏览器操作能力去 ggb 网页版绘制图形，难免舍近求远。ggb 经过二十多年的发展，从 java 到 js 再到 html5，有着独属于自己的一套 gui 主导的操作规范，但其实很多功能都可以直接在现在的 agent 客户端 canvas 里直接生成 html（通过 three.js 等），这样在演示时完全无需借助 ggb，本地打开即可。因此我的总结是</p>
+<blockquote>
+<p>可以 html，何必ggb。</p>
+</blockquote>
+<p>tsqx 的扩展和 skills 未来会被整合到一个更为庞大的 ocr 工作流里，暂时略去。但值得一提的是这半年里我自己用的最多的其实中间的核心步骤相关的一个 skill，也即是通过对话内容生成一份规范完整的讲义，以后这个系列 skills 以及工作流将会做成一个开源仓库。</p>
+<p>上次还提到了 Von 题库。不得不说，MIT 的这一批人还是非常厉害的，除了研究 Evan Chen 的这个题库外，上面提到的 tsqx 也是他的工作之一，这些项目的前瞻性令我惊叹不已（只可惜目前关注这个小众方向的人并不多）。而后面我又接触到了另外几位 MIT 校友的工作，比如 <a href="https://huggingface.co/datasets/ShadenA/MathNet">MathNet</a>，除了了解这个数据集本身，我还顺便看了一下两位作者的一些论文，他们的背景方向都十分有意思。与此同时，转到国内的互联网，情况就大不一样了，除了公众号上的 ai 文章不忍卒读，B 站的算法机制，也导致我时不时被推送一些视频，介绍通过某些拉垮 ai vibe 出来的个人题库，甚至草草上线尝试商业化。这也许是国内互联网生态的一个通病，只要是做了一个什么东西出来，大部分人的想法就是如何 toC 变现。问题在于，这些 ai 垃圾可以说几乎没有门槛，而且深受国内审美荼毒和传统思维束缚，依葫芦画瓢，比如参照丑陋的学科网做的所谓的 LaTeX 题库，其实没有任何意义。既然是 ai 导向的产品，为何设计的页面和功能还要仿照传统的学科网呢？另一方面，学科网的题库资源之丰富已经可以满足普通教师的需求，用 docx 下载好试卷后转换为 LaTeX 的成本近乎为零。</p>
+<p>Obsidian 越使用越发现其强大之处，创始人的 file over apps 的设计哲学也同样意味深长。最近重新配置了主题，并用 claudian 替代了 copilot 插件。</p>
+<p>将 Notion 等应用通过插件接入 ChatGPT （或Grok）等已经不是什么新鲜事，完全不需要过往 openclaw 的那一套东西，但如何组织数据仍是核心。</p>
+<p>从某次发现 ChatGPT 可以直接在云端编译 latex 开始，我就发现了 ChatGPT 实现了类似于 Manus 一样的功能，也就是会在后台分配虚拟主机，只可惜现在这种功能变为了 work 模式，会消耗 Codex 额度。</p>
+<p>既然提到 Manus，不得不再次感慨一番，从突然官宣 Meta 收购的巅峰到撤回的爆冷，完美诠释了</p>
+<blockquote>
+<p>领先半步是先驱，领先一步是先烈。</p>
+</blockquote>
+<p>无论是25年底走红的 OpenClaw，还是现在疯狂互怼的 Codex 和 Claude，很多功能其实都在走 Manus 的老路。那时 Harness、Skills 这类词甚至还未出现，Manus 就用 gpt 4.x 和 sonnet 3.x 级别的模型就做到了现在很多一线模型才实现的效果，只可惜运气差了一些。</p>
+<h2 id="四、生活与未来展望"><a href="#四、生活与未来展望" class="headerlink" title="四、生活与未来展望"></a>四、生活与未来展望</h2><p>这半年以来，基本在按照 Marc Andreessen 所说的那样不断转变，逐渐从国内媒体彻底脱离出来，比如抖音、小红书，关闭朋友圈，如此操作下来，我发现对我的生活并没有任何的影响，反而多出来很多时间。这些时间被投入到</p>
+<blockquote>
+<ul>
+<li><strong>1/4</strong> X </li>
+<li><strong>1/4</strong> 播客访谈最聪明的从业者</li>
+<li><strong>1/4</strong> 与最先进的 AI 模型对话</li>
+<li><strong>1/4</strong> 读旧书</li>
+</ul>
+</blockquote>
+<p>不过不得不承认在转变的早期，刷 X 的时间还是有点太多了，应该要分配更多的时间给播客与阅读的。</p>
+<p>因此最近开始一下子读了不少书，也入手了一台掌阅 neo3，小巧精致，令人爱不释手。最近读了以下书籍，希望是一个良好的开端</p>
+<blockquote>
+<p>纳瓦尔宝典<br>平面国<br>人类群星闪耀时<br>我看见的世界</p>
+</blockquote>
+<p>2026年7月25日 于凤凰山谷（纯手敲）</p>
+]]></content>
+      <tags>
+        <tag>AI</tag>
+        <tag>工具</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
 </search>
