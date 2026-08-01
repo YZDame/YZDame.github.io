@@ -215,38 +215,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Tikz绘制BNU校徽</title>
-    <url>/post/2723d25d.html</url>
-    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
-<p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
-</blockquote>
-<p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
-<span id="more"></span>
-
-<p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{graphicx} </span><br><span class="line"><span class="keyword">\usepackage</span>{pgfplots}</span><br><span class="line"><span class="keyword">\pgfplotsset</span>{compat=1.18}</span><br></pre></td></tr></table></figure>
-
-<p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
-<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
-<ol>
-<li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
-<li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
-</ol>
-<p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>"latex-workshop.latex.recipes": [...]</code>部分加入</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"XeLaTeX * 2"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"xelatex"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
-<p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
-]]></content>
-      <categories>
-        <category>LaTeX模板</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>模板</tag>
-        <tag>Tikz</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BNUslides：一份简洁的师大蓝主题Beamer</title>
     <url>/post/a4a4bede.html</url>
     <content><![CDATA[<h3 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h3><ol>
