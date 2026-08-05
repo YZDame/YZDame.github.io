@@ -1114,12 +1114,12 @@
   <entry>
     <title>把 VS Code 变成超级智能体工作台</title>
     <url>/post/463d8022.html</url>
-    <content><![CDATA[<h1 id="把-VS-Code-变成超级智能体工作台"><a href="#把-VS-Code-变成超级智能体工作台" class="headerlink" title="把 VS Code 变成超级智能体工作台"></a>把 VS Code 变成超级智能体工作台</h1><blockquote>
+    <content><![CDATA[<h1>把 VS Code 变成超级智能体工作台</h1>
 <p>最近又要准备新阶段的毕业论文了，于是乎，再次和论文模板在 VS Code 当中见面了，可谓是故地重游。本来觉得现在这些东西简直不值得一提，但是看到两年多前自己亲手写的文章，还是不免有些感慨。一方面，那时的 AI 还不太具有撰写高质量长文的能力（可惜现在的另一个趋势是如果不加以控制，AI 很可能会撰写奇怪的低质量长文），所以自己当时几乎是一个字一个字敲上去的（甚至也没有这么好用的语音输入）。另一方面，看到自己当年的配置过程以及电脑的截图，真是稚嫩且青涩呀！因此，这篇文章也算是回顾并致敬前一篇文章《用 VS Code 搭建 BNU 毕业论文写作平台》。事实上，“超级智能体工作台”这个名字有些言过其实了，像 Claude，Code等桌面 Agent 应用的功能早已非常强大，写下这些文字，主要是在回顾往昔岁月的同时，也记录自己当下的一些思考。</p>
-</blockquote>
-<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>2023.12</p>
+<span id="more"></span>
+<h2 id="前情提要">前情提要</h2>
+<p>2023.12</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20231216.JPG" alt="20231216" style="zoom: 80%;">
-
 <p>现在（2026.8）</p>
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2026-08-04%2012.40.13.png" alt="20260804"></p>
 <p>简单说一下原来那篇文章的写作背景。2023 年底，我临近毕业，准备撰写毕业论文。那时我使用 VS Code 的主要场景还是在本地写 LaTeX。在那篇文章当中，我非常详细地（像知乎、CSDN 那样）列出了如何一步步从下载图书馆官方 LaTeX 学位论文模板，到配置编译环境，以及安装插件、Git 等等，甚至还提到了通过 Zotero 去做文献同步。</p>
@@ -1133,10 +1133,11 @@
 </blockquote>
 <p>虽然说当时的很多步骤现在都可以利用 AI Agent 去完成，但是稍稍对比就会发现其中有许多有趣的东西。</p>
 <p>比如那时其实 ChatGPT 已经发布了整整一年，但我们可以看到，当时真正把 AI 接入到真实工作环境当中的应用是非常少的。GitHub Copilot 可能是为数不多的、真正能够进入到工作生产环境当中、直接接入真实上下文的 AI 辅助工具。在 GPT-4 加持下，Copilot 可以实现代码补全以及代码片段的快速编辑和修改。</p>
-<h2 id="现在咋搞"><a href="#现在咋搞" class="headerlink" title="现在咋搞"></a>现在咋搞</h2><p>下面直接进入正题：在今天这样一个时间点，还是做相同的事情，该怎么做？</p>
+<h2 id="现在咋搞">现在咋搞</h2>
+<p>下面直接进入正题：在今天这样一个时间点，还是做相同的事情，该怎么做？</p>
 <p>可以说，现在已经简单到不能再简单了，并且成本几乎为零。</p>
 <p>如果在一年多前，那么答案是：问。即直接问 AI。</p>
-<p>但如果是现在的话，答案是：**下命令。**直接给你的 AI agent 下命令。</p>
+<p>但如果是现在的话，答案是：<strong>下命令</strong>。直接给你的 AI agent 下命令。</p>
 <p>首先，你需要先下载安装好本地环境：</p>
 <ol>
 <li>VS Code</li>
@@ -1145,7 +1146,7 @@
 </ol>
 <p>如何安装？在你电脑上的 Codex (现在已经和 ChatGPT 合并)或 WorkBuddy 或 Trae （或者也许豆包客户端也行？作者没用过不确定）发送以下命令即可：</p>
 <blockquote>
-<p>（请帮我）下载安装好以下环境：……</p>
+<p>（请帮我）下载安装好以下环境：…</p>
 </blockquote>
 <p>注意这里有两个小问题：</p>
 <ol>
@@ -1160,17 +1161,18 @@
 <p>当然可以再加一点实用的上下文，让 agent 把几个活一起干了。</p>
 <p>比如我是这么说的：</p>
 <blockquote>
-<p>…… 明白明白。然后你看我那个开题的文件夹里边，已经有了一个开题报告的初稿。你把我现在这个从图书馆下载的 LaTeX 论文模板（直接这个文件夹），改造成我最后可以用的论文结构，然后可以把一些必要的信息先填上去，然后那些没有必要的东西就可以删掉了。</p>
+<p>… 明白明白。然后你看我那个开题的文件夹里边，已经有了一个开题报告的初稿。你把我现在这个从图书馆下载的 LaTeX 论文模板（直接这个文件夹），改造成我最后可以用的论文结构，然后可以把一些必要的信息先填上去，然后那些没有必要的东西就可以删掉了。</p>
 </blockquote>
 <p>在语音模式下可能会显得比较稀碎，但是对 AI agent 来说，这些都不重要。</p>
-<h2 id="继续考古"><a href="#继续考古" class="headerlink" title="继续考古"></a>继续考古</h2><p>除此之外，在现在这样一个时间点，虽然很多 AI Agent 客户端非常好用，但 VS Code 同样也可以变得非常<strong>好用</strong>，且非常<strong>好看</strong>。</p>
+<h2 id="继续考古">继续考古</h2>
+<p>除此之外，在现在这样一个时间点，虽然很多 AI Agent 客户端非常好用，但 VS Code 同样也可以变得非常<strong>好用</strong>，且非常<strong>好看</strong>。</p>
 <p>下面结合实际的图片，去观察一下两年多前与现在我自己 VS Code 界面的变化，从 UI 变化这种表面现象由浅入深，顺便探讨一下 AI 对于整个工作流（这里以论文写作为例）的影响。</p>
 <p>这也是为什么这篇文章的题目没有写成《用 VS Code 搭建一个更好的论文写作平台》，又或者《用 VS Code 搭建超级智能体工作台》。</p>
 <p>前者被否定掉，是因为 VS Code 的用途实在是太广泛了，当然我自己也只是用了它很小一部分的功能；后者被否定掉，是因为我们现在甚至不需要去经历“搭建”这个过程，我们只需要借助 AI 的魔法棒稍加点缀，就可以把 VS Code 直接变成一个超级智能体工作台！</p>
 <p>整体而言，我的 vs code 的界面经历了3个阶段。</p>
-<h3 id="阶段一：Copilot"><a href="#阶段一：Copilot" class="headerlink" title="阶段一：Copilot"></a>阶段一：Copilot</h3><p>下面是第一阶段的屏幕快照。虽然说当时已经使用 copilot 一年多，但布局仍然是经典样式，即</p>
+<h3 id="阶段一：Copilot">阶段一：Copilot</h3>
+<p>下面是第一阶段的屏幕快照。虽然说当时已经使用 copilot 一年多，但布局仍然是经典样式，即</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">活动栏｜主侧栏｜代码编辑区｜Copilot</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20241213.png" alt="20241213"></p>
 <p>顺便翻了一下邮箱，2023年4月24日首次认证 GitHub Education，那时注册的一个因素现在看来大概率是为了用上最新的 GPT-4，与此同时还有另一张照片（2023.04.21）：</p>
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20230421.png" alt="20230421"></p>
@@ -1181,9 +1183,9 @@
 <p>领先半步是先驱，领先一步是先烈。</p>
 </blockquote>
 <p>再回到 Copilot 上面来。从上面的截图可以看到，那时的 Copilot 可以说开创了基于上下文的 AI coding 的先河。无需离开 IDE 编辑器界面，即可在代码区域实现自动补全、片段修改以及对报错问题的修复，还有一个侧边栏的对话，并且也从早期的纯聊天模式，发展成了“Ask-Edit”，再到了“Chat-Agent-Plan”。在此后的日子，Copilot 几乎都会在第一时间上线最新的模型，从 GPT-4 开始，再到上图令很多人都非常难忘的 GPT-4o，以及一直用到了今年年初的 Claude Opus 4.6。但是非常遗憾的是，前段时间 GitHub Copilot Education 版被大幅阉割，几乎没法用。因此，我后续直接关闭了 VS Code 当中的 Copilot 功能。</p>
-<h3 id="阶段二：Agent"><a href="#阶段二：Agent" class="headerlink" title="阶段二：Agent"></a>阶段二：Agent</h3><p>今年 3 月，我第一次对自己 VS Code 的布局界面进行了大改，基本上可以说是按照 Cursor 以及后面的 CodeX 的方向去做了一个修改：把 Agent 聊天界面放在左侧栏，把文件、git 等放在右侧栏，即</p>
+<h3 id="阶段二：Agent">阶段二：Agent</h3>
+<p>今年 3 月，我第一次对自己 VS Code 的布局界面进行了大改，基本上可以说是按照 Cursor 以及后面的 CodeX 的方向去做了一个修改：把 Agent 聊天界面放在左侧栏，把文件、git 等放在右侧栏，即</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Agent(主)|Canvas（次）|Files List</span><br></pre></td></tr></table></figure>
-
 <p>有意思的一个事情是，随后 Codex 开启的日更模式当中，也把文件列表以及预览放在了右侧。</p>
 <p>所以从中可以看到一个趋势：大部分这些和 AI 相关的 APP 界面样式趋同的背后，是 AI 本身会变成一个超级 APP ，会成为其他所有应用的一个入口。</p>
 <p>以下这张屏幕快照来自于对 tsqx-Compiler 的演示。</p>
@@ -1194,7 +1196,9 @@
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/image-20260805110714353.png" alt="obsidian20260805"></p>
 <p>其实，中间的 Claudian 确实有点露馅了，答案正是 Obsidian。前段时间我也对自己 Obsidian 的配置进行了大刀阔斧的改造。通过 Claudian 插件，可以在笔记仓库里使用 Claude、Codex、Grok、Opencode 和 Pi 等不同的 Agents。</p>
 <p>在这些界面 UI 样式趋同的背后，我们会发现阶段二的 Agent 和阶段一的 Copilot 是完全两种不同的逻辑：在 Copilot 的那一套逻辑里，仍然有许许多多传统的应用。我们给这些传统的应用通过 API 的方式，去增加一个 AI 辅助的功能，比较直观的形式，就是加入一个对话侧边栏，但此时，AI 仍然是你的副驾驶（Copilot）；而在 Agent 模式当中，AI 就是主入口，它是你手下的调度员，对某个项目进行整体的、全流程的任务。其中的主次关系发生了根本上的改变。</p>
-<h2 id="未来已来？"><a href="#未来已来？" class="headerlink" title="未来已来？"></a>未来已来？</h2><h3 id="阶段三：Human"><a href="#阶段三：Human" class="headerlink" title="阶段三：Human"></a>阶段三：Human</h3><p>这次对 VS Code 的自定义调整主要有以下几个方面：</p>
+<h2 id="未来已来？">未来已来？</h2>
+<h3 id="阶段三：Human">阶段三：Human</h3>
+<p>这次对 VS Code 的自定义调整主要有以下几个方面：</p>
 <ol>
 <li>开启了目前还是实验版本的全新 UI：和 Agent 模式下的 UI 是一致的，看起来更现代一些。</li>
 <li>开启抗锯齿字体渲染：无意中发现把 Antialiasing 选择使用抗锯齿字体渲染，字体线条变纤细也更清晰了，在 MacBook 上显示的效果特别好。</li>
@@ -1206,11 +1210,13 @@
 <p>举个例子，比如说现在 Agent 在完成特定任务后都可以自动提交 Git，所以此时就无需打开右侧栏上的 Git 面板来手动执行相关操作。</p>
 ]]></content>
       <categories>
-        <category>工具与效率</category>
+        <category>生活杂感</category>
       </categories>
       <tags>
+        <tag>LaTeX</tag>
+        <tag>vscode</tag>
+        <tag>copilot</tag>
         <tag>AI</tag>
-        <tag>VS Code</tag>
         <tag>Agent</tag>
       </tags>
   </entry>
@@ -1230,9 +1236,12 @@
   <entry>
     <title>我的 VS Code 配置清单</title>
     <url>/post/d29c3ef8.html</url>
-    <content><![CDATA[<h1 id="我的-VS-Code-配置清单（2026-08-05）"><a href="#我的-VS-Code-配置清单（2026-08-05）" class="headerlink" title="我的 VS Code 配置清单（2026-08-05）"></a>我的 VS Code 配置清单（2026-08-05）</h1><p>2026 年 8 月 5 日由 GPT-5.6 Luna 整理，人工小幅修改；</p>
+    <content><![CDATA[<h1>我的 VS Code 配置清单（2026-08-05）</h1>
+<p>2026 年 8 月 5 日由 GPT-5.6 Luna 整理，人工小幅修改；</p>
 <p>设备和系统：MacBook Air M3，macOS Tahoe。</p>
-<h2 id="一、外观配置"><a href="#一、外观配置" class="headerlink" title="一、外观配置"></a>一、外观配置</h2><table>
+<span id="more"></span>
+<h2 id="一、外观配置">一、外观配置</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1240,7 +1249,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>workbench.colorTheme</code></td>
 <td><code>Anthropic Light</code></td>
 <td>当前颜色主题</td>
@@ -1290,12 +1300,13 @@
 <td><code>left</code></td>
 <td>小地图放在左侧</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>对应代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "workbench.colorTheme": "Anthropic Light",</span><br><span class="line">  "workbench.preferredLightColorTheme": "Anthropic Light",</span><br><span class="line">  "workbench.preferredDarkColorTheme": "Anthropic Dark",</span><br><span class="line">  "window.autoDetectColorScheme": true,</span><br><span class="line"></span><br><span class="line">  "editor.fontFamily": "SF Mono, Maple Mono NF CN, Menlo, Consolas, Maple UI, PingFang, 'Microsoft YaHei', monospace",</span><br><span class="line">  "editor.fontLigatures": "'calt', 'cv01', 'ss01', 'zero'",</span><br><span class="line">  "editor.lineHeight": 2,</span><br><span class="line">  "workbench.fontAliasing": "antialiased",</span><br><span class="line"></span><br><span class="line">  "editor.minimap.size": "fit",</span><br><span class="line">  "editor.minimap.side": "left"</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
 <p><code>Maple Mono NF CN</code> 和 <code>Maple UI</code> 曾经在阮一峰老师的博客上被推荐过，下载后使用至今。</p>
-<h2 id="二、界面布局"><a href="#二、界面布局" class="headerlink" title="二、界面布局"></a>二、界面布局</h2><table>
+<h2 id="二、界面布局">二、界面布局</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1303,7 +1314,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>workbench.sideBar.location</code></td>
 <td><code>right</code></td>
 <td>侧边栏放在右侧</td>
@@ -1353,11 +1365,12 @@
 <td><code>true</code></td>
 <td>在标题栏显示内置浏览器</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>对应代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "workbench.sideBar.location": "right",</span><br><span class="line">  "workbench.panel.defaultLocation": "right",</span><br><span class="line">  "workbench.secondarySideBar.defaultVisibility": "hidden",</span><br><span class="line"></span><br><span class="line">  "workbench.editor.showTabs": "none",</span><br><span class="line"></span><br><span class="line">  "workbench.activityBar.location": "top",</span><br><span class="line">  "workbench.activityBar.autoHide": true,</span><br><span class="line">  "workbench.activityBar.compact": true,</span><br><span class="line"></span><br><span class="line">  "workbench.statusBar.visible": false,</span><br><span class="line">  "window.commandCenter": false,</span><br><span class="line">  "workbench.browser.showInTitleBar": true</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、快捷键对照"><a href="#三、快捷键对照" class="headerlink" title="三、快捷键对照"></a>三、快捷键对照</h2><table>
+<h2 id="三、快捷键对照">三、快捷键对照</h2>
+<table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -1365,7 +1378,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>Alt + Q</code></td>
 <td><code>editor.action.toggleWordWrap</code></td>
 <td>切换自动换行</td>
@@ -1410,17 +1424,16 @@
 <td><code>workbench.action.terminal.sendSequence</code></td>
 <td>在终端发送反斜杠加换行</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>代码中的快捷键：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+q",</span><br><span class="line">    "command": "editor.action.toggleWordWrap"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+1",</span><br><span class="line">    "command": "workbench.action.toggleAuxiliaryBar"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+2",</span><br><span class="line">    "command": "workbench.action.toggleSidebarVisibility"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+[Backquote]",</span><br><span class="line">    "command": "workbench.action.maximizeAuxiliaryBar"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+3",</span><br><span class="line">    "command": "workbench.action.togglePanel"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "alt+u",</span><br><span class="line">    "command": "workbench.action.toggleStatusbarVisibility",</span><br><span class="line">    "when": "!isSessionsWindow"</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
 <p>LaTeX Workshop 快捷键：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "key": "alt+m",</span><br><span class="line">  "command": "latex-workshop.view",</span><br><span class="line">  "when": "!virtualWorkspace"</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
 <p>终端快捷键：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    "key": "shift+enter",</span><br><span class="line">    "command": "workbench.action.terminal.sendSequence",</span><br><span class="line">    "when": "terminalFocus",</span><br><span class="line">    "args": {</span><br><span class="line">      "text": "\\\r\n"</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "key": "ctrl+enter",</span><br><span class="line">    "command": "workbench.action.terminal.sendSequence",</span><br><span class="line">    "when": "terminalFocus",</span><br><span class="line">    "args": {</span><br><span class="line">      "text": "\\\r\n"</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、编辑器行为"><a href="#四、编辑器行为" class="headerlink" title="四、编辑器行为"></a>四、编辑器行为</h2><table>
+<h2 id="四、编辑器行为">四、编辑器行为</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1428,7 +1441,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>editor.formatOnSave</code></td>
 <td><code>true</code></td>
 <td>保存时自动格式化</td>
@@ -1468,16 +1482,19 @@
 <td><code>false</code></td>
 <td>拖放文件时不确认</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>对应代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "editor.formatOnSave": true,</span><br><span class="line">  "files.autoSave": "afterDelay",</span><br><span class="line">  "editor.inlineSuggest.enabled": true,</span><br><span class="line"></span><br><span class="line">  "editor.accessibilitySupport": "off",</span><br><span class="line">  "editor.unicodeHighlight.nonBasicASCII": false,</span><br><span class="line"></span><br><span class="line">  "security.workspace.trust.untrustedFiles": "open",</span><br><span class="line">  "explorer.confirmDelete": false,</span><br><span class="line">  "explorer.confirmDragAndDrop": false</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h2 id="五、不同语言的配置"><a href="#五、不同语言的配置" class="headerlink" title="五、不同语言的配置"></a>五、不同语言的配置</h2><h3 id="LaTeX"><a href="#LaTeX" class="headerlink" title="LaTeX"></a>LaTeX</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "latex-workshop.formatting.latex": "latexindent",</span><br><span class="line">  "latex-workshop.formatting.latexindent.args": [</span><br><span class="line">    "-"</span><br><span class="line">  ],</span><br><span class="line">  "latex-workshop.latex.autoBuild.run": "onSave",</span><br><span class="line">  "latex-workshop.latex.autoClean.run": "onBuilt",</span><br><span class="line">  "latex-workshop.latex.recipe.default": "lastUsed",</span><br><span class="line">  "latex-workshop.view.pdf.viewer": "tab",</span><br><span class="line">  "latex-workshop.view.pdf.zoom": "page-width",</span><br><span class="line">  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",</span><br><span class="line"></span><br><span class="line">  "[latex]": {</span><br><span class="line">    "editor.formatOnSave": true,</span><br><span class="line">    "editor.defaultFormatter": "James-Yu.latex-workshop"</span><br><span class="line">  },</span><br><span class="line">  "[tex]": {</span><br><span class="line">    "editor.formatOnSave": true,</span><br><span class="line">    "editor.defaultFormatter": "James-Yu.latex-workshop"</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "markdown-preview-enhanced.enablePreviewZenMode": true,</span><br><span class="line">  "markdown-preview-enhanced.previewTheme": "atom-light.css",</span><br><span class="line">  "markdown-preview-enhanced.revealjsTheme": "beige.css",</span><br><span class="line">  "markdown-preview-enhanced.codeBlockTheme": "github.css",</span><br><span class="line"></span><br><span class="line">  "[markdown]": {</span><br><span class="line">    "editor.quickSuggestions": {</span><br><span class="line">      "comments": "on",</span><br><span class="line">      "strings": "on",</span><br><span class="line">      "other": "on"</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h3 id="其他语言"><a href="#其他语言" class="headerlink" title="其他语言"></a>其他语言</h3><p>略。</p>
-<h2 id="六、AI-相关扩展"><a href="#六、AI-相关扩展" class="headerlink" title="六、AI 相关扩展"></a>六、AI 相关扩展</h2><p>已安装的主要 AI 扩展：</p>
+<h2 id="五、不同语言的配置">五、不同语言的配置</h2>
+<h3 id="LaTeX">LaTeX</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "latex-workshop.formatting.latex": "latexindent",</span><br><span class="line">  "latex-workshop.formatting.latexindent.args": [</span><br><span class="line">    "-"</span><br><span class="line">  ],</span><br><span class="line">  "latex-workshop.latex.autoBuild.run": "onSave",</span><br><span class="line">  "latex-workshop.latex.autoClean.run": "onBuilt",</span><br><span class="line">  "latex-workshop.latex.recipe.default": "lastUsed",</span><br><span class="line">  "latex-workshop.view.pdf.viewer": "tab",</span><br><span class="line">  "latex-workshop.view.pdf.zoom": "page-width",</span><br><span class="line">  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",</span><br><span class="line"></span><br><span class="line">  "[latex]": {</span><br><span class="line">    "editor.formatOnSave": true,</span><br><span class="line">    "editor.defaultFormatter": "James-Yu.latex-workshop"</span><br><span class="line">  },</span><br><span class="line">  "[tex]": {</span><br><span class="line">    "editor.formatOnSave": true,</span><br><span class="line">    "editor.defaultFormatter": "James-Yu.latex-workshop"</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="Markdown">Markdown</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "markdown-preview-enhanced.enablePreviewZenMode": true,</span><br><span class="line">  "markdown-preview-enhanced.previewTheme": "atom-light.css",</span><br><span class="line">  "markdown-preview-enhanced.revealjsTheme": "beige.css",</span><br><span class="line">  "markdown-preview-enhanced.codeBlockTheme": "github.css",</span><br><span class="line"></span><br><span class="line">  "[markdown]": {</span><br><span class="line">    "editor.quickSuggestions": {</span><br><span class="line">      "comments": "on",</span><br><span class="line">      "strings": "on",</span><br><span class="line">      "other": "on"</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="其他语言">其他语言</h3>
+<p>略。</p>
+<h2 id="六、AI-相关扩展">六、AI 相关扩展</h2>
+<p>已安装的主要 AI 扩展：</p>
 <table>
 <thead>
 <tr>
@@ -1485,7 +1502,8 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>openai.chatgpt</code></td>
 <td>Codex in VS Code</td>
 </tr>
@@ -1501,30 +1519,30 @@
 <td><code>github.copilot</code> 相关配置</td>
 <td>GitHub Copilot 配置项</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>相关配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "editor.inlineSuggest.enabled": true,</span><br><span class="line">  "github.copilot.nextEditSuggestions.enabled": true,</span><br><span class="line">  "chat.agent.thinkingStyle": "collapsed",</span><br><span class="line">  "chat.viewSessions.orientation": "stacked",</span><br><span class="line">  "chat.titleBar.openInAgentsWindow.enabled": false,</span><br><span class="line">  "chatgpt.localeOverride": "en-US",</span><br><span class="line">  "chatgpt.followUpQueueMode": "queue"</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
 <p>Kilo Code 的界面和自动化偏好：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "kilo-code.new.agentWorkStyle": "autonomous",</span><br><span class="line">  "kilo-code.new.showTaskTimeline": false,</span><br><span class="line">  "kilo-code.new.attention.enabled": true,</span><br><span class="line">  "kilo-code.new.autocomplete.enableAutoTrigger": false,</span><br><span class="line">  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": true,</span><br><span class="line">  "kilo-code.new.autocomplete.enableChatAutocomplete": false,</span><br><span class="line">  "kilo-code.new.showTokenThroughput": true</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
 <p>注意这里我手动关闭了自带的 Copilot  AI 功能：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">"chat.disableAIFeatures": true</span><br></pre></td></tr></table></figure>
-
-<h2 id="七、扩展清单（部分）"><a href="#七、扩展清单（部分）" class="headerlink" title="七、扩展清单（部分）"></a>七、扩展清单（部分）</h2><h3 id="AI-与编程辅助"><a href="#AI-与编程辅助" class="headerlink" title="AI 与编程辅助"></a>AI 与编程辅助</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openai.chatgpt</span><br><span class="line">kilocode.kilo-code</span><br><span class="line">pawelhuryn.grok-vscode-phuryn</span><br></pre></td></tr></table></figure>
-
-<h3 id="LaTeX、数学和知识管理"><a href="#LaTeX、数学和知识管理" class="headerlink" title="LaTeX、数学和知识管理"></a>LaTeX、数学和知识管理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">james-yu.latex-workshop</span><br><span class="line">lydt.tsqx-compiler</span><br><span class="line">orangex4.hsnips</span><br><span class="line">supakornras.asymptote</span><br><span class="line">tecosaur.latex-utilities</span><br><span class="line">xing.zotero-cite</span><br><span class="line">unicode-latex</span><br></pre></td></tr></table></figure>
-
+<h2 id="七、扩展清单（部分）">七、扩展清单（部分）</h2>
+<h3 id="AI-与编程辅助">AI 与编程辅助</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openai.chatgpt</span><br><span class="line">kilocode.kilo-code</span><br><span class="line">pawelhuryn.grok-vscode-phuryn</span><br></pre></td></tr></table></figure>
+<h3 id="LaTeX、数学和知识管理">LaTeX、数学和知识管理</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">james-yu.latex-workshop</span><br><span class="line">lydt.tsqx-compiler</span><br><span class="line">orangex4.hsnips</span><br><span class="line">supakornras.asymptote</span><br><span class="line">tecosaur.latex-utilities</span><br><span class="line">xing.zotero-cite</span><br><span class="line">unicode-latex</span><br></pre></td></tr></table></figure>
 <p>实际扩展 ID 中，Unicode LaTeX 扩展是：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">oijaz.unicode-latex</span><br></pre></td></tr></table></figure>
-
-<h3 id="Markdown-与文档"><a href="#Markdown-与文档" class="headerlink" title="Markdown 与文档"></a>Markdown 与文档</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bierner.markdown-mermaid</span><br><span class="line">cweijan.vscode-office</span><br></pre></td></tr></table></figure>
+<h3 id="Markdown-与文档">Markdown 与文档</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bierner.markdown-mermaid</span><br><span class="line">cweijan.vscode-office</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>工具与效率</category>
       </categories>
       <tags>
-        <tag>VS Code</tag>
+        <tag>工具</tag>
+        <tag>技术</tag>
         <tag>配置</tag>
       </tags>
   </entry>
