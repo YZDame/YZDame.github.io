@@ -333,7 +333,21 @@
 <span id="more"></span>
 <p>总的说来，有以下几点技术加持。</p>
 <p>一是markdown相关。从Mathpix Snip到Typora再到vscode+marp流水线式“生产”讲稿以及课件以及答案解析，贯穿始终的md语法让一切操作都变得无比丝滑。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph </span><br><span class="line">    A(Mathpix Snip) --&gt;|截图和识别数学公式| B(Typora)</span><br><span class="line">    B --&gt;|编辑和格式化文档| C(VSCode+Marp)</span><br><span class="line">    C --&gt;|创建和预览幻灯片| D(最终讲稿和课件输出)</span><br><span class="line">    </span><br><span class="line">    style A fill:#e6f7ff,stroke:#5b8db8,stroke-width:2px</span><br><span class="line">    style B fill:#fff0f6,stroke:#d35d6e,stroke-width:2px</span><br><span class="line">    style C fill:#fffbe6,stroke:#f4b942,stroke-width:2px</span><br><span class="line">    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre>
+<code class="mermaid">
+
+graph 
+    A(Mathpix Snip) --&gt;|截图和识别数学公式| B(Typora)
+    B --&gt;|编辑和格式化文档| C(VSCode+Marp)
+    C --&gt;|创建和预览幻灯片| D(最终讲稿和课件输出)
+    
+    style A fill:#e6f7ff,stroke:#5b8db8,stroke-width:2px
+    style B fill:#fff0f6,stroke:#d35d6e,stroke-width:2px
+    style C fill:#fffbe6,stroke:#f4b942,stroke-width:2px
+    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+</code>
+</pre>
 <p>二是AI相关。为了让课堂不单调，我尝试用GPT-4生成了一些谜语和插图。</p>
 <p>比如讲韦达定理时，我本打算找一则相关的谜语，但是在网上找了一圈也没有发现合适的，于是让GPT-4写了一个：</p>
 <blockquote>
@@ -878,7 +892,7 @@
 <p>2026 年 7 月 25 日 于凤凰山谷（纯手敲）</p>
 ]]></content>
       <categories>
-        <category>AI工具小结</category>
+        <category>AI 日记</category>
       </categories>
       <tags>
         <tag>AI</tag>
@@ -1089,7 +1103,7 @@
 <p>2026年2月18日 大年初二</p>
 ]]></content>
       <categories>
-        <category>AI工具小结</category>
+        <category>AI 日记</category>
       </categories>
       <tags>
         <tag>AI</tag>
@@ -1467,7 +1481,7 @@
 时隔两年, 我的博客终于回来了!</p>
 ]]></content>
       <categories>
-        <category>生活杂感</category>
+        <category>生活巧克力</category>
       </categories>
       <tags>
         <tag>AI</tag>
@@ -1529,7 +1543,7 @@
 <p><em>本文由飞书智能纪要整理，2026年4月5日</em></p>
 ]]></content>
       <categories>
-        <category>AI工具小结</category>
+        <category>AI 日记</category>
       </categories>
       <tags>
         <tag>AI</tag>
@@ -1544,7 +1558,6 @@
     <url>/post/b585e161.html</url>
     <content><![CDATA[<p>转眼间博客停更也有大半年了，由于小问题不断，在某一次页面渲染空白后很长一段时间我都没有了写作的动力。现在看来大概率是个别文章的语法或短链的设置问题，所以我打算让以前的文章保留在<a href="https://leyudame.github.io/">原有的站点</a>，至于新博客则从头开始。</p>
 <span id="more"></span>
-
 <p>其实在写博客之前我就接触到了GitHub pages，当时准备参加2023年的美赛，我想把一些有用的链接放到一个网页上分享给队友，于是利用GitHub pages的README文件把这些链接整理在了一起，虽然后面也没太大用处，但我发现，对于我这样一个计算机小白，原来只需要掌握一点markdown语言就可以制作一个简单的静态网页。</p>
 <p>同样是在那个寒假，我在朋友圈看到了一位高中同学分享的年度总结，图文并茂十分精彩，后面我才知道那是基于Hugo搭建的博客。此外，步入大三下学期，我在网上查询很多数学或者是LaTeX相关知识的时候，我发现很多高质量的文章都出自个人博客。于是，我渐渐萌生了搭建自己个人博客的想法。</p>
 <p>经过一番比较，我选择了主流简单的GitHub+Hexo的方案，并选择了简约但高级的Next主题，其中很大的原因是受<a href="https://liam.page/">始终</a>和<a href="https://hanyuz1996.github.io/">Mesonychid</a>两个网站的影响，前者在学习LaTeX时总能看到相关的文章，而后者则与我当时学习高维统计的课程内容十分相关，且有很多不错的补充。所以一直以来，我对自己博客的定位始终围绕LaTeX和数学。</p>
@@ -1556,7 +1569,7 @@
 <p>2025年6月17日</p>
 ]]></content>
       <categories>
-        <category>生活杂感</category>
+        <category>生活巧克力</category>
       </categories>
       <tags>
         <tag>博客</tag>
@@ -1567,7 +1580,7 @@
     <title>如何当好一名校内竞赛教练</title>
     <url>/post/c716e291.html</url>
     <content><![CDATA[<blockquote>
-<p>文章作者: 陈嘉昊</p>
+<p>原文作者是陈嘉昊。出处是某次竞赛培训讲座。我觉得讲得非常好所以整理出来，时不时翻阅一下。</p>
 </blockquote>
 <h2 id="一、序言：校内竞赛教练vs机构老师">一、序言：校内竞赛教练vs机构老师</h2>
 <h3 id="校内教练多了哪些职责？">校内教练多了哪些职责？</h3>
