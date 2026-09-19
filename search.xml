@@ -214,7 +214,6 @@
     <url>/post/fda8c156.html</url>
     <content><![CDATA[<p>记录一下自己常用的Marp基本配置，这样如果隔一段时间不用忘记了又得翻这几个文档🤣</p>
 <span id="more"></span>
-
 <ol>
 <li><a href="https://cloud.tencent.com/developer/article/1942512">https://cloud.tencent.com/developer/article/1942512</a></li>
 <li><a href="https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD">https://caizhiyuan.gitee.io/categories/skills/20200730-marp.html#%E5%8A%9F%E8%83%BD</a></li>
@@ -223,39 +222,36 @@
 </ol>
 <p>基本配置：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">marp: true</span><br><span class="line">theme: gaia</span><br><span class="line"><span class="section">#gaia, uncover, default</span></span><br><span class="line"><span class="emphasis">_class: lead</span></span><br><span class="line"><span class="emphasis">paginate: true</span></span><br><span class="line"><span class="emphasis">header: </span></span><br><span class="line"><span class="emphasis">footer: </span></span><br><span class="line"><span class="emphasis">headingDivider: 2 </span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
-
 <p>指定页垂直居中：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--_class: lead--&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p><em>其他功能如插入图片和语法细节后期补充。</em></p>
 ]]></content>
       <tags>
         <tag>Marp</tag>
         <tag>Markdown</tag>
-        <tag>vscode</tag>
+        <tag>VS Code</tag>
       </tags>
   </entry>
   <entry>
     <title>Tikz绘制BNU校徽</title>
     <url>/post/2723d25d.html</url>
-    <content><![CDATA[<h2 id="Tikz校徽"><a href="#Tikz校徽" class="headerlink" title="Tikz校徽"></a>Tikz校徽</h2><blockquote>
+    <content><![CDATA[<h2 id="Tikz校徽">Tikz校徽</h2>
+<blockquote>
 <p>矢量图来源于Figma上的<em>中国大学矢量校徽合集</em>，但是由于介绍页面中注明禁止转载，所以也就不附上链接了。</p>
 </blockquote>
 <p>前段时间看到了<a href="https://yuxtech.club/2019/06/14/ink/">这篇文章</a>中通过<a href="https://inkscape.org/">Inkscape</a>以及插件<a href="https://github.com/xyz2tex/svg2tikz">svg2tikz</a>，分别得到了复旦和科大的校徽Tikz代码。由于之前发布的部分模板里并没有用到矢量logo，于是得到北师大校徽Tikz代码后，我顺带更新了一下之前模板里的校徽，目前更新已全部发布到<a href="https://github.com/LeyuDame">GitHub</a>，而overleaf由于发布流程繁琐一些，所以暂时不考虑更新。</p>
 <span id="more"></span>
-
 <p>在<a href="https://inkscape.org/">Inkscape</a>中导出的时候，似乎有一个用浮点数表示的精度选项（❓记不太清楚了），由于我直接选择了最高精度，所以导出来有五千多行代码，不过也才几百KB，并且放在tex文件中这部分代码片段是可以折叠的，这样就免去了插入图片带来的各种问题。当然，既然用到了Tikz绘图，那么相应的宏包一定不要忘记添加，一般来说这三个就够用了：</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{graphicx} </span><br><span class="line"><span class="keyword">\usepackage</span>{pgfplots}</span><br><span class="line"><span class="keyword">\pgfplotsset</span>{compat=1.18}</span><br></pre></td></tr></table></figure>
-
 <p>相应的Tikz代码可参见<a href="https://github.com/LeyuDame/BNU_icon_Tikz">BNU_icon_Tikz</a>，同一目录下还包括了校徽和校名矢量图(.pdf)。</p>
-<h2 id="原有模板更新"><a href="#原有模板更新" class="headerlink" title="原有模板更新"></a>原有模板更新</h2><p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
+<h2 id="原有模板更新">原有模板更新</h2>
+<p>此次的更新主要是原来那些没有用矢量logo的模板，包括</p>
 <ol>
 <li><a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 北师大中文简历模板</li>
 <li><a href="https://github.com/LeyuDame/BNUpapers">BNUpapers</a> 北师大课程小论文模板</li>
 </ol>
 <p>其中还解决了<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a>在本地vscode用<code>xelatex</code>编译显示不出头像图片的问题，原因在于需要用<code>xelatex</code>编译两遍，要配置<code>xelatex*2</code>，只需在<code>settings.json</code>中的<code>"latex-workshop.latex.recipes": [...]</code>部分加入</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"XeLaTeX * 2"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"xelatex"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
 <p>所以解决上述问题后，<a href="https://github.com/LeyuDame/BNUCV">BNUCV</a> 也顺带发布到了GitHub中。</p>
 ]]></content>
       <categories>
@@ -264,7 +260,7 @@
       <tags>
         <tag>LaTeX</tag>
         <tag>模板</tag>
-        <tag>Tikz</tag>
+        <tag>TikZ</tag>
       </tags>
   </entry>
   <entry>
@@ -272,41 +268,30 @@
     <url>/post/cbb03b27.html</url>
     <content><![CDATA[<p>今天push到远程仓库的时候系统报错：</p>
 <span id="more"></span>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Failed to connect to github.com port 443 after 21051 ms: Couldn't connect to server</span><br></pre></td></tr></table></figure>
-
 <p>接着又是一顿左转右转反复尝试，试了一堆方法都不行（尤其是某N网站里的回答），最后通过这篇<a href="https://zhuanlan.zhihu.com/p/636418854">知乎文章</a>里的方法搞定。</p>
 <p>其实说到底就是<strong>git 设置的端口与系统代理不一致</strong>，调整一下git端口即可。</p>
 <p>首先可以查看一下当前git是否使用了代理：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
-
 <p>如果使用了代理会显示相应的ip以及端口号，未使用则不会显示内容。</p>
 <p>接着查看一下自己的系统代理，以win11为例，在“设置-网络和Internet-代理”中编辑代理服务器界面可以查看到当前的系统代理地址和端口，比如我的是<code>127.0.0.1:7890</code>，接下来给自己的git配置上：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 注意结合自己的实际情况调整代理地址</span><br><span class="line">git config --global http.proxy http://127.0.0.1:7890 </span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<p> 最后重新push一下，搞定！🎉</p>
+<p>最后重新push一下，搞定！🎉</p>
 <p><em>如果需要重置即恢复默认值取消git代理的话，可以使用如下命令：</em></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 取消代理</span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 ]]></content>
       <tags>
         <tag>GitHub</tag>
-        <tag>git</tag>
-        <tag>bug</tag>
+        <tag>Git</tag>
+        <tag>故障排查</tag>
       </tags>
   </entry>
   <entry>
     <title>BNU LaTeX课程小论文模板</title>
     <url>/post/ef784f81.html</url>
-    <content><![CDATA[<h2 id="模板说明"><a href="#模板说明" class="headerlink" title="模板说明"></a>模板说明</h2><p>本模板主要适用于一些课程的平时论文以及期末论文，默认页边距为2.5cm，中文宋体，英文Times New Roman，字号为12pt（小四）。</p>
+    <content><![CDATA[<h2 id="模板说明">模板说明</h2>
+<p>本模板主要适用于一些课程的平时论文以及期末论文，默认页边距为2.5cm，中文宋体，英文Times New Roman，字号为12pt（小四）。</p>
 <span id="more"></span>
-
 <p>编译方式：<code>xelatex -&gt; bibtex -&gt; xelatex*2</code></p>
 <p>默认模板文件由以下四部分组成：</p>
 <ol>
@@ -317,14 +302,17 @@
 </ol>
 <p>第一次使用时需前往<code>BNUpapers.sty</code> 对标题、姓名、学号、院系、页眉等进行设置，设置完后即可一劳永逸，封面logo亦可替换</p>
 <p>默认带有封面页以及目录页，页码从目录页开始</p>
-<h2 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a>特色功能</h2><ol>
+<h2 id="特色功能">特色功能</h2>
+<ol>
 <li>智能引用<code>\autoref{}</code></li>
 <li>插入圆角灰底的文本框<code>\tbox{}</code></li>
 <li>中文定理环境</li>
 <li>Bibtex</li>
 </ol>
-<h2 id="待实现的功能"><a href="#待实现的功能" class="headerlink" title="待实现的功能"></a>待实现的功能</h2><p>一般在数学中文论文中，常常用实心全角句点“.”代替句号“。”，为实现这一功能，理论上可以用<code>xeCJK</code>里的<code>fullwidth-stop</code>来进行字符映射，从而实现句号的转换，但在实际编译中常常因为各种原因报错，希望以后能实现这一功能。</p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
+<h2 id="待实现的功能">待实现的功能</h2>
+<p>一般在数学中文论文中，常常用实心全角句点“.”代替句号“。”，为实现这一功能，理论上可以用<code>xeCJK</code>里的<code>fullwidth-stop</code>来进行字符映射，从而实现句号的转换，但在实际编译中常常因为各种原因报错，希望以后能实现这一功能。</p>
+<h2 id="链接">链接</h2>
+<ul>
 <li><a href="https://github.com/LeyuDame/BNUpapers">GitHub</a></li>
 <li><a href="https://www.overleaf.com/latex/templates/bnuke-cheng-lun-wen-mo-ban/bcwvxncqffkw">Overleaf</a></li>
 </ul>
@@ -335,7 +323,7 @@
       <tags>
         <tag>LaTeX</tag>
         <tag>模板</tag>
-        <tag>overleaf</tag>
+        <tag>Overleaf</tag>
       </tags>
   </entry>
   <entry>
@@ -343,11 +331,9 @@
     <url>/post/9d56260e.html</url>
     <content><![CDATA[<p>前几天整理了一下1月份上学科营的内容，连续多天的课程为我后续进行批量大规模的备课提供了可借鉴的经验基础。</p>
 <span id="more"></span>
-
 <p>总的说来，有以下几点技术加持。</p>
 <p>一是markdown相关。从Mathpix Snip到Typora再到vscode+marp流水线式“生产”讲稿以及课件以及答案解析，贯穿始终的md语法让一切操作都变得无比丝滑。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph </span><br><span class="line">    A(Mathpix Snip) --&gt;|截图和识别数学公式| B(Typora)</span><br><span class="line">    B --&gt;|编辑和格式化文档| C(VSCode+Marp)</span><br><span class="line">    C --&gt;|创建和预览幻灯片| D(最终讲稿和课件输出)</span><br><span class="line">    </span><br><span class="line">    style A fill:#e6f7ff,stroke:#5b8db8,stroke-width:2px</span><br><span class="line">    style B fill:#fff0f6,stroke:#d35d6e,stroke-width:2px</span><br><span class="line">    style C fill:#fffbe6,stroke:#f4b942,stroke-width:2px</span><br><span class="line">    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>二是AI相关。为了让课堂不单调，我尝试用GPT-4生成了一些谜语和插图。</p>
 <p>比如讲韦达定理时，我本打算找一则相关的谜语，但是在网上找了一圈也没有发现合适的，于是让GPT-4写了一个：</p>
 <blockquote>
@@ -359,14 +345,14 @@
 </blockquote>
 <p>以及几幅章节页的插图：</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010815221.webp" style="zoom: 25%;">
-
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010817513.webp" alt="" style="zoom: 25%;">
-
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202402010816770.webp" style="zoom: 25%;">
-
 <p>因为这几节课的核心在于“对称性”思想，所以这些插图虽然里面的符号看上去有些奇怪，但是整体的效果仍然很好地突出了主题。</p>
 <p>谜语是简单的，插图是抽象的，这几节课同学们反馈的效果还不错，相当于是咖啡加糖，起到了恰到好处的调节作用。顺便再提一下上面的这个mermaid图也是GPT-4画的。😋</p>
 ]]></content>
+      <categories>
+        <category>教学札记</category>
+      </categories>
       <tags>
         <tag>数学教学</tag>
       </tags>
@@ -378,47 +364,47 @@
 <p>很久之前就有搭建一个丝滑的毕业论文写作平台的构想了，但是直到最近才有时间写出来。毕业论文同数学建模竞赛论文一样都有着较为严格的格式规范，具体的格式要求可参阅长达10页的<a href="https://jwb.bnu.edu.cn/docs/2021-11/20451a955bc94eef9ea9baf69d94eea0.pdf">《师教培养〔2020〕6 号-北京师范大学本科生毕业论文写作规范》</a>，因此如果能用上提前定义好格式的<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>模板，专注于查阅文献与内容创作，并且让论文里的数学公式和图表漂亮一些，将是一个较为不错的选择。</p>
 </blockquote>
 <span id="more"></span>
-
-<h2 id="下载BNU图书馆官方-LaTeX-模板"><a href="#下载BNU图书馆官方-LaTeX-模板" class="headerlink" title="下载BNU图书馆官方$\LaTeX$模板"></a>下载BNU图书馆官方<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>模板</h2><p>在<a href="https://etdlib.bnu.edu.cn/index.action">北京师范大学图书馆学位论文服务系统</a>的<a href="https://etdlib.bnu.edu.cn/download.jsp">常用下载</a>页面中，找到<strong>研究生学位论文Latex参考模板</strong>，下载得到<code>zip</code>源文档，下载到本地后就会发现这个模板其实是<strong>学士/硕士/博士通用</strong>的一个模板，是从清华大学 TUNA 协会制作的<a href="https://github.com/tuna/thuthesis">清华大学学位论文模板</a>修改而来的。</p>
-<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>在电脑已经能够用vscode编译<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>的前提下（这一点如未配置可参考网上的<a href="https://zhuanlan.zhihu.com/p/139210056">相关文字教程</a>或<a href="https://www.bilibili.com/video/BV11h41127FD">视频</a>），解压后用vscode打开整个文件夹，开始对模板文档进行基本的配置。</p>
+<h2 id="下载BNU图书馆官方-LaTeX-模板">下载BNU图书馆官方<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>模板</h2>
+<p>在<a href="https://etdlib.bnu.edu.cn/index.action">北京师范大学图书馆学位论文服务系统</a>的<a href="https://etdlib.bnu.edu.cn/download.jsp">常用下载</a>页面中，找到<strong>研究生学位论文Latex参考模板</strong>，下载得到<code>zip</code>源文档，下载到本地后就会发现这个模板其实是<strong>学士/硕士/博士通用</strong>的一个模板，是从清华大学 TUNA 协会制作的<a href="https://github.com/tuna/thuthesis">清华大学学位论文模板</a>修改而来的。</p>
+<h2 id="基本配置">基本配置</h2>
+<p>在电脑已经能够用vscode编译<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>的前提下（这一点如未配置可参考网上的<a href="https://zhuanlan.zhihu.com/p/139210056">相关文字教程</a>或<a href="https://www.bilibili.com/video/BV11h41127FD">视频</a>），解压后用vscode打开整个文件夹，开始对模板文档进行基本的配置。</p>
 <p>首先推荐过一遍官方的说明文档<code>bnuthesis.pdf</code>的内容，按照相关提示进行操作即可。</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/bnuthesis.webp">
-
 <p><strong>主要步骤与注意事项：</strong></p>
 <ol>
-<li><p>**新建：**按照说明文档中<code>3.3 编译论文</code>部分的提示，建议另行复制一份主文档并重命名（例如<code>main.tex</code>），并且<code>/data</code>文件夹中对应各章节的<code>tex</code>文件的首行也更改<code>!TeX root</code>后相应的文件名；</p>
+<li>
+<p>**新建：**按照说明文档中<code>3.3 编译论文</code>部分的提示，建议另行复制一份主文档并重命名（例如<code>main.tex</code>），并且<code>/data</code>文件夹中对应各章节的<code>tex</code>文件的首行也更改<code>!TeX root</code>后相应的文件名；</p>
 </li>
-<li><p>**改头：**在<code>bnusetup.tex</code>文档里填写自己的基本信息；</p>
+<li>
+<p>**改头：**在<code>bnusetup.tex</code>文档里填写自己的基本信息；</p>
 </li>
-<li><p>**换面：**更换封面，在你自己主文档的<code>\documentclass</code>部分根据自身情况调整学位参数；</p>
+<li>
+<p>**换面：**更换封面，在你自己主文档的<code>\documentclass</code>部分根据自身情况调整学位参数；</p>
 <p>默认为学术硕士：</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[degree=master]{bnuthesis}</span><br><span class="line">  <span class="comment">% 学位 degree:</span></span><br><span class="line">  <span class="comment">%   doctor | master | bachelor</span></span><br><span class="line">  <span class="comment">% 学位类型 degree-type:</span></span><br><span class="line">  <span class="comment">%   academic（默认）| professional</span></span><br></pre></td></tr></table></figure>
-
 <p>封面长这样：</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202312200847205.webp">
-
 <p>如果是本科生，使用下面修改后的参数即可：</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[degree=bachelor]{bnuthesis}</span><br><span class="line">  <span class="comment">% 学位 degree:</span></span><br><span class="line">  <span class="comment">%   doctor | master | bachelor</span></span><br><span class="line">  <span class="comment">% 学位类型 degree-type:</span></span><br><span class="line">  <span class="comment">%   academic（默认）| professional</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>**编译：**如果电脑是Windows，推荐直接用<code>latexmk</code>命令在终端编译一次即可，如果你的主文档叫<code>main.tex</code>，要编译输出相应的pdf，则基本格式为</p>
+<li>
+<p>**编译：**如果电脑是Windows，推荐直接用<code>latexmk</code>命令在终端编译一次即可，如果你的主文档叫<code>main.tex</code>，要编译输出相应的pdf，则基本格式为</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">latexmk <span class="selector-tag">main</span><span class="selector-class">.tex</span></span><br></pre></td></tr></table></figure>
-
 <p>若要清理编译生成的辅助文件，输入</p>
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">latexmk -c</span></span><br></pre></td></tr></table></figure>
-
 <p>如果是本科生，在修改<code>\documentclass</code>参数后用上述方法编译一次，可以看到封面瞬间焕然一新，与官方word版的封面（如下图）如出一辙（可能比word版更清晰一些🤔）：</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202312200853633.webp">
-
 <p>至此，模板基本的配置就完成了，下面可根据个人需要选择性地添加部分功能（起飞✈️）。</p>
 </li>
 </ol>
-<h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><p>以下部分功能的实现可能需要一点时间（当然全都是选择性的，不是必须），这里只简单介绍基本功能及配置思路。</p>
-<h3 id="智能补全：Github-Copilot"><a href="#智能补全：Github-Copilot" class="headerlink" title="智能补全：Github Copilot"></a>智能补全：<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">Github Copilot</a></h3><img src="https://github.gallerycdn.vsassets.io/extensions/github/copilot/1.143.601/1702570386943/Microsoft.VisualStudio.Services.Icons.Default" style="zoom: 33%;">
-
+<h2 id="进阶配置">进阶配置</h2>
+<p>以下部分功能的实现可能需要一点时间（当然全都是选择性的，不是必须），这里只简单介绍基本功能及配置思路。</p>
+<h3 id="智能补全：Github-Copilot">智能补全：<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">Github Copilot</a></h3>
+<img src="https://github.gallerycdn.vsassets.io/extensions/github/copilot/1.143.601/1702570386943/Microsoft.VisualStudio.Services.Icons.Default" style="zoom: 33%;">
 <p>用vscode的一大好处就在于这个接入了GPT-4的插件<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">Github Copilot</a>，虽然其本质上是一个代码补全工具，但是其强大的功能使得在编写tex文档时一样能够丝滑输出，它会根据上下文不断学习，自动推测出光标处要写的公式及文字😋</p>
 <p>Github Copilot的订阅费用为$ 10/月，但是在GitHub中用edu邮箱完成学生认证后即可免费使用，具体步骤请自行Google</p>
-<h3 id="云同步：git"><a href="#云同步：git" class="headerlink" title="云同步：git"></a>云同步：git</h3><img src="https://git-scm.com/images/logo@2x.png" style="zoom: 80%;">
-
+<h3 id="云同步：git">云同步：git</h3>
+<img src="https://git-scm.com/images/logo@2x.png" style="zoom: 80%;">
 <p>写论文过程中及时备份存档毫无疑问是一个很重要的功能，并且有时会同时产生多个版本，形成不同的分支，要从当前版本切换到不同分支，又或是不小心删除了当前的内容需要回退到前一个版本，这个时候git就出现了。（<a href="https://zhuanlan.zhihu.com/p/610468270">如何做好 Word 文档的版本管理？两种方法10个工具 - 知乎</a>）</p>
 <p>实现云同步的工具有很多，适合自己的才是最好的。于我而言，对<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container>数学公式的支持最为重要，因此Word或者其他云文档在这方面就有些欠缺。用git进行版本控制与Word和其他云文档主要有以下区别：</p>
 <table>
@@ -429,7 +415,8 @@
 <th>对网络环境的依赖</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>git</td>
 <td>利用tex/md文档书写，本质上是代码，完美支持✅</td>
 <td>需要同步（push）的时候才需要网络，其余时间都在本地编辑🥰</td>
@@ -444,21 +431,26 @@
 <td>有些可以，但还是略显麻烦，不够强大❓</td>
 <td>需要实时网络🌐</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>用vscode的另一大好处就是可以很方便地利用git把tex文档接入GitHub进行同步，从而及时备份并进行版本控制（当然Overleaf上也有这个功能，不过价格有点小贵）。具体介绍可以参见这个up主的视频，还不错：<a href="https://www.bilibili.com/video/BV1KD4y1S7FL">《Git + GitHub 10分钟完全入门》</a></p>
 <p>这里我选择了<a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">gitlens</a>将版本记录可视化，当然也有其他很多git图形界面，都做得很不错，可按自己喜好选择（只要GitHub账号绑定了<strong>学生包</strong>，那么就可以直接用此GitHub账号登录获取GitKraken Pro🤩）。gitlens的界面长这样：</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202312200922915.webp">
-
-<h3 id="参考文献管理与引用"><a href="#参考文献管理与引用" class="headerlink" title="参考文献管理与引用"></a>参考文献管理与引用</h3><p>这里推荐采用<code>vscode</code>+<code>zotero</code>+<code>坚果云</code>的方式完成智能引用和参考文献云同步，用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.738ex;" xmlns="http://www.w3.org/2000/svg" width="8.371ex" height="2.284ex" role="img" focusable="false" viewBox="0 -683 3699.9 1009.4"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(708,0)"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="49" d="M328 0Q307 3 180 3T32 0H21V46H43Q92 46 106 49T126 60Q128 63 128 342Q128 620 126 623Q122 628 118 630T96 635T43 637H21V683H32Q53 680 180 680T328 683H339V637H317Q268 637 254 634T234 623Q232 620 232 342Q232 63 234 60Q238 55 242 53T264 48T317 46H339V0H328Z"></path><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z" transform="translate(361,0)"></path></g></g></g></g><g data-mml-node="msub" transform="translate(1463.9,0)"><g data-mml-node="mi"><path data-c="54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"></path></g><g data-mml-node="TeXAtom" transform="translate(755,-326.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="mi"><path data-c="45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path></g></g></g></g></g><g data-mml-node="mi" transform="translate(2949.9,0)"><path data-c="58" d="M270 0Q252 3 141 3Q46 3 31 0H23V46H40Q129 50 161 88Q165 94 244 216T324 339Q324 341 235 480T143 622Q133 631 119 634T57 637H37V683H46Q64 680 172 680Q297 680 318 683H329V637H324Q307 637 286 632T263 621Q263 618 322 525T384 431Q385 431 437 511T489 593Q490 595 490 599Q490 611 477 622T436 637H428V683H437Q455 680 566 680Q661 680 676 683H684V637H667Q585 634 551 599Q548 596 478 491Q412 388 412 387Q412 385 514 225T620 62Q628 53 642 50T695 46H726V0H717Q699 3 591 3Q466 3 445 0H434V46H440Q454 46 476 51T499 64Q499 67 463 124T390 238L353 295L350 292Q348 290 343 283T331 265T312 236T286 195Q219 88 218 84Q218 70 234 59T272 46H280V0H270Z"></path></g></g></g></g></g></g></svg></mjx-container>实现，具体引用格式的选择请参见说明文档的<code>4.7.1 参考文献</code>部分，相关配置方法可参考以下文章：</p>
+<h3 id="参考文献管理与引用">参考文献管理与引用</h3>
+<p>这里推荐采用<code>vscode</code>+<code>zotero</code>+<code>坚果云</code>的方式完成智能引用和参考文献云同步，用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.738ex;" xmlns="http://www.w3.org/2000/svg" width="8.371ex" height="2.284ex" role="img" focusable="false" viewBox="0 -683 3699.9 1009.4"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(708,0)"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="49" d="M328 0Q307 3 180 3T32 0H21V46H43Q92 46 106 49T126 60Q128 63 128 342Q128 620 126 623Q122 628 118 630T96 635T43 637H21V683H32Q53 680 180 680T328 683H339V637H317Q268 637 254 634T234 623Q232 620 232 342Q232 63 234 60Q238 55 242 53T264 48T317 46H339V0H328Z"></path><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z" transform="translate(361,0)"></path></g></g></g></g><g data-mml-node="msub" transform="translate(1463.9,0)"><g data-mml-node="mi"><path data-c="54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"></path></g><g data-mml-node="TeXAtom" transform="translate(755,-326.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(1.414)"><g data-mml-node="mi"><path data-c="45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path></g></g></g></g></g><g data-mml-node="mi" transform="translate(2949.9,0)"><path data-c="58" d="M270 0Q252 3 141 3Q46 3 31 0H23V46H40Q129 50 161 88Q165 94 244 216T324 339Q324 341 235 480T143 622Q133 631 119 634T57 637H37V683H46Q64 680 172 680Q297 680 318 683H329V637H324Q307 637 286 632T263 621Q263 618 322 525T384 431Q385 431 437 511T489 593Q490 595 490 599Q490 611 477 622T436 637H428V683H437Q455 680 566 680Q661 680 676 683H684V637H667Q585 634 551 599Q548 596 478 491Q412 388 412 387Q412 385 514 225T620 62Q628 53 642 50T695 46H726V0H717Q699 3 591 3Q466 3 445 0H434V46H440Q454 46 476 51T499 64Q499 67 463 124T390 238L353 295L350 292Q348 290 343 283T331 265T312 236T286 195Q219 88 218 84Q218 70 234 59T272 46H280V0H270Z"></path></g></g></g></g></g></g></svg></mjx-container>实现，具体引用格式的选择请参见说明文档的<code>4.7.1 参考文献</code>部分，相关配置方法可参考以下文章：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/183605019">VS Code + LaTex + Zotero 写作毕业论文 - 知乎 (zhihu.com)</a></li>
 <li><a href="https://help.jianguoyun.com/?p=4190">坚果云使用 Zotero 配置过程详解 | 坚果云帮助中心 (jianguoyun.com)</a></li>
 </ol>
-<h2 id="小工具与个性化"><a href="#小工具与个性化" class="headerlink" title="小工具与个性化"></a>小工具与个性化</h2><h3 id="Shift-IM-for-Math"><a href="#Shift-IM-for-Math" class="headerlink" title="Shift IM for Math"></a><a href="https://marketplace.visualstudio.com/items?itemName=yfzhao.shift-im-for-math">Shift IM for Math</a></h3><p>官方介绍：Automatically change IME condition. Make it easier to input <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container> in <code>latex</code> and <code>markdown</code> file. Without AutoHotkey.</p>
+<h2 id="小工具与个性化">小工具与个性化</h2>
+<h3 id="Shift-IM-for-Math"><a href="https://marketplace.visualstudio.com/items?itemName=yfzhao.shift-im-for-math">Shift IM for Math</a></h3>
+<p>官方介绍：Automatically change IME condition. Make it easier to input <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.488ex;" xmlns="http://www.w3.org/2000/svg" width="6.293ex" height="2.108ex" role="img" focusable="false" viewBox="0 -716.3 2781.3 931.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mspace" transform="translate(681,0)"></g><g data-mml-node="mpadded" transform="translate(356,0)"><g transform="translate(0,210)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle" transform="scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></g><g data-mml-node="mspace" transform="translate(886.3,0)"></g><g data-mml-node="mi" transform="translate(716.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mspace" transform="translate(1420.3,0)"></g><g data-mml-node="mpadded" transform="translate(1280.3,0)"><g transform="translate(0,-215.5)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g><g data-mml-node="mspace" transform="translate(2044.3,0)"></g><g data-mml-node="mi" transform="translate(1929.3,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container> in <code>latex</code> and <code>markdown</code> file. Without AutoHotkey.</p>
 <p>简而言之就是自动识别<code>$</code>之间的数学公式环境自动切换中英文输入。</p>
-<h3 id="Office主题套装"><a href="#Office主题套装" class="headerlink" title="Office主题套装"></a><a href="https://marketplace.visualstudio.com/items?itemName=huacat.office-theme">Office主题套装</a></h3><p>使用这个主题（非官方）会给人一种在编辑Office的错觉，其中Word主题效果如下：</p>
-<p><img src="https://raw.githubusercontent.com/huacat1017/huacat.office-theme/master/image/word.png"></p>
-<h3 id="NBARealTimeScore"><a href="#NBARealTimeScore" class="headerlink" title="NBARealTimeScore"></a><a href="https://marketplace.visualstudio.com/items?itemName=liyangjj.NBARealTimeScore">NBARealTimeScore</a></h3><p>官方介绍：实时获取当天NBA比赛比分，并显示在vscode下方状态栏左侧；更可以观看实时文字直播，以及赛后数据统计。你可以边搬砖边关注NBA。</p>
+<h3 id="Office主题套装"><a href="https://marketplace.visualstudio.com/items?itemName=huacat.office-theme">Office主题套装</a></h3>
+<p>使用这个主题（非官方）会给人一种在编辑Office的错觉，其中Word主题效果如下：</p>
+<p><img src="https://raw.githubusercontent.com/huacat1017/huacat.office-theme/master/image/word.png" alt=""></p>
+<h3 id="NBARealTimeScore"><a href="https://marketplace.visualstudio.com/items?itemName=liyangjj.NBARealTimeScore">NBARealTimeScore</a></h3>
+<p>官方介绍：实时获取当天NBA比赛比分，并显示在vscode下方状态栏左侧；更可以观看实时文字直播，以及赛后数据统计。你可以边搬砖边关注NBA。</p>
 <p>简而言之就是摸鱼搬砖两不误🤣</p>
 ]]></content>
       <categories>
@@ -467,44 +459,49 @@
       <tags>
         <tag>LaTeX</tag>
         <tag>模板</tag>
-        <tag>vscode</tag>
+        <tag>VS Code</tag>
       </tags>
   </entry>
   <entry>
     <title>解决hexo部署出现Spawn failed问题</title>
     <url>/post/cf2181b.html</url>
-    <content><![CDATA[<h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>在部署时出现如下问题：</p>
+    <content><![CDATA[<h2 id="报错信息">报错信息</h2>
+<p>在部署时出现如下问题：</p>
 <span id="more"></span>
-
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line"><span class="built_in">INFO</span>  Validating<span class="built_in"> config</span></span><br><span class="line"><span class="built_in"></span><span class="built_in">INFO</span>  Deploying: git</span><br><span class="line"><span class="built_in">INFO</span>  Clearing .deploy_git folder<span class="built_in">..</span>.</span><br><span class="line"><span class="built_in">INFO</span>  Copying files <span class="keyword">from</span> public folder<span class="built_in">..</span>.</span><br><span class="line"><span class="built_in">INFO</span>  Copying files <span class="keyword">from</span> extend dirs<span class="built_in">..</span>.</span><br><span class="line">On branch main</span><br><span class="line"><span class="literal">nothing</span> <span class="keyword">to</span> commit, working tree clean</span><br><span class="line">ssh: connect <span class="keyword">to</span> host github.com<span class="built_in"> port </span>22:<span class="built_in"> Connection </span>timed out</span><br><span class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line"><span class="keyword">and</span> the repository exists.</span><br><span class="line">FATAL {</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\.BNU\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:513:28)</span><br><span class="line">      at cp.emit (D:\.BNU\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at ChildProcess._handle.onexit (node:internal/child_process:291:12) {</span><br><span class="line">    code: 128</span><br><span class="line">  }</span><br><span class="line">} Something<span class="string">'s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方案一❌"><a href="#方案一❌" class="headerlink" title="方案一❌"></a>方案一❌</h3><p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
+<h2 id="解决办法">解决办法</h2>
+<h3 id="方案一❌">方案一❌</h3>
+<p>先是尝试了一下<a href="http://t.csdnimg.cn/wZKdW">这个方案</a>，但仍然报错：</p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="comment">##进入站点根目录</span></span><br><span class="line"><span class="keyword">cd</span> <span class="string">/usr/local/src/hexo/hanyubolg/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##删除git提交内容文件夹</span></span><br><span class="line">rm -rf <span class="string">.deploy_git/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##执行</span></span><br><span class="line">git config <span class="params">--global</span> core.autocrlf <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##最后</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="方案二✅"><a href="#方案二✅" class="headerlink" title="方案二✅"></a>方案二✅</h3><p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
+<h3 id="方案二✅">方案二✅</h3>
+<p>接着左转右转转到了<a href="https://wakeuppppp.github.io/2022/09/20/some-problems-with-hexo/">这篇文章</a>，按照如下步骤操作，成功：</p>
 <ul>
-<li><p>打开命令行输入</p>
+<li>
+<p>打开命令行输入</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
 <p>得到报错</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">ssh: <span class="title">connect</span> <span class="title">to</span> <span class="title">host</span> <span class="title">github.com</span> <span class="title">port</span> 22: <span class="title">Connection</span> <span class="title">timed</span> <span class="title">out</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
+<li>
+<p>找到 <code>.ssh</code> 文件夹，打开看其中是否有 <code>config</code> 文件，如果没有则新建一个，<code>windows</code> 用记事本打开编辑写入以下代码</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line"><span class="keyword">User</span> <span class="title">GitHub</span>用户名</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port <span class="number">443</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
+<li>
+<p>把其中的<code>GitHub用户名</code>修改成自己的用户名</p>
 </li>
-<li><p>命令行再次输入</p>
+<li>
+<p>命令行再次输入</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>出现相关提示，输入 <code>yes</code> 即可。</p>
+<li>
+<p>出现相关提示，输入 <code>yes</code> 即可。</p>
 </li>
 </ul>
 ]]></content>
       <tags>
-        <tag>git</tag>
-        <tag>bug</tag>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+        <tag>故障排查</tag>
       </tags>
   </entry>
   <entry>
@@ -627,38 +624,44 @@
     <url>/post/622bc5ab.html</url>
     <content><![CDATA[<p>在vscode中编译LaTeX时，时常会遇到几个小问题。</p>
 <span id="more"></span>
-
 <p>今天我尝试将这些小问题与copilot进行交流，没想到它很快给出了比较专业准确的回答，经过几轮对话，最终问题也都得到了解决。最后我把copilot的回答总结了一下得到了这篇文档，文中的解决办法<strong>全部</strong>来自copilot，因此个别细节的正确性还有待考证。</p>
-<h2 id="LaTeX-Workshop扩展的报错弹窗"><a href="#LaTeX-Workshop扩展的报错弹窗" class="headerlink" title="LaTeX Workshop扩展的报错弹窗"></a>LaTeX Workshop扩展的报错弹窗</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
+<h2 id="LaTeX-Workshop扩展的报错弹窗">LaTeX Workshop扩展的报错弹窗</h2>
+<h3 id="问题描述">问题描述</h3>
+<p>每次在写<code>.tex</code>文件时使用<code>Ctrl+S</code>来保存当前完成的工作，扩展LaTeX Workshop都会默认会编译一遍，但是这样编译肯定是会报错的，因为我设置的默认编译器是pdflatex，而一般写中文文档时需要用xelatex编译，有时还有bibtex，因此每次按下<code>Ctrl+S</code>后LaTeX Workshop扩展都给我弹窗提示报错</p>
 <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">Recipe terminated <span class="keyword">with</span> <span class="keyword">error</span>. Retry building <span class="keyword">the</span> project.</span><br></pre></td></tr></table></figure>
-
 <p>那么有没有什么解决办法呢？比如让<code>Ctrl+S</code>变为单纯的保存功能而不自动进行编译，或者隐藏LaTeX Workshop扩展的弹窗提示报错？</p>
 <blockquote>
 <p>在此之前我已经设置了常用编译链<code>xelatex -&gt; bibtex -&gt; xelatex*2</code>的快捷键为<code>Alt+X</code>，因此我希望取消这个保存（<code>Ctrl+S</code>）后自动用pdflatex编译的功能。</p>
 </blockquote>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
+<h3 id="解决办法">解决办法</h3>
+<p>在 VS Code 中，可以通过修改设置来禁止 LaTeX Workshop 扩展在保存文件时自动编译 LaTeX 文件。以下是具体步骤：</p>
 <ol>
 <li>打开 VS Code 的设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>设置</code>，或者使用快捷键 <code>Ctrl+,</code> 来打开。</li>
 <li>在设置中，找到 <code>LaTeX Workshop</code> 部分。</li>
 <li>在 <code>LaTeX Workshop</code> 设置中，找到 <code>latex.autoBuild.onSave.enabled</code> 选项，它默认是 <code>onFileChange</code>，现在选择 <code>never</code>。</li>
 </ol>
 <p>现在，当你保存 LaTeX 文件时，VS Code 不会自动编译它。</p>
-<h4 id="补充一"><a href="#补充一" class="headerlink" title="补充一"></a>补充一</h4><p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
-<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
+<h4 id="补充一">补充一</h4>
+<p>至于隐藏 LaTeX Workshop 扩展的弹窗提示报错，copilot没有找到直接的设置选项。但是，你可以尝试在设置中找到 <code>latex.recipe.default</code> 选项，然后将其设置为一个不会产生错误的编译命令，这可能可以避免弹窗提示报错。</p>
+<h4 id="补充二">补充二</h4>
+<p>这个设置决定了 LaTeX Workshop 扩展何时自动编译 LaTeX 项目。</p>
 <ul>
 <li><code>onSave</code>：在保存 <code>.tex</code> 文件时编译项目。也就是说，每当你在 VS Code 中保存 LaTeX 文件时，VS Code 将自动编译你的 LaTeX 项目。</li>
 <li><code>onFileChange</code>：在检测到任何依赖文件的变化时编译项目，即使这些变化是由其他应用程序引起的。</li>
 </ul>
-<h2 id="latexmk编译命令绑定快捷键"><a href="#latexmk编译命令绑定快捷键" class="headerlink" title="latexmk编译命令绑定快捷键"></a>latexmk编译命令绑定快捷键</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
-<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
-<li><p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
+<h2 id="latexmk编译命令绑定快捷键">latexmk编译命令绑定快捷键</h2>
+<h3 id="问题描述-2">问题描述</h3>
+<p>每次用latexmk命令编译时，都需要在内置终端输入<code>latexmk main.tex</code>，虽然只是一段短短的字符，但是在vscode中怎么能不用快捷键呢？因此我决定把这个命令和<code>Ctrl+D</code>绑定一下，这样和保存<code>Ctrl+S</code>就可以一起丝滑操作了，先保存再编译，而且也没有报错弹窗了，非常nice！</p>
+<h3 id="解决办法-2">解决办法</h3>
+<ol>
+<li>
+<p>在 VS Code 中，你可以通过创建一个任务（task）来运行 <code>latexmk</code> 命令，然后将这个任务绑定到快捷键 <code>Ctrl+S</code>。以下是具体步骤：</p>
 <ol>
 <li>在 VS Code 中，打开你的工作区的 <code>.vscode</code> 目录（如果没有，你需要创建一个）</li>
 <li>在 <code>.vscode</code> 目录中，创建一个名为 <code>tasks.json</code> 的文件</li>
 <li>在 <code>tasks.json</code> 文件中，添加以下内容：</li>
 </ol>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"2.0.0"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"tasks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"label"</span><span class="punctuation">:</span> <span class="string">"build latex"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"shell"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"latexmk"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"main.tex"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"group"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">                <span class="attr">"kind"</span><span class="punctuation">:</span> <span class="string">"build"</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">"isDefault"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
 <p>这将创建一个名为 “build latex” 的任务，它会运行 <code>latexmk main.tex</code> 命令。</p>
 <ol>
 <li>打开 VS Code 的键盘快捷键设置。你可以通过顶部菜单的 <code>文件</code> -&gt; <code>首选项</code> -&gt; <code>键盘快捷键</code>，或者使用快捷键 <code>Ctrl+K Ctrl+S</code> 来打开。</li>
@@ -667,10 +670,10 @@
 <p>现在，每次你按 <code>Ctrl+D</code>，VS Code 就会运行 “build latex” 任务，即运行 <code>latexmk main.tex</code> 命令。</p>
 </li>
 </ol>
-<h2 id="其他问答：latexmk是什么"><a href="#其他问答：latexmk是什么" class="headerlink" title="其他问答：latexmk是什么"></a>其他问答：latexmk是什么</h2><p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
+<h2 id="其他问答：latexmk是什么">其他问答：latexmk是什么</h2>
+<p><code>latexmk</code> 是一个用于自动编译 LaTeX 文档的工具。它可以自动运行 LaTeX 编译器，以及其他必要的工具（如 bibtex 或 biber），以生成最终的文档。</p>
 <p>基本的 <code>latexmk</code> 命令如下：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk [选项] [文件...]</span><br></pre></td></tr></table></figure>
-
 <p>其中，<code>[选项]</code> 是可选的命令行选项，<code>[文件...]</code> 是一个或多个要编译的 LaTeX 文件。</p>
 <p>一些常用的 <code>latexmk</code> 选项包括：</p>
 <ul>
@@ -681,13 +684,12 @@
 </ul>
 <p>例如，如果你有一个名为 <code>main.tex</code> 的 LaTeX 文件，你可以使用以下命令来编译它：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">latexmk -pdf -bibtex main.tex</span><br></pre></td></tr></table></figure>
-
 <p>这将使用 pdflatex 和 bibtex（如果需要）来编译 <code>main.tex</code>，并生成一个 PDF 文件。</p>
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
-        <tag>vscode</tag>
-        <tag>copilot</tag>
+        <tag>VS Code</tag>
+        <tag>GitHub Copilot</tag>
       </tags>
   </entry>
   <entry>
@@ -763,14 +765,17 @@
   <entry>
     <title>2024年阅读摘录</title>
     <url>/post/b2821542.html</url>
-    <content><![CDATA[<h2 id="余秋雨《文化苦旅》"><a href="#余秋雨《文化苦旅》" class="headerlink" title="余秋雨《文化苦旅》"></a>余秋雨《文化苦旅》</h2><blockquote>
+    <content><![CDATA[<h2 id="余秋雨《文化苦旅》">余秋雨《文化苦旅》</h2>
+<blockquote>
 <p>只有走在路上，才能摆脱局限，摆脱执着，让所有的选择、探寻、猜测、想象都生机勃勃。</p>
 </blockquote>
-<h2 id="吴军《数学之美》"><a href="#吴军《数学之美》" class="headerlink" title="吴军《数学之美》"></a>吴军《数学之美》</h2><blockquote>
+<h2 id="吴军《数学之美》">吴军《数学之美》</h2>
+<blockquote>
 <p>每当弗莱德和我谈起各自少年时的教育，我们都同意这样几个观点。首先，小学生和中学生其实没有必要花那么多时间读书，而他们的社会经验、生活能力以及在那时树立起的志向将帮助他们的一生。第二，中学阶段花很多时间比同伴多读的课程，上大学以后用很短时间就能读完，因为在大学阶段，人的理解力要强得多。举个例子，在中学需要花500小时才能学会的内容，在大学可能花100小时就够了。因此，一个学生在中小学阶段建立的那一点点优势在大学很快就会丧失殆尽。第三，学习（和教育）是持续一辈子的过程，很多中学成绩优异的亚裔学生进入名校后表现明显不如那些出于兴趣而读书的美国同伴，因前者持续学习的动力不足。第四，书本的内容可以早学，也可以晚学，但是错过了成长阶段却是无法补回来的。（因此，少年班的做法不足取。）现在中国的好学校里，恐怕百分之九十九的孩子在读书上花的时间都比我当时要多，更比贾里尼克要多得多，但是这些孩子今天可能有百分之九十九在学术上的建树不如我，更不如贾里尼克。这实在是教育的误区。</p>
 </blockquote>
-<h2 id="丘成桐《我的几何人生》"><a href="#丘成桐《我的几何人生》" class="headerlink" title="丘成桐《我的几何人生》"></a>丘成桐《我的几何人生》</h2><blockquote>
-<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。 </p>
+<h2 id="丘成桐《我的几何人生》">丘成桐《我的几何人生》</h2>
+<blockquote>
+<p>从这次和多年来同行间的摩擦，可见世事从来就不是一帆风顺的，就算拿到菲尔兹奖，人生也不会就此步步高升。地心吸力会发挥作用，拖你后腿，有时甚至拖垮你。</p>
 </blockquote>
 <blockquote>
 <p>虽然金钱需要考虑，但正如五柳先生说的，它并不是一切，做人要看远些。我会在高研院的一年尽力工作和学习，然后再找更理想的位置。</p>
@@ -778,13 +783,18 @@
 <blockquote>
 <p>自1987年开始，过去三十多年我都在哈佛度过。诚然，这么多年，不一定天天都快乐，但总的来说是美好的日子，或者谚语说得对，“第三次，便顺意”。</p>
 </blockquote>
-<h2 id="顾险峰"><a href="#顾险峰" class="headerlink" title="顾险峰"></a>顾险峰</h2><blockquote>
+<h2 id="顾险峰">顾险峰</h2>
+<blockquote>
 <p>大多数浅层次的智力劳动很快会被AI所承担，年轻人求学期间尽量学习更为深刻的理工科方向，才能保证长期的核心竞争力。</p>
 </blockquote>
-<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》"><a href="#沃尔特·艾萨克森-《埃隆·马斯克传》" class="headerlink" title="沃尔特·艾萨克森 《埃隆·马斯克传》"></a>沃尔特·艾萨克森 《埃隆·马斯克传》</h2><blockquote>
-<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。 </p>
+<h2 id="沃尔特·艾萨克森-《埃隆·马斯克传》">沃尔特·艾萨克森 《埃隆·马斯克传》</h2>
+<blockquote>
+<p>先设定一个不切实际的时间表，然后“取法乎上得其中”——疯狂的想法原本不可能变成现实，结果是很多年之后最终实现了。</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>阅读摘录</category>
+      </categories>
       <tags>
         <tag>阅读</tag>
       </tags>
@@ -792,17 +802,20 @@
   <entry>
     <title>2026年7月AI工具小结</title>
     <url>/post/9ebb64ac.html</url>
-    <content><![CDATA[<h2 id="一、回顾与感慨"><a href="#一、回顾与感慨" class="headerlink" title="一、回顾与感慨"></a>一、回顾与感慨</h2><p>How time flies! 仅仅过去四个月时间，AI 的产品和模型就发生了翻天覆地的变化——Harness 工程的普及与模型能力的爬升不断交织，Skills 逐渐进入大众视野甚至有点泛滥成灾。</p>
-<h2 id="二、模型使用"><a href="#二、模型使用" class="headerlink" title="二、模型使用"></a>二、模型使用</h2><h3 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h3><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/codex-profile-card.png" alt="codex-profile-card" style="zoom: 33%;">
-
+    <content><![CDATA[<h2 id="一、回顾与感慨">一、回顾与感慨</h2>
+<p>How time flies! 仅仅过去四个月时间，AI 的产品和模型就发生了翻天覆地的变化——Harness 工程的普及与模型能力的爬升不断交织，Skills 逐渐进入大众视野甚至有点泛滥成灾。</p>
+<h2 id="二、模型使用">二、模型使用</h2>
+<h3 id="GPT">GPT</h3>
+<img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/codex-profile-card.png" alt="codex-profile-card" style="zoom: 33%;">
 <p>首先这几个月来用得最顺手的无疑是 ChatGPT / Codex 了，开了 Plus 订阅后基本够用，虽说进入夏季后几乎没啥新灵感新项目，但还是在以 GPT-5.5 的辅助下不断推进已有项目的迭代更新，比如 Suhuang Scroll；此外，由于普通聊天并不消耗额度，所以日常聊天和简单工作任务处理也几乎全部都转了到 GPT 上来，使用频率明显上升。</p>
 <p>此外，前段时间让 GPT 总结了一下目前在我生活和工作中承担的角色，居然达到了 10 种之多！可以说越来越全能了。不过 GPT 也有一些问题，比如喜欢吹捧，很少辩证或直接提反对意见，仍有 AI 味儿比如</p>
 <blockquote>
-<p>你上面提到的… 抓住了问题的本质。<br>这不是…, 而是 …<br>一句话总结：…</p>
+<p>你上面提到的… 抓住了问题的本质。<br>
+这不是…, 而是 …<br>
+一句话总结：…</p>
 </blockquote>
 <p>因此最近我给 GPT 加入了系统指令，感觉效果似乎好了一些：</p>
 <span id="more"></span>
-
 <blockquote>
 <p>采用自然、直接、有判断力的表达方式。避免套话、夸张赞美、空泛总结、机械化转折和带有明显 AI 痕迹的语言。</p>
 <p>不要为了制造“深度感”而使用固定结构。例如“不是 X，而是 Y”“不仅 X，而且 Y”“真正的本质是……”。只有在存在真实且影响结论的区别时，才进行对比或转折。</p>
@@ -815,13 +828,20 @@
 <p>目前 AI 的信息检索、推理判断能力在许多方面远胜于我，再加之我时常询问问题时本身带着不确定性与模糊的记忆，有着极大的局限性，所以我希望 GPT 可以通过纠偏带我跳出局限性。（当然这份提示词未来还有改进的空间或者说随着模型能力的进步可以彻底去掉这个提示词）</p>
 <p>另一个不得不提的一点，作为一名轻度强迫症患者，很高兴看到 ChatGPT 和 Codex 终于合并了（就像是 Claude 桌面端那样），并且 OpenAI 这批人不仅保持着近乎日更的频率，而且天天活跃在 X 上，或玩梗或来一些猝不及防的重置，很有意思，但这种现象终归是阶段性的，目前 AI 的竞赛仍然非常激烈甚至内卷得非常严重，有点像当年五颜六色的共享单车，最后变为了黄绿蓝三分天下才稳定下来（然后就逐渐涨价毫无性价比可言）。</p>
 <p>其他一些功能就不再详细展开了，比如 GPT 的 Live 语音模式、手机端的 Remote 功能（还可以连服务器）、再早一些的焕然一新的 Image。最后提一提 Skills，经历了先安装一大堆随后再精简最后准备按工作区 / 项目建立个人 Skills 集合（Plugins）的过程，这部分目前还在进行中，此外这个假期也在思考如何打造好自己的 Loop。</p>
-<h3 id="Claude"><a href="#Claude" class="headerlink" title="Claude"></a>Claude</h3><p>6 月底开通了久违的 Claude Pro，用了一下最新的 Claude 桌面端，简直夯到爆炸，尤其是做前端无敌。起因是在 Vercel 的 v0 上做前端时用了 Opus 4.8，但是额度太少所以转到了官方的订阅。只可惜正好赶上了 Fable 5 前后的封号浪潮，只用了不到一周（准确的说是 5 天），但即便如此，也消耗了大约 300 刀的 tokens。此外，Claude 的客户端真的很好用，窗口可以任意拖动排列，动画也很流畅，再加上强大的模型，戒断反应实在太大。</p>
-<h3 id="Grok"><a href="#Grok" class="headerlink" title="Grok"></a>Grok</h3><p>开通了几个月的 X Premium 订阅后，最惊喜的事情莫过于可以用早期需要 SuperGrok 才能使用的 Grok Build 了，后者简直是现阶段 TUI 的天花板，在 Grok Build 里可以使用 Cursor 的 Composer 2.5 Fast 和 Grok Build 0.1；而后更惊喜的是 SpaceXAI 很快又推出了 Grok 4.5，官方说是 Opus 4.8 级别的模型，但用下来体感比较接近 GPT 5.4，但速度贼快，比大多数同级别模型都要快。</p>
-<h3 id="MiniMax"><a href="#MiniMax" class="headerlink" title="MiniMax"></a>MiniMax</h3><p>推出了 M3，拉完了，完全没法用。只希望 M3 Pro 可以达到能用的水平。</p>
-<h3 id="GLM-和-Kimi"><a href="#GLM-和-Kimi" class="headerlink" title="GLM 和 Kimi"></a>GLM 和 Kimi</h3><p>最近表现很是亮眼，先有 GLM 5.2，后有 Kimi K3，只可惜当年图便宜买了 MiniMax 的年度订阅而没有选择这两家，只能当新闻看了。</p>
-<h3 id="Hermes-和-OpenClaw"><a href="#Hermes-和-OpenClaw" class="headerlink" title="Hermes 和 OpenClaw"></a>Hermes 和 OpenClaw</h3><p>截至 5 月份，彻底停用 OpenClaw， 转为 Hermes；进入 6 月份，使用 Hermes 的频率也近乎为零，原因很简单， Codex 太好用了！</p>
-<h3 id="Copilot"><a href="#Copilot" class="headerlink" title="Copilot"></a>Copilot</h3><p>学生套餐几乎没法用了，官方称是算力紧张，但社区可谓是骂声一片。回想自己的 Copilot 使用历程，当然后期是一步步被阉割之路，不免有些感慨，这里暂且不作展开。一个直接的结果就是我开始寻找 VS Code 的替代品，先后尝试了 Cursor，Zed，都无法实现良好的 LaTeX 编辑体验（这个确实硬需求，虽说后者们对 AI 的支持也非常好），于是最后的解决办法是直接关闭 VS Code 的 Copilot 功能。</p>
-<h2 id="三、对过去项目的一些思考"><a href="#三、对过去项目的一些思考" class="headerlink" title="三、对过去项目的一些思考"></a>三、对过去项目的一些思考</h2><p>前面提到了局限性，除了横向的局限性外（比如自己的内部认知与外部世界），还有自身在不同时间点产生的纵向局限性（站在当下往前看）。也正是因为认识到了这种时间产生的局限性，所以 4 月份以来几乎没有什么新的工作或想法，而是在不断地冲浪学习。</p>
+<h3 id="Claude">Claude</h3>
+<p>6 月底开通了久违的 Claude Pro，用了一下最新的 Claude 桌面端，简直夯到爆炸，尤其是做前端无敌。起因是在 Vercel 的 v0 上做前端时用了 Opus 4.8，但是额度太少所以转到了官方的订阅。只可惜正好赶上了 Fable 5 前后的封号浪潮，只用了不到一周（准确的说是 5 天），但即便如此，也消耗了大约 300 刀的 tokens。此外，Claude 的客户端真的很好用，窗口可以任意拖动排列，动画也很流畅，再加上强大的模型，戒断反应实在太大。</p>
+<h3 id="Grok">Grok</h3>
+<p>开通了几个月的 X Premium 订阅后，最惊喜的事情莫过于可以用早期需要 SuperGrok 才能使用的 Grok Build 了，后者简直是现阶段 TUI 的天花板，在 Grok Build 里可以使用 Cursor 的 Composer 2.5 Fast 和 Grok Build 0.1；而后更惊喜的是 SpaceXAI 很快又推出了 Grok 4.5，官方说是 Opus 4.8 级别的模型，但用下来体感比较接近 GPT 5.4，但速度贼快，比大多数同级别模型都要快。</p>
+<h3 id="MiniMax">MiniMax</h3>
+<p>推出了 M3，拉完了，完全没法用。只希望 M3 Pro 可以达到能用的水平。</p>
+<h3 id="GLM-和-Kimi">GLM 和 Kimi</h3>
+<p>最近表现很是亮眼，先有 GLM 5.2，后有 Kimi K3，只可惜当年图便宜买了 MiniMax 的年度订阅而没有选择这两家，只能当新闻看了。</p>
+<h3 id="Hermes-和-OpenClaw">Hermes 和 OpenClaw</h3>
+<p>截至 5 月份，彻底停用 OpenClaw， 转为 Hermes；进入 6 月份，使用 Hermes 的频率也近乎为零，原因很简单， Codex 太好用了！</p>
+<h3 id="Copilot">Copilot</h3>
+<p>学生套餐几乎没法用了，官方称是算力紧张，但社区可谓是骂声一片。回想自己的 Copilot 使用历程，当然后期是一步步被阉割之路，不免有些感慨，这里暂且不作展开。一个直接的结果就是我开始寻找 VS Code 的替代品，先后尝试了 Cursor，Zed，都无法实现良好的 LaTeX 编辑体验（这个确实硬需求，虽说后者们对 AI 的支持也非常好），于是最后的解决办法是直接关闭 VS Code 的 Copilot 功能。</p>
+<h2 id="三、对过去项目的一些思考">三、对过去项目的一些思考</h2>
+<p>前面提到了局限性，除了横向的局限性外（比如自己的内部认知与外部世界），还有自身在不同时间点产生的纵向局限性（站在当下往前看）。也正是因为认识到了这种时间产生的局限性，所以 4 月份以来几乎没有什么新的工作或想法，而是在不断地冲浪学习。</p>
 <p>而在 4 月份之前的 3 月份，则是达到了一个 vibe coding 的高峰期，那时接触 Claude Code 和 OpenClaw 有一段时间，慢慢认识到了 AI Agent 的强大。虽然到后面才进一步认识到这种强大的边界以及能力的上限，但当时并没有这种意识，可谓初生牛犊不怕虎，于是乎，wemath2md 应运而生。这个算得上是最早的 vibe 作品，第一个版本在 2025 年 11 月用 Cherry Studio 的 chat 模式和 VS Code 完成，后续理论上来说应该做成一个 Skill，但实际使用频率太低，加之这并不是一个正确的方向，也就是如果公众号作者连数学排版都不会，拿一堆图片糊在一起，也没什么转换保持的价值。因此，在后面我会提到，要写一个系列文章，名字就叫做 Markdown is all you need（致敬经典）。在 AI 时代，每个人都需要有一点 md 的基本知识，这样上述糊糊图数学文章就会成为时代遗物。</p>
 <p>Gikz 和 GeoGebra-MCP 则是另一个未来的时代遗物，甚至 GGB 本身。Gikz 的想法是把 GGB 图形导出的 TikZ 代码进行简化，从而更好地插入到 LaTeX 文档中，但事实上，现在几乎可以直接让 AI 生成较为准确的 TikZ，在这个视角看，tsqx 的意义反而大一些。至于 GGB MCP，利用 Agent 的浏览器操作能力去 GGB 网页版绘制图形，难免舍近求远。GGB 经过二十多年的发展，从 Java 到 JS 再到 HTML5，有着独属于自己的一套 GUI 主导的操作规范，但其实很多功能都可以直接在现在的 Agent 客户端 canvas 里直接生成 html（通过 three.js 等），这样在演示时完全无需借助 GGB，本地打开即可。因此我的总结是</p>
 <blockquote>
@@ -837,10 +857,11 @@
 <p>领先半步是先驱，领先一步是先烈。</p>
 </blockquote>
 <p>无论是 25 年底走红的 OpenClaw，还是现在疯狂互怼的 Codex 和 Claude，很多功能其实都在走 Manus 的老路。那时 Harness、Skills 这类词甚至还未出现，Manus 就用 GPT 4.x 和 Sonnet 3.x 级别的模型就做到了现在很多一线模型才实现的效果，只可惜运气差了一些。</p>
-<h2 id="四、生活与未来展望"><a href="#四、生活与未来展望" class="headerlink" title="四、生活与未来展望"></a>四、生活与未来展望</h2><p>这半年以来，基本在按照 Marc Andreessen 所说的那样不断转变，逐渐从国内媒体彻底脱离出来，比如抖音、小红书，关闭朋友圈，如此操作下来，我发现对我的生活并没有任何的影响，反而多出来很多时间。这些时间被投入到</p>
+<h2 id="四、生活与未来展望">四、生活与未来展望</h2>
+<p>这半年以来，基本在按照 Marc Andreessen 所说的那样不断转变，逐渐从国内媒体彻底脱离出来，比如抖音、小红书，关闭朋友圈，如此操作下来，我发现对我的生活并没有任何的影响，反而多出来很多时间。这些时间被投入到</p>
 <blockquote>
 <ul>
-<li><strong>1/4</strong> X </li>
+<li><strong>1/4</strong> X</li>
 <li><strong>1/4</strong> 播客访谈最聪明的从业者</li>
 <li><strong>1/4</strong> 与最先进的 AI 模型对话</li>
 <li><strong>1/4</strong> 读旧书</li>
@@ -849,10 +870,16 @@
 <p>不过不得不承认在转变的早期，刷 X 的时间还是有点太多了，应该要分配更多的时间给播客与阅读。</p>
 <p>因此最近开始一下子读了不少书，也入手了一台掌阅 Neo3，小巧精致，令人爱不释手。最近读了以下书籍，希望是一个良好的开端</p>
 <blockquote>
-<p>纳瓦尔宝典<br>平面国<br>人类群星闪耀时<br>我看见的世界</p>
+<p>纳瓦尔宝典<br>
+平面国<br>
+人类群星闪耀时<br>
+我看见的世界</p>
 </blockquote>
 <p>2026 年 7 月 25 日 于凤凰山谷（纯手敲）</p>
 ]]></content>
+      <categories>
+        <category>AI工具小结</category>
+      </categories>
       <tags>
         <tag>AI</tag>
         <tag>工具</tag>
@@ -862,7 +889,9 @@
   <entry>
     <title>2026年除夕AI工具小结</title>
     <url>/post/ca2e1c42.html</url>
-    <content><![CDATA[<h2 id="一、各家模型的使用情况"><a href="#一、各家模型的使用情况" class="headerlink" title="一、各家模型的使用情况"></a>一、各家模型的使用情况</h2><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>ChatGPT 仍为日常对话、搜索的主力模型。</p>
+    <content><![CDATA[<h2 id="一、各家模型的使用情况">一、各家模型的使用情况</h2>
+<h3 id="客户端">客户端</h3>
+<p>ChatGPT 仍为日常对话、搜索的主力模型。</p>
 <blockquote>
 <p>移动端首选</p>
 </blockquote>
@@ -873,7 +902,6 @@
 </blockquote>
 <p>涉及到复杂图像的生成和理解时，用 Gemini。</p>
 <span id="more"></span>
-
 <p>实时类的新闻搜索使用 Grok。</p>
 <blockquote>
 <p>Grok 的一个小问题就是，有些时候会默认用英语回答。</p>
@@ -890,7 +918,8 @@
 <p>工作首选, 导出md-&gt;overleaf</p>
 <p>调用 API 可能不如直接在官方的体验好</p>
 </blockquote>
-<h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><p>vibe coding</p>
+<h3 id="CLI">CLI</h3>
+<p>vibe coding</p>
 <blockquote>
 <p>项目</p>
 </blockquote>
@@ -900,114 +929,153 @@
 </blockquote>
 <p>Claude Code 先后接入了：</p>
 <ol>
-<li><p>小米 Mimo V2 flash</p>
+<li>
+<p>小米 Mimo V2 flash</p>
 </li>
-<li><p>智谱的GLM</p>
+<li>
+<p>智谱的GLM</p>
 </li>
-<li><p>MiniMax</p>
+<li>
+<p>MiniMax</p>
 </li>
 </ol>
 <p>最近逐渐有 CodeX (macOS app)取代 Claude Code 的趋势</p>
 <p><em>Ghostty</em></p>
-<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>Gemini</p>
+<h3 id="API">API</h3>
+<p>Gemini</p>
 <p>硅基流动</p>
-<h3 id="OpenClaw"><a href="#OpenClaw" class="headerlink" title="OpenClaw"></a>OpenClaw</h3><p>探索阶段, <strong>太有意思了</strong> 🦞</p>
+<h3 id="OpenClaw">OpenClaw</h3>
+<p>探索阶段, <strong>太有意思了</strong> 🦞</p>
 <ul>
-<li><p>部署</p>
+<li>
+<p>部署</p>
 <ul>
-<li><p>Mac</p>
+<li>
+<p>Mac</p>
 </li>
-<li><p>服务器</p>
+<li>
+<p>服务器</p>
 </li>
 </ul>
 </li>
-<li><p><em>Her</em>(2013)</p>
+<li>
+<p><em>Her</em>(2013)</p>
 </li>
 </ul>
 <p>agents -&gt; skills</p>
 <p><em>扣子</em></p>
-<h2 id="二、-OCR工作流"><a href="#二、-OCR工作流" class="headerlink" title="二、 OCR工作流"></a>二、 OCR工作流</h2><ul>
-<li><p>图片/PDF(zlib)</p>
-</li>
-<li><p>OCR</p>
+<h2 id="二、-OCR工作流">二、 OCR工作流</h2>
 <ul>
-<li><p>MinerU: 绝对主力</p>
+<li>
+<p>图片/PDF(zlib)</p>
 </li>
-<li><p>ChatGPT, Qwen, Gemini: 临时图片</p>
+<li>
+<p>OCR</p>
+<ul>
+<li>
+<p>MinerU: 绝对主力</p>
 </li>
-<li><p>Mistral</p>
+<li>
+<p>ChatGPT, Qwen, Gemini: 临时图片</p>
+</li>
+<li>
+<p>Mistral</p>
 </li>
 </ul>
 </li>
-<li><p>单文件: ChatGPT/Cherry Studio</p>
+<li>
+<p>单文件: ChatGPT/Cherry Studio</p>
 </li>
-<li><p>项目级文件: cc</p>
+<li>
+<p>项目级文件: cc</p>
 </li>
 </ul>
 <p>语音输入: Typeless</p>
 <ol>
-<li><p>正弦和角公式： \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</p>
+<li>
+<p>正弦和角公式： \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta</p>
 </li>
-<li><p>余弦差角公式： \cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</p>
+<li>
+<p>余弦差角公式： \cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta</p>
 </li>
 </ol>
 <p>上面相当于是 PlainText 的格式。我也可以使用 Typeless 选中相应的公式，直接跟它说需要怎么修改。通过语音输入结合 AI，它就能具备这种编辑能力，然后快速转化为 Markdown 或者是 LaTeX 代码。</p>
 <p>手写输入: WriteTeX</p>
 <p>不仅仅是简单的手写公式并快速转化为 LaTeX 代码，它还可以处理手绘图形（比如一些平面几何图形）。</p>
 <p>只要预设好提示词，就可以按照自己想要的格式，标准规范地输出 TikZ 代码。</p>
-<h2 id="三、工作场景"><a href="#三、工作场景" class="headerlink" title="三、工作场景"></a>三、工作场景</h2><ul>
-<li><p>整理资料</p>
+<h2 id="三、工作场景">三、工作场景</h2>
+<ul>
+<li>
+<p>整理资料</p>
 </li>
-<li><p>备课: 教案+板书</p>
+<li>
+<p>备课: 教案+板书</p>
 </li>
-<li><p>授课</p>
+<li>
+<p>授课</p>
 </li>
-<li><p>PPT</p>
+<li>
+<p>PPT</p>
 <blockquote>
 <p>只要能生成 Beamer 就可以了，不用那种 Office 格式的 PPT</p>
 </blockquote>
 </li>
-<li><p>学习</p>
+<li>
+<p>学习</p>
 </li>
-<li><p>阅卷</p>
+<li>
+<p>阅卷</p>
 </li>
 </ul>
-<h2 id="四、生活娱乐"><a href="#四、生活娱乐" class="headerlink" title="四、生活娱乐"></a>四、生活娱乐</h2><ul>
-<li><p>Typeless</p>
+<h2 id="四、生活娱乐">四、生活娱乐</h2>
+<ul>
+<li>
+<p>Typeless</p>
 <blockquote>
 <p>用完 Typeless 之后，你真的不会再想用键盘打字了。</p>
 <p>因为键盘其实是计算机时代人类发明的一种输入工具，但它并不是那么自然。我之前看过一篇文章也提到过这点：使用键盘时，我得先想好内容，然后再用手指去敲击，还得配合各种组合键。如果是英文，得拼写单词；如果是中文，还得思考拼音并把它拼出来。这种效率肯定没有直接口述来得快。</p>
 <p>Typeless 的神奇之处在于：</p>
 <ol>
-<li><p>它支持长时间录音，我可以连续说一段很长的话。</p>
+<li>
+<p>它支持长时间录音，我可以连续说一段很长的话。</p>
 </li>
-<li><p>即使表达中有些错误、重复、停顿或者各种杂音夹杂，它都能很好地识别。</p>
+<li>
+<p>即使表达中有些错误、重复、停顿或者各种杂音夹杂，它都能很好地识别。</p>
 </li>
-<li><p>它能自动整理出非常规范的格式。</p>
+<li>
+<p>它能自动整理出非常规范的格式。</p>
 </li>
-<li><p>比如说这样，它也可以识别出来。当你在办公室对着手机小声说话时，它也能准确识别。</p>
+<li>
+<p>比如说这样，它也可以识别出来。当你在办公室对着手机小声说话时，它也能准确识别。</p>
 </li>
 </ol>
 </blockquote>
 </li>
-<li><p>微信</p>
+<li>
+<p>微信</p>
 </li>
-<li><p>B站</p>
+<li>
+<p>B站</p>
 </li>
-<li><p>抖音、小红书</p>
+<li>
+<p>抖音、小红书</p>
 </li>
 </ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<h2 id="小结">小结</h2>
+<blockquote>
 <p>长期、专注地做一件事越来越难能可贵: 纸质书、播客</p>
 <p>最近一直有在听一些比较优质的长时间播客。可能一期节目就要三四个小时，但我是在利用零散的碎片时间去做同一件事情，这种连贯性是真实存在的。</p>
 <p>我可能一周花个三四天才听完一期播客节目，但相比于那种一个小时刷几十条短视频而言，效果是完全不一样的。</p>
 <p>包括看书也是如此：</p>
 <ol>
-<li><p>可能要花几个星期甚至几个月才能完整看完一本纸质书</p>
+<li>
+<p>可能要花几个星期甚至几个月才能完整看完一本纸质书</p>
 </li>
-<li><p>这种体验会让人感觉特别好</p>
+<li>
+<p>这种体验会让人感觉特别好</p>
 </li>
-<li><p>它不会带来那种刷完碎片化内容后的空虚感</p>
+<li>
+<p>它不会带来那种刷完碎片化内容后的空虚感</p>
 </li>
 </ol>
 </blockquote>
@@ -1020,23 +1088,32 @@
 <p>YKWTII_0</p>
 <p>2026年2月18日 大年初二</p>
 ]]></content>
+      <categories>
+        <category>AI工具小结</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>工具</tag>
+      </tags>
   </entry>
   <entry>
     <title>BNU中文LaTeX简历模板</title>
     <url>/post/9df161f6.html</url>
     <content><![CDATA[<p>由 <a href="https://github.com/LeyuDame">LeyuDame</a> 改进，主要参考<a href="https://github.com/Htallone/myCV">myCV</a></p>
 <span id="more"></span>
-
-<h2 id="主要改动"><a href="#主要改动" class="headerlink" title="主要改动"></a>主要改动</h2><ul>
+<h2 id="主要改动">主要改动</h2>
+<ul>
 <li>添加了BNU校名Logo</li>
 <li>从BNU校徽上选取了师大蓝作为简历的整体配色</li>
 <li>调整了部分图标的样式</li>
 </ul>
-<h2 id="编译方式❓"><a href="#编译方式❓" class="headerlink" title="编译方式❓"></a>编译方式❓</h2><p>推荐直接在overleaf上进行编译✅</p>
+<h2 id="编译方式❓">编译方式❓</h2>
+<p>推荐直接在overleaf上进行编译✅</p>
 <p>（<em>待解决的问题：在overleaf上编译显示正常，但是在本地xelatex编译图片不能正常显示❓</em>）</p>
-<h2 id="页面预览"><a href="#页面预览" class="headerlink" title="页面预览"></a>页面预览</h2><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401141925277.webp" alt="" style="zoom: 25%;">
-
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Overleaf: <a href="https://www.overleaf.com/latex/templates/bnucv/stjnkyqdcqzm">BNUCV-BNU中文LaTeX简历模板</a></p>
+<h2 id="页面预览">页面预览</h2>
+<img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/202401141925277.webp" alt="" style="zoom: 25%;">
+<h2 id="链接">链接</h2>
+<p>Overleaf: <a href="https://www.overleaf.com/latex/templates/bnucv/stjnkyqdcqzm">BNUCV-BNU中文LaTeX简历模板</a></p>
 ]]></content>
       <categories>
         <category>LaTeX模板</category>
@@ -1044,7 +1121,7 @@
       <tags>
         <tag>LaTeX</tag>
         <tag>模板</tag>
-        <tag>overleaf</tag>
+        <tag>Overleaf</tag>
       </tags>
   </entry>
   <entry>
@@ -1072,8 +1149,8 @@
 <p>设备和系统：MacBook Air M3，macOS Tahoe。</p>
 <p>以下均为全局用户配置。</p>
 <span id="more"></span>
-
-<h2 id="一、外观配置"><a href="#一、外观配置" class="headerlink" title="一、外观配置"></a>一、外观配置</h2><table>
+<h2 id="一、外观配置">一、外观配置</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1081,7 +1158,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>workbench.colorTheme</code></td>
 <td><code>Anthropic Light</code></td>
 <td>当前颜色主题</td>
@@ -1136,15 +1214,15 @@
 <td>未在用户设置中声明</td>
 <td>沿用 VS Code 默认值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>对应代码：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"workbench.colorTheme"</span><span class="punctuation">:</span> <span class="string">"Anthropic Light"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.preferredLightColorTheme"</span><span class="punctuation">:</span> <span class="string">"Anthropic Light"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.preferredDarkColorTheme"</span><span class="punctuation">:</span> <span class="string">"Anthropic Dark"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"window.autoDetectColorScheme"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"editor.fontFamily"</span><span class="punctuation">:</span> <span class="string">"SF Mono, Maple Mono NF CN, Menlo, Consolas, Maple UI, PingFang, 'Microsoft YaHei', monospace"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"editor.fontLigatures"</span><span class="punctuation">:</span> <span class="string">"'calt', 'cv01', 'ss01', 'zero'"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"editor.lineHeight"</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.fontAliasing"</span><span class="punctuation">:</span> <span class="string">"antialiased"</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"editor.minimap.autohide"</span><span class="punctuation">:</span> <span class="string">"mouseover"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"editor.minimap.size"</span><span class="punctuation">:</span> <span class="string">"fill"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
 <p>实际 <code>settings.json</code> 中曾重复声明 <code>editor.fontLigatures</code>，本文只保留后一次声明的生效值。本机当前可以匹配到 <code>SF Mono</code>、<code>Maple Mono NF CN</code> 和 <code>Menlo</code>；后面的字体名称属于回退项，是否命中取决于系统安装情况。</p>
 <p>Anthropic Light 主题还覆盖了状态栏颜色：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"workbench.colorCustomizations"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"[Anthropic Light]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"statusBar.background"</span><span class="punctuation">:</span> <span class="string">"#FAFAF7"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"statusBar.noFolderBackground"</span><span class="punctuation">:</span> <span class="string">"#FAFAF7"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"statusBar.border"</span><span class="punctuation">:</span> <span class="string">"#FAFAF7"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"statusBar.foreground"</span><span class="punctuation">:</span> <span class="string">"#191919"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="二、界面布局"><a href="#二、界面布局" class="headerlink" title="二、界面布局"></a>二、界面布局</h2><table>
+<h2 id="二、界面布局">二、界面布局</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1152,7 +1230,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>workbench.sideBar.location</code></td>
 <td><code>right</code></td>
 <td>侧边栏放在右侧</td>
@@ -1222,11 +1301,12 @@
 <td><code>false</code></td>
 <td>命令面板隐藏 Ask in Chat</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>对应代码：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"workbench.sideBar.location"</span><span class="punctuation">:</span> <span class="string">"right"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.panel.defaultLocation"</span><span class="punctuation">:</span> <span class="string">"right"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.secondarySideBar.defaultVisibility"</span><span class="punctuation">:</span> <span class="string">"hidden"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.editor.showTabs"</span><span class="punctuation">:</span> <span class="string">"none"</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"workbench.activityBar.location"</span><span class="punctuation">:</span> <span class="string">"top"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.activityBar.autoHide"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.activityBar.compact"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"workbench.statusBar.visible"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"window.commandCenter"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.browser.showInTitleBar"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.browser.searchEngine"</span><span class="punctuation">:</span> <span class="string">"google"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.editor.useModal"</span><span class="punctuation">:</span> <span class="string">"some"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.layoutControl.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"workbench.commandPalette.showAskInChat"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、快捷键对照"><a href="#三、快捷键对照" class="headerlink" title="三、快捷键对照"></a>三、快捷键对照</h2><p>以下快捷键按 macOS 的 <code>Cmd</code> 记载。</p>
+<h2 id="三、快捷键对照">三、快捷键对照</h2>
+<p>以下快捷键按 macOS 的 <code>Cmd</code> 记载。</p>
 <table>
 <thead>
 <tr>
@@ -1235,7 +1315,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>Alt + Q</code></td>
 <td><code>editor.action.toggleWordWrap</code></td>
 <td>切换自动换行</td>
@@ -1275,12 +1356,13 @@
 <td><code>workbench.action.terminal.sendSequence</code></td>
 <td>在终端发送反斜杠加换行</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>当前 <code>keybindings.json</code>：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"shift+enter"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.terminal.sendSequence"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"when"</span><span class="punctuation">:</span> <span class="string">"terminalFocus"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"text"</span><span class="punctuation">:</span> <span class="string">"\\\r\n"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"ctrl+enter"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.terminal.sendSequence"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"when"</span><span class="punctuation">:</span> <span class="string">"terminalFocus"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"text"</span><span class="punctuation">:</span> <span class="string">"\\\r\n"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"alt+m"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"latex-workshop.view"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"when"</span><span class="punctuation">:</span> <span class="string">"!virtualWorkspace"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"alt+q"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"editor.action.toggleWordWrap"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"alt+z"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"-editor.action.toggleWordWrap"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.toggleAuxiliaryBar"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"alt+cmd+b"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"-workbench.action.toggleAuxiliaryBar"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+2"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.toggleSidebarVisibility"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+b"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"-workbench.action.toggleSidebarVisibility"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+3"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.togglePanel"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+j"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"-workbench.action.togglePanel"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+u"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"workbench.action.toggleStatusbarVisibility"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"when"</span><span class="punctuation">:</span> <span class="string">"!isSessionsWindow"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"key"</span><span class="punctuation">:</span> <span class="string">"cmd+u"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"-cursorUndo"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"when"</span><span class="punctuation">:</span> <span class="string">"textInputFocus"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
 <p>相比旧记录，侧边栏、辅助侧边栏和面板快捷键已经改为 <code>Cmd + 1/2/3</code>；<code>Alt + Backquote</code> 不再使用，同时取消了若干默认快捷键以避免冲突。</p>
-<h2 id="四、编辑器行为、安全和-Git"><a href="#四、编辑器行为、安全和-Git" class="headerlink" title="四、编辑器行为、安全和 Git"></a>四、编辑器行为、安全和 Git</h2><table>
+<h2 id="四、编辑器行为、安全和-Git">四、编辑器行为、安全和 Git</h2>
+<table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1288,7 +1370,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>editor.formatOnSave</code></td>
 <td><code>true</code></td>
 <td>保存时自动格式化</td>
@@ -1338,49 +1421,54 @@
 <td><code>false</code></td>
 <td>终端不继承 VS Code 环境变量</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Git 相关配置：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"git.openRepositoryInParentFolders"</span><span class="punctuation">:</span> <span class="string">"never"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"git.autofetch"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"git.enableSmartCommit"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"git.confirmSync"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="五、不同语言的配置"><a href="#五、不同语言的配置" class="headerlink" title="五、不同语言的配置"></a>五、不同语言的配置</h2><h3 id="LaTeX"><a href="#LaTeX" class="headerlink" title="LaTeX"></a>LaTeX</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"latex-workshop.formatting.latex"</span><span class="punctuation">:</span> <span class="string">"latexindent"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.formatting.latexindent.args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"-"</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoBuild.run"</span><span class="punctuation">:</span> <span class="string">"onSave"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoBuild.cleanAndRetry.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoClean.run"</span><span class="punctuation">:</span> <span class="string">"onBuilt"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.recipe.default"</span><span class="punctuation">:</span> <span class="string">"lastUsed"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.showContextMenu"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.viewer"</span><span class="punctuation">:</span> <span class="string">"tab"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.zoom"</span><span class="punctuation">:</span> <span class="string">"page-width"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.internal.synctex.keybinding"</span><span class="punctuation">:</span> <span class="string">"double-click"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.message.error.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.message.warning.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[latex]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.formatOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[tex]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.formatOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="五、不同语言的配置">五、不同语言的配置</h2>
+<h3 id="LaTeX">LaTeX</h3>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"latex-workshop.formatting.latex"</span><span class="punctuation">:</span> <span class="string">"latexindent"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.formatting.latexindent.args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"-"</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoBuild.run"</span><span class="punctuation">:</span> <span class="string">"onSave"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoBuild.cleanAndRetry.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.autoClean.run"</span><span class="punctuation">:</span> <span class="string">"onBuilt"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.recipe.default"</span><span class="punctuation">:</span> <span class="string">"lastUsed"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.showContextMenu"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.viewer"</span><span class="punctuation">:</span> <span class="string">"tab"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.zoom"</span><span class="punctuation">:</span> <span class="string">"page-width"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.view.pdf.internal.synctex.keybinding"</span><span class="punctuation">:</span> <span class="string">"double-click"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.message.error.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.message.warning.show"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[latex]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.formatOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[tex]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.formatOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"James-Yu.latex-workshop"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
 <p>当前可用的编译配方包括：<code>XeLaTeX</code>、<code>XeLaTeX * 2</code>、<code>XeLaTeX -&gt; BibTeX -&gt; XeLaTeX*2</code>、<code>latexmk</code>、<code>PDFLaTeX</code>、<code>BibTeX</code> 和 <code>PDFLaTeX -&gt; BibTeX -&gt; PDFLaTeX*2</code>。工具参数如下：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.tools"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"latexmk"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"latexmk"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-pdfxe"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"%DOCFILE%"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"xelatex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"%DOCFILE%"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"pdflatex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"-synctex=1"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-interaction=nonstopmode"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"-file-line-error"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">"%DOCFILE%"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"bibtex"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"%DOCFILE%"</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"latex-workshop.latex.clean.args"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"-outdir=%OUTDIR%"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"-auxdir=%AUXDIR%"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"-c"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"%DOCFILE_EXT%"</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
 <p>自动清理在构建成功后运行，清理类型包括 <code>aux</code>、<code>bbl</code>、<code>blg</code>、<code>idx</code>、<code>ind</code>、<code>lof</code>、<code>lot</code>、<code>out</code>、<code>toc</code>、<code>acn</code>、<code>acr</code>、<code>alg</code>、<code>glg</code>、<code>glo</code>、<code>gls</code>、<code>ist</code>、<code>fls</code>、<code>log</code> 和 <code>fdb_latexmk</code>。</p>
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.enablePreviewZenMode"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.previewTheme"</span><span class="punctuation">:</span> <span class="string">"atom-light.css"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.revealjsTheme"</span><span class="punctuation">:</span> <span class="string">"beige.css"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.codeBlockTheme"</span><span class="punctuation">:</span> <span class="string">"github.css"</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"[markdown]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.quickSuggestions"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"comments"</span><span class="punctuation">:</span> <span class="string">"on"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"strings"</span><span class="punctuation">:</span> <span class="string">"on"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"other"</span><span class="punctuation">:</span> <span class="string">"on"</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"DavidAnson.vscode-markdownlint"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="TSQX、JSON-和-Python"><a href="#TSQX、JSON-和-Python" class="headerlink" title="TSQX、JSON 和 Python"></a>TSQX、JSON 和 Python</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"tsqx.autoCompileOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tsqx.autoCompileDelay"</span><span class="punctuation">:</span> <span class="number">2000</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"python.analysis.typeCheckingMode"</span><span class="punctuation">:</span> <span class="string">"basic"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[json]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"vscode.json-language-features"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[jsonc]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"vscode.json-language-features"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[python]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"mikoz.black-py"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Markdown">Markdown</h3>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.enablePreviewZenMode"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.previewTheme"</span><span class="punctuation">:</span> <span class="string">"atom-light.css"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.revealjsTheme"</span><span class="punctuation">:</span> <span class="string">"beige.css"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"markdown-preview-enhanced.codeBlockTheme"</span><span class="punctuation">:</span> <span class="string">"github.css"</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"[markdown]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.quickSuggestions"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"comments"</span><span class="punctuation">:</span> <span class="string">"on"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"strings"</span><span class="punctuation">:</span> <span class="string">"on"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"other"</span><span class="punctuation">:</span> <span class="string">"on"</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"DavidAnson.vscode-markdownlint"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+<h3 id="TSQX、JSON-和-Python">TSQX、JSON 和 Python</h3>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"tsqx.autoCompileOnSave"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tsqx.autoCompileDelay"</span><span class="punctuation">:</span> <span class="number">2000</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"python.analysis.typeCheckingMode"</span><span class="punctuation">:</span> <span class="string">"basic"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[json]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"vscode.json-language-features"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[jsonc]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"vscode.json-language-features"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"[python]"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span><span class="punctuation">:</span> <span class="string">"mikoz.black-py"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
 <p>文件关联：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"workbench.editorAssociations"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"*.copilotmd"</span><span class="punctuation">:</span> <span class="string">"vscode.markdown.preview.editor"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"*.md"</span><span class="punctuation">:</span> <span class="string">"vscode.markdown.editor"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"*.pdf"</span><span class="punctuation">:</span> <span class="string">"latex-workshop-pdf-hook"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="六、AI-相关配置"><a href="#六、AI-相关配置" class="headerlink" title="六、AI 相关配置"></a>六、AI 相关配置</h2><p>当前配置没有 <code>chat.disableAIFeatures</code>。GitHub Copilot 的开关是按文件类型设置的：普通文件开启，纯文本和 SCM 输入框关闭，Markdown 开启；行内补全和 Next Edit Suggestions 也保持开启。</p>
+<h2 id="六、AI-相关配置">六、AI 相关配置</h2>
+<p>当前配置没有 <code>chat.disableAIFeatures</code>。GitHub Copilot 的开关是按文件类型设置的：普通文件开启，纯文本和 SCM 输入框关闭，Markdown 开启；行内补全和 Next Edit Suggestions 也保持开启。</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"github.copilot.enable"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"*"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"plaintext"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"markdown"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"scminput"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"github.copilot.nextEditSuggestions.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"github.copilot.chat.gpt55LargePromptSections.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"github.copilot.chat.gpt55EconomicalSearchAndEdit.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"github.copilot.chat.claude47OpusPrompt.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.agent.thinkingStyle"</span><span class="punctuation">:</span> <span class="string">"collapsed"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.viewSessions.orientation"</span><span class="punctuation">:</span> <span class="string">"stacked"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.titleBar.openInAgentsWindow.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chatgpt.localeOverride"</span><span class="punctuation">:</span> <span class="string">"en-US"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chatgpt.followUpQueueMode"</span><span class="punctuation">:</span> <span class="string">"queue"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chatgpt.reviewDelivery"</span><span class="punctuation">:</span> <span class="string">"detached"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.mcp.gallery.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.tools.compressOutput.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.sessionSync.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"inlineChat.notebookAgent"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"inlineChat.defaultModel"</span><span class="punctuation">:</span> <span class="string">"OpenCode Go / Deepseek V4 Flash (opencodego)"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"chat.agentHost.byokModels.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"extensions.supportAgentsWindow"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ltmoerdani.opencode-copilot-chat"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">"claudeCode.preferredLocation"</span><span class="punctuation">:</span> <span class="string">"panel"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"claudeCode.selectedModel"</span><span class="punctuation">:</span> <span class="string">"opus"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"grok.showThinking"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"grok.defaultEffort"</span><span class="punctuation">:</span> <span class="string">"xhigh"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"grok.summarizeRepliesAloud"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"grok.soundNotifications"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
 <p>设置文件中还存在网络访问和自动批准相关配置。它们会扩大自动化操作范围，本文不公开具体值。</p>
 <p>Kilo Code 的界面和自动化偏好：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"kilo-code.new.agentWorkStyle"</span><span class="punctuation">:</span> <span class="string">"autonomous"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.showTaskTimeline"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.attention.enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.attention.sound"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.languageCommitMessage"</span><span class="punctuation">:</span> <span class="string">"en"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.autocomplete.enableAutoTrigger"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.autocomplete.enableChatAutocomplete"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.autocomplete.provider"</span><span class="punctuation">:</span> <span class="string">"inception"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.autocomplete.model"</span><span class="punctuation">:</span> <span class="string">"mercury-next-edit"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.fontSize"</span><span class="punctuation">:</span> <span class="number">12</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"kilo-code.new.showTokenThroughput"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="七、扩展清单（部分）"><a href="#七、扩展清单（部分）" class="headerlink" title="七、扩展清单（部分）"></a>七、扩展清单（部分）</h2><p>以下版本号是 2026 年 8 月 16 日在本机查询到的结果。</p>
-<h3 id="AI-与编程辅助"><a href="#AI-与编程辅助" class="headerlink" title="AI 与编程辅助"></a>AI 与编程辅助</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">openai.chatgpt@26.810.52044</span><br><span class="line">kilocode.kilo-code@7.4.22</span><br><span class="line">ltmoerdani.opencode-copilot-chat@0.6.0</span><br><span class="line">pawelhuryn.grok-vscode-phuryn@3.10.0</span><br></pre></td></tr></table></figure>
-
-<h3 id="LaTeX、数学和知识管理"><a href="#LaTeX、数学和知识管理" class="headerlink" title="LaTeX、数学和知识管理"></a>LaTeX、数学和知识管理</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">james-yu.latex-workshop@10.18.0</span><br><span class="line">lydt.tsqx-compiler@0.4.1</span><br><span class="line">orangex4.hsnips@0.4.8</span><br><span class="line">oijaz.unicode-latex@1.2.0</span><br><span class="line">supakornras.asymptote@2.1.0</span><br><span class="line">tecosaur.latex-utilities@0.4.14</span><br><span class="line">xing.zotero-cite@0.9.14</span><br></pre></td></tr></table></figure>
-
-<h3 id="Markdown、文档和界面"><a href="#Markdown、文档和界面" class="headerlink" title="Markdown、文档和界面"></a>Markdown、文档和界面</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">bierner.markdown-mermaid@1.32.1</span><br><span class="line">cweijan.vscode-office@4.1.9</span><br><span class="line">weihongliang233.code-block@0.0.3</span><br><span class="line">briansuhit.anthropic-inspired-theme@1.0.1</span><br><span class="line">shadesofbuntu.flexoki-light@1.0.0</span><br></pre></td></tr></table></figure>
-
+<h2 id="七、扩展清单（部分）">七、扩展清单（部分）</h2>
+<p>以下版本号是 2026 年 8 月 16 日在本机查询到的结果。</p>
+<h3 id="AI-与编程辅助">AI 与编程辅助</h3>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">openai.chatgpt@26.810.52044</span><br><span class="line">kilocode.kilo-code@7.4.22</span><br><span class="line">ltmoerdani.opencode-copilot-chat@0.6.0</span><br><span class="line">pawelhuryn.grok-vscode-phuryn@3.10.0</span><br></pre></td></tr></table></figure>
+<h3 id="LaTeX、数学和知识管理">LaTeX、数学和知识管理</h3>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">james-yu.latex-workshop@10.18.0</span><br><span class="line">lydt.tsqx-compiler@0.4.1</span><br><span class="line">orangex4.hsnips@0.4.8</span><br><span class="line">oijaz.unicode-latex@1.2.0</span><br><span class="line">supakornras.asymptote@2.1.0</span><br><span class="line">tecosaur.latex-utilities@0.4.14</span><br><span class="line">xing.zotero-cite@0.9.14</span><br></pre></td></tr></table></figure>
+<h3 id="Markdown、文档和界面">Markdown、文档和界面</h3>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">bierner.markdown-mermaid@1.32.1</span><br><span class="line">cweijan.vscode-office@4.1.9</span><br><span class="line">weihongliang233.code-block@0.0.3</span><br><span class="line">briansuhit.anthropic-inspired-theme@1.0.1</span><br><span class="line">shadesofbuntu.flexoki-light@1.0.0</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>工具</tag>
         <tag>配置</tag>
         <tag>技术</tag>
+        <tag>VS Code</tag>
       </tags>
   </entry>
   <entry>
     <title>再度回归博客</title>
     <url>/post/66cdbfb.html</url>
-    <content><![CDATA[<p>通过 OpenClaw, 极大简化了 Hexo 博客的发布流程.<br>通过 Claude Code 和 CodeX, 完美解决了 Hexo 博客发布过程当中的报错问题.<br>时隔两年, 我的博客终于回来了!</p>
+    <content><![CDATA[<p>通过 OpenClaw, 极大简化了 Hexo 博客的发布流程.<br>
+通过 Claude Code 和 CodeX, 完美解决了 Hexo 博客发布过程当中的报错问题.<br>
+时隔两年, 我的博客终于回来了!</p>
 ]]></content>
+      <categories>
+        <category>生活杂感</category>
+      </categories>
       <tags>
         <tag>AI</tag>
         <tag>技术</tag>
@@ -1392,20 +1480,24 @@
   <entry>
     <title>2026年3月：AI工具使用小结与个人项目复盘</title>
     <url>/post/3a8f1b2c.html</url>
-    <content><![CDATA[<h2 id="一、模型背景"><a href="#一、模型背景" class="headerlink" title="一、模型背景"></a>一、模型背景</h2><ul>
+    <content><![CDATA[<h2 id="一、模型背景">一、模型背景</h2>
+<ul>
 <li><strong>Copilot 教育版</strong>：3月突然降级了。原本 Copilot 教育版支持 Opus 4.6，三月初突然被砍掉，只能用 Haiku 4.5 或 Codex 5.3。体验降级比较明显。</li>
 <li><strong>ChatGPT Plus</strong>：gpt-5.4 fast 版本，速度很快，很丝滑。但 token 消耗也会加快。</li>
 <li><strong>GLM-5.1</strong>：一月份包季购买了智谱最便宜的 Lite 套餐，花了 40 多块。最近套餐快到期了，到期之后 GLM 4.7 换成了 GLM 5.1，5.1 版本效果比之前好，但使用机会不多了。</li>
 <li><strong>MiniMax M2.7</strong>：一个多月内从 M2.1 升级到 M2.7，能力逐渐增强，性价比高，包年 200 元。目前作为 OpenClaw 主力模型使用，但在 Agents 执行方面有所欠缺。</li>
 </ul>
 <span id="more"></span>
-
-<h2 id="二、个人项目"><a href="#二、个人项目" class="headerlink" title="二、个人项目"></a>二、个人项目</h2><h3 id="WeMath2MD"><a href="#WeMath2MD" class="headerlink" title="WeMath2MD"></a>WeMath2MD</h3><p><a href="https://github.com/YZDame/WeMath2MD">GitHub: YZDame/WeMath2MD</a></p>
+<h2 id="二、个人项目">二、个人项目</h2>
+<h3 id="WeMath2MD">WeMath2MD</h3>
+<p><a href="https://github.com/YZDame/WeMath2MD">GitHub: YZDame/WeMath2MD</a></p>
 <p>这个项目三年前就有想法了。当时微信公众号里数学类文章大量采用图片拼接排版，把图片型文章转化为 Markdown 非常麻烦。现在有了 AI OCR，这个过程变得很方便。</p>
 <p>实现方式：在终端输入 <code>WeMath2MD</code> 命令并附上微信公众号链接，自动调用 MinerU API 下载图片和解析，最终将 OCR 结果汇总成 Markdown 文件，图片以 Markdown 外链形式嵌入文档。</p>
-<h3 id="Gikz"><a href="#Gikz" class="headerlink" title="Gikz"></a>Gikz</h3><p><a href="https://github.com/YZDame/GIKZ">Gikz</a> 的起点是一个 B 站视频 <a href="https://www.bilibili.com/video/BV14UqFBgEZ7/">GeoTikTirm</a>，看了之后开始思考 Geogebra GGB 导出代码清洗的问题。</p>
+<h3 id="Gikz">Gikz</h3>
+<p><a href="https://github.com/YZDame/GIKZ">Gikz</a> 的起点是一个 B 站视频 <a href="https://www.bilibili.com/video/BV14UqFBgEZ7/">GeoTikTirm</a>，看了之后开始思考 Geogebra GGB 导出代码清洗的问题。</p>
 <p>Gikz 是一个清洗 Geogebra GGB 导出代码的工具，有在线网页版，可以把复杂凌乱的代码清洗成简洁好看的代码。同时发布了 npm 包，全局安装后可在任意位置直接使用。这个项目也开启了 tsqx 的探索之路。</p>
-<h3 id="tsqx"><a href="#tsqx" class="headerlink" title="tsqx"></a>tsqx</h3><p><a href="https://github.com/YZDame/TSQX">tsqx</a> 是 Asymptote 代码的一种简化版本，更适合绘制平面几何图形。相比 TikZ，声明图形关系的方式更直观。</p>
+<h3 id="tsqx">tsqx</h3>
+<p><a href="https://github.com/YZDame/TSQX">tsqx</a> 是 Asymptote 代码的一种简化版本，更适合绘制平面几何图形。相比 TikZ，声明图形关系的方式更直观。</p>
 <p>这也是再次探索 Evan Chen 主页的产品，他的讲义中大量使用 Asymptote 或 tsqx 来画几何图。</p>
 <p>目前 tsqx 已经发布了三样东西：</p>
 <ol>
@@ -1413,20 +1505,32 @@
 <li><strong>VS Code 扩展</strong>（类似 LaTeX Workshop，有编译和预览功能）</li>
 <li><strong>Skill</strong>（可在 OpenClaw、cc、Codex 中调用）</li>
 </ol>
-<h3 id="GeoGebra-MCP-Server"><a href="#GeoGebra-MCP-Server" class="headerlink" title="GeoGebra-MCP-Server"></a>GeoGebra-MCP-Server</h3><p>受 <a href="https://www.bilibili.com/video/BV1iDQyBmEUj/">MathOver</a> 视频启发，我对开源的 GeoGebra MCP 项目 Gebrai 进行样式调整和重命名，也发布了 npm 包，可以在 cc、Codex 等工具中调用。</p>
+<h3 id="GeoGebra-MCP-Server">GeoGebra-MCP-Server</h3>
+<p>受 <a href="https://www.bilibili.com/video/BV1iDQyBmEUj/">MathOver</a> 视频启发，我对开源的 GeoGebra MCP 项目 Gebrai 进行样式调整和重命名，也发布了 npm 包，可以在 cc、Codex 等工具中调用。</p>
 <p>这验证了一个思路：通过 Coding Agents 的 CLI 调用工具链来生成 GGB 文件是可行的。B 站上那位 up 主上线了商业化应用，但需要配置服务器、管理账户和缓存数据，部分功能还需付费订阅。</p>
-<h3 id="Von"><a href="#Von" class="headerlink" title="Von"></a>Von</h3><p>先是 B 站给我推这个视频：<a href="https://www.bilibili.com/video/BV1BqqPBPE8g/">LaTeX 题库</a>。</p>
+<h3 id="Von">Von</h3>
+<p>先是 B 站给我推这个视频：<a href="https://www.bilibili.com/video/BV1BqqPBPE8g/">LaTeX 题库</a>。</p>
 <p>然后我发现 Evan Chen 的 Von 题库功能很强，可以方便地组卷和引用题目。我计划将题库镜像成 Markdown 的 Obsidian vault，后续接入 Agents 自动化流程。</p>
-<h2 id="三、OCR-之后可以做什么"><a href="#三、OCR-之后可以做什么" class="headerlink" title="三、OCR 之后可以做什么"></a>三、OCR 之后可以做什么</h2><p>用 <strong>Mistral OCR</strong> 将 PDF 扫描版书籍或文章在 30 秒左右转化成 Markdown，免费、速度快、准确率高。有错误的地方交给 <strong>Codex</strong> 或 <strong>Claude Code</strong> 修复结构和语法，在 <strong>Obsidian</strong> 里预览，配合内置 Copilot 或 Obsidian Skill 做笔记、总结内容。</p>
+<h2 id="三、OCR-之后可以做什么">三、OCR 之后可以做什么</h2>
+<p>用 <strong>Mistral OCR</strong> 将 PDF 扫描版书籍或文章在 30 秒左右转化成 Markdown，免费、速度快、准确率高。有错误的地方交给 <strong>Codex</strong> 或 <strong>Claude Code</strong> 修复结构和语法，在 <strong>Obsidian</strong> 里预览，配合内置 Copilot 或 Obsidian Skill 做笔记、总结内容。</p>
 <p>一个实际例子：用 Mistral OCR 转化了一本数论书籍的 PDF 扫描版，然后用 Codex 修复了部分符号问题，最后在 Obsidian 里总结欧拉函数的证明写成小讲义。</p>
-<h2 id="四、工作中的应用"><a href="#四、工作中的应用" class="headerlink" title="四、工作中的应用"></a>四、工作中的应用</h2><h3 id="学生数据库"><a href="#学生数据库" class="headerlink" title="学生数据库"></a>学生数据库</h3><p>用 OpenClaw、Claude Code、Codex 结合飞书或 Notion 搭建学生数据库，可以将学生成绩表格以结构化形式放入飞书多维表格或 Notion 中。目前推广给其他老师使用还有难度，但底层逻辑已经跑通了。</p>
-<h3 id="Office-Skill-套装"><a href="#Office-Skill-套装" class="headerlink" title="Office Skill 套装"></a>Office Skill 套装</h3><p>用 CC、Codex、MiniMax 等工具操控 Office 文件，生成 docx、xlsx、pptx。</p>
-<h3 id="直接用-ChatGPT-生成-LaTeX-小讲义"><a href="#直接用-ChatGPT-生成-LaTeX-小讲义" class="headerlink" title="直接用 ChatGPT 生成 LaTeX 小讲义"></a>直接用 ChatGPT 生成 LaTeX 小讲义</h3><p>在 ChatGPT 对话窗口直接生成 LaTeX 源代码，复制到 Overleaf 编译。有时候赶时间，直接让 ChatGPT 生成可编译代码，放到 Overleaf 编译。</p>
+<h2 id="四、工作中的应用">四、工作中的应用</h2>
+<h3 id="学生数据库">学生数据库</h3>
+<p>用 OpenClaw、Claude Code、Codex 结合飞书或 Notion 搭建学生数据库，可以将学生成绩表格以结构化形式放入飞书多维表格或 Notion 中。目前推广给其他老师使用还有难度，但底层逻辑已经跑通了。</p>
+<h3 id="Office-Skill-套装">Office Skill 套装</h3>
+<p>用 CC、Codex、MiniMax 等工具操控 Office 文件，生成 docx、xlsx、pptx。</p>
+<h3 id="直接用-ChatGPT-生成-LaTeX-小讲义">直接用 ChatGPT 生成 LaTeX 小讲义</h3>
+<p>在 ChatGPT 对话窗口直接生成 LaTeX 源代码，复制到 Overleaf 编译。有时候赶时间，直接让 ChatGPT 生成可编译代码，放到 Overleaf 编译。</p>
 <p>现在 ChatGPT 可以在后台运行，提供源代码和 PDF 下载链接，不用开电脑，手机就能瞬间生成 PDF 小讲义。</p>
-<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><h3 id="Paralex"><a href="#Paralex" class="headerlink" title="Paralex"></a>Paralex</h3><p>Vibe Coding 的一个实践：做了一个原生 macOS 应用，实现双语对照翻译功能，用于查看英文论文和 PDF。</p>
+<h2 id="五、其他">五、其他</h2>
+<h3 id="Paralex">Paralex</h3>
+<p>Vibe Coding 的一个实践：做了一个原生 macOS 应用，实现双语对照翻译功能，用于查看英文论文和 PDF。</p>
 <p>用 Xcode 开发，左边导入 PDF，右边进行 OCR 和翻译，可以翻译成不同语言，提供下载原文、译文及原文加译文的功能。虽然不会正式对外发布，但验证了想法落地的过程。</p>
 <p><em>本文由飞书智能纪要整理，2026年4月5日</em></p>
 ]]></content>
+      <categories>
+        <category>AI工具小结</category>
+      </categories>
       <tags>
         <tag>AI</tag>
         <tag>工具</tag>
@@ -1465,275 +1569,392 @@
     <content><![CDATA[<blockquote>
 <p>文章作者: 陈嘉昊</p>
 </blockquote>
-<h2 id="一、序言：校内竞赛教练vs机构老师"><a href="#一、序言：校内竞赛教练vs机构老师" class="headerlink" title="一、序言：校内竞赛教练vs机构老师"></a>一、序言：校内竞赛教练vs机构老师</h2><h3 id="校内教练多了哪些职责？"><a href="#校内教练多了哪些职责？" class="headerlink" title="校内教练多了哪些职责？"></a>校内教练多了哪些职责？</h3><p><strong>机构老师：</strong></p>
+<h2 id="一、序言：校内竞赛教练vs机构老师">一、序言：校内竞赛教练vs机构老师</h2>
+<h3 id="校内教练多了哪些职责？">校内教练多了哪些职责？</h3>
+<p><strong>机构老师：</strong></p>
 <ul>
-<li><p>几乎只需完成教学任务</p>
+<li>
+<p>几乎只需完成教学任务</p>
 </li>
-<li><p>教学任务设计相对随心所欲</p>
+<li>
+<p>教学任务设计相对随心所欲</p>
 </li>
-<li><p>需要承担少部分招生任务</p>
+<li>
+<p>需要承担少部分招生任务</p>
 </li>
 </ul>
 <span id="more"></span>
-
 <p><strong>校内教练的额外压力：</strong></p>
-<h4 id="1-教学上的”委屈”"><a href="#1-教学上的”委屈”" class="headerlink" title="1. 教学上的”委屈”"></a>1. 教学上的”委屈”</h4><ul>
-<li><p><strong>兼顾课内外教学</strong>：很多老师要同时负责高考、竞赛、强基三块，备课时间大大增加</p>
+<h4 id="1-教学上的-委屈">1. 教学上的"委屈"</h4>
+<ul>
+<li>
+<p><strong>兼顾课内外教学</strong>：很多老师要同时负责高考、竞赛、强基三块，备课时间大大增加</p>
 </li>
-<li><p><strong>生源基础薄弱</strong>：在弱校中，很难招到初中基础不错的学生，每届可能只有一两个，教学节奏必须兼顾课内进度</p>
+<li>
+<p><strong>生源基础薄弱</strong>：在弱校中，很难招到初中基础不错的学生，每届可能只有一两个，教学节奏必须兼顾课内进度</p>
 </li>
-<li><p><strong>学生水平参差不齐</strong>：不像机构可以把水平接近的孩子凑到一起，竞赛组水平天南海北，教学难以照顾所有阶层</p>
+<li>
+<p><strong>学生水平参差不齐</strong>：不像机构可以把水平接近的孩子凑到一起，竞赛组水平天南海北，教学难以照顾所有阶层</p>
 </li>
-<li><p><strong>被低估的水平</strong>：人们总觉得机构老师水平更高，这显然不公平</p>
+<li>
+<p><strong>被低估的水平</strong>：人们总觉得机构老师水平更高，这显然不公平</p>
 </li>
 </ul>
-<h4 id="2-教学内容的内在枷锁"><a href="#2-教学内容的内在枷锁" class="headerlink" title="2. 教学内容的内在枷锁"></a>2. 教学内容的内在枷锁</h4><ul>
-<li><p><strong>承担铺基本方法的任务</strong>：比起讲新奇问题，校内教练要更多地承担把普通方法技巧给学生铺一遍的任务</p>
+<h4 id="2-教学内容的内在枷锁">2. 教学内容的内在枷锁</h4>
+<ul>
+<li>
+<p><strong>承担铺基本方法的任务</strong>：比起讲新奇问题，校内教练要更多地承担把普通方法技巧给学生铺一遍的任务</p>
 </li>
-<li><p><strong>两类问题的矛盾</strong>：</p>
+<li>
+<p><strong>两类问题的矛盾</strong>：</p>
 </li>
-<li><p><strong>学生听了会觉得老师水平很高的问题</strong>：有丰富背景的问题、高级定理、巧妙方法、大学教材/论文问题、游戏策略类问题</p>
+<li>
+<p><strong>学生听了会觉得老师水平很高的问题</strong>：有丰富背景的问题、高级定理、巧妙方法、大学教材/论文问题、游戏策略类问题</p>
 </li>
-<li><p><strong>优秀学生会听起来不满意的问题</strong>：基础方法讲解、一试内容、老题、不美观的问题</p>
+<li>
+<p><strong>优秀学生会听起来不满意的问题</strong>：基础方法讲解、一试内容、老题、不美观的问题</p>
 </li>
 </ul>
 <p><strong>关键矛盾</strong>：机构老师可以完全避免第二类问题，而校内老师几乎不可避免要讲大量第二类问题。如果是成名教练，学生可以理解；但如果是非清北出身的年轻老师，很容易被学生看不起。</p>
-<h4 id="3-非教学事务"><a href="#3-非教学事务" class="headerlink" title="3. 非教学事务"></a>3. 非教学事务</h4><ul>
-<li><p><strong>学习相关</strong>：跟进学生学习情况、检查听课质量、指导自习、安排模拟测试</p>
+<h4 id="3-非教学事务">3. 非教学事务</h4>
+<ul>
+<li>
+<p><strong>学习相关</strong>：跟进学生学习情况、检查听课质量、指导自习、安排模拟测试</p>
 </li>
-<li><p><strong>非学习相关</strong>：竞赛生的”超级班主任”，负责竞赛生的每分每秒、招生、德育、甚至研究高等知识</p>
+<li>
+<p><strong>非学习相关</strong>：竞赛生的"超级班主任"，负责竞赛生的每分每秒、招生、德育、甚至研究高等知识</p>
 </li>
-<li><p><strong>最终问题</strong>：学校没钱，做这些干啥？（建议直接跳槽）</p>
+<li>
+<p><strong>最终问题</strong>：学校没钱，做这些干啥？（建议直接跳槽）</p>
 </li>
 </ul>
-<h2 id="二、学生的学习安排"><a href="#二、学生的学习安排" class="headerlink" title="二、学生的学习安排"></a>二、学生的学习安排</h2><h3 id="竞赛生的发展周期"><a href="#竞赛生的发展周期" class="headerlink" title="竞赛生的发展周期"></a>竞赛生的发展周期</h3><ol>
-<li><p><strong>预备期</strong>：预习初高中课内知识，达到高考130分左右水平</p>
+<h2 id="二、学生的学习安排">二、学生的学习安排</h2>
+<h3 id="竞赛生的发展周期">竞赛生的发展周期</h3>
+<ol>
+<li>
+<p><strong>预备期</strong>：预习初高中课内知识，达到高考130分左右水平</p>
 </li>
-<li><p><strong>入门期</strong>：开始二试学习，四大板块过完一遍，课外以看书和一轮课程为主</p>
+<li>
+<p><strong>入门期</strong>：开始二试学习，四大板块过完一遍，课外以看书和一轮课程为主</p>
 </li>
-<li><p><strong>联赛刷题期</strong>：学习二试二轮，刷近年赛题，了解CMO热门知识点，参加机构外培</p>
+<li>
+<p><strong>联赛刷题期</strong>：学习二试二轮，刷近年赛题，了解CMO热门知识点，参加机构外培</p>
 </li>
-<li><p><strong>CMO刷题期</strong>：准备CMO，针对训练CMO3、6，周期性练习联赛一试保持手感，参加更难外培</p>
+<li>
+<p><strong>CMO刷题期</strong>：准备CMO，针对训练CMO3、6，周期性练习联赛一试保持手感，参加更难外培</p>
 </li>
 </ol>
-<h3 id="预备期"><a href="#预备期" class="headerlink" title="预备期"></a>预备期</h3><ul>
-<li><p>推荐资料：《六十课时学完高中数学》</p>
+<h3 id="预备期">预备期</h3>
+<ul>
+<li>
+<p>推荐资料：《六十课时学完高中数学》</p>
 </li>
-<li><p>尽量少在初联和小奥上花费时间</p>
+<li>
+<p>尽量少在初联和小奥上花费时间</p>
 </li>
-<li><p>有条件的话，直接尽快进入二试学习</p>
-</li>
-</ul>
-<h3 id="入门期（一二试一轮学习）"><a href="#入门期（一二试一轮学习）" class="headerlink" title="入门期（一二试一轮学习）"></a>入门期（一二试一轮学习）</h3><h4 id="听什么课"><a href="#听什么课" class="headerlink" title="听什么课"></a>听什么课</h4><ul>
-<li><p><strong>外部课程</strong>：陈祖维、杨全会的线上课程（极好，必听）</p>
-</li>
-<li><p><strong>自己授课</strong>：承担一试、几何、数论梳理任务（根据自身水平和时间，排名分先后）</p>
-</li>
-<li><p><strong>代数</strong>：想讲好代数对教练要求极高，需要很强的命题风向把控能力，推荐学习龚固老师公众号《天空的数学小天地》</p>
+<li>
+<p>有条件的话，直接尽快进入二试学习</p>
 </li>
 </ul>
-<h4 id="看什么书"><a href="#看什么书" class="headerlink" title="看什么书"></a>看什么书</h4><p><strong>一试</strong>：浙大和中科大的几本书仍是一轮学习的优质选择</p>
+<h3 id="入门期（一二试一轮学习）">入门期（一二试一轮学习）</h3>
+<h4 id="听什么课">听什么课</h4>
+<ul>
+<li>
+<p><strong>外部课程</strong>：陈祖维、杨全会的线上课程（极好，必听）</p>
+</li>
+<li>
+<p><strong>自己授课</strong>：承担一试、几何、数论梳理任务（根据自身水平和时间，排名分先后）</p>
+</li>
+<li>
+<p><strong>代数</strong>：想讲好代数对教练要求极高，需要很强的命题风向把控能力，推荐学习龚固老师公众号《天空的数学小天地》</p>
+</li>
+</ul>
+<h4 id="看什么书">看什么书</h4>
+<p><strong>一试</strong>：浙大和中科大的几本书仍是一轮学习的优质选择</p>
 <p><strong>几何</strong>：</p>
 <ul>
-<li><p>入门：小蓝皮几何</p>
+<li>
+<p>入门：小蓝皮几何</p>
 </li>
-<li><p>主要：浙大《几何分册》和Evan Chen《数学奥林匹克中的欧几里得几何》</p>
+<li>
+<p>主要：浙大《几何分册》和Evan Chen《数学奥林匹克中的欧几里得几何》</p>
 </li>
-<li><p>理想组合：后者 + 前者关键章节（圆与圆相交、圆与圆相切、直角三角形）</p>
+<li>
+<p>理想组合：后者 + 前者关键章节（圆与圆相交、圆与圆相切、直角三角形）</p>
 </li>
-<li><p>辅助：《几何变换与几何证题》、《命题人讲座圆》、万喜人</p>
+<li>
+<p>辅助：《几何变换与几何证题》、《命题人讲座圆》、万喜人</p>
 </li>
 </ul>
 <p><strong>代数</strong>：</p>
 <ul>
-<li><p>入门：小蓝皮4、9两本</p>
+<li>
+<p>入门：小蓝皮4、9两本</p>
 </li>
-<li><p>系统性方法：目前书籍几乎无法提供帮助</p>
+<li>
+<p>系统性方法：目前书籍几乎无法提供帮助</p>
 </li>
-<li><p>n元不等式理论：《代数不等式的证明》、《不等式的秘密》第一卷、《上海中学竞赛课程》</p>
+<li>
+<p>n元不等式理论：《代数不等式的证明》、《不等式的秘密》第一卷、《上海中学竞赛课程》</p>
 </li>
-<li><p><strong>关键</strong>：当前代数真的很靠网课，需要优秀老师总结近年赛题，提点新式赛题思路</p>
+<li>
+<p><strong>关键</strong>：当前代数真的很靠网课，需要优秀老师总结近年赛题，提点新式赛题思路</p>
 </li>
 </ul>
 <p><strong>数论</strong>：</p>
 <ul>
-<li><p>神书：《命题人讲座初等数论》和Titu《数论：概念与问题》</p>
+<li>
+<p>神书：《命题人讲座初等数论》和Titu《数论：概念与问题》</p>
 </li>
-<li><p>建议：小蓝皮数论打底，然后以学习上面两本书之一为主</p>
+<li>
+<p>建议：小蓝皮数论打底，然后以学习上面两本书之一为主</p>
 </li>
-<li><p>校内教学：直接选一本作为蓝本，需要对知识体系做一定补充或增删</p>
+<li>
+<p>校内教学：直接选一本作为蓝本，需要对知识体系做一定补充或增删</p>
 </li>
 </ul>
 <p><strong>组合</strong>：</p>
 <ul>
-<li><p>入门：小蓝皮两本组合</p>
+<li>
+<p>入门：小蓝皮两本组合</p>
 </li>
-<li><p>思路讲解：冯跃峰《组合构造》（有些过时但思路好）</p>
+<li>
+<p>思路讲解：冯跃峰《组合构造》（有些过时但思路好）</p>
 </li>
-<li><p>全面性：《奥赛经典组合分册》（堪堪能看）</p>
+<li>
+<p>全面性：《奥赛经典组合分册》（堪堪能看）</p>
 </li>
-<li><p>综合最好：《上海中学数学课程》（题目新颖，讲解不错，但初学者难看进去）</p>
+<li>
+<p>综合最好：《上海中学数学课程》（题目新颖，讲解不错，但初学者难看进去）</p>
 </li>
-<li><p>推荐：两本小蓝皮打底，同步学习《组合构造》、《上中》，刷俄罗斯赛题</p>
-</li>
-</ul>
-<h3 id="联赛刷题期"><a href="#联赛刷题期" class="headerlink" title="联赛刷题期"></a>联赛刷题期</h3><h4 id="停不停课与竞赛需要多少时间"><a href="#停不停课与竞赛需要多少时间" class="headerlink" title="停不停课与竞赛需要多少时间"></a>停不停课与竞赛需要多少时间</h4><ul>
-<li><p><strong>不停课</strong>：保证周一到五每天2-3小时竞赛学习，周末几乎全空闲即可</p>
-</li>
-<li><p><strong>停课</strong>：更好，但必须有人盯着一举一动</p>
-</li>
-<li><p><strong>关键</strong>：一天能集中注意力搞数学的时间约4-5小时，再多效率下降</p>
+<li>
+<p>推荐：两本小蓝皮打底，同步学习《组合构造》、《上中》，刷俄罗斯赛题</p>
 </li>
 </ul>
-<h4 id="做什么题：一试"><a href="#做什么题：一试" class="headerlink" title="做什么题：一试"></a>做什么题：一试</h4><ul>
-<li><p><strong>可做</strong>：中数、根源杯、学数学</p>
+<h3 id="联赛刷题期">联赛刷题期</h3>
+<h4 id="停不停课与竞赛需要多少时间">停不停课与竞赛需要多少时间</h4>
+<ul>
+<li>
+<p><strong>不停课</strong>：保证周一到五每天2-3小时竞赛学习，周末几乎全空闲即可</p>
 </li>
-<li><p><strong>避雷</strong>：协作体（偏题、老题、错题多）</p>
+<li>
+<p><strong>停课</strong>：更好，但必须有人盯着一举一动</p>
 </li>
-<li><p><strong>推荐</strong>：数之谜”筑梦”模拟（质量极高）</p>
+<li>
+<p><strong>关键</strong>：一天能集中注意力搞数学的时间约4-5小时，再多效率下降</p>
 </li>
 </ul>
-<h4 id="做什么题：二试原则"><a href="#做什么题：二试原则" class="headerlink" title="做什么题：二试原则"></a>做什么题：二试原则</h4><ol>
-<li><p>年份考察：远于十年的题尽量不选（除重要考试或特别经典）</p>
+<h4 id="做什么题：一试">做什么题：一试</h4>
+<ul>
+<li>
+<p><strong>可做</strong>：中数、根源杯、学数学</p>
 </li>
-<li><p>优先刷完中美俄大赛题（可刷多遍）</p>
+<li>
+<p><strong>避雷</strong>：协作体（偏题、老题、错题多）</p>
 </li>
-<li><p>有阶段性主题（板块或考试）</p>
+<li>
+<p><strong>推荐</strong>：数之谜"筑梦"模拟（质量极高）</p>
 </li>
-<li><p>引导学生情绪，忌讳评价题目好坏</p>
-</li>
-</ol>
-<h4 id="做什么题：题源顺序"><a href="#做什么题：题源顺序" class="headerlink" title="做什么题：题源顺序"></a>做什么题：题源顺序</h4><ol>
-<li><p>东南、西部、女奥、高联、CMO</p>
-</li>
-<li><p>IMO预选题、IMO、08~14CTST</p>
-</li>
-<li><p>中美俄其它比赛（TST,TSTST,ELMO等）</p>
-</li>
-<li><p>日本、越南、罗马尼亚、保加利亚等国的MO,TST</p>
-</li>
-<li><p>其余国家考试、网上原创题</p>
-</li>
-</ol>
-<h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><p><strong>数之谜组卷</strong>：</p>
+</ul>
+<h4 id="做什么题：二试原则">做什么题：二试原则</h4>
 <ol>
-<li><p>打开微信小程序”数之谜”</p>
+<li>
+<p>年份考察：远于十年的题尽量不选（除重要考试或特别经典）</p>
 </li>
-<li><p>在题库界面点击题目右下角”+”号</p>
+<li>
+<p>优先刷完中美俄大赛题（可刷多遍）</p>
 </li>
-<li><p>回到主页”我的”，进入组卷功能</p>
+<li>
+<p>有阶段性主题（板块或考试）</p>
 </li>
-<li><p>选择题目、排序，预览确认后付5金币下载</p>
+<li>
+<p>引导学生情绪，忌讳评价题目好坏</p>
 </li>
-<li><p>每天签到+2金币，2-3个号可每周组卷多次</p>
+</ol>
+<h4 id="做什么题：题源顺序">做什么题：题源顺序</h4>
+<ol>
+<li>
+<p>东南、西部、女奥、高联、CMO</p>
+</li>
+<li>
+<p>IMO预选题、IMO、08~14CTST</p>
+</li>
+<li>
+<p>中美俄其它比赛（TST,TSTST,ELMO等）</p>
+</li>
+<li>
+<p>日本、越南、罗马尼亚、保加利亚等国的MO,TST</p>
+</li>
+<li>
+<p>其余国家考试、网上原创题</p>
+</li>
+</ol>
+<h4 id="工具推荐">工具推荐</h4>
+<p><strong>数之谜组卷</strong>：</p>
+<ol>
+<li>
+<p>打开微信小程序"数之谜"</p>
+</li>
+<li>
+<p>在题库界面点击题目右下角"+"号</p>
+</li>
+<li>
+<p>回到主页"我的"，进入组卷功能</p>
+</li>
+<li>
+<p>选择题目、排序，预览确认后付5金币下载</p>
+</li>
+<li>
+<p>每天签到+2金币，2-3个号可每周组卷多次</p>
 </li>
 </ol>
 <p><strong>制作Word讲义</strong>：</p>
 <ul>
-<li>微信小程序”小彭扫描”或软件Mathpix</li>
+<li>微信小程序"小彭扫描"或软件Mathpix</li>
 </ul>
 <p><strong>制作LaTeX讲义</strong>：</p>
 <ol>
-<li><p>将内容截图</p>
+<li>
+<p>将内容截图</p>
 </li>
-<li><p>粘贴给豆包转换成LaTeX代码</p>
+<li>
+<p>粘贴给豆包转换成LaTeX代码</p>
 </li>
-<li><p>粘贴到overleaf平台编译</p>
+<li>
+<p>粘贴到overleaf平台编译</p>
 </li>
-<li><p>推荐使用中国科技云：<a href="https://sharelatex.cstcloud.cn/">https://sharelatex.cstcloud.cn/</a></p>
+<li>
+<p>推荐使用中国科技云：<a href="https://sharelatex.cstcloud.cn/">https://sharelatex.cstcloud.cn/</a></p>
 </li>
-<li><p>支持中文需替换<code>\begin{document}</code>为：</p>
+<li>
+<p>支持中文需替换<code>\begin{document}</code>为：</p>
 </li>
 </ol>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{CJKutf8}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\begin</span>{CJK}{UTF8}{gbsn}</span><br></pre></td></tr></table></figure>
-
-<h4 id="品味与趋势"><a href="#品味与趋势" class="headerlink" title="品味与趋势"></a>品味与趋势</h4><ul>
-<li><p><strong>品味定义</strong>：近五年所有选拔考试赛题风格的平均值</p>
+<h4 id="品味与趋势">品味与趋势</h4>
+<ul>
+<li>
+<p><strong>品味定义</strong>：近五年所有选拔考试赛题风格的平均值</p>
 </li>
-<li><p><strong>联赛趋势</strong>：没有趋势，不想被预测</p>
+<li>
+<p><strong>联赛趋势</strong>：没有趋势，不想被预测</p>
 </li>
-<li><p><strong>避免</strong>：过于老的问题（如几何老旧三角形性质题、代数传统不等式）</p>
-</li>
-</ul>
-<h4 id="建议着重练习的板块"><a href="#建议着重练习的板块" class="headerlink" title="建议着重练习的板块"></a>建议着重练习的板块</h4><ul>
-<li><p><strong>几何</strong>：自由度≥4的问题（四边形出发）、动点问题</p>
-</li>
-<li><p><strong>代数</strong>：非常规代数问题（ISL数列、离散极值、代数杂题、形式新颖不等式）</p>
-</li>
-<li><p><strong>数论</strong>：数论与数列、组合结合的问题，有一定高等背景的问题</p>
-</li>
-<li><p><strong>组合</strong>：与其余板块结合、游戏策略类、分析特殊结构、崭新情境</p>
+<li>
+<p><strong>避免</strong>：过于老的问题（如几何老旧三角形性质题、代数传统不等式）</p>
 </li>
 </ul>
-<h4 id="可以减少练习的板块"><a href="#可以减少练习的板块" class="headerlink" title="可以减少练习的板块"></a>可以减少练习的板块</h4><ul>
-<li><p><strong>几何</strong>：三角形五心性质/经典性质出发的问题</p>
+<h4 id="建议着重练习的板块">建议着重练习的板块</h4>
+<ul>
+<li>
+<p><strong>几何</strong>：自由度≥4的问题（四边形出发）、动点问题</p>
 </li>
-<li><p><strong>代数</strong>：三元不等式、除均值和柯西以外定理结论为核心的不等式</p>
+<li>
+<p><strong>代数</strong>：非常规代数问题（ISL数列、离散极值、代数杂题、形式新颖不等式）</p>
 </li>
-<li><p><strong>数论</strong>：不定方程、结论导向型问题</p>
+<li>
+<p><strong>数论</strong>：数论与数列、组合结合的问题，有一定高等背景的问题</p>
 </li>
-<li><p><strong>组合</strong>：结论导向型问题</p>
+<li>
+<p><strong>组合</strong>：与其余板块结合、游戏策略类、分析特殊结构、崭新情境</p>
 </li>
 </ul>
-<h4 id="一篇重要的阅读理解（关于CMO命题趋势）"><a href="#一篇重要的阅读理解（关于CMO命题趋势）" class="headerlink" title="一篇重要的阅读理解（关于CMO命题趋势）"></a>一篇重要的阅读理解（关于CMO命题趋势）</h4><p><strong>问题背景</strong>：考生批评连续三年CMO集训队线87分加权，金牌线水涨船高</p>
+<h4 id="可以减少练习的板块">可以减少练习的板块</h4>
+<ul>
+<li>
+<p><strong>几何</strong>：三角形五心性质/经典性质出发的问题</p>
+</li>
+<li>
+<p><strong>代数</strong>：三元不等式、除均值和柯西以外定理结论为核心的不等式</p>
+</li>
+<li>
+<p><strong>数论</strong>：不定方程、结论导向型问题</p>
+</li>
+<li>
+<p><strong>组合</strong>：结论导向型问题</p>
+</li>
+</ul>
+<h4 id="一篇重要的阅读理解（关于CMO命题趋势）">一篇重要的阅读理解（关于CMO命题趋势）</h4>
+<p><strong>问题背景</strong>：考生批评连续三年CMO集训队线87分加权，金牌线水涨船高</p>
 <p><strong>重要观点</strong>：</p>
 <ol>
-<li><p>变卷是我国学生人数众多和优质资源稀缺导致的必然结果</p>
+<li>
+<p>变卷是我国学生人数众多和优质资源稀缺导致的必然结果</p>
 </li>
-<li><p>命题组明确希望在1、2、4、5题减少区分度，防止只训练这些的学生进集训队</p>
+<li>
+<p>命题组明确希望在1、2、4、5题减少区分度，防止只训练这些的学生进集训队</p>
 </li>
-<li><p>命题组在3、6题设置难度较低的得分点</p>
+<li>
+<p>命题组在3、6题设置难度较低的得分点</p>
 </li>
 </ol>
 <p><strong>重要提示</strong>：联赛压力较小的同学，平时训练不能排斥3、6难度的顶级难题，多进行讨论，即使无法完整做出，讨论产生的部分思路可能转化为最后的部分分。</p>
-<h4 id="模拟测试"><a href="#模拟测试" class="headerlink" title="模拟测试"></a>模拟测试</h4><ul>
-<li><p>质量通常不如赛题</p>
+<h4 id="模拟测试">模拟测试</h4>
+<ul>
+<li>
+<p>质量通常不如赛题</p>
 </li>
-<li><p>用途：训练后期、需要考试排名选拔时</p>
+<li>
+<p>用途：训练后期、需要考试排名选拔时</p>
 </li>
-<li><p>推荐：大机构联考题、易湃刷题班</p>
+<li>
+<p>推荐：大机构联考题、易湃刷题班</p>
 </li>
 </ul>
-<h4 id="上什么课"><a href="#上什么课" class="headerlink" title="上什么课"></a>上什么课</h4><p>外培目的明确：</p>
+<h4 id="上什么课">上什么课</h4>
+<p>外培目的明确：</p>
 <ol>
-<li><p>一定要上命题人的课</p>
+<li>
+<p>一定要上命题人的课</p>
 </li>
-<li><p>注意外培节奏，劳逸结合，与日常训练穿插</p>
+<li>
+<p>注意外培节奏，劳逸结合，与日常训练穿插</p>
 </li>
 </ol>
-<h3 id="学生的非授课指导"><a href="#学生的非授课指导" class="headerlink" title="学生的非授课指导"></a>学生的非授课指导</h3><h4 id="指导方式"><a href="#指导方式" class="headerlink" title="指导方式"></a>指导方式</h4><ol>
+<h3 id="学生的非授课指导">学生的非授课指导</h3>
+<h4 id="指导方式">指导方式</h4>
+<ol>
 <li><strong>督促学生做难题集</strong></li>
 </ol>
 <ul>
-<li><p>金牌选手至少十本起步</p>
+<li>
+<p>金牌选手至少十本起步</p>
 </li>
-<li><p>从被动监督到主动热情</p>
+<li>
+<p>从被动监督到主动热情</p>
 </li>
-<li><p>记下思路与标答/老师思路”打架”的过程</p>
+<li>
+<p>记下思路与标答/老师思路"打架"的过程</p>
 </li>
 </ul>
 <ol>
 <li><strong>面批</strong></li>
 </ol>
 <ul>
-<li><p>叫1-3名学生到办公室</p>
+<li>
+<p>叫1-3名学生到办公室</p>
 </li>
-<li><p>检查学习内容、上课笔记</p>
+<li>
+<p>检查学习内容、上课笔记</p>
 </li>
-<li><p>让学生给自己讲一遍或直接在边上写</p>
+<li>
+<p>让学生给自己讲一遍或直接在边上写</p>
 </li>
-<li><p><strong>注意</strong>：不管学生水平多高，都可以严厉严格进行</p>
+<li>
+<p><strong>注意</strong>：不管学生水平多高，都可以严厉严格进行</p>
 </li>
 </ul>
 <ol>
 <li><strong>做过的题重做</strong></li>
 </ol>
 <ul>
-<li><p>从作业/考试中选题，尤其是外培题</p>
+<li>
+<p>从作业/考试中选题，尤其是外培题</p>
 </li>
-<li><p>严谨复写是初学和独立解题之间的良好过渡</p>
+<li>
+<p>严谨复写是初学和独立解题之间的良好过渡</p>
 </li>
-<li><p>锻炼书写</p>
+<li>
+<p>锻炼书写</p>
 </li>
 </ul>
 <ol>
@@ -1742,80 +1963,112 @@
 <ul>
 <li>准备问题或知识点，让学生自学后互相讲解</li>
 </ul>
-<h4 id="指导要点：及时敲打不当心态"><a href="#指导要点：及时敲打不当心态" class="headerlink" title="指导要点：及时敲打不当心态"></a>指导要点：及时敲打不当心态</h4><p><strong>常见不当心态</strong>：</p>
+<h4 id="指导要点：及时敲打不当心态">指导要点：及时敲打不当心态</h4>
+<p><strong>常见不当心态</strong>：</p>
 <ol>
-<li><p>“xxx太牛了”、”mol”等起哄</p>
+<li>
+<p>“xxx太牛了”、"mol"等起哄</p>
 </li>
-<li><p>对题目挑三拣四（太偏、出题人脑残）</p>
+<li>
+<p>对题目挑三拣四（太偏、出题人脑残）</p>
 </li>
-<li><p>畏新、畏难</p>
+<li>
+<p>畏新、畏难</p>
 </li>
-<li><p>对平面几何、对称不等式有过大热情</p>
+<li>
+<p>对平面几何、对称不等式有过大热情</p>
 </li>
-<li><p>做题好高骛远</p>
+<li>
+<p>做题好高骛远</p>
 </li>
-<li><p>对网络活动、原创题过于热情</p>
+<li>
+<p>对网络活动、原创题过于热情</p>
 </li>
 </ol>
 <p><strong>敲打方式</strong>：多用案例提点，必要时请老学长回来讲讲</p>
-<h4 id="指导要点：”过拟合”"><a href="#指导要点：”过拟合”" class="headerlink" title="指导要点：”过拟合”"></a>指导要点：”过拟合”</h4><p><strong>定义</strong>：机器学习术语，指模型只适用于特定数据集</p>
+<h4 id="指导要点：“过拟合”">指导要点：“过拟合”</h4>
+<p><strong>定义</strong>：机器学习术语，指模型只适用于特定数据集</p>
 <p><strong>学生表现</strong>：</p>
 <ol>
-<li><p>对冷门/高级方法非常推崇，做题想不到或过早放弃基本方法</p>
+<li>
+<p>对冷门/高级方法非常推崇，做题想不到或过早放弃基本方法</p>
 </li>
-<li><p>希望建立绝对映射，把所有问题题干对应到唯一方法，不允许通过巧思或尝试解决</p>
+<li>
+<p>希望建立绝对映射，把所有问题题干对应到唯一方法，不允许通过巧思或尝试解决</p>
 </li>
 </ol>
 <p><strong>预防</strong>：在种子选手身上多加预防</p>
-<h4 id="指导要点：德育"><a href="#指导要点：德育" class="headerlink" title="指导要点：德育"></a>指导要点：德育</h4><ul>
-<li><p>数之谜联赛考前考后情绪反差大</p>
+<h4 id="指导要点：德育">指导要点：德育</h4>
+<ul>
+<li>
+<p>数之谜联赛考前考后情绪反差大</p>
 </li>
-<li><p>原因：一半好高骛远，一半弄虚作假，仅10%是真发挥失常</p>
+<li>
+<p>原因：一半好高骛远，一半弄虚作假，仅10%是真发挥失常</p>
 </li>
-<li><p><strong>核心</strong>：保证学生始终在向前做功</p>
-</li>
-</ul>
-<h2 id="三、学生的挑选与选拔"><a href="#三、学生的挑选与选拔" class="headerlink" title="三、学生的挑选与选拔"></a>三、学生的挑选与选拔</h2><h3 id="招生策略"><a href="#招生策略" class="headerlink" title="招生策略"></a>招生策略</h3><ul>
-<li><p>教小奥课去挖人</p>
-</li>
-<li><p>和机构喝酒、混家长圈子</p>
-</li>
-<li><p>向校长要政策：免中考、保班型</p>
+<li>
+<p><strong>核心</strong>：保证学生始终在向前做功</p>
 </li>
 </ul>
-<h3 id="选拔技巧"><a href="#选拔技巧" class="headerlink" title="选拔技巧"></a>选拔技巧</h3><p><strong>核心</strong>：不要选拔超前学的孩子，要选拔理解能力强的孩子</p>
+<h2 id="三、学生的挑选与选拔">三、学生的挑选与选拔</h2>
+<h3 id="招生策略">招生策略</h3>
+<ul>
+<li>
+<p>教小奥课去挖人</p>
+</li>
+<li>
+<p>和机构喝酒、混家长圈子</p>
+</li>
+<li>
+<p>向校长要政策：免中考、保班型</p>
+</li>
+</ul>
+<h3 id="选拔技巧">选拔技巧</h3>
+<p><strong>核心</strong>：不要选拔超前学的孩子，要选拔理解能力强的孩子</p>
 <p><strong>方法</strong>：现学现考</p>
 <ul>
-<li><p>讲偏序集和全序集定义，让学生判断、举例</p>
+<li>
+<p>讲偏序集和全序集定义，让学生判断、举例</p>
 </li>
-<li><p>问”一个偏序集里有没有可能恰有0、1、3个极大元”等问题</p>
+<li>
+<p>问"一个偏序集里有没有可能恰有0、1、3个极大元"等问题</p>
 </li>
-<li><p>对初中生思维的很好考验</p>
+<li>
+<p>对初中生思维的很好考验</p>
 </li>
-<li><p>小学生可用三角函数基本知识</p>
+<li>
+<p>小学生可用三角函数基本知识</p>
 </li>
 </ul>
-<h3 id="学生家长常见负面观点及应对"><a href="#学生家长常见负面观点及应对" class="headerlink" title="学生家长常见负面观点及应对"></a>学生家长常见负面观点及应对</h3><ol>
-<li><p><strong>竞赛后面学不懂怎么办</strong> → 一试也对强基有用</p>
+<h3 id="学生家长常见负面观点及应对">学生家长常见负面观点及应对</h3>
+<ol>
+<li>
+<p><strong>竞赛后面学不懂怎么办</strong> → 一试也对强基有用</p>
 </li>
-<li><p><strong>竞赛太卷</strong> → 咱在弱省，进省队容易，银牌也能华五强基</p>
+<li>
+<p><strong>竞赛太卷</strong> → 咱在弱省，进省队容易，银牌也能华五强基</p>
 </li>
-<li><p><strong>强基只能读理科，没前途</strong> → 强基也有越来越多工科院系，数学系就业极好</p>
+<li>
+<p><strong>强基只能读理科，没前途</strong> → 强基也有越来越多工科院系，数学系就业极好</p>
 </li>
-<li><p><strong>学校前几年成绩不好</strong> → 今年加大投入，校长开会说了</p>
+<li>
+<p><strong>学校前几年成绩不好</strong> → 今年加大投入，校长开会说了</p>
 </li>
 </ol>
-<h3 id="维持适当人数"><a href="#维持适当人数" class="headerlink" title="维持适当人数"></a>维持适当人数</h3><p>以年均5省队、有初中部的学校为例：</p>
+<h3 id="维持适当人数">维持适当人数</h3>
+<p>以年均5省队、有初中部的学校为例：</p>
 <ul>
-<li><p>初一下学期：开始数竞选拔和一试培训</p>
+<li>
+<p>初一下学期：开始数竞选拔和一试培训</p>
 </li>
-<li><p>竞赛组人数参考：初二50人 → 初三50人 → 高一30人 → 高二15人</p>
+<li>
+<p>竞赛组人数参考：初二50人 → 初三50人 → 高一30人 → 高二15人</p>
 </li>
 </ul>
 <p><strong>未完待续</strong></p>
 ]]></content>
       <categories>
-        <category>竞赛方法论</category>
+        <category>教学札记</category>
       </categories>
       <tags>
         <tag>竞赛</tag>
@@ -1826,10 +2079,9 @@
     <url>/post/463d8022.html</url>
     <content><![CDATA[<p>最近又要准备新阶段的毕业论文了，于是乎，再次和论文模板在 VS Code 当中见面了，可谓是故地重游。本来觉得现在这些东西简直不值得一提，但是看到两年多前自己亲手写的文章，还是不免有些感慨。一方面，那时的 AI 还不太具有撰写高质量长文的能力（可惜现在的另一个趋势是如果不加以控制，AI 很可能会撰写奇怪的低质量长文），所以自己当时几乎是一个字一个字敲上去的（甚至也没有这么好用的语音输入）。另一方面，看到自己当年的配置过程以及电脑的截图，真是稚嫩且青涩呀！因此，这篇文章也算是回顾并致敬前一篇文章《用 VS Code 搭建 BNU 毕业论文写作平台》。事实上，“超级智能体工作台”这个名字有些言过其实了，像 Claude，Code等桌面 Agent 应用的功能早已非常强大，写下这些文字，主要是在回顾往昔岁月的同时，也记录自己当下的一些思考。</p>
 <span id="more"></span>
-
-<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>2023.12</p>
+<h2 id="前情提要">前情提要</h2>
+<p>2023.12</p>
 <img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20231216.JPG" alt="20231216" style="zoom: 80%;">
-
 <p>现在（2026.8）</p>
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2026-08-04%2012.40.13.png" alt="20260804"></p>
 <p>简单说一下原来那篇文章的写作背景。2023 年底，我临近毕业，准备撰写毕业论文。那时我使用 VS Code 的主要场景还是在本地写 LaTeX。在那篇文章当中，我非常详细地（像知乎、CSDN 那样）列出了如何一步步从下载图书馆官方 LaTeX 学位论文模板，到配置编译环境，以及安装插件、Git 等等，甚至还提到了通过 Zotero 去做文献同步。</p>
@@ -1843,7 +2095,8 @@
 </blockquote>
 <p>虽然说当时的很多步骤现在都可以利用 AI Agent 去完成，但是稍稍对比就会发现其中有许多有趣的东西。</p>
 <p>比如那时其实 ChatGPT 已经发布了整整一年，但我们可以看到，当时真正把 AI 接入到真实工作环境当中的应用是非常少的。GitHub Copilot 可能是为数不多的、真正能够进入到工作生产环境当中、直接接入真实上下文的 AI 辅助工具。在 GPT-4 加持下，Copilot 可以实现代码补全以及代码片段的快速编辑和修改。</p>
-<h2 id="现在咋搞"><a href="#现在咋搞" class="headerlink" title="现在咋搞"></a>现在咋搞</h2><p>下面直接进入正题：在今天这样一个时间点，还是做相同的事情，该怎么做？</p>
+<h2 id="现在咋搞">现在咋搞</h2>
+<p>下面直接进入正题：在今天这样一个时间点，还是做相同的事情，该怎么做？</p>
 <p>可以说，现在已经简单到不能再简单了，并且成本几乎为零。</p>
 <p>如果在一年多前，那么答案是：问。即直接问 AI。</p>
 <p>但如果是现在的话，答案是：<strong>下命令</strong>。直接给你的 AI agent 下命令。</p>
@@ -1855,7 +2108,7 @@
 </ol>
 <p>如何安装？在你电脑上的 Codex (现在已经和 ChatGPT 合并)或 WorkBuddy 或 Trae （或者也许豆包客户端也行？作者没用过不确定）发送以下命令即可：</p>
 <blockquote>
-<p>（请帮我）下载安装好以下环境：……</p>
+<p>（请帮我）下载安装好以下环境：…</p>
 </blockquote>
 <p>注意这里有两个小问题：</p>
 <ol>
@@ -1870,17 +2123,18 @@
 <p>当然可以再加一点实用的上下文，让 agent 把几个活一起干了。</p>
 <p>比如我是这么说的：</p>
 <blockquote>
-<p>…… 明白明白。然后你看我那个开题的文件夹里边，已经有了一个开题报告的初稿。你把我现在这个从图书馆下载的 LaTeX 论文模板（直接这个文件夹），改造成我最后可以用的论文结构，然后可以把一些必要的信息先填上去，然后那些没有必要的东西就可以删掉了。</p>
+<p>… 明白明白。然后你看我那个开题的文件夹里边，已经有了一个开题报告的初稿。你把我现在这个从图书馆下载的 LaTeX 论文模板（直接这个文件夹），改造成我最后可以用的论文结构，然后可以把一些必要的信息先填上去，然后那些没有必要的东西就可以删掉了。</p>
 </blockquote>
 <p>在语音模式下可能会显得比较稀碎，但是对 AI agent 来说，这些都不重要。</p>
-<h2 id="继续考古"><a href="#继续考古" class="headerlink" title="继续考古"></a>继续考古</h2><p>除此之外，在现在这样一个时间点，虽然很多 AI Agent 客户端非常好用，但 VS Code 同样也可以变得非常<strong>好用</strong>，且非常<strong>好看</strong>。</p>
+<h2 id="继续考古">继续考古</h2>
+<p>除此之外，在现在这样一个时间点，虽然很多 AI Agent 客户端非常好用，但 VS Code 同样也可以变得非常<strong>好用</strong>，且非常<strong>好看</strong>。</p>
 <p>下面结合实际的图片，去观察一下两年多前与现在我自己 VS Code 界面的变化，从 UI 变化这种表面现象由浅入深，顺便探讨一下 AI 对于整个工作流（这里以论文写作为例）的影响。</p>
 <p>这也是为什么这篇文章的题目没有写成《用 VS Code 搭建一个更好的论文写作平台》，又或者《用 VS Code 搭建超级智能体工作台》。</p>
 <p>前者被否定掉，是因为 VS Code 的用途实在是太广泛了，当然我自己也只是用了它很小一部分的功能；后者被否定掉，是因为我们现在甚至不需要去经历“搭建”这个过程，我们只需要借助 AI 的魔法棒稍加点缀，就可以把 VS Code 直接变成一个超级智能体工作台！</p>
 <p>整体而言，我的 vs code 的界面经历了3个阶段。</p>
-<h3 id="阶段一：Copilot"><a href="#阶段一：Copilot" class="headerlink" title="阶段一：Copilot"></a>阶段一：Copilot</h3><p>下面是第一阶段的屏幕快照。虽然说当时已经使用 copilot 一年多，但布局仍然是经典样式，即</p>
+<h3 id="阶段一：Copilot">阶段一：Copilot</h3>
+<p>下面是第一阶段的屏幕快照。虽然说当时已经使用 copilot 一年多，但布局仍然是经典样式，即</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">活动栏｜主侧栏｜代码编辑区｜Copilot</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20241213.png" alt="20241213"></p>
 <p>顺便翻了一下邮箱，2023年4月24日首次认证 GitHub Education，那时注册的一个因素现在看来大概率是为了用上最新的 GPT-4，与此同时还有另一张照片（2023.04.21）：</p>
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/20230421.png" alt="20230421"></p>
@@ -1891,9 +2145,9 @@
 <p>领先半步是先驱，领先一步是先烈。</p>
 </blockquote>
 <p>再回到 Copilot 上面来。从上面的截图可以看到，那时的 Copilot 可以说开创了基于上下文的 AI coding 的先河。无需离开 IDE 编辑器界面，即可在代码区域实现自动补全、片段修改以及对报错问题的修复，还有一个侧边栏的对话，并且也从早期的纯聊天模式，发展成了“Ask-Edit”，再到了“Chat-Agent-Plan”。在此后的日子，Copilot 几乎都会在第一时间上线最新的模型，从 GPT-4 开始，再到上图令很多人都非常难忘的 GPT-4o，以及一直用到了今年年初的 Claude Opus 4.6。但是非常遗憾的是，前段时间 GitHub Copilot Education 版被大幅阉割，几乎没法用。因此，我后续直接关闭了 VS Code 当中的 Copilot 功能。</p>
-<h3 id="阶段二：Agent"><a href="#阶段二：Agent" class="headerlink" title="阶段二：Agent"></a>阶段二：Agent</h3><p>今年 3 月，我第一次对自己 VS Code 的布局界面进行了大改，基本上可以说是按照 Cursor 以及后面的 CodeX 的方向去做了一个修改：把 Agent 聊天界面放在左侧栏，把文件、git 等放在右侧栏，即</p>
+<h3 id="阶段二：Agent">阶段二：Agent</h3>
+<p>今年 3 月，我第一次对自己 VS Code 的布局界面进行了大改，基本上可以说是按照 Cursor 以及后面的 CodeX 的方向去做了一个修改：把 Agent 聊天界面放在左侧栏，把文件、git 等放在右侧栏，即</p>
 <figure class="highlight coq"><table><tr><td class="code"><pre><span class="line">Agent(主)|<span class="type">Canvas</span>（次）|<span class="type">Files</span> List</span><br></pre></td></tr></table></figure>
-
 <p>有意思的一个事情是，随后 Codex 开启的日更模式当中，也把文件列表以及预览放在了右侧。</p>
 <p>所以从中可以看到一个趋势：大部分这些和 AI 相关的 APP 界面样式趋同的背后，是 AI 本身会变成一个超级 APP ，会成为其他所有应用的一个入口。</p>
 <p>以下这张屏幕快照来自于对 tsqx-Compiler 的演示。</p>
@@ -1904,7 +2158,9 @@
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/image-20260805110714353.png" alt="obsidian20260805"></p>
 <p>其实，中间的 Claudian 确实有点露馅了，答案正是 Obsidian。前段时间我也对自己 Obsidian 的配置进行了大刀阔斧的改造。通过 Claudian 插件，可以在笔记仓库里使用 Claude、Codex、Grok、Opencode 和 Pi 等不同的 Agents。</p>
 <p>在这些界面 UI 样式趋同的背后，我们会发现阶段二的 Agent 和阶段一的 Copilot 是完全两种不同的逻辑：在 Copilot 的那一套逻辑里，仍然有许许多多传统的应用。我们给这些传统的应用通过 API 的方式，去增加一个 AI 辅助的功能，比较直观的形式，就是加入一个对话侧边栏，但此时，AI 仍然是你的副驾驶（Copilot）；而在 Agent 模式当中，AI 就是主入口，它是你手下的调度员，对某个项目进行整体的、全流程的任务。其中的主次关系发生了根本上的改变。</p>
-<h2 id="未来已来？"><a href="#未来已来？" class="headerlink" title="未来已来？"></a>未来已来？</h2><h3 id="阶段三：Human"><a href="#阶段三：Human" class="headerlink" title="阶段三：Human"></a>阶段三：Human</h3><p>这次对 VS Code 的自定义调整主要有以下几个方面：</p>
+<h2 id="未来已来？">未来已来？</h2>
+<h3 id="阶段三：Human">阶段三：Human</h3>
+<p>这次对 VS Code 的自定义调整主要有以下几个方面：</p>
 <ol>
 <li>开启了目前还是实验版本的全新 UI：和 Agent 模式下的 UI 是一致的，看起来更现代一些。</li>
 <li>开启抗锯齿字体渲染：无意中发现把 Antialiasing 选择使用抗锯齿字体渲染，字体线条变纤细也更清晰了，在 MacBook 上显示的效果特别好。</li>
@@ -1917,10 +2173,10 @@
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
-        <tag>vscode</tag>
-        <tag>copilot</tag>
         <tag>AI</tag>
         <tag>Agent</tag>
+        <tag>VS Code</tag>
+        <tag>GitHub Copilot</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,7 +2197,7 @@
 <p>9月13日，这个属于高联的周末终于到来了。再一次抵达广州，阴沉的天空下，街道上的人流车流如工厂流水线般密集交汇，也将往日的记忆碎片重新串联起来。年初在大学城带着期许写下“今日小谷围，明日勇夺魁”，也许在不久的未来能够部分实现，只是这里面的变量实在太多，巧妇难为无米之炊。但无论如何，发挥个人的主观能动性，借助日新月异的工具，成果与收获终会到来。</p>
 ]]></content>
       <categories>
-        <category>教学感悟</category>
+        <category>教学札记</category>
       </categories>
       <tags>
         <tag>数学教学</tag>
