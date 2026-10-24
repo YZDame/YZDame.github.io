@@ -1470,7 +1470,6 @@ graph
         <tag>工具</tag>
         <tag>配置</tag>
         <tag>技术</tag>
-        <tag>VS Code</tag>
       </tags>
   </entry>
   <entry>
@@ -2183,13 +2182,13 @@ graph
 </ol>
 <p><img src="https://pauline.oss-cn-shenzhen.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2026-08-04%2022.43.38.png" alt="20260803"></p>
 <p>举个例子，比如说现在 Agent 在完成特定任务后都可以自动提交 Git，所以此时就无需打开右侧栏上的 Git 面板来手动执行相关操作。</p>
+<p>…</p>
+<p>由于这一阶段还在经历过程中，所以暂时不展开讨论，但深受前段时间看李飞飞自传《我看见的世界》影响，我现在也开始重新用“以人为本”的思想去审视很多最近的工作或者所谓的“作品”。也许就像是工业化规模化的大宗商品和特定手工打造的艺术品一样，后者并不会消亡，反而会成为一种更为珍贵稀有的资源。</p>
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
         <tag>AI</tag>
         <tag>Agent</tag>
-        <tag>VS Code</tag>
-        <tag>GitHub Copilot</tag>
       </tags>
   </entry>
   <entry>
@@ -2215,6 +2214,21 @@ graph
       <tags>
         <tag>数学教学</tag>
         <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Codex Flexoki Theme Snippet</title>
+    <url>/post/10f80992.html</url>
+    <content><![CDATA[<p>Codex 的一个小 bug：可以自定义主题，但是不能用自定义的主题 ID，所以就得借用已有的 ID。</p>
+<p>比如说此前我比较喜欢用的两个，一个是浅色模式下的 Proof，一个是深色模式下的 Ayu，不过现在我都统一成了 Flexoki。</p>
+<p>由于每次改成其他主题后，自定义配置就会被清空，所以把这两个 Snippets 放在博客上备份。</p>
+<h2 id="Light">Light</h2>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">codex-theme-v1<span class="punctuation">:</span><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"codeThemeId"</span><span class="punctuation">:</span> <span class="string">"proof"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"theme"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"accent"</span><span class="punctuation">:</span> <span class="string">"#205ea6"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"contrast"</span><span class="punctuation">:</span> <span class="number">30</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"fonts"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"code"</span><span class="punctuation">:</span> <span class="string">"\"SF Mono\""</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"ui"</span><span class="punctuation">:</span> <span class="string">"\"SF Pro Text\""</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ink"</span><span class="punctuation">:</span> <span class="string">"#100f0f"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"opaqueWindows"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"semanticColors"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"diffAdded"</span><span class="punctuation">:</span> <span class="string">"#66800b"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"diffRemoved"</span><span class="punctuation">:</span> <span class="string">"#af3029"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"skill"</span><span class="punctuation">:</span> <span class="string">"#5e409d"</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"surface"</span><span class="punctuation">:</span> <span class="string">"#fffcf0"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"variant"</span><span class="punctuation">:</span> <span class="string">"light"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+<h2 id="Dark">Dark</h2>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">codex-theme-v1<span class="punctuation">:</span><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"codeThemeId"</span><span class="punctuation">:</span> <span class="string">"ayu"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"theme"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"accent"</span><span class="punctuation">:</span> <span class="string">"#4385be"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"contrast"</span><span class="punctuation">:</span> <span class="number">47</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"fonts"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"code"</span><span class="punctuation">:</span> <span class="string">"\"SF Mono\""</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"ui"</span><span class="punctuation">:</span> <span class="string">"\"SF Pro Text\""</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ink"</span><span class="punctuation">:</span> <span class="string">"#cecdc3"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"opaqueWindows"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"semanticColors"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"diffAdded"</span><span class="punctuation">:</span> <span class="string">"#879a39"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"diffRemoved"</span><span class="punctuation">:</span> <span class="string">"#d14d41"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"skill"</span><span class="punctuation">:</span> <span class="string">"#8b7ec8"</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"surface"</span><span class="punctuation">:</span> <span class="string">"#100f0f"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"variant"</span><span class="punctuation">:</span> <span class="string">"dark"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>配置</tag>
       </tags>
   </entry>
 </search>
