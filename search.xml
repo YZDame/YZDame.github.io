@@ -852,9 +852,7 @@
   <entry>
     <title>AI 真的能赋能教学吗：数学图形绘制（一）</title>
     <url>/post/ee75cf2b.html</url>
-    <content><![CDATA[<blockquote>
-<p>最近把自己用了半年的 GeoGebra Skill——<a href="https://yzdame.github.io/GeoGebra-Studio/">GeoGebra Studio</a> 进行了完善与推广。随着 DeepSeek Harness 版本趋于稳定，我也补齐了对它的适配（此前自己一直在 Codex 上使用），并顺带制作了<a href="https://yzdame.github.io/GeoGebra-Studio/">发布页网站</a>和<a href="https://www.bilibili.com/video/BV1h1s66cECZ/">录屏宣传片</a>。</p>
-</blockquote>
+    <content><![CDATA[<p>最近把自己用了半年的 GeoGebra Skill——<a href="https://yzdame.github.io/GeoGebra-Studio/">GeoGebra Studio</a> 进行了完善与推广。随着 DeepSeek Harness 版本趋于稳定，我也补齐了对它的适配（此前自己一直在 Codex 上使用），并顺带制作了<a href="https://yzdame.github.io/GeoGebra-Studio/">发布页网站</a>和<a href="https://www.bilibili.com/video/BV1h1s66cECZ/">录屏宣传片</a>。</p>
 <span id="more"></span>
 <h2 id="考古">考古</h2>
 <p>GeoGebra 可以说是更现代化的“几何画板”；不过它结合了几何（Geometry）与代数（Algebra）等模块，用它旗下核心应用常见的中文名“图形计算器”（或更广义的“动态数学软件”）来概括，或许会比单纯的“几何画板”更全面一些。它对于数学教学的可视化展示非常有帮助，功能强大，上手也不算难。</p>
